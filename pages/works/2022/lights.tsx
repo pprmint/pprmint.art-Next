@@ -19,8 +19,6 @@ export default function Lights() {
 					property="og:image"
 					content="https://next.pprmint.art/og/noclickbait.png"
 				/>
-				<meta property="og:image:width" content="1920" />
-				<meta property="og:image:height" content="1080" />
 				<meta property="og:title" content="please work." />
 				<meta property="og:url" content="https://next.pprmint.art/works/2022/lights" />
 			</Head>

@@ -24,8 +24,6 @@ const Home: NextPage = () => {
 					property="og:image"
 					content="https://next.pprmint.art/og/index.png"
 				/>
-				<meta property="og:image:width" content="1920" />
-				<meta property="og:image:height" content="1080" />
 				<meta property="og:title" content="A Next.JS site." />
 				<meta property="og:url" content="https://next.pprmint.art" />
 			</Head>
