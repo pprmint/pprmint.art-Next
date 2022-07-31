@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."
 				/>
 				<meta
-					property="og:image"
+					property="twitter:image"
 					content="https://next.pprmint.art/og/index.png"
 				/>
 				<meta property="og:title" content="A Next.JS site." />

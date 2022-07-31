@@ -16,7 +16,7 @@ export default function Lights() {
 					content="Holy shit if this works I swear to god."
 				/>
 				<meta
-					property="og:image"
+					property="twitter:image"
 					content="https://next.pprmint.art/og/noclickbait.png"
 				/>
 				<meta property="og:title" content="please work." />
