@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 					property="og:description"
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."
 				/>
-                <meta content="summary_large_image" name="twitter:card" />
+				<meta content="summary_large_image" name="twitter:card" />
 				<meta
 					property="og:image"
 					content="https://next.pprmint.art/og/index.png"

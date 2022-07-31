@@ -6,8 +6,10 @@ const theme = createTheme({
         fontFamily: "Noway",
 		h1: {
             fontWeight: "700",
+            color: "#eee",
 		},
 		h1top: {
+            color: "#bbb",
 			fontFamily: "N27",
 			fontWeight: "300",
 			fontStyle: "italic",
