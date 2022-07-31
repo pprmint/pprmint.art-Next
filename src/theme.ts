@@ -3,8 +3,8 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 // Create a theme instance.
 const theme = createTheme({
 	typography: {
+        fontFamily: "Noway",
 		h1: {
-			fontFamily: "Noway",
             fontWeight: "700",
 		},
 		h1top: {
@@ -14,21 +14,9 @@ const theme = createTheme({
             fontSize: "2.5rem",
             textTransform: "uppercase",
 		},
-		h2: {
-			fontFamily: "Noway",
-		},
-		h3: {
-			fontFamily: "Noway",
-		},
-		h4: {
-			fontFamily: "Noway",
-		},
-		h5: {
-			fontFamily: "Noway",
-		},
-		h6: {
-			fontFamily: "Noway",
-		},
+        button: {
+            fontFamily: "N27",
+        }
 	},
 	palette: {
 		mode: "dark",
