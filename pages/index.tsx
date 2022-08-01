@@ -17,14 +17,14 @@ const Home: NextPage = () => {
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."
 				/>
 
-                <link rel="apple-touch-icon" sizes="180x180" href="/favicons/mintcraft/apple-touch-icon.png" />
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicons/mintcraft/favicon-32x32.png" />
-                <link rel="icon" type="image/png" sizes="16x16" href="/favicons/mintcraft/favicon-16x16.png" />
-                <link rel="manifest" href="/favicons/mintcraft/site.webmanifest" />
-                <link rel="mask-icon" href="/favicons/mintcraft/safari-pinned-tab.svg" color="#00CC66" />
-                <link rel="shortcut icon" href="/favicons/mintcraft/favicon.ico" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/favicons/pprmint/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicons/pprmint/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicons/pprmint/favicon-16x16.png" />
+                <link rel="manifest" href="/favicons/pprmint/site.webmanifest" />
+                <link rel="mask-icon" href="/favicons/pprmint/safari-pinned-tab.svg" color="#00CC66" />
+                <link rel="shortcut icon" href="/favicons/pprmint/favicon.ico" />
                 <meta name="msapplication-TileColor" content="#00CC66" />
-                <meta name="msapplication-config" content="/favicons/mintcraft/browserconfig.xml" />
+                <meta name="msapplication-config" content="/favicons/pprmint/browserconfig.xml" />
                 <meta name="theme-color" content="#00CC66" />
 
 				<meta
