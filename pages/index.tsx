@@ -16,7 +16,17 @@ const Home: NextPage = () => {
 					name="description"
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."
 				/>
-				<meta name="theme-color" content="#00cc66" />
+
+                <link rel="apple-touch-icon" sizes="180x180" href="/favicons/mintcraft/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicons/mintcraft/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicons/mintcraft/favicon-16x16.png" />
+                <link rel="manifest" href="/favicons/mintcraft/site.webmanifest" />
+                <link rel="mask-icon" href="/favicons/mintcraft/safari-pinned-tab.svg" color="#00CC66" />
+                <link rel="shortcut icon" href="/favicons/mintcraft/favicon.ico" />
+                <meta name="msapplication-TileColor" content="#00CC66" />
+                <meta name="msapplication-config" content="/favicons/mintcraft/browserconfig.xml" />
+                <meta name="theme-color" content="#00CC66" />
+
 				<meta
 					property="og:description"
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."

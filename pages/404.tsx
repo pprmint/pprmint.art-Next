@@ -18,7 +18,7 @@ const Home: NextPage = () => {
 					name="description"
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."
 				/>
-				<meta name="theme-color" content="#00cc66" />
+				<meta name="theme-color" content="#00CC66" />
 				<meta
 					property="og:description"
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."

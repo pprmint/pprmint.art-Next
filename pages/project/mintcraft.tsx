@@ -11,11 +11,11 @@ export default function Mintcraft() {
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicons/mintcraft/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicons/mintcraft/favicon-16x16.png" />
                 <link rel="manifest" href="/favicons/mintcraft/site.webmanifest" />
-                <link rel="mask-icon" href="/favicons/mintcraft/safari-pinned-tab.svg" color="#ffbb22" />
+                <link rel="mask-icon" href="/favicons/mintcraft/safari-pinned-tab.svg" color="#FFBB22" />
                 <link rel="shortcut icon" href="/favicons/mintcraft/favicon.ico" />
-                <meta name="msapplication-TileColor" content="#ffbb22" />
+                <meta name="msapplication-TileColor" content="#FFBB22" />
                 <meta name="msapplication-config" content="/favicons/mintcraft/browserconfig.xml" />
-                <meta name="theme-color" content="#ffbb22" />
+                <meta name="theme-color" content="#FFBB22" />
 
 				<meta
 					name="description"
@@ -30,7 +30,7 @@ export default function Mintcraft() {
 					property="og:image"
 					content="https://next.pprmint.art/og/mintcraft.png"
 				/>
-				<meta property="og:title" content="Mintcraf, a Minecraft resource pack." />
+				<meta property="og:title" content="Mintcraft, a Minecraft resource pack." />
 				<meta property="og:url" content="https://next.pprmint.art/project/mintcraft" />
 			</Head>
 			<Container className="title" maxWidth="lg">
