@@ -20,7 +20,8 @@
 		"next": "latest",
 		"react": "latest",
 		"react-dom": "latest",
-		"react-lottie-player": "^1.4.3"
+		"react-lottie-player": "^1.4.3",
+		"sass": "^1.54.0"
 	},
 	"devDependencies": {
 		"@types/node": "latest",

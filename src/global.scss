@@ -1,0 +1,42 @@
+:root {
+	// Main color palette
+	--greenPrimary: #0c6;
+	--greenSecondary: #095;
+	--redPrimary: #f34;
+	--redSecondary: #b23;
+	--bluePrimary: #19f;
+	--blueSecondary: #17c;
+	--yellowPrimary: #fb2;
+	--yellowSecondary: #d92;
+	--textPrimary: #bbb;
+	--textSecondary: #eee;
+	--textTertiary: #fff;
+	--backgroundPrimary: #111;
+	--backgroundSecondary: #222;
+	--backgroundTertiary: #333;
+	// Desktop nav
+	--backgroundNavButton: #ffffff12;
+	// Easing
+	--easeOut: cubic-bezier(0, 0, 0.2, 1);
+	--easeInOut: cubic-bezier(0.6, 0, 0.1, 1);
+}
+
+@keyframes shiftFromRight {
+	from {
+		transform: translateX(40px);
+	}
+	to {
+		transform: translateX(0px);
+	}
+}
+
+body, html {
+	background-color: #111;
+}
+
+.title {
+	animation: shiftFromRight 1s var(--easeOut) forwards;
+	h1 {
+		animation: shiftFromRight 1s var(--easeOut) forwards;
+	}
+}

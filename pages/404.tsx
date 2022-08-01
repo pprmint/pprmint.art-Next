@@ -3,10 +3,9 @@ import Head from "next/head";
 import type { NextPage } from "next";
 import { Container, Typography, Box } from "@mui/material";
 import Lottie from "react-lottie-player";
-import lottieJson from "../animations/error.json";
+import errorJson from "../animations/error.json";
 
 import Link from "../src/Link";
-import ProTip from "../src/ProTip";
 import Copyright from "../src/Copyright";
 
 const Home: NextPage = () => {
@@ -46,14 +45,13 @@ const Home: NextPage = () => {
 					</Typography>
 					<Lottie
 						loop={false}
-						animationData={lottieJson}
+						animationData={errorJson}
 						play
 						style={{ width: 800, height: 400 }}
 					/>
-					<Link href="/" color="secondary">
+					<Link href="/" color="primary">
 						Go home
 					</Link>
-					<ProTip />
 					<Copyright />
 				</Box>
 			</Container>

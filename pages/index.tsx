@@ -2,14 +2,18 @@ import * as React from "react";
 import Head from "next/head";
 import type { NextPage } from "next";
 import { Container, Typography, Box, Button } from "@mui/material";
+import { motion } from "framer-motion";
 
 import Link from "../src/Link";
-import ProTip from "../src/ProTip";
 import Copyright from "../src/Copyright";
 
 const Home: NextPage = () => {
 	return (
-		<>
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+		>
 			<Head>
 				<title>pprmint.art</title>
 				<meta
@@ -60,11 +64,10 @@ const Home: NextPage = () => {
 					>
 						Go to Mintcraft page
 					</Button>
-					<ProTip />
-					<Copyright />
 				</Box>
 			</Container>
-		</>
+            <Copyright />
+		</motion.div>
 	);
 };
 

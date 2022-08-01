@@ -7,18 +7,17 @@ const theme = createTheme({
 		h1: {
             fontWeight: "700",
             color: "#eee",
+            lineHeight: ".9"
 		},
 		h1top: {
             color: "#bbb",
 			fontFamily: "N27",
 			fontWeight: "300",
 			fontStyle: "italic",
-            fontSize: "2.5rem",
-            textTransform: "uppercase",
+            fontSize: "2rem",
 		},
         button: {
             fontFamily: "N27",
-            lineHeight: "1.6rem",
         },
 	},
     components: {
@@ -31,6 +30,9 @@ const theme = createTheme({
 		},
 		MuiButton: {
 			styleOverrides: {
+				root: {
+					paddingBottom: 3,
+				},
 				outlined: {
 					borderWidth: "2px !important",
 				},
