@@ -43,10 +43,10 @@ const Home: NextPage = () => {
 						MUI v5 + Next.js with TypeScript example
 					</Typography>
 					<Button
-						variant="contained"
+						variant="outlined"
 						component={Link}
 						noLinkStyle
-						href="/"
+						href="/project/mintcraft"
 					>
 						Go to Mintcraft page
 					</Button>
