@@ -18,8 +18,25 @@ const theme = createTheme({
 		},
         button: {
             fontFamily: "N27",
-        }
+            lineHeight: "1.6rem",
+        },
 	},
+    components: {
+		MuiSkeleton: {
+			styleOverrides: {
+				root: {
+                    backgroundColor: "transparent",
+				},
+			},
+		},
+		MuiButton: {
+			styleOverrides: {
+				outlined: {
+					borderWidth: "2px !important",
+				},
+			},
+		},
+    },
 	palette: {
 		mode: "dark",
 		// Green
