@@ -19,23 +19,23 @@ export default function Mintcraft() {
 
 				<meta
 					name="description"
-					content="Holy shit if this works I swear to god."
+					content="Dark mode for the Minecraft UI, with some small details here and there."
 				/>
 				<meta
 					property="og:description"
-					content="Holy shit if this works I swear to god."
+					content="Dark mode for the Minecraft UI, with some small details here and there."
 				/>
                 <meta content="summary_large_image" name="twitter:card" />
 				<meta
 					property="og:image"
-					content="https://next.pprmint.art/og/noclickbait.png"
+					content="https://next.pprmint.art/og/mintcraft.png"
 				/>
-				<meta property="og:title" content="please work." />
-				<meta property="og:url" content="https://next.pprmint.art/works/2022/lights" />
+				<meta property="og:title" content="Mintcraf, a Minecraft resource pack." />
+				<meta property="og:url" content="https://next.pprmint.art/project/mintcraft" />
 			</Head>
-			<Container maxWidth="lg">
-				<Typography variant="h1top">downloads</Typography>
-				<Typography variant="h1">It's a thing!</Typography>
+			<Container className="title" maxWidth="lg">
+				<Typography variant="h1top">A Minecraft resource pack</Typography>
+				<Typography variant="h1">Mintcraft</Typography>
 			</Container>
 		</>
 	);

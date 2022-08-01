@@ -19,7 +19,8 @@
 		"framer-motion": "^6.5.1",
 		"next": "latest",
 		"react": "latest",
-		"react-dom": "latest"
+		"react-dom": "latest",
+		"react-lottie-player": "^1.4.3"
 	},
 	"devDependencies": {
 		"@types/node": "latest",

@@ -1,7 +1,9 @@
 import * as React from "react";
 import Head from "next/head";
 import type { NextPage } from "next";
-import { Container, Typography, Box, Button } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
+import Lottie from "react-lottie-player";
+import lottieJson from "../animations/error.json";
 
 import Link from "../src/Link";
 import ProTip from "../src/ProTip";
@@ -11,7 +13,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>pprmint.art</title>
+				<title>That's a goner.</title>
 				<meta
 					name="description"
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."
@@ -26,7 +28,7 @@ const Home: NextPage = () => {
 					property="og:image"
 					content="https://next.pprmint.art/og/index.png"
 				/>
-				<meta property="og:title" content="[PREVIEW] pprmint.art" />
+				<meta property="og:title" content="A Next.JS site." />
 				<meta property="og:url" content="https://next.pprmint.art" />
 			</Head>
 			<Container maxWidth="lg">
@@ -40,16 +42,17 @@ const Home: NextPage = () => {
 					}}
 				>
 					<Typography variant="h4" component="h1" gutterBottom>
-						MUI v5 + Next.js with TypeScript example
+						Error 404
 					</Typography>
-					<Button
-						variant="contained"
-						component={Link}
-						noLinkStyle
-						href="/"
-					>
-						Go to Mintcraft page
-					</Button>
+					<Lottie
+						loop={false}
+						animationData={lottieJson}
+						play
+						style={{ width: 800, height: 400 }}
+					/>
+					<Link href="/" color="secondary">
+						Go home
+					</Link>
 					<ProTip />
 					<Copyright />
 				</Box>
