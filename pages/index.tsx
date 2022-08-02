@@ -1,7 +1,6 @@
 import * as React from "react";
 import Head from "next/head";
 import { GetStaticPropsContext } from "next";
-import {useTranslations} from 'next-intl';
 import type { NextPage } from "next";
 import { Container, Typography, Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
@@ -10,7 +9,6 @@ import Link from "../src/Link";
 import Copyright from "../src/Copyright";
 
 export default function Home() {
-	const t = useTranslations("strings.home");
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -84,7 +82,7 @@ export default function Home() {
 					}}
 				>
 					<Typography variant="h4" component="h1" gutterBottom>
-						{t("title")}
+						Good today.
 					</Typography>
 					<Button
 						variant="outlined"

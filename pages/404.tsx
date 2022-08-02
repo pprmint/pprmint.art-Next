@@ -69,7 +69,7 @@ const NotFound: NextPage = () => {
 									"shiftFromBottom 1s var(--easeOut) 1.7s forwards",
 							}}
 						>
-							{t("title")}
+							This page was not found.
 						</Typography>
 						<Button
 							variant="outlined"
