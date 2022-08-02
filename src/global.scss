@@ -21,12 +21,38 @@
 	--easeInOut: cubic-bezier(0.6, 0, 0.1, 1);
 }
 
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 @keyframes shiftFromRight {
 	from {
 		transform: translateX(40px);
 	}
 	to {
 		transform: translateX(0px);
+	}
+}
+@keyframes shiftFromBottom {
+	from {
+		transform: translateY(40px);
+	}
+	to {
+		transform: translateY(0px);
+	}
+}
+@keyframes fadeFromBottom {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
 	}
 }
 
