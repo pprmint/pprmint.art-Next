@@ -1,0 +1,9 @@
+{
+	"404": {
+		"button": "Back to home page",
+		"errortext": "This page was not found."
+	},
+	"home": {
+		"title": "Good today."
+	}
+}

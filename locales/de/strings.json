@@ -1,0 +1,9 @@
+{
+	"404": {
+		"button": "Zurück zur Startseite",
+		"errortext": "Diese Seite wurde nicht gefunden."
+	},
+	"home": {
+		"title": "Guten Heute."
+	}
+}

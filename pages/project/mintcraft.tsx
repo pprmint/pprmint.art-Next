@@ -99,7 +99,7 @@ export default function Mintcraft() {
 					announcements and stuff.
 				</Typography>
 				<Button
-                    sx={{mt: 4}}
+					sx={{ mt: 4 }}
 					variant="outlined"
 					component={Link}
 					noLinkStyle
