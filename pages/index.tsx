@@ -81,7 +81,7 @@ export default function Home() {
 						alignItems: "center",
 					}}
 				>
-					<Typography variant="h4" component="h1" gutterBottom>
+					<Typography variant="h2" gutterBottom>
 						Good today.
 					</Typography>
 					<Button
@@ -97,13 +97,4 @@ export default function Home() {
 			<Copyright />
 		</motion.div>
 	);
-}
-
-export async function getStaticProps({ locale }: GetStaticPropsContext) {
-	return {
-		props: {
-			messages: (await import(`../locales/${locale}/strings.json`))
-				.default,
-		},
-	};
 }
