@@ -18,6 +18,7 @@
 		"@mui/material": "latest",
 		"framer-motion": "^6.5.1",
 		"next": "latest",
+		"next-i18next": "^11.3.0",
 		"react": "latest",
 		"react-dom": "latest",
 		"react-lottie-player": "^1.4.3",
