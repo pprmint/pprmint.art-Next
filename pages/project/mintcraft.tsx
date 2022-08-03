@@ -77,7 +77,6 @@ export default function Mintcraft() {
 			<Title top="A Minecraft resource pack." bottom="Mintcraft." />
 			<Box
 				sx={{
-					my: 4,
 					py: 8,
 					display: "flex",
 					flexDirection: "column",

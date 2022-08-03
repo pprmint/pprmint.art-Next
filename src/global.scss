@@ -59,11 +59,11 @@
 body {
 	background-color: #111;
 	overflow-x: hidden;
-    perspective: 2px;
+	perspective: 2px;
 }
 
 .title {
-    padding-top: 70px;
+	padding-top: 70px;
 	animation: shiftFromRight 1s var(--easeOut) forwards;
 	h1 {
 		animation: shiftFromRight 1s var(--easeOut) forwards;
