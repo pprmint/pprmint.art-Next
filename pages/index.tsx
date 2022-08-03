@@ -50,12 +50,12 @@ export default function Home() {
                 />
                 <link
                     rel="shortcut icon"
-                    href="/favicons/pprmint/favicon.ico"
+                    href="./favicons/pprmint/favicon.ico"
                 />
                 <meta name="msapplication-TileColor" content="#00CC66" />
                 <meta
                     name="msapplication-config"
-                    content="/favicons/pprmint/browserconfig.xml"
+                    content="./favicons/pprmint/browserconfig.xml"
                 />
                 <meta name="theme-color" content="#00CC66" />
 
