@@ -8,6 +8,9 @@ import { useRouter } from "next/router";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "../src/createEmotionCache";
 
+import "../fonts/Noway/Noway.css";
+import "../fonts/N27/N27.css";
+
 import theme from "../src/theme";
 import "../src/global.scss";
 
@@ -34,8 +37,6 @@ export default function MyApp(props: MyAppProps) {
 					name="viewport"
 					content="initial-scale=1, width=device-width"
 				/>
-                <link rel="preload" as="style" href="./fonts/Noway/Noway.css"/>
-                <link rel="preload" as="style" href="./fonts/N27/N27.css"/>
 			</Head>
             <Navigation />
 			<ThemeProvider theme={theme}>

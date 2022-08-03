@@ -30,7 +30,7 @@ export default function Title(
 					sx={{ textShadow: "0 4px 10px #1115" }}
 				>
 					<Typography variant="h1top">{props.top}</Typography>
-					<Typography variant="h1">{props.bottom}</Typography>
+					<Typography variant="h1" gutterBottom>{props.bottom}</Typography>
 					<Typography variant="body1">{props.body}</Typography>
 				</Container>
 			</Container>
@@ -40,7 +40,7 @@ export default function Title(
 			<>
 				<Container className="title" maxWidth="lg" sx={{ pt: 50 }}>
 					<Typography variant="h1top">{props.top}</Typography>
-					<Typography variant="h1">{props.bottom}</Typography>
+					<Typography variant="h1" gutterBottom>{props.bottom}</Typography>
 				</Container>
 			</>
 		);

@@ -3,33 +3,35 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 // Create a theme instance.
 const theme = createTheme({
 	typography: {
-        fontFamily: "Noway",
+		fontFamily:
+			"Noway, Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif",
 		h1: {
-            fontWeight: "700",
-            lineHeight: "1"
+			fontWeight: "700",
+			lineHeight: "1",
 		},
 		h1top: {
-			fontFamily: "N27",
+			fontFamily:
+				"N27, Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif",
 			fontWeight: "300",
 			fontStyle: "italic",
-            fontSize: "2rem",
+			fontSize: "2rem",
 		},
-        button: {
-            fontFamily: "N27",
-        },
+		button: {
+			fontFamily: "N27",
+		},
 	},
-    components: {
+	components: {
 		MuiTypography: {
 			styleOverrides: {
 				gutterBottom: {
 					marginBottom: 18,
-				}
-			}
+				},
+			},
 		},
 		MuiSkeleton: {
 			styleOverrides: {
 				root: {
-                    backgroundColor: "transparent",
+					backgroundColor: "transparent",
 				},
 			},
 		},
@@ -43,12 +45,12 @@ const theme = createTheme({
 				},
 			},
 		},
-    },
+	},
 	palette: {
-        text: {
-            primary: "#eee",
-            secondary: "#eeea",
-        },
+		text: {
+			primary: "#eee",
+			secondary: "#eeea",
+		},
 		mode: "dark",
 		// Green
 		primary: {
