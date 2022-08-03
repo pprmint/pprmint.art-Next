@@ -34,8 +34,8 @@ export default function MyApp(props: MyAppProps) {
 					name="viewport"
 					content="initial-scale=1, width=device-width"
 				/>
-                <link rel="preload" as="style" href="./fonts/Noway/Noway.css"/>
-                <link rel="preload" as="style" href="./fonts/N27/N27.css"/>
+                <link rel="preload" as="style" href="../fonts/Noway/Noway.css"/>
+                <link rel="preload" as="style" href="../fonts/N27/N27.css"/>
 			</Head>
             <Navigation />
 			<ThemeProvider theme={theme}>
