@@ -21,6 +21,13 @@ const theme = createTheme({
         },
 	},
     components: {
+		MuiTypography: {
+			styleOverrides: {
+				gutterBottom: {
+					marginBottom: 18,
+				}
+			}
+		},
 		MuiSkeleton: {
 			styleOverrides: {
 				root: {
