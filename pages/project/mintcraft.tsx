@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Container, Box, Typography, Button, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 
+import Title from "../../src/Title";
+
 import Link from "../../src/Link";
 
 export default function Mintcraft() {
@@ -13,7 +15,6 @@ export default function Mintcraft() {
 		>
 			<Head>
 				<title>Mintcraft</title>
-
 				<link
 					rel="apple-touch-icon"
 					sizes="180x180"
@@ -73,12 +74,7 @@ export default function Mintcraft() {
 					content="https://next.pprmint.art/project/mintcraft"
 				/>
 			</Head>
-			<Container className="title" maxWidth="lg">
-				<Typography variant="h1top">
-					A Minecraft resource pack
-				</Typography>
-				<Typography variant="h1">Mintcraft</Typography>
-			</Container>
+			<Title top="A Minecraft resource pack." bottom="Mintcraft." />
 			<Box
 				sx={{
 					my: 4,

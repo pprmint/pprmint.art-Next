@@ -1,7 +1,7 @@
 import * as React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Typography, Box, Button } from "@mui/material";
+import { Container, Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
 
 import Title from "../src/Title";
@@ -73,8 +73,8 @@ export default function Home() {
             </Head>
             <Title
                 big
-                top="smol text"
-                bottom="BIG TEXT"
+                top="Small text."
+                bottom="Big text."
                 body="Lorem ipsum dolor sit amet."
                 src="https://media.pprmint.art/2022/Lights/N.png"
             >

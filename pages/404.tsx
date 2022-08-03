@@ -47,7 +47,7 @@ const NotFound: NextPage = () => {
 						loop={false}
 						animationData={errorJson}
 						play
-						style={{ width: "100%", maxWidth: 900 }}
+						style={{ width: "100%", maxWidth: 900, marginTop: 70 }}
 					/>
 					<Box
 						sx={{
@@ -57,7 +57,7 @@ const NotFound: NextPage = () => {
 							alignItems: "center",
 							opacity: 0,
 							animation:
-								"opacity 1s var(--easeOut) 1.8s forwards",
+								"opacity 1s var(--easeOut) 1.9s forwards",
 						}}
 					>
 						<Typography
@@ -66,7 +66,7 @@ const NotFound: NextPage = () => {
 							gutterBottom
 							sx={{
 								animation:
-									"shiftFromBottom 1s var(--easeOut) 1.7s forwards",
+									"shiftFromBottom 1s var(--easeOut) 1.8s forwards",
 							}}
 						>
 							This page was not found.
@@ -79,7 +79,7 @@ const NotFound: NextPage = () => {
 							href="/"
 							sx={{
 								animation:
-									"shiftFromBottom 1s var(--easeOut) 1.8s forwards",
+									"shiftFromBottom 1s var(--easeOut) 1.9s forwards",
 							}}
 						>
 							Go to home page

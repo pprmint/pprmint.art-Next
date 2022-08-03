@@ -6,11 +6,9 @@ const theme = createTheme({
         fontFamily: "Noway",
 		h1: {
             fontWeight: "700",
-            color: "#eee",
-            lineHeight: ".9"
+            lineHeight: "1"
 		},
 		h1top: {
-            color: "#bbb",
 			fontFamily: "N27",
 			fontWeight: "300",
 			fontStyle: "italic",
@@ -47,6 +45,10 @@ const theme = createTheme({
 		},
     },
 	palette: {
+        text: {
+            primary: "#eee",
+            secondary: "#eeea",
+        },
 		mode: "dark",
 		// Green
 		primary: {
