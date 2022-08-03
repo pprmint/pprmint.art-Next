@@ -79,7 +79,8 @@ export default function Home() {
 				src="https://media.pprmint.art/2022/Lights/N-720.png"
 			>
 				<Button
-					variant="outlined"
+                    size="large"
+					variant="contained"
 					component={Link}
 					noLinkStyle
 					href="/project/mintcraft"
