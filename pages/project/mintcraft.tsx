@@ -1,10 +1,9 @@
-import Head from "next/head";
+import Head from "src/CommonHead";
 import { Container, Box, Typography, Button, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 
-import Title from "../../src/Title";
-
-import Link from "../../src/Link";
+import Title from "src/Title";
+import Link from "src/Link";
 
 export default function Mintcraft() {
 	return (
@@ -13,67 +12,13 @@ export default function Mintcraft() {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 		>
-			<Head>
-				<title>Mintcraft</title>
-				<link
-					rel="apple-touch-icon"
-					sizes="180x180"
-					href="/favicons/mintcraft/apple-touch-icon.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="32x32"
-					href="/favicons/mintcraft/favicon-32x32.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="16x16"
-					href="/favicons/mintcraft/favicon-16x16.png"
-				/>
-				<link
-					rel="manifest"
-					href="/favicons/mintcraft/site.webmanifest"
-				/>
-				<link
-					rel="mask-icon"
-					href="/favicons/mintcraft/safari-pinned-tab.svg"
-					color="#FFBB22"
-				/>
-				<link
-					rel="shortcut icon"
-					href="/favicons/mintcraft/favicon.ico"
-				/>
-				<meta name="msapplication-TileColor" content="#FFBB22" />
-				<meta
-					name="msapplication-config"
-					content="/favicons/mintcraft/browserconfig.xml"
-				/>
-				<meta name="theme-color" content="#FFBB22" />
-
-				<meta
-					name="description"
-					content="Dark mode for the Minecraft UI, with some small details here and there."
-				/>
-				<meta
-					property="og:description"
-					content="Dark mode for the Minecraft UI, with some small details here and there."
-				/>
-				<meta content="summary_large_image" name="twitter:card" />
-				<meta
-					property="og:image"
-					content="https://next.pprmint.art/og/mintcraft.png"
-				/>
-				<meta
-					property="og:title"
-					content="Mintcraft, a Minecraft resource pack."
-				/>
-				<meta
-					property="og:url"
-					content="https://next.pprmint.art/project/mintcraft"
-				/>
-			</Head>
+			<Head
+				title="Mintcraft."
+				description="A resource pack for Minecraft that offers a dark theme."
+				ogImg="mintcraft.png"
+                favicon="mintcraft"
+                color="#fb2"
+			/>
 			<Title top="A Minecraft resource pack." bottom="Mintcraft." />
 			<Box
 				sx={{

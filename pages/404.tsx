@@ -1,12 +1,12 @@
 import * as React from "react";
-import Head from "next/head";
 import type { NextPage } from "next";
 import { Container, Typography, Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie-player";
-import errorJson from "../animations/error.json";
+import errorJson from "src/animations/error.json";
 
-import Link from "../src/Link";
+import Link from "src/Link";
+import CommonHead from "src/CommonHead";
 
 const NotFound: NextPage = () => {
 	return (
@@ -15,25 +15,11 @@ const NotFound: NextPage = () => {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 		>
-			<Head>
-				<title>Not found.</title>
-				<meta
-					name="description"
-					content="Whatever you were supposed to see here, it doesn't exist."
-				/>
-				<meta name="theme-color" content="#FF3344" />
-				<meta
-					property="og:description"
-					content="Whatever you were supposed to see here, it doesn't exist."
-				/>
-				<meta content="summary_large_image" name="twitter:card" />
-				<meta
-					property="og:image"
-					content="https://next.pprmint.art/og/404.png"
-				/>
-				<meta property="og:title" content="uh. nothing's here?" />
-				<meta property="og:url" content="https://next.pprmint.art" />
-			</Head>
+			<CommonHead
+				title="This page was not found."
+				description="Whatever is supposed to be here according to you or whoever sent you here, it's not."
+				ogImg="404.png"
+			/>
 			<Container maxWidth="lg">
 				<Box
 					sx={{
