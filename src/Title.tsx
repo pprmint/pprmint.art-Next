@@ -1,85 +1,85 @@
 import { Typography, Container, Grid } from "@mui/material";
 
 export default function Title(
-	props: React.PropsWithChildren<{
-		top: string;
-		bottom: string;
-		big?: boolean;
-		body?: string;
-		src?: string;
-	}>
+    props: React.PropsWithChildren<{
+        top: string;
+        bottom: string;
+        big?: boolean;
+        body?: string;
+        src?: string;
+    }>
 ) {
-	if (props.big) {
-		return (
-			<Container
-				maxWidth={false}
-				sx={{
-					backgroundImage: "linear-gradient(to right, #111a , #1110), url(" + props.src + ")",
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					height: 500,
-					display: "flex",
-					alignItems: "center",
-					mb: 8,
-				}}
-			>
-				<Grid
-					container
-					spacing={0}
-					maxWidth="xl"
-					sx={{
-						margin: "0 auto",
-						display: "flex",
-						alignItems: "center",
-					}}
-				>
-					<Grid
-						item
-						sm={12}
-						md={7}
-						className="title"
-						sx={{ textShadow: "0 4px 10px #1115" }}
-					>
-						<Typography variant="h1top">{props.top}</Typography>
-						<Typography variant="h1" gutterBottom>
-							{props.bottom}
-						</Typography>
-						<Typography variant="body1" gutterBottom>
-							{props.body}
-						</Typography>
-					</Grid>
-					<Grid
-						item
-						sm={12}
-						md={5}
-						mt={8}
-						sx={{ display: "flex", justifyContent: "right" }}
-					>
-						{props.children}
-					</Grid>
-				</Grid>
-			</Container>
-		);
-	} else {
-		return (
-			<>
-				<Container
-					maxWidth={false}
-					sx={{
-						py: 8,
-						maxWidth: "max-content",
-						display: "flex",
-						alignItems: "center",
-					}}
-				>
-					<Container className="title">
-						<Typography variant="h1top">{props.top}</Typography>
-						<Typography variant="h1" gutterBottom>
-							{props.bottom}
-						</Typography>
-					</Container>
-				</Container>
-			</>
-		);
-	}
+    if (props.big) {
+        return (
+            <Container
+                maxWidth={false}
+                sx={{
+                    backgroundImage: "linear-gradient(to right, #111a , #1110), url(" + props.src + ")",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    height: 500,
+                    display: "flex",
+                    alignItems: "center",
+                    mb: 8,
+                }}
+            >
+                <Grid
+                    container
+                    spacing={0}
+                    maxWidth="xl"
+                    sx={{
+                        margin: "0 auto",
+                        display: "flex",
+                        alignItems: "center",
+                    }}
+                >
+                    <Grid
+                        item
+                        sm={12}
+                        md={7}
+                        className="title"
+                        sx={{ textShadow: "0 4px 10px #1115" }}
+                    >
+                        <Typography variant="h1top">{props.top}</Typography>
+                        <Typography variant="h1" gutterBottom>
+                            {props.bottom}
+                        </Typography>
+                        <Typography variant="body1" gutterBottom>
+                            {props.body}
+                        </Typography>
+                    </Grid>
+                    <Grid
+                        item
+                        sm={12}
+                        md={5}
+                        mt={{ md: 8, xs: 2 }}
+                        sx={{ display: "flex", justifyContent: "right" }}
+                    >
+                        {props.children}
+                    </Grid>
+                </Grid>
+            </Container>
+        );
+    } else {
+        return (
+            <>
+                <Container
+                    maxWidth={false}
+                    sx={{
+                        py: 8,
+                        maxWidth: "max-content",
+                        display: "flex",
+                        alignItems: "center",
+                    }}
+                >
+                    <Container className="title">
+                        <Typography variant="h1top">{props.top}</Typography>
+                        <Typography variant="h1" gutterBottom>
+                            {props.bottom}
+                        </Typography>
+                    </Container>
+                </Container>
+            </>
+        );
+    }
 }

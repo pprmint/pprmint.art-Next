@@ -1,7 +1,7 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // Create a theme instance.
-const theme = createTheme({
+let theme = createTheme({
 	typography: {
 		fontFamily:
 			"Noway, Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif",
@@ -10,11 +10,13 @@ const theme = createTheme({
 			lineHeight: "1",
 		},
 		h1top: {
+            color: "secondaryText",
 			fontFamily:
 				"N27, Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif",
 			fontWeight: "300",
 			fontStyle: "italic",
 			fontSize: "2rem",
+            lineHeight: "1",
 		},
 		button: {
 			fontFamily: "N27",
@@ -38,7 +40,7 @@ const theme = createTheme({
 		MuiButton: {
 			styleOverrides: {
 				sizeSmall: {
-					paddingBottom: 3,
+					paddingBottom: 2,
 				},
 				sizeMedium: {
 					paddingBottom: 3,
@@ -107,6 +109,6 @@ declare module "@mui/material/Typography" {
 	}
 }
 
-// theme = responsiveFontSizes(theme);
+theme = responsiveFontSizes(theme);
 
 export default theme;
