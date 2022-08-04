@@ -4,6 +4,7 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 let theme = createTheme({
     typography: {
         allVariants: {
+            lineHeight: 1.6,
             color: "#eeeeeec4",
             fontFamily: "Noway, Roboto, Helvetica, Arial, sans-serif",
         },
