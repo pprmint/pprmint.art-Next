@@ -21,6 +21,7 @@ export default function Home() {
 					name="description"
 					content="I make vector points, polygons, keyframes and colorful monospace letters look neat."
 				/>
+				<meta name="theme-color" content="#00cc66" />
 
 				<link
 					rel="apple-touch-icon"
@@ -46,18 +47,17 @@ export default function Home() {
 				<link
 					rel="mask-icon"
 					href="/favicons/pprmint/safari-pinned-tab.svg"
-					color="#00CC66"
+					color="#00cc66"
 				/>
 				<link
 					rel="shortcut icon"
 					href="./favicons/pprmint/favicon.ico"
 				/>
-				<meta name="msapplication-TileColor" content="#00CC66" />
+				<meta name="msapplication-TileColor" content="#00cc66" />
 				<meta
 					name="msapplication-config"
 					content="./favicons/pprmint/browserconfig.xml"
 				/>
-				<meta name="theme-color" content="#00CC66" />
 
 				<meta
 					property="og:description"
