@@ -33,12 +33,7 @@ export default function Title(
                         alignItems: "center",
                     }}
                 >
-                    <Grid
-                        item
-                        sm={12}
-                        md={7}
-                        className="title"
-                        sx={{ textShadow: "0 4px 10px #1115" }}
+                    <Grid item sm={12} md={7} className="title" sx={{ textShadow: "0 4px 10px #1115" }}
                     >
                         <Typography variant="h1top" color="text.secondary">{props.top}</Typography>
                         <Typography variant="h1" gutterBottom>
@@ -48,12 +43,7 @@ export default function Title(
                             {props.body}
                         </Typography>
                     </Grid>
-                    <Grid
-                        item
-                        sm={12}
-                        md={5}
-                        mt={{ md: 8, xs: 2 }}
-                        sx={{ display: "flex", justifyContent: "right" }}
+                    <Grid item sm={12} md={5} mt={{ md: 8, xs: 2 }} sx={{ display: "flex", justifyContent: "right" }}
                     >
                         {props.children}
                     </Grid>
