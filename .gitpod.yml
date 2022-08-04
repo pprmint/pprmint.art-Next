@@ -3,5 +3,5 @@
 # and commit this file to your remote git repository to share the goodness with others.
 
 tasks:
-  - init: yarn install && yarn run build
+  - init: yarn install && yarn run build && git config user.email "29925944+pprmint@users.noreply.github.com"
     command: yarn run dev
