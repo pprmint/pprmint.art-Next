@@ -33,12 +33,10 @@ function ElevationScroll(props: Props) {
     return React.cloneElement(children, {
         sx: trigger
             ? {
-                background: "#1115",
-                boxShadow: "0px 2px 8px -1px #111111",
+                boxShadow: "inset 0 70px 45px -70px #111",
             }
             : {
-                background: "#1110",
-                boxShadow: "0 0 0 0 #111111",
+                boxShadow: "inset 0 70px 45px -70px #1110",
             },
     });
 }
@@ -52,6 +50,7 @@ export default function Navigation() {
                     color="transparent"
                     sx={{
                         transition: "all 0.15s",
+                        borderBottom: "1px solid red !important",
                     }}
                 >
                     <Toolbar sx={{ pl: "17px !important" }}>

@@ -14,7 +14,7 @@ export default function Title(
             <Container
                 maxWidth={false}
                 sx={{
-                    backgroundImage: "linear-gradient(to right, #111a , #1110), url(" + props.src + ")",
+                    backgroundImage: "linear-gradient(to right, #111c , #1113), url(" + props.src + ")",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     height: 500,
@@ -40,7 +40,7 @@ export default function Title(
                         className="title"
                         sx={{ textShadow: "0 4px 10px #1115" }}
                     >
-                        <Typography variant="h1top">{props.top}</Typography>
+                        <Typography variant="h1top" color="text.secondary">{props.top}</Typography>
                         <Typography variant="h1" gutterBottom>
                             {props.bottom}
                         </Typography>
@@ -73,7 +73,7 @@ export default function Title(
                     }}
                 >
                     <Container className="title">
-                        <Typography variant="h1top">{props.top}</Typography>
+                        <Typography variant="h1top" color="text.secondary">{props.top}</Typography>
                         <Typography variant="h1" gutterBottom>
                             {props.bottom}
                         </Typography>
