@@ -1,5 +1,4 @@
 import { Box, Typography, Divider } from "@mui/material";
-import MuiLink from "@mui/material/Link";
 import Link from "./Link";
 import { FiCoffee, FiHeart } from "react-icons/fi";
 
@@ -12,20 +11,10 @@ export default function Copyright() {
                     Made with <FiHeart style={{ position: "relative", top: 2, color: "var(--redPrimary)" }} /> and{" "}
                     <FiCoffee style={{ position: "relative", top: 2, color: "var(--yellowPrimary)" }} />
                 </Typography>
-                <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    align="center"
-                    gutterBottom
-                >
-                    {"© "}
-                    {new Date().getFullYear()} pprmint.
+                <Typography variant="body2" color="text.secondary" align="center" gutterBottom>
+                    {"© "}{new Date().getFullYear()} pprmint.
                 </Typography>
-                <Typography
-                    variant="body2"
-                    color="text.primary"
-                    align="center"
-                    gutterBottom
+                <Typography variant="body2" color="text.primary" align="center" gutterBottom
                 >
                     <Link href="/privacy">Privacy policy</Link>
                 </Typography>
