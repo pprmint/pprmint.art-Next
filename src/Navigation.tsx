@@ -16,8 +16,8 @@ import {
 } from "@mui/material";
 import theme from './theme';
 import Lottie from "react-lottie-player";
-import wordmarkJson from "../animations/wordmark.json";
-import Link from "../src/Link";
+import wordmarkJson from "src/animations/wordmark.json";
+import Link from "src/Link";
 
 interface Props {
     children: React.ReactElement;
