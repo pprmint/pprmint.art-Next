@@ -9,30 +9,36 @@ let theme = createTheme({
             fontFamily: "Noway, Roboto, Helvetica, Arial, sans-serif",
         },
         h1: {
+            fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
             color: "#eee",
             fontWeight: "700",
             lineHeight: "1",
         },
         h1top: {
-            fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Noway, Roboto, Helvetica, Arial, sans-serif",
             fontWeight: "300",
             fontStyle: "italic",
             fontSize: "2rem",
             lineHeight: "1",
         },
         h2: {
+            fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
             color: "#eee",
         },
         h3: {
+            fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
             color: "#eee",
         },
         h4: {
+            fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
             color: "#eee",
         },
         h5: {
+            fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
             color: "#eee",
         },
         h6: {
+            fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
             color: "#eee",
         },
         button: {
