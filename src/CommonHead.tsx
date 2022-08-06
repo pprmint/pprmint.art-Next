@@ -6,7 +6,7 @@ export default function CommonHead(props: {
 	description: string;
 	ogImg: string; // Images must be placed in /public/og.
 	favicon?: string; // Must match respective folder name inside /public/favicons.
-	color?: string;
+	color?: string; // Can't use short HEX codes (#123), must be #123456
 }) {
     // Get URL for OpenGraph metadata.
     const router = useRouter();
