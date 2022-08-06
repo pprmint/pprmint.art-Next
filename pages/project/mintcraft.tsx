@@ -17,7 +17,7 @@ export default function Mintcraft() {
 				description="A resource pack for Minecraft that offers a dark theme."
 				ogImg="mintcraft.png"
                 favicon="mintcraft"
-                color="#fb2"
+                color="#ffbb22"
 			/>
 			<Title top="A Minecraft resource pack." bottom="Mintcraft." />
 			<Box
