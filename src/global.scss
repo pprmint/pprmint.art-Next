@@ -68,3 +68,20 @@ body {
 		animation: shiftFromRight 1s var(--easeOut) forwards;
 	}
 }
+
+br {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: var(--textSecondary);
+}
+
+p svg {
+    position: relative;
+    top: 3px;
+}
+
+p a svg {
+    margin-left: 3px;
+}

@@ -43,6 +43,7 @@ export default function Home() {
 				<Button
 					variant="outlined"
 					component={Link}
+                    scroll={false}
 					noLinkStyle
 					href="/project/mintcraft"
 				>
@@ -189,7 +190,6 @@ export default function Home() {
 					<br /> <br />{" "}
 				</Typography>
 			</Container>
-			<Copyright />
 		</motion.div>
 	);
 }

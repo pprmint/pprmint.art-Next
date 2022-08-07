@@ -1,4 +1,4 @@
-import { Typography, Container, Grid } from "@mui/material";
+import { Typography, Container, Box } from "@mui/material";
 import styles from "./title.module.scss";
 
 export default function Title(
@@ -8,7 +8,7 @@ export default function Title(
 		big?: boolean;
 		body?: string;
 		src?: string;
-        topLevel?: string;
+		topLevel?: string;
 	}>
 ) {
 	if (props.big) {
@@ -17,30 +17,20 @@ export default function Title(
 				className={styles.titleContainer}
 				maxWidth={false}
 				sx={{
-                    overflow: "hidden",
+                    display: "flex",
+                    alignItems: "center",
+					overflow: "hidden",
 					height: 500,
-					display: "flex",
-					alignItems: "center",
 					mb: 8,
 				}}
 			>
 				{props.children}
-				<Grid
-					container
-					spacing={0}
-					maxWidth="xl"
-					sx={{
-						margin: "0 auto",
-						display: "flex",
-						alignItems: "center",
-					}}
-				>
-					<Grid
-						item
-						sm={12}
-						md={7}
+				<Container maxWidth="xl">
+					<Box
 						className="title"
-						sx={{ textShadow: "0 4px 10px #1115" }}
+						sx={{
+							textShadow: "0 4px 10px #1115",
+						}}
 					>
 						<Typography variant="h1top" color="text.secondary">
 							{props.top}
@@ -51,17 +41,8 @@ export default function Title(
 						<Typography variant="body1" gutterBottom>
 							{props.body}
 						</Typography>
-					</Grid>
-					<Grid
-						item
-						sm={12}
-						md={5}
-						mt={{ md: 8, xs: 2 }}
-						sx={{ display: "flex", justifyContent: "right" }}
-					>
-						fgsfds
-					</Grid>
-				</Grid>
+					</Box>
+				</Container>
 			</Container>
 		);
 	} else {

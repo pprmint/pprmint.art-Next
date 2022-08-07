@@ -62,6 +62,7 @@ const NotFound: NextPage = () => {
 							variant="outlined"
 							color="error"
 							component={Link}
+                            scroll={false}
 							noLinkStyle
 							href="/"
 							sx={{
