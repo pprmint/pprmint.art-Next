@@ -8,7 +8,7 @@ export default function CommonHead(props: {
 	favicon?: string; // Must match respective folder name inside /public/favicons.
 	color?: string; // Can't use short HEX codes (#123), must be #123456
 }) {
-	// Output title in browser as single node.
+	// Output title element as single text node.
 	const title = `${props.title} // pprmint.art`;
 	// Get URL for OpenGraph metadata.
 	const router = useRouter();
