@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Container, Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
-import Head from "../src/CommonHead";
-import Title from "../src/Title";
-import Link from "../src/Link";
-import Copyright from "../src/Copyright";
+import Head from "src/components/CommonHead";
+import Title from "src/components/Title";
+import Link from "src/components/Link";
+import Copyright from "src/components/Copyright";
 import { FiArrowUpRight } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
 
@@ -29,20 +29,7 @@ export default function Home() {
 				body="I finally got myself learn more about Next.js and decided to rewrite my website with it. While the current site will still be around for some time, it'll likely not receive any major updates for now."
 				src="https://media.pprmint.art/code.png"
 			>
-				<Button
-					size="large"
-					color="secondary"
-					variant="contained"
-					component={Link}
-					noLinkStyle
-					href="https://github.com/pprmint/pprmint.art-Next"
-					target="_blank"
-					rel="noopener noreferrer"
-					startIcon={<SiGithub />}
-					endIcon={<FiArrowUpRight />}
-				>
-					Visit the new repo
-				</Button>
+				<Image src="https://media.pprmint.art/code.png" layout="fill" />
 			</Title>
 			<Box
 				sx={{

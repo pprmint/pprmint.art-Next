@@ -14,7 +14,7 @@ import "../fonts/N27/N27.css";
 import theme from "../src/theme";
 import "../src/global.scss";
 
-import Navigation from "../src/Navigation";
+import Navigation from "../src/components/Navigation";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

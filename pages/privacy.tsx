@@ -5,8 +5,8 @@ import type { NextPage } from "next";
 import { Container, Typography, Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
 
-import Link from "../src/Link";
-import Copyright from "../src/Copyright";
+import Link from "../src/components/Link";
+import Copyright from "../src/components/Copyright";
 
 export default function Home() {
 	return (

@@ -1,0 +1,22 @@
+@keyframes zoomOut {
+	from {
+		transform: scale(1.05);
+		filter: blur(10px) brightness(0%) contrast(80%);
+	}
+	to {
+		transform: scale(1);
+		filter: blur(3px) brightness(50%) contrast(95%);
+	}
+}
+
+.titleContainer {
+	position: relative;
+	img {
+		animation: zoomOut 1.5s var(--easeOut);
+        filter: blur(3px) brightness(50%) contrast(95%);
+		display: block;
+		position: relative;
+		height: 100%;
+		object-fit: cover;
+	}
+}

@@ -1,9 +1,9 @@
-import Head from "src/CommonHead";
+import Head from "src/components/CommonHead";
 import { Container, Box, Typography, Button, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 
-import Title from "src/Title";
-import Link from "src/Link";
+import Title from "src/components/Title";
+import Link from "src/components/Link";
 
 export default function Mintcraft() {
 	return (

@@ -14,10 +14,10 @@ import {
     Divider,
     ListItemIcon,
 } from "@mui/material";
-import theme from './theme';
+import theme from '../theme';
 import Lottie from "react-lottie-player";
 import wordmarkJson from "src/animations/wordmark.json";
-import Link from "src/Link";
+import Link from "src/components/Link";
 
 interface Props {
     children: React.ReactElement;
@@ -33,10 +33,12 @@ function ElevationScroll(props: Props) {
     return React.cloneElement(children, {
         sx: trigger
             ? {
-                boxShadow: "inset 0 70px 45px -70px #111",
+                transition: ".15s",
+                backdropFilter: "blur(15px) brightness(30%) contrast(90%)",
             }
             : {
-                boxShadow: "inset 0 70px 45px -70px #1110",
+                transition: ".5s",
+                backdropFilter: "blur(0px) brightness(100%) contrast(100%)",
             },
     });
 }
@@ -48,10 +50,7 @@ export default function Navigation() {
                 <AppBar
                     position="fixed"
                     color="transparent"
-                    sx={{
-                        transition: "all 0.15s",
-                        borderBottom: "1px solid red !important",
-                    }}
+                    elevation={0}
                 >
                     <Toolbar sx={{ pl: "17px !important" }}>
                         <Box sx={{ display: "flex", flexGrow: 1 }}>

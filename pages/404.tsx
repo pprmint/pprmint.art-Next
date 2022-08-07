@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import Lottie from "react-lottie-player";
 import errorJson from "src/animations/error.json";
 
-import Link from "src/Link";
-import CommonHead from "src/CommonHead";
+import Link from "src/components/Link";
+import CommonHead from "src/components/CommonHead";
 
 const NotFound: NextPage = () => {
 	return (
