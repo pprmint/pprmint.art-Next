@@ -23,7 +23,7 @@ const NotFound: NextPage = () => {
 			<Container maxWidth="lg">
 				<Box
 					sx={{
-                        height: "100vh",
+                        height: "90vh",
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "center",
