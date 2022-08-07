@@ -12,6 +12,7 @@
 .titleContainer {
 	position: relative;
 	img {
+        transform-origin: left center;
 		animation: zoomOut 1.5s var(--easeOut);
         filter: blur(3px) brightness(50%) contrast(95%);
 		display: block;
