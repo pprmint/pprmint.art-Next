@@ -8,6 +8,7 @@ export default function Title(
 		big?: boolean;
 		body?: string;
 		src?: string;
+        topLevel?: string;
 	}>
 ) {
 	if (props.big) {
@@ -16,9 +17,7 @@ export default function Title(
 				className={styles.titleContainer}
 				maxWidth={false}
 				sx={{
-					// backgroundImage: "linear-gradient(to right, #111c , #1113), url(" + props.src + ")",
-					// backgroundSize: "cover",
-					// backgroundPosition: "center",
+                    overflow: "hidden",
 					height: 500,
 					display: "flex",
 					alignItems: "center",
