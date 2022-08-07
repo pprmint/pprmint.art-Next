@@ -6,43 +6,39 @@ let theme = createTheme({
 		allVariants: {
 			lineHeight: 1.6,
 			color: "#eeeeeec4",
-			fontFamily: "Noway, Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
 		},
 		h1: {
-			fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			color: "#eee",
-			fontWeight: "700",
+			fontWeight: "600",
 			lineHeight: "1",
 		},
 		h1top: {
-			fontFamily: "Noway, Roboto, Helvetica, Arial, sans-serif",
-			fontWeight: "300",
+            fontWeight: "300",
 			fontStyle: "italic",
 			fontSize: "2rem",
 			lineHeight: "1",
 		},
 		h2: {
-			fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			color: "#eee",
 		},
 		h3: {
-			fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			color: "#eee",
 		},
 		h4: {
-			fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			color: "#eee",
 		},
 		h5: {
-			fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			color: "#eee",
 		},
 		h6: {
-			fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			color: "#eee",
-		},
-		button: {
-			fontFamily: "N27, Roboto, Helvetica, Arial, sans-serif",
 		},
 	},
 	components: {
@@ -62,21 +58,6 @@ let theme = createTheme({
 		},
 		MuiButton: {
 			styleOverrides: {
-				startIcon: {
-					paddingBottom: 2,
-				},
-				endIcon: {
-					paddingBottom: 2,
-				},
-				sizeSmall: {
-					paddingBottom: 1,
-				},
-				sizeMedium: {
-					paddingBottom: 3,
-				},
-				sizeLarge: {
-					paddingBottom: 5,
-				},
 				outlined: {
 					borderWidth: "2px !important",
 				},
