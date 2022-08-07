@@ -19,7 +19,7 @@ export default function Home() {
 			<Head
 				title="Privacy policy."
 				description="Read about what data is collected about you. Spoiler: It's not a lot, really."
-				ogImg="index.png"
+				ogImg="privacy.png"
 			/>
 			<Title
 				top="Last updated: 08. August 2022"
