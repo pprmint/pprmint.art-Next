@@ -1,4 +1,4 @@
-import Head from "src/components/CommonHead";
+import Head from "src/components/Head";
 import { Container, Box, Typography, Button, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 

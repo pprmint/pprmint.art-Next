@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import { Container, Typography, Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
 
-import Head from "src/components/CommonHead";
+import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Link from "../src/components/Link";
 import { FiExternalLink } from "react-icons/fi";

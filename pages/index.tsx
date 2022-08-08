@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Container, Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
-import Head from "src/components/CommonHead";
+import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Link from "src/components/Link";
 import { FiArrowUpRight } from "react-icons/fi";

@@ -8,7 +8,7 @@ import Lottie from "react-lottie-player";
 import errorJson from "src/animations/error.json";
 
 import Link from "src/components/Link";
-import Head from "src/components/CommonHead";
+import Head from "src/components/Head";
 
 const NotFound: NextPage = () => {
     const t = useTranslations("404");
