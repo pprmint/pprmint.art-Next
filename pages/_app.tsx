@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { useRouter } from "next/router";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "src/createEmotionCache";
-import { NextIntlProvider } from 'next-intl';
+import { NextIntlProvider } from "next-intl";
 
 import "fonts/Silka/silka.css";
 import "fonts/BasierCircle/basier_circle.css";
@@ -15,41 +15,45 @@ import theme from "src/theme";
 import "src/global.scss";
 
 import Navigation from "src/components/Navigation";
-import Copyright from "src/components/Footer";
 import { AnimatePresence } from "framer-motion";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
 interface pageProps extends AppProps {
-    emotionCache?: EmotionCache;
+	emotionCache?: EmotionCache;
 }
 
 export default function MyApp(props: pageProps) {
-    const location = useRouter();
-    const {
-        Component,
-        emotionCache = clientSideEmotionCache,
-        pageProps,
-    } = props;
-    return (
-        <CacheProvider value={emotionCache}>
-            <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
-                <NextIntlProvider messages={pageProps.messages} key={location.pathname}>
-                    <Head>
-                        <meta
-                            name="viewport"
-                            content="initial-scale=1, width=device-width"
-                        />
-                    </Head>
-                    <ThemeProvider theme={theme}>
-                        <CssBaseline />
-                        <Navigation />
-                        <Component {...pageProps} />
-                        <Copyright />
-                    </ThemeProvider>
-                </NextIntlProvider>
-            </AnimatePresence>
-        </CacheProvider>
-    );
+	const location = useRouter();
+	const {
+		Component,
+		emotionCache = clientSideEmotionCache,
+		pageProps,
+	} = props;
+	return (
+		<CacheProvider value={emotionCache}>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+                <Navigation />
+				<AnimatePresence
+					exitBeforeEnter
+					onExitComplete={() => window.scrollTo(0, 0)}
+				>
+					<NextIntlProvider
+						messages={pageProps.messages}
+						key={location.pathname}
+					>
+						<Head>
+							<meta
+								name="viewport"
+								content="initial-scale=1, width=device-width"
+							/>
+						</Head>
+						<Component {...pageProps} />
+					</NextIntlProvider>
+				</AnimatePresence>
+			</ThemeProvider>
+		</CacheProvider>
+	);
 }
