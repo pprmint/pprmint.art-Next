@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 import Head from "src/components/Head";
 import Title from "src/components/Title";
+import Footer from "src/components/Footer";
 import Link from "../src/components/Link";
 import { FiExternalLink } from "react-icons/fi";
 
@@ -154,6 +155,15 @@ export default function Home() {
 					responsibility for their practices or contents.
 				</Typography>
 			</Container>
+            <Footer />
 		</motion.div>
 	);
+}
+
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+    return {
+        props: {
+            messages: (await import(`locales/${locale}/strings.json`)).default
+        }
+    };
 }
