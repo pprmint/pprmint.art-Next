@@ -42,19 +42,11 @@ export default function MyApp(props: pageProps) {
                 />
             </Head>
             <ThemeProvider theme={theme}>
-                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline />
                 <Navigation />
-                <AnimatePresence
-                    exitBeforeEnter
-                    onExitComplete={() => window.scrollTo(0, 0)}
-                >
-                    <NextIntlProvider messages={pageProps.messages}>
-                        <Component
-                            {...pageProps}
-                            location={location}
-                            key={location.pathname}
-                        />
+                <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
+                    <NextIntlProvider messages={pageProps.messages} key={location.pathname}>
+                        <Component {...pageProps} />
                     </NextIntlProvider>
                 </AnimatePresence>
                 <Copyright />
