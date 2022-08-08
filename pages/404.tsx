@@ -19,6 +19,7 @@ const NotFound: NextPage = () => {
 				title="This page was not found."
 				description="Whatever is supposed to be here according to you or whoever sent you here, it's not."
 				ogImg="404.png"
+                color="#ff3344"
 			/>
 			<Container maxWidth="lg">
 				<Box
