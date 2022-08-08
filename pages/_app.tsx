@@ -1,4 +1,3 @@
-import * as React from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material";
@@ -35,22 +34,22 @@ export default function MyApp(props: pageProps) {
     } = props;
     return (
         <CacheProvider value={emotionCache}>
-            <Head>
-                <meta
-                    name="viewport"
-                    content="initial-scale=1, width=device-width"
-                />
-            </Head>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <Navigation />
-                <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
-                    <NextIntlProvider messages={pageProps.messages} key={location.pathname}>
+            <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
+                <NextIntlProvider messages={pageProps.messages} key={location.pathname}>
+                    <Head>
+                        <meta
+                            name="viewport"
+                            content="initial-scale=1, width=device-width"
+                        />
+                    </Head>
+                    <ThemeProvider theme={theme}>
+                        <CssBaseline />
+                        <Navigation />
                         <Component {...pageProps} />
-                    </NextIntlProvider>
-                </AnimatePresence>
-                <Copyright />
-            </ThemeProvider>
+                        <Copyright />
+                    </ThemeProvider>
+                </NextIntlProvider>
+            </AnimatePresence>
         </CacheProvider>
     );
 }

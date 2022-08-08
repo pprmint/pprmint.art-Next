@@ -17,5 +17,9 @@
         "title": "Diese Seite wurde nicht gefunden.",
         "description": "Überprüfe die URL auf Tippfehler, oder kehre zur Startseite zurück.",
         "button": "Zurück zur Startseite"
+    },
+    "Footer": {
+        "madeWith": "Gemacht mit ",
+        "and": " und "
     }
 }
