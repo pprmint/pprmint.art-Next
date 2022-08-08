@@ -4,4 +4,8 @@ module.exports = {
 	images: {
 		domains: ["media.pprmint.art"],
 	},
+    i18n: {
+        locales: ['en', 'de'],
+        defaultLocale: 'en',
+    }
 };

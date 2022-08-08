@@ -18,6 +18,7 @@
 		"@mui/material": "latest",
 		"framer-motion": "^6.5.1",
 		"next": "latest",
+		"next-intl": "^2.7.4",
 		"react": "latest",
 		"react-dom": "latest",
 		"react-icons": "^4.4.0",

@@ -1,30 +1,33 @@
 import * as React from "react";
 import type { NextPage } from "next";
+import { GetStaticPropsContext } from 'next';
+import { useTranslations } from "next-intl";
 import { Container, Typography, Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie-player";
 import errorJson from "src/animations/error.json";
 
 import Link from "src/components/Link";
-import CommonHead from "src/components/CommonHead";
+import Head from "src/components/CommonHead";
 
 const NotFound: NextPage = () => {
+    const t = useTranslations("404");
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 		>
-			<CommonHead
-				title="This page was not found."
-				description="Whatever is supposed to be here according to you or whoever sent you here, it's not."
+			<Head
+				title={t("Head.title")}
+				description={t("description")}
 				ogImg="404.png"
                 color="#ff3344"
 			/>
 			<Container maxWidth="lg">
 				<Box
 					sx={{
-                        height: "90vh",
+                        minHeight: "90vh",
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "center",
@@ -51,13 +54,21 @@ const NotFound: NextPage = () => {
 						<Typography
 							variant="h4"
 							component="h1"
+							sx={{
+								animation:
+									"shiftFromBottom 1s var(--easeOut) 0.5s forwards",
+							}}
+						>
+							{t("title")}
+						</Typography>
+						<Typography
 							gutterBottom
 							sx={{
 								animation:
 									"shiftFromBottom 1s var(--easeOut) 0.6s forwards",
 							}}
 						>
-							This page was not found.
+							{t("description")}
 						</Typography>
 						<Button
 							variant="outlined"
@@ -71,7 +82,7 @@ const NotFound: NextPage = () => {
 									"shiftFromBottom 1s var(--easeOut) 0.7s forwards",
 							}}
 						>
-							Go to home page
+							{t("button")}
 						</Button>
 					</Box>
 				</Box>
@@ -79,5 +90,13 @@ const NotFound: NextPage = () => {
 		</motion.div>
 	);
 };
+
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+    return {
+        props: {
+            messages: (await import(`locales/${locale}/strings.json`)).default
+        }
+    };
+}
 
 export default NotFound;

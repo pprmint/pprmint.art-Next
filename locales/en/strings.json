@@ -1,9 +1,21 @@
 {
-	"404": {
-		"button": "Back to home page",
-		"errortext": "This page was not found."
-	},
-	"home": {
-		"title": "Good today."
-	}
+    "Home": {
+        "Head": {
+            "title": "Good today.",
+            "description": "I make vector points, polygons, keyframes and colorful monospace letters look neat."
+        },
+        "Title": {
+            "top": "Work in progress:",
+            "bottom": "Rebuild with Next.js.",
+            "description": "I finally got myself to spend some time with Next.js and decided to rebuild my site with it. While my current React site will still be online for some time, it won't get any significant updates for now."
+        }
+    },
+    "404": {
+        "Head": {
+            "title": "Page not found."
+        },
+        "title": "This page was not found.",
+        "description": "Check the URL for typos or go back to the home page.",
+        "button": "Back to home page."
+    }
 }
