@@ -16,10 +16,12 @@
         },
         "title": "This page was not found.",
         "description": "Check the URL for typos or go back to the home page.",
-        "button": "Back to home page."
+        "button": "Back to home page"
     },
     "Footer": {
         "madeWith": "Made with ",
-        "and": " and "
+        "and": " and ",
+        "privacyPolicy": "Privacy policy",
+        "switchLocale": "Zu Deutsch wechseln"
     }
 }

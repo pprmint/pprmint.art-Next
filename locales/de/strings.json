@@ -20,6 +20,8 @@
     },
     "Footer": {
         "madeWith": "Gemacht mit ",
-        "and": " und "
+        "and": " und ",
+        "privacyPolicy": "Datenschutzerklärung",
+        "switchLocale": "Switch to English"
     }
 }
