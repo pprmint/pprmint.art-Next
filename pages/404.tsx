@@ -9,8 +9,9 @@ import errorJson from "src/animations/error.json";
 
 import Link from "src/components/Link";
 import Head from "src/components/Head";
+import Footer from "src/components/Footer";
 
-const NotFound: NextPage = () => {
+export default function NotFound() {
     const t = useTranslations("404");
 	return (
 		<motion.div
@@ -27,7 +28,7 @@ const NotFound: NextPage = () => {
 			<Container maxWidth="lg">
 				<Box
 					sx={{
-                        minHeight: "90vh",
+                        minHeight: "100vh",
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "center",
@@ -38,7 +39,7 @@ const NotFound: NextPage = () => {
 						loop={false}
 						animationData={errorJson}
 						play
-						style={{ width: "100%", maxWidth: 900 }}
+						style={{ maxWidth: "700px", height: "auto" }}
 					/>
 					<Box
 						sx={{
@@ -54,6 +55,7 @@ const NotFound: NextPage = () => {
 						<Typography
 							variant="h4"
 							component="h1"
+                            align="center"
 							sx={{
 								animation:
 									"shiftFromBottom 1s var(--easeOut) 0.5s forwards",
@@ -63,6 +65,7 @@ const NotFound: NextPage = () => {
 						</Typography>
 						<Typography
 							gutterBottom
+                            align="center"
 							sx={{
 								animation:
 									"shiftFromBottom 1s var(--easeOut) 0.6s forwards",
@@ -87,6 +90,7 @@ const NotFound: NextPage = () => {
 					</Box>
 				</Box>
 			</Container>
+            <Footer />
 		</motion.div>
 	);
 };
@@ -98,5 +102,3 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
         }
     };
 }
-
-export default NotFound;
