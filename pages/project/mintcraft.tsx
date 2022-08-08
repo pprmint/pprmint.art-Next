@@ -1,9 +1,11 @@
 import Head from "src/components/Head";
+import { GetStaticPropsContext } from "next";
 import { Container, Box, Typography, Button, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 
 import Title from "src/components/Title";
 import Link from "src/components/Link";
+import Footer from "src/components/Footer";
 
 export default function Mintcraft() {
 	return (
@@ -48,6 +50,15 @@ export default function Mintcraft() {
 					Go to Home page
 				</Button>
 			</Box>
+            <Footer />
 		</motion.div>
 	);
+}
+
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+    return {
+        props: {
+            messages: (await import(`locales/${locale}/strings.json`)).default
+        }
+    };
 }
