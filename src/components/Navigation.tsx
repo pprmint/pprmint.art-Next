@@ -1,65 +1,51 @@
-import * as React from "react";
-import {
-	IconButton,
-	AppBar,
-	Toolbar,
-	Box,
-	Drawer,
-	List,
-	ListItem,
-	useScrollTrigger,
-	Button,
-	Stack,
-	Divider,
-	ListItemIcon,
-} from "@mui/material";
-import theme from "../theme";
+import { AppBar, Fab, Box, useScrollTrigger, Zoom } from "@mui/material";
+import { FiChevronUp } from "react-icons/fi";
 import Lottie from "react-lottie-player";
 import wordmarkJson from "src/animations/wordmark.json";
 import Link from "src/components/Link";
 
-interface Props {
-	children: React.ReactElement;
-}
-
-// Transparent app bar when at top of page, backdrop filter + divider line once scrolling down
-function ElevationScroll(props: Props) {
-	const { children } = props;
+function ScrollTop() {
 	const trigger = useScrollTrigger({
 		disableHysteresis: true,
-		threshold: 0,
+		threshold: 75,
 	});
-	return React.cloneElement(children, {
-		sx: trigger
-			? {
-					transition: ".15s",
-					backdropFilter: "blur(15px) brightness(30%) contrast(90%)",
-			  }
-			: {
-					transition: ".5s",
-					backdropFilter: "blur(0px) brightness(100%) contrast(100%)",
-			  },
-	});
+
+	return (
+		<Zoom in={trigger}>
+			<Box
+				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+				sx={{ position: "fixed", bottom: 24, right: 24 }}
+			>
+				<Fab size="medium" aria-label="scroll back to top">
+					<FiChevronUp />
+				</Fab>
+			</Box>
+		</Zoom>
+	);
 }
+
 export default function Navigation() {
 	return (
-		<ElevationScroll>
+		<>
 			<AppBar
 				color="transparent"
 				elevation={0}
-				sx={{ width: "50px" }}
+				style={{
+					position: "absolute",
+					zIndex: 9999,
+					backgroundImage: "linear-gradient(#111f, #1110)",
+				}}
 			>
-				<Toolbar>
-					<Link href="/" scroll={false} sx={{ width: "max-content" }}>
-						<Lottie
-							loop={false}
-							animationData={wordmarkJson}
-							play
-							style={{ height: 70 }}
-						/>
-					</Link>
-				</Toolbar>
+				<Link href="/" scroll={false}>
+					<Lottie
+						loop={false}
+						animationData={wordmarkJson}
+						play
+						style={{ height: 75, width: "min-width" }}
+					/>
+				</Link>
 			</AppBar>
-		</ElevationScroll>
+			<ScrollTop />
+		</>
 	);
 }
