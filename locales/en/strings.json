@@ -1,37 +1,44 @@
 {
-    "Home": {
-        "Head": {
-            "title": "Good today.",
-            "description": "I make vector points, polygons, keyframes and colorful monospace letters look neat."
-        },
-        "Title": {
-            "top": "Work in progress:",
-            "bottom": "Rebuild with Next.js.",
-            "description": "I finally got myself to spend some time with Next.js and decided to rebuild my site with it. While my current React site will still be online for some time, it won't get any significant updates for now."
-        }
-    },
-    "PrivacyPolicy": {
-        "Head": {
-            "title": "Privacy policy.",
-            "description": "Learn more about what information is processed upon your visit and by whom. Spoiler: It's not that much."
-        },
-        "Title": {
-            "top": "Last updated: {revisionDate, date, ::yyyyMMMMd}",
-            "bottom": "Privacy policy."
-        }
-    },
-    "404": {
-        "Head": {
-            "title": "Page not found."
-        },
-        "title": "This page was not found.",
-        "description": "Check the URL for typos or go back to the home page.",
-        "button": "Back to home page"
-    },
-    "Footer": {
-        "madeWith": "Made with ",
-        "and": " and ",
-        "privacyPolicy": "Privacy policy",
-        "switchLocale": "Zu Deutsch wechseln"
-    }
+	"404": {
+		"Head": {
+			"title": "Page not found."
+		},
+		"button": "Back to home page",
+		"description": "Check the URL for typos or go back to the home page.",
+		"title": "This page was not found."
+	},
+	"Footer": {
+		"and": " and ",
+		"madeWith": "Made with ",
+		"privacyPolicy": "Privacy policy",
+		"switchLocale": "Zu Deutsch wechseln"
+	},
+	"Home": {
+		"Head": {
+			"description": "I make vector points, polygons, keyframes and colorful monospace letters look neat.",
+			"title": "Good today."
+		},
+		"Title": {
+			"bottom": "Rebuild with Next.js.",
+			"description": "I finally got myself to spend some time with Next.js and decided to rebuild my site with it. While my current React site will still be online for some time, it won't get any significant updates for now.",
+			"top": "Work in progress:"
+		}
+	},
+	"PrivacyPolicy": {
+		"Content": {
+			"Contact": {
+				"text1": "If you have any privacy-related questions, feel free to send an email to privacy[at]pprmint.art.",
+				"text2": "Only use this address for the above-mentioned purpose, not to ask general questions, send advertisements, spam or similar.",
+				"title": "Contact."
+			}
+		},
+		"Head": {
+			"description": "Learn more about what information is processed upon your visit and by whom. Spoiler: It's not that much.",
+			"title": "Privacy policy."
+		},
+		"Title": {
+			"bottom": "Privacy policy.",
+			"top": "Last updated: {revisionDate, date, ::yyyyMMMMd}"
+		}
+	}
 }

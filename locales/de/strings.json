@@ -1,37 +1,44 @@
 {
-    "Home": {
-        "Head": {
-            "title": "Guten Heute.",
-            "description": "Ich lasse Vektorpunkte, Polygone, Keyframes und bunte Monospace-Buchstaben schick aussehen."
-        },
-        "Title": {
-            "top": "Aktuell in Arbeit:",
-            "bottom": "Neuaufbau mit Next.js.",
-            "description": "Ich habe mich endlich dazu gerissen, mich mit Next.js zu beschäftigen und meine Website damit neu aufzubauen. Die aktuelle React-Seite wird noch für einige Zeit online bleiben, fürs Erste aber keine großen Updates erhalten."
-        }
-    },
-    "PrivacyPolicy": {
-        "Head": {
-            "title": "Datenschutzerklärung.",
-            "description": "Erfahre mehr darüber, welche Informationen bei deinem Besuch von wem verarbeitet werden. Spoiler: Es ist nicht viel."
-        },
-        "Title": {
-            "top": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}",
-            "bottom": "Daten­schutz­erklärung."
-        }
-    },
-    "404": {
-        "Head": {
-            "title": "Seite nicht gefunden."
-        },
-        "title": "Diese Seite wurde nicht gefunden.",
-        "description": "Überprüfe die URL auf Tippfehler, oder kehre zur Startseite zurück.",
-        "button": "Zurück zur Startseite"
-    },
-    "Footer": {
-        "madeWith": "Gemacht mit ",
-        "and": " und ",
-        "privacyPolicy": "Datenschutzerklärung",
-        "switchLocale": "Switch to English"
-    }
+	"404": {
+		"Head": {
+			"title": "Seite nicht gefunden."
+		},
+		"button": "Zurück zur Startseite",
+		"description": "Überprüfe die URL auf Tippfehler, oder kehre zur Startseite zurück.",
+		"title": "Diese Seite wurde nicht gefunden."
+	},
+	"Footer": {
+		"and": " und ",
+		"madeWith": "Gemacht mit ",
+		"privacyPolicy": "Datenschutzerklärung",
+		"switchLocale": "Switch to English"
+	},
+	"Home": {
+		"Head": {
+			"description": "Ich lasse Vektorpunkte, Polygone, Keyframes und bunte Monospace-Buchstaben schick aussehen.",
+			"title": "Guten Heute."
+		},
+		"Title": {
+			"bottom": "Neuaufbau mit Next.js.",
+			"description": "Ich habe mich endlich dazu gerissen, mich mit Next.js zu beschäftigen und meine Website damit neu aufzubauen. Die aktuelle React-Seite wird noch für einige Zeit online bleiben, fürs Erste aber keine großen Updates erhalten.",
+			"top": "Aktuell in Arbeit:"
+		}
+	},
+	"PrivacyPolicy": {
+		"Content": {
+			"Contact": {
+				"text1": "Bei Fragen zum Thema Datenschutz kannst du mir gerne eine Email an privacy[at]pprmint.art schicken.",
+				"text2": "Verwende diese Adresse nur für den obigen Zweck, nicht für allgemeine Fragen, Werbung, Spam oder Ähnliches.",
+				"title": "Kontakt."
+			}
+		},
+		"Head": {
+			"description": "Erfahre mehr darüber, welche Informationen bei deinem Besuch von wem verarbeitet werden. Spoiler: Es ist nicht viel.",
+			"title": "Datenschutzerklärung."
+		},
+		"Title": {
+			"bottom": "Daten­schutz­erklärung.",
+			"top": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}"
+		}
+	}
 }
