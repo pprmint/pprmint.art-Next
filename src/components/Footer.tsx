@@ -10,9 +10,9 @@ export default function Footer() {
 	const otherLocale = locales?.find((cur) => cur !== locale);
 	return (
 		<NextIntlProvider>
+			<Box mt={8}>
 			<Divider />
-			<Box py={4}>
-				<Container maxWidth="lg">
+				<Container maxWidth="lg" sx={{py: 4}}>
 					<Typography variant="body1" color="text.secondary">
 						{t("madeWith")}
 						<FiHeart style={{ color: "var(--redPrimary)" }} />
