@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useLocale } from "next-intl";
 
 export default function CommonHead(props: {
 	title: string;
@@ -15,6 +16,7 @@ export default function CommonHead(props: {
 	// Default props if not passed in the element.
 	const { favicon = "pprmint" } = props;
 	const { color = "#00cc66" } = props;
+    const locale = useLocale();
 	return (
 		<Head>
 			{/* Basic metadata */}
@@ -33,7 +35,7 @@ export default function CommonHead(props: {
 			{/* OpenGraph metadata */}
 			<meta content="summary_large_image" name="twitter:card" />
 			<meta property="og:description" content={props.description} />
-			<meta property="og:image" content={"/og/"+props.ogImg} />
+			<meta property="og:image" content={"/og/"+locale+"/"+props.ogImg} />
 			<meta property="og:title" content={props.title} />
 			<meta property="og:url" content={""+router.pathname} />
 		</Head>
