@@ -63,6 +63,14 @@ let theme = createTheme({
 				},
 			},
 		},
+        MuiLink: {
+            styleOverrides: {
+                root: {
+                    fontWeight: 600,
+                    textDecorationThickness: 2,
+                },
+            },
+        },
 	},
 	palette: {
 		mode: "dark",
