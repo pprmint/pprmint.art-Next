@@ -22,23 +22,28 @@ let theme = createTheme({
 		},
 		h2: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			color: "#eee",
+			fontWeight: 500,
+            color: "#eee",
 		},
 		h3: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			color: "#eee",
+			fontWeight: 500,
+            color: "#eee",
 		},
 		h4: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			color: "#eee",
+			fontWeight: 500,
+            color: "#eee",
 		},
 		h5: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			color: "#eee",
+			fontWeight: 500,
+            color: "#eee",
 		},
 		h6: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			color: "#eee",
+			fontWeight: 500,
+            color: "#eee",
 		},
 	},
 	components: {
