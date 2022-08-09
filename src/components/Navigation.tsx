@@ -14,7 +14,7 @@ function ScrollTop() {
 		<Zoom in={trigger}>
 			<Box
 				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-				sx={{ position: "fixed", bottom: 24, right: 24 }}
+				sx={{ position: "fixed", bottom: 24, right: 24, zIndex: 9999 }}
 			>
 				<Fab size="medium" aria-label="scroll back to top">
 					<FiChevronUp />
