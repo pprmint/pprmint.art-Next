@@ -1,7 +1,7 @@
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { parseISO } from "date-fns";
-import { Container, Typography, Box, Button } from "@mui/material";
+import { Container, Typography, Stack, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 
 import Head from "src/components/Head";
@@ -30,23 +30,139 @@ export default function PrivacyPolicy() {
 				)}
 				bottom={t("Title.bottom")}
 			/>
-			<Container maxWidth="lg">
+			<Container maxWidth="md">
+				<Typography variant="h2">{t("Content.Tldr.title")}</Typography>
+				<Typography>{t("Content.Tldr.text")}</Typography>
+
+				<Divider sx={{ mt: 6, mb: 3 }} />
+
+				<Typography variant="h2">
+					{t("Content.General.title")}
+				</Typography>
+				<Typography gutterBottom>
+					{t("Content.General.text1")}
+					<br />
+					{t("Content.General.text2")}
+					<br />
+					<Link
+						href=""
+						className="external"
+						color="secondary"
+						scroll={false}
+					>
+						{t.rich("Content.General.example", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<FiExternalLink />
+					</Link>
+				</Typography>
+
+				<Typography variant="h2">
+					{t("Content.Hosting.title")}
+				</Typography>
+				<Typography gutterBottom>
+					{t.rich("Content.Hosting.text1", {
+						strong: (children) => <strong>{children}</strong>,
+					})}
+					<br />
+					{t.rich("Content.Hosting.text2", {
+						strong: (children) => <strong>{children}</strong>,
+					})}
+					<Container>
+						<br />
+						{t.rich("Content.Hosting.Log.domain", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
+						{t.rich("Content.Hosting.Log.ipAddress", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
+						{t.rich("Content.Hosting.Log.accessTime", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
+						{t.rich("Content.Hosting.Log.receivedFile", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
+						{t.rich("Content.Hosting.Log.httpCode", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
+						<Link
+							className="external"
+							color="secondary"
+							href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							HTTP response status codes - HTTP | MDN
+							<FiExternalLink />
+						</Link>
+						<br />
+						{t.rich("Content.Hosting.Log.userAgent", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
+						<Link
+							className="external"
+							color="secondary"
+							href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							User-Agent - HTTP | MDN
+							<FiExternalLink />
+						</Link>
+					</Container>
+					<br />
+					{t("Content.Hosting.text3")}
+					<br />
+					{t("Content.Hosting.text4")}
+					<br />
+					<Stack direction="row" spacing={3}>
+						<Link
+							className="external"
+							color="secondary"
+							href="https://vercel.com/legal/privacy-policy"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{t("Content.privacyPolicyOf", {
+								provider: "Vercel",
+							})}
+							<FiExternalLink />
+						</Link>
+						<Link
+							className="external"
+							color="secondary"
+							href="https://www.hetzner.com/legal/privacy-policy"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{t("Content.privacyPolicyOf", {
+								provider: "Hetzner",
+							})}
+							<FiExternalLink />
+						</Link>
+					</Stack>
+				</Typography>
+
 				<Typography variant="h2">
 					{t("Content.Contact.title")}
 				</Typography>
 				<Typography gutterBottom>
-					{t("Content.Contact.text1")}
+					{t.rich("Content.Contact.text1", {
+						strong: (children) => <strong>{children}</strong>,
+					})}
 					<br />
 					{t("Content.Contact.text2")}
-				</Typography>
-				<Typography variant="h2">General.</Typography>
-				<Typography gutterBottom>
-					This website does not directly collect any personally
-					identifiable data, be it through analytics, ads, trackers,
-					cookies, fingerprinting, what have you.
 					<br />
-					Emails you might send to me will be processed by my mail
-					provider{" "}
+					{t.rich("Content.Contact.text3", {
+						strong: (children) => <strong>{children}</strong>,
+					})}
+					<br />
 					<Link
 						className="external"
 						color="secondary"
@@ -54,119 +170,9 @@ export default function PrivacyPolicy() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Fastmail
+						{t("Content.privacyPolicyOf", { provider: "Fastmail" })}
 						<FiExternalLink />
 					</Link>
-					. Your name, email address and message contents won't ever
-					be shared with any other third parties.
-				</Typography>
-				<Typography variant="h2">Hosting.</Typography>
-				<Typography gutterBottom>
-					The website itself is hosted on{" "}
-					<Link
-						className="external"
-						color="secondary"
-						href="https://vercel.com/legal/privacy-policy"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Vercel
-						<FiExternalLink />
-					</Link>
-					, who may keep logs that contain your IP address and system
-					configuration, which is used "improve" their services and
-					platform, as well as to detect threats.
-					<br />
-					Some images, videos, and other files that you can download
-					are hosted on my webspace from{" "}
-					<Link
-						className="external"
-						color="secondary"
-						href="https://www.hetzner.com/legal/privacy-policy"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Hetzner
-						<FiExternalLink />
-					</Link>
-					. When your browser accesses things from said webspace, the
-					server will log it. For full transparency, this is what one
-					such log entry can contain:
-					<br />
-					<strong>Domain: </strong>
-					pprmint.art. Shocking, I know.
-					<br />
-					<strong>IP address: </strong>
-					Hetzner is required by law to anonymize IP addresses, which
-					is done by randomizing their last octet.
-					<br />
-					<strong>Access time: </strong>
-					The time when a client received a file from the server. If
-					you care: The format is DD/MMMM/YYYY: HH:MM:SS +GMT.
-					<br />
-					<strong>Received file: </strong>
-					The path and name of the file that the client (your browser)
-					received.
-					<br />
-					<strong>HTTP code: </strong>
-					Usually that's "200 OK", because ♪ everything is awesome ♪.
-					If you wanna learn more about all the different codes that
-					the HTTP world has to offer, see{" "}
-					<Link
-						className="external"
-						color="secondary"
-						href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						HTTP response status codes - HTTP | MDN
-						<FiExternalLink />
-					</Link>
-					<br />
-					<strong>User-Agent: </strong>
-					This thing tells the server infos like what browser,
-					operating system and rendering engine was used to access
-					something. It also allows me to tell you that Windows 11 is
-					still referred to as "Windows NT 10.0; Win64; x64" in there.
-					For more info on what's in the User-Agent header, see{" "}
-					<Link
-						className="external"
-						color="secondary"
-						href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						User-Agent - HTTP | MDN
-						<FiExternalLink />
-					</Link>
-					<br />
-					<strong>Storage period: </strong>
-					Each log entry is stored for up to 7 days.
-					<br />
-					If you don't use Hetzner yourself: The logs appear in a
-					giant scrollable list, in descending order from bottom
-					(newest) to top (oldest). If I wanted, I could store these
-					logs to then let Hetzner generate statistics at the end of
-					each month, but I recently disabled that and also manually
-					deleted all remaining files from the server.
-				</Typography>
-				<Typography variant="h2">External links.</Typography>
-				<Typography gutterBottom>
-					Pages may contain links to external websites. Any link that
-					takes you to third party sites will be highlighted in blue
-					and have an icon{" "}
-					<Link
-						className="external"
-						href="#"
-						scroll={false}
-						color="secondary"
-					>
-						like this
-						<FiExternalLink />
-					</Link>
-					. Once you visit such external websites, you are subject to
-					their respective privacy policies, and I take no
-					responsibility for their practices or contents.
 				</Typography>
 			</Container>
 			<Footer />

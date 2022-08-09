@@ -27,10 +27,37 @@
 	"PrivacyPolicy": {
 		"Content": {
 			"Contact": {
-				"text1": "If you have any privacy-related questions, feel free to send an email to privacy[at]pprmint.art.",
+				"text1": "If you have any privacy-related questions, feel free to send an email to <strong>privacy[at]pprmint.art</strong>.",
 				"text2": "Only use this address for the above-mentioned purpose, not to ask general questions, send advertisements, spam or similar.",
+				"text3": "Emails you might send to me will be processed by my mail provider <strong>Fastmail</strong>. I'll never share your name, email address or the message contents with anyone.",
 				"title": "Contact."
-			}
+			},
+			"General": {
+				"example": "Display example for external link",
+				"text1": "This website does not directly collect any personal information, be it through analytics, ads, trackers, cookies, fingerprinting, what have you.",
+				"text2": "Pages may contain links to third party websites. Their contents, privacy policies and other practices are nothing I have control over and nothing I take any responsibility for.",
+				"title": "General."
+			},
+			"Hosting": {
+				"Log": {
+					"accessTime": "<strong>Access time: </strong>The time when a client (so your browser) received a file from the server. If you care: The format is DD/MMMM/YYYY: HH:MM:SS +GMT.",
+					"domain": "<strong>Domain: </strong>pprmint.art. Unbelievable, I know.",
+					"httpCode": "<strong>HTTP response code: </strong>That's usually \"200 OK\" because ♪ everything is awesome ♪. If you wanna learn more about all the different codes of the HTTP world:",
+					"ipAddress": "<strong>IP address: </strong>The thing that your router uses to identify itself on the interwebs. Hetzner is required to anonymize IP addresses, which they do by randomizing their last octet with a random number.",
+					"receivedFile": "<strong>Received file: </strong>Take a guess.",
+					"userAgent": "<strong>User-Agent: </strong>This thing tells the server infos like what browser, operating system and rendering engine was used to access something. It also allows me to tell you that Windows 11 is still referred to as \"Windows NT 10.0; Win64; x64\" in there. For more info on what's in the User-Agent header, have a look here:"
+				},
+				"text1": "The website itself is hosted by <strong>Vercel</strong>. They keep server logs that contain your IP address and system configuration, which are used to \"improve\" their services and platform, as well as to detect threats.",
+				"text2": "Some images, videos, and other files that you can download are hosted on my webspace by <strong>Hetzner</strong>. When your browser accesses things from said webspace, the server will log it. For full transparency, this is what one such log entry may contain:",
+				"text3": "Each log entry is stored for up to 7 days.",
+				"text4": "If you don't use Hetzner yourself: The logs appear in a giant scrollable list, in descending order from bottom (newest) to top (oldest). If I wanted, I could store these logs to then let Hetzner generate statistics at the end of each month, but I recently disabled that and also manually deleted all remaining files from the server.",
+				"title": "Hosting."
+			},
+			"Tldr": {
+				"text": "Server logs are the only things that store information about you, or rather about the browser and device you're currently using. The actual site is hosted by Vercel, with some images, videos and downloads coming from my webspace on Hetzner.",
+				"title": "TL;DR:"
+			},
+			"privacyPolicyOf": "{provider}'s privacy policy"
 		},
 		"Head": {
 			"description": "Learn more about what information is processed upon your visit and by whom. Spoiler: It's not that much.",
