@@ -29,6 +29,7 @@
 		opacity: 1;
 	}
 }
+
 @keyframes shiftFromRight {
 	from {
 		transform: translateX(40px);
@@ -37,6 +38,7 @@
 		transform: translateX(0px);
 	}
 }
+
 @keyframes shiftFromBottom {
 	from {
 		transform: translateY(40px);
@@ -45,6 +47,7 @@
 		transform: translateY(0px);
 	}
 }
+
 @keyframes fadeFromBottom {
 	from {
 		opacity: 0;
@@ -57,7 +60,7 @@
 }
 
 body {
-    width: 100vw;
+	width: 100vw;
 	overflow-x: hidden;
 }
 
@@ -70,18 +73,23 @@ body {
 }
 
 br {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 strong {
-    color: var(--textSecondary);
+	color: var(--textSecondary);
 }
 
-p svg {
-    position: relative;
-    top: 3px;
-}
-
-p a svg {
-    margin-left: 3px;
+p {
+	svg {
+		position: relative;
+		top: 2px;
+	}
+    .MuiLink-root svg {
+        margin-right: 5px;
+    }
+	.MuiLink-root.external svg {
+		margin-right: 0;
+		margin-left: 5px;
+	}
 }
