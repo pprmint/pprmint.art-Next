@@ -10,6 +10,16 @@
             "description": "Ich habe mich endlich dazu gerissen, mich mit Next.js zu beschäftigen und meine Website damit neu aufzubauen. Die aktuelle React-Seite wird noch für einige Zeit online bleiben, fürs Erste aber keine großen Updates erhalten."
         }
     },
+    "PrivacyPolicy": {
+        "Head": {
+            "title": "Datenschutzerklärung.",
+            "description": "Erfahre mehr darüber, welche Informationen bei deinem Besuch von wem verarbeitet werden. Spoiler: Es ist nicht viel."
+        },
+        "Title": {
+            "top": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}",
+            "bottom": "Daten­schutz­erklärung."
+        }
+    },
     "404": {
         "Head": {
             "title": "Seite nicht gefunden."

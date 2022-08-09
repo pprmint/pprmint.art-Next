@@ -16,6 +16,7 @@
 		"@emotion/styled": "latest",
 		"@mui/icons-material": "latest",
 		"@mui/material": "latest",
+		"date-fns": "^2.29.1",
 		"framer-motion": "^6.5.1",
 		"next": "latest",
 		"next-intl": "^2.7.4",
