@@ -15,35 +15,35 @@ let theme = createTheme({
 			lineHeight: "1",
 		},
 		h1top: {
-            fontWeight: "300",
+			fontWeight: "300",
 			fontStyle: "italic",
 			fontSize: "2rem",
 			lineHeight: "1",
 		},
 		h2: {
-            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
-            color: "#eee",
+			color: "#eee",
 		},
 		h3: {
-            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
-            color: "#eee",
+			color: "#eee",
 		},
 		h4: {
-            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
-            color: "#eee",
+			color: "#eee",
 		},
 		h5: {
-            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
-            color: "#eee",
+			color: "#eee",
 		},
 		h6: {
-            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
-            color: "#eee",
+			color: "#eee",
 		},
 	},
 	components: {
@@ -68,15 +68,18 @@ let theme = createTheme({
 				},
 			},
 		},
-        MuiLink: {
-            styleOverrides: {
-                root: {
-                    transition: "250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-                    fontWeight: 600,
-                    textDecorationThickness: 2,
-                },
-            },
-        },
+		MuiLink: {
+			styleOverrides: {
+				root: {
+					transition: "250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+					fontWeight: 600,
+					textDecorationThickness: 1,
+					"&:hover": {
+						textDecorationThickness: 2,
+					},
+				},
+			},
+		},
 	},
 	palette: {
 		mode: "dark",
