@@ -31,13 +31,13 @@ export default function PrivacyPolicy() {
 				bottom={t("Title.bottom")}
 			/>
 			<Container maxWidth="md">
-				<Typography variant="h2">{t("Content.Tldr.title")}</Typography>
+				<Typography variant="h2">{t("Content.Tldr.heading")}</Typography>
 				<Typography>{t("Content.Tldr.text")}</Typography>
 
 				<Divider sx={{ mt: 6, mb: 3 }} />
 
 				<Typography variant="h2">
-					{t("Content.General.title")}
+					{t("Content.General.heading")}
 				</Typography>
 				<Typography gutterBottom>
 					{t("Content.General.text1")}
@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
 				</Typography>
 
 				<Typography variant="h2">
-					{t("Content.Hosting.title")}
+					{t("Content.Hosting.heading")}
 				</Typography>
 				<Typography gutterBottom>
 					{t.rich("Content.Hosting.text1", {
@@ -150,7 +150,7 @@ export default function PrivacyPolicy() {
 				</Typography>
 
 				<Typography variant="h2">
-					{t("Content.Contact.title")}
+					{t("Content.Contact.heading")}
 				</Typography>
 				<Typography gutterBottom>
 					{t.rich("Content.Contact.text1", {
