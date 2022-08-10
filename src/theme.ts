@@ -74,6 +74,7 @@ let theme = createTheme({
 					transition: "250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
 					fontWeight: 600,
 					textDecorationThickness: 1,
+                    textUnderlineOffset: 2,
 					"&:hover": {
 						textDecorationThickness: 2,
 					},
