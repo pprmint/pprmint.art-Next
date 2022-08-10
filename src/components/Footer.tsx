@@ -8,7 +8,7 @@ import {
 	Grid,
 } from "@mui/material";
 import Link from "./Link";
-import { FiCoffee, FiExternalLink, FiHeart, FiRepeat } from "react-icons/fi";
+import { FiCoffee, FiExternalLink, FiHeart, FiGlobe } from "react-icons/fi";
 import { NextIntlProvider, useTranslations } from "next-intl";
 import logo from "../assets/logo.svg";
 import Image from "next/image";
@@ -59,7 +59,7 @@ export default function Footer() {
 											})
 										}
 									>
-										<FiRepeat />
+										<FiGlobe />
 										{t("switchLocale", {
 											locale: otherLocale,
 										})}
