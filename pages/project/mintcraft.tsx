@@ -1,5 +1,6 @@
 import Head from "src/components/Head";
 import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 import { Container, Box, Typography, Button, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 
@@ -8,6 +9,7 @@ import Link from "src/components/Link";
 import Footer from "src/components/Footer";
 
 export default function Mintcraft() {
+    const t = useTranslations("Project.Mintcraft");
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -15,13 +17,13 @@ export default function Mintcraft() {
 			exit={{ opacity: 0 }}
 		>
 			<Head
-				title="Mintcraft."
-				description="A resource pack for Minecraft that offers a dark theme."
+				title={t("Head.title")}
+				description={t("Head.description")}
 				ogImg="mintcraft.png"
 				favicon="mintcraft"
 				color="#ffbb22"
 			/>
-			<Title top="A Minecraft resource pack." bottom="Mintcraft." />
+			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
 			<Box
 				sx={{
 					py: 8,
