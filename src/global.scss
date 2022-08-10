@@ -64,6 +64,12 @@ body {
 	overflow-x: hidden;
 }
 
+:focus-visible {
+    outline: 2px dotted #eee;
+    outline-offset: 2px;
+    transition: outline outline-offset 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .title {
 	padding-top: 70px;
 	animation: shiftFromRight 1s var(--easeOut) forwards;
