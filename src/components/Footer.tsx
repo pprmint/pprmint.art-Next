@@ -44,7 +44,7 @@ export default function Footer() {
 							</Typography>
 							<Stack
 								direction={{ xs: "column", sm: "row" }}
-								spacing={{ xs: 1, md: 3 }}
+								spacing={{ xs: 1, md: 2 }}
 							>
 								{/* Internal links */}
 								<Typography variant="body2">

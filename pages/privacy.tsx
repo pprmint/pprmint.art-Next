@@ -121,7 +121,7 @@ export default function PrivacyPolicy() {
 					<br />
 					{t("Content.Hosting.text4")}
 					<br />
-					<Stack direction="row" spacing={3}>
+					<Stack direction="row" spacing={2}>
 						<Link
 							className="external"
 							color="secondary"
