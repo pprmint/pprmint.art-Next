@@ -1,15 +1,24 @@
 import Head from "src/components/Head";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
-import { Container, Box, Typography, Button, Divider } from "@mui/material";
+import {
+	Container,
+	Box,
+	Typography,
+	Button,
+	Divider,
+	Grid,
+} from "@mui/material";
 import { motion } from "framer-motion";
 
 import Title from "src/components/Title";
 import Link from "src/components/Link";
 import Footer from "src/components/Footer";
+import Image from "next/image";
+import { FiExternalLink } from "react-icons/fi";
 
 export default function Mintcraft() {
-    const t = useTranslations("Project.Mintcraft");
+	const t = useTranslations("Project.Mintcraft");
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -24,43 +33,43 @@ export default function Mintcraft() {
 				color="#ffbb22"
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
-			<Box
+			<Container
+				maxWidth={false}
 				sx={{
-					py: 8,
+					minHeight: 500,
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "center",
-					alignItems: "center",
-					background: "var(--backgroundSecondary)",
+					textAlign: "center",
+                    backgroundImage: "url(/assets/mintcraft/furnace_bg.png)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right top",
 				}}
 			>
-				<Typography variant="h2">
-					It's not actually here yet.
-				</Typography>
-				<Typography>
-					However I now know that I'll likely put bars like this on
-					some pages, perhaps with an image to the right for like
-					announcements and stuff.
-				</Typography>
-				<Button
-					sx={{ mt: 4 }}
-					variant="outlined"
-					component={Link}
-					noLinkStyle
-					href="/"
-				>
-					Go to Home page
-				</Button>
-			</Box>
-            <Footer />
+				<Container sx={{ textAlign: "center" }}>
+					<Typography variant="h2">
+						{t("Content.About.Dark.heading")}
+					</Typography>
+					<Typography>
+						{t("Content.About.Dark.text1")}
+						<br />
+						{t.rich("Content.About.Dark.text2", {
+                            strong: (children) => <strong>{children}</strong>,
+						})}
+                        <br />
+                        <Link className="external" color="secondary" href="https://vanillatweaks.net/" target="_blank" rel="noopener noreferrer">Vanilla Tweaks<FiExternalLink /></Link>
+					</Typography>
+				</Container>
+			</Container>
+			<Footer />
 		</motion.div>
 	);
 }
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
-    return {
-        props: {
-            messages: (await import(`locales/${locale}/strings.json`)).default
-        }
-    };
+	return {
+		props: {
+			messages: (await import(`locales/${locale}/strings.json`)).default,
+		},
+	};
 }
