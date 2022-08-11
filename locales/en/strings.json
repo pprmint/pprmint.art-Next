@@ -46,11 +46,11 @@
                     },
                     "Modern": {
                         "heading": "Modern.",
-                        "text": "A mostly flat design for buttons and containers, featuring redesigned icons that even <small>sometimes</small) move when you hover over them!"
+                        "text": "A mostly flat design for buttons and containers, featuring redesigned icons that <small>sometimes</small> even move when you hover over them!"
                     },
                     "Consistent": {
                         "heading": "Consistent.",
-                        "text1": "No shadows on buttons until you hover your mouse over them, uniform rounded corners on all sides and consistent color palette."
+                        "text": "No shadows on buttons until you hover your mouse over them, uniform rounded corners on all sides and consistent color palette."
                     }
                 }
             }
