@@ -17,6 +17,8 @@ import Footer from "src/components/Footer";
 import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 
+// To be added: Function to reuse ribbons with texts as children
+
 export default function Mintcraft() {
 	const t = useTranslations("Project.Mintcraft");
 	return (
