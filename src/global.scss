@@ -64,6 +64,11 @@ body {
 	overflow-x: hidden;
 }
 
+::selection {
+    background-color: #0c6;
+    color: #111;
+}
+
 :focus-visible {
     outline: 2px dotted #0c6;
     outline-offset: 2px;
