@@ -1,4 +1,5 @@
 import { Typography, Container, Box } from "@mui/material";
+import { Parallax } from "react-scroll-parallax";
 import styles from "./title.module.scss";
 
 export default function Title(
@@ -17,8 +18,8 @@ export default function Title(
 				className={styles.titleContainer}
 				maxWidth={false}
 				sx={{
-                    display: "flex",
-                    alignItems: "center",
+					display: "flex",
+					alignItems: "center",
 					overflow: "hidden",
 					height: 500,
 					mb: 8,
@@ -27,20 +28,22 @@ export default function Title(
 				{props.children}
 				<Container maxWidth="xl">
 					<Box
-						className="title"
 						sx={{
 							textShadow: "0 4px 10px #1115",
+                            animation: "shiftFromRight 1s var(--easeOut) forwards"
 						}}
 					>
-						<Typography variant="h1top" color="text.secondary">
-							{props.top}
-						</Typography>
-						<Typography variant="h1" gutterBottom>
-							{props.bottom}
-						</Typography>
-						<Typography variant="body1" gutterBottom>
-							{props.body}
-						</Typography>
+						<Parallax speed={-8}>
+							<Typography variant="h1top" color="text.secondary">
+								{props.top}
+							</Typography>
+							<Typography variant="h1" gutterBottom style={{animation: "shiftFromRight 1s var(--easeOut) forwards"}}>
+								{props.bottom}
+							</Typography>
+							<Typography variant="body1" gutterBottom>
+								{props.body}
+							</Typography>
+						</Parallax>
 					</Box>
 				</Container>
 			</Container>
@@ -51,17 +54,18 @@ export default function Title(
 				<Container
 					maxWidth={false}
 					sx={{
+                        mt: 10,
 						py: 8,
 						maxWidth: "max-content",
 						display: "flex",
 						alignItems: "center",
 					}}
 				>
-					<Container className="title">
+					<Container sx={{animation: "shiftFromRight 1s var(--easeOut) forwards"}}>
 						<Typography variant="h1top" color="text.secondary">
 							{props.top}
 						</Typography>
-						<Typography variant="h1" gutterBottom>
+						<Typography variant="h1" gutterBottom sx={{animation: "shiftFromRight 1s var(--easeOut) forwards"}}>
 							{props.bottom}
 						</Typography>
 					</Container>

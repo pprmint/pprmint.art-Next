@@ -75,14 +75,6 @@ body {
     transition: outline-offset 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.title {
-	padding-top: 70px;
-	animation: shiftFromRight 1s var(--easeOut) forwards;
-	h1 {
-		animation: shiftFromRight 1s var(--easeOut) forwards;
-	}
-}
-
 br {
 	margin-bottom: 10px;
 }

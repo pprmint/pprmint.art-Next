@@ -16,6 +16,7 @@ import "src/global.scss";
 
 import Navigation from "src/components/Navigation";
 import { AnimatePresence } from "framer-motion";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -26,16 +27,12 @@ interface pageProps extends AppProps {
 
 export default function MyApp(props: pageProps) {
 	const location = useRouter();
-	const {
-		Component,
-		emotionCache = clientSideEmotionCache,
-		pageProps,
-	} = props;
+	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 	return (
 		<CacheProvider value={emotionCache}>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-                <Navigation />
+				<Navigation />
 				<AnimatePresence
 					exitBeforeEnter
 					onExitComplete={() => window.scrollTo(0, 0)}
@@ -50,7 +47,9 @@ export default function MyApp(props: pageProps) {
 								content="initial-scale=1, width=device-width"
 							/>
 						</Head>
-						<Component {...pageProps} />
+						<ParallaxProvider>
+							<Component {...pageProps} />
+						</ParallaxProvider>
 					</NextIntlProvider>
 				</AnimatePresence>
 			</ThemeProvider>
