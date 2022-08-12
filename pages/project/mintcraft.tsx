@@ -42,12 +42,13 @@ export default function Mintcraft() {
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "center",
-					backgroundImage: "url(/assets/mintcraft/furnace_bg.png), linear-gradient(to right, #222, #111)",
+					backgroundImage: "linear-gradient(to bottom, #1110, #111c), url(/assets/mintcraft/furnace_bg.png)",
 					backgroundRepeat: "no-repeat",
-					backgroundPosition: "right top",
+					backgroundPosition: "center top",
+                    backgroundSize: "cover",
 				}}
 			>
-				<Container sx={{ textAlign: "left" }}>
+				<Container sx={{ textAlign: "center" }}>
 					<Typography variant="h2">
 						{t("Content.About.Dark.heading")}
 					</Typography>
@@ -78,12 +79,13 @@ export default function Mintcraft() {
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "center",
-					backgroundImage: "url(/assets/mintcraft/beacon_bg.png), linear-gradient(to left, #222, #111)",
+					backgroundImage: "linear-gradient(to bottom, #1110, #111c), url(/assets/mintcraft/beacon_bg.png)",
 					backgroundRepeat: "no-repeat",
-					backgroundPosition: "left top",
+					backgroundPosition: "center top",
+                    backgroundSize: "cover",
 				}}
 			>
-				<Container sx={{ textAlign: "right" }}>
+				<Container sx={{ textAlign: "center" }}>
 					<Typography variant="h2">
 						{t("Content.About.Consistent.heading")}
 					</Typography>
@@ -98,12 +100,13 @@ export default function Mintcraft() {
 					flexDirection: "column",
 					justifyContent: "center",
 					textAlign: "center",
-					backgroundImage: "url(/assets/mintcraft/inventory_bg.png), linear-gradient(to right, #222, #111)",
+					backgroundImage: "linear-gradient(to bottom, #1110, #111c), url(/assets/mintcraft/inventory_bg.png)",
 					backgroundRepeat: "no-repeat",
 					backgroundPosition: "center top",
+                    backgroundSize: "cover",
 				}}
 			>
-				<Container sx={{ textAlign: "left" }}>
+				<Container sx={{ textAlign: "center" }}>
 					<Typography variant="h2">
 						{t("Content.About.Modern.heading")}
 					</Typography>
