@@ -24,7 +24,8 @@
 		"Title": {
 			"bottom": "Neuaufbau mit Next.js.",
 			"description": "Ich habe mich endlich dazu gerissen, mich mit Next.js zu beschäftigen und meine Website damit neu aufzubauen. Die aktuelle React-Seite wird noch für einige Zeit online bleiben, fürs Erste aber keine großen Updates erhalten.",
-			"top": "Aktuell in Arbeit:"
+			"top": "Aktuell in Arbeit:",
+            "button": "Repo ansehen"
 		}
 	},
     "Project": {

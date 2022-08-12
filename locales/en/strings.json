@@ -24,7 +24,8 @@
 		"Title": {
 			"bottom": "Rebuild with Next.js.",
 			"description": "I finally got myself to spend some time with Next.js and decided to rebuild my site with it. While my current React site will still be online for some time, it won't get any significant updates for now.",
-			"top": "Work in progress:"
+			"top": "Work in progress:",
+            "button": "Check out repo"
 		}
 	},
     "Project": {
