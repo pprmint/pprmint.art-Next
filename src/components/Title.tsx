@@ -18,8 +18,7 @@ export default function Title(
 					{
 						image: props.src,
 						speed: -20,
-						id: "background",
-						opacity: [0.8, 0.3],
+						opacity: [0.75, 0.2],
 					},
 				]}
 				style={{
@@ -33,8 +32,6 @@ export default function Title(
 				<Container maxWidth="xl">
 					<Box
 						sx={{
-							mb: 8,
-                            pt: 6,
 							animation: "shiftFromRight 1s var(--easeOut) forwards",
 						}}
 					>
