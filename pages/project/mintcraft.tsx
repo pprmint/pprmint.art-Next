@@ -1,6 +1,7 @@
 import Head from "src/components/Head";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import {
 	Container,
 	Box,
@@ -21,7 +22,8 @@ import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 // To be added: Function to reuse ribbons with texts as children
 
 export default function Mintcraft() {
-	const t = useTranslations("Project.Mintcraft");
+    const t = useTranslations("Project.Mintcraft");
+    const locale = useLocale();
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -39,14 +41,14 @@ export default function Mintcraft() {
 			<ParallaxBanner
 				layers={[
 					{
-						image: "/assets/mintcraft/furnace_bg.png",
+						image: "/assets/mintcraft/"+locale+"/furnace_bg.png",
 						speed: -20,
 						opacity: [0.75, 0.2],
 						easing: "easeOutQuad",
 					},
 				]}
 				style={{
-					minHeight: "100vh",
+					minHeight: "80vh",
 					display: "flex",
 					alignItems: "center",
 					overflow: "hidden",
@@ -104,7 +106,7 @@ export default function Mintcraft() {
 								}}
 							>
 								<Image
-									src="/assets/mintcraft/furnace.png"
+									src={"/assets/mintcraft/"+locale+"/furnace.png"}
 									width="500px"
 									height="500px"
 								/>
@@ -116,14 +118,14 @@ export default function Mintcraft() {
 			<ParallaxBanner
 				layers={[
 					{
-						image: "/assets/mintcraft/beacon_bg.png",
+						image: "/assets/mintcraft/"+locale+"/beacon_bg.png",
 						speed: -20,
 						opacity: [0.75, 0.2],
 						easing: "easeOutQuad",
 					},
 				]}
 				style={{
-					minHeight: "100vh",
+					minHeight: "80vh",
 					display: "flex",
 					alignItems: "center",
 					overflow: "hidden",
@@ -167,7 +169,7 @@ export default function Mintcraft() {
 								}}
 							>
 								<Image
-									src="/assets/mintcraft/beacon.png"
+									src={"/assets/mintcraft/"+locale+"/beacon.png"}
 									width="500px"
 									height="500px"
 								/>
@@ -179,14 +181,14 @@ export default function Mintcraft() {
 			<ParallaxBanner
 				layers={[
 					{
-						image: "/assets/mintcraft/inventory_bg.png",
+						image: "/assets/mintcraft/"+locale+"/inventory_bg.png",
 						speed: -20,
 						opacity: [0.75, 0.2],
 						easing: "easeOutQuad",
 					},
 				]}
 				style={{
-					minHeight: "100vh",
+					minHeight: "80vh",
 					display: "flex",
 					alignItems: "center",
 					overflow: "hidden",
@@ -236,7 +238,7 @@ export default function Mintcraft() {
 								}}
 							>
 								<Image
-									src="/assets/mintcraft/inventory.png"
+									src={"/assets/mintcraft/"+locale+"/inventory.png"}
 									width="1000px"
 									height="500px"
 								/>
