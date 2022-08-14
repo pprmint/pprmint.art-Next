@@ -13,9 +13,6 @@
 		"privacyPolicy": "Datenschutzerklärung",
 		"switchLocale": "Switch to English"
 	},
-    "Navigation": {
-		"scrollToTop": "Nach oben scrollen"
-	},
 	"Home": {
 		"Head": {
 			"description": "Ich lasse Vektorpunkte, Polygone, Keyframes und bunte Monospace-Buchstaben schick aussehen.",
@@ -23,53 +20,27 @@
 		},
 		"Title": {
 			"bottom": "Neuaufbau mit Next.js.",
+			"button": "Repo ansehen",
 			"description": "Ich habe mich endlich dazu gerissen, mich mit Next.js zu beschäftigen und meine Website damit neu aufzubauen. Die aktuelle React-Seite wird noch für einige Zeit online bleiben, fürs Erste aber keine großen Updates erhalten.",
-			"top": "Aktuell in Arbeit:",
-            "button": "Repo ansehen"
+			"top": "Aktuell in Arbeit:"
 		}
 	},
-    "Project": {
-        "Mintcraft": {
-            "Head": {
-                "description": "Ein Minecraft-Resourcenpaket mit einem dunklen, modernen Design, inspiriert vom Minecraft Launcher und Material Icons.",
-                "title": "Mintcraft."
-            },
-            "Title": {
-                "top": "Ein Minecraft-Resourcenpaket.",
-                "bottom": "Mintcraft."
-            },
-            "Content": {
-                "About": {
-                    "Dark": {
-                        "heading": "Dunkel.",
-                        "text1": "Ich war nie ein großer Fan des normalen dunkelgrauen Farbschemas der meisten UI-Elemente. Also hab ich's dunkel gemacht.",
-                        "text2": "Der Fix für helle Textfarben auf dunklen Hintergründen stammt von "
-                    },
-                    "Modern": {
-                        "heading": "Modern.",
-                        "text": "Ein vorwiegend flaches Design für Buttons und Container, mit neuen Icons die sich <small>manchmal</small> sogar bewegen, wenn du mit der Maus drüberfährst!"
-                    },
-                    "Consistent": {
-                        "heading": "Einheitlich.",
-                        "text": "Keine Schatten auf Buttons, bis du die Maus drüber bewegst, gleichmäßig abgerundete Ecken und eine einheitliche Farbpalette."
-                    }
-                }
-            }
-        }
-    },
+	"Navigation": {
+		"scrollToTop": "Nach oben scrollen"
+	},
 	"PrivacyPolicy": {
 		"Content": {
 			"Contact": {
+				"heading": "Kontakt.",
 				"text1": "Bei Fragen zum Thema Datenschutz kannst du mir gerne eine Email an <strong>privacy[at]pprmint.art</strong> schicken.",
 				"text2": "Verwende diese Adresse nur für den obigen Zweck, nicht für allgemeine Fragen, Werbung, Spam oder Ähnliches.",
-				"text3": "Emails, die du mir schicken könntest, werden von meinem Email-Provider <strong>Fastmail</strong> verarbeitet. Ich werde deinen Namen, deine Email-Adresse oder die Inhalte deiner Nachrichten nie verbreiten.",
-				"heading": "Kontakt."
+				"text3": "Emails, die du mir schicken könntest, werden von meinem Email-Provider <strong>Fastmail</strong> verarbeitet. Ich werde deinen Namen, deine Email-Adresse oder die Inhalte deiner Nachrichten nie verbreiten."
 			},
 			"General": {
 				"example": "Darstellungsbeispiel für externen Link",
+				"heading": "Allgemein.",
 				"text1": "Diese Website allein sammelt keine persönlichen Daten, sei es durch Analysen, Werbung, Tracker, Cookies, Fingerprinting oder ähnliches.",
-				"text2": "Seiten können Links zu Websites Dritter enthalten. Auf dortige Inhalte und Datenschutzpraktiken habe ich keinerlei Einfluss und ich übernehme keine Verantwortung für diese.",
-				"heading": "Allgemein."
+				"text2": "Seiten können Links zu Websites Dritter enthalten. Auf dortige Inhalte und Datenschutzpraktiken habe ich keinerlei Einfluss und ich übernehme keine Verantwortung für diese."
 			},
 			"Hosting": {
 				"Log": {
@@ -80,15 +51,15 @@
 					"receivedFile": "<strong>Erhaltene Datei: </strong>Na rate mal.",
 					"userAgent": "<strong>User-Agent: </strong>Damit erfährt der Server beispielsweise, welcher Browser, welches Betriebssystem und welche Rendering-Engine für den Zugriff auf etwas verwendet wurde. Außerdem kann ich dir sagen, dass Windows 11 dort immer noch als \"Windows NT 10.0; Win64; x64\" bezeichnet wird. Weitere Informationen über den User-Agent-Header findest du hier:"
 				},
+				"heading": "Hosting.",
 				"text1": "Die Website selbst wird von <strong>Vercel</strong> gehostet, die Server-Logs mit deiner IP-Adresse und Systemkonfiguration behalten. Sie werden zur \"Verbesserung\" ihrer Dienste und Plattform sowie zur Erkennung von Bedrohungen verwendet.",
 				"text2": "Einige Bilder, Videos und andere Dateien, die du herunterladen kannst, werden auf meinem Webspace von <strong>Hetzner</strong> gehostet. Wenn dein Browser auf Dateien von dort zugreift, wird das vom Server protokolliert. Für volle Transparenz ist hier was ein solcher Log-Eintrag enthalten kann:",
 				"text3": "Jeder Log-Eintrag wird für bis zu 7 Tage gespeichert.",
-				"text4": "Solltest du selbst Hetzner nicht benutzen: Die Protokolle erscheinen in einer riesigen, scrollbaren Liste, in absteigender Reihenfolge von unten (neueste) nach oben (älteste). Wenn ich wollte, könnte ich diese Protokolle speichern, damit Hetzner am Ende eines jedes Monats Statistiken erstellt, aber ich habe das kürzlich deaktiviert und auch alle übrigen Dateien manuell vom Server gelöscht.",
-				"heading": "Hosting."
+				"text4": "Solltest du selbst Hetzner nicht benutzen: Die Protokolle erscheinen in einer riesigen, scrollbaren Liste, in absteigender Reihenfolge von unten (neueste) nach oben (älteste). Wenn ich wollte, könnte ich diese Protokolle speichern, damit Hetzner am Ende eines jedes Monats Statistiken erstellt, aber ich habe das kürzlich deaktiviert und auch alle übrigen Dateien manuell vom Server gelöscht."
 			},
 			"Tldr": {
-				"text": "Server-Logs sind die einzigen Dinger, die Informationen über dich speichern, oder genauer über den Browser und das Gerät, dass du gerade verwendest. Die eigentliche Website wird von Vercel gehostet, während einige Bilder, Videos und Downloads von meinem Webspace bei Hetzner stammen.",
-				"heading": "Die Kurzfassung:"
+				"heading": "Die Kurzfassung:",
+				"text": "Server-Logs sind die einzigen Dinger, die Informationen über dich speichern, oder genauer über den Browser und das Gerät, dass du gerade verwendest. Die eigentliche Website wird von Vercel gehostet, während einige Bilder, Videos und Downloads von meinem Webspace bei Hetzner stammen."
 			},
 			"privacyPolicyOf": "Datenschutzerklärung von {provider}"
 		},
@@ -99,6 +70,50 @@
 		"Title": {
 			"bottom": "Daten­schutz­erklärung.",
 			"top": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}"
+		}
+	},
+	"Project": {
+		"Mintcraft": {
+			"Content": {
+				"About": {
+					"Consistent": {
+						"heading": "Einheitlich.",
+						"text": "Keine Schatten auf Buttons, bis du die Maus drüber bewegst, gleichmäßig abgerundete Ecken und eine einheitliche Farbpalette."
+					},
+					"Dark": {
+						"heading": "Dunkel.",
+						"text1": "Ich war nie ein großer Fan des normalen dunkelgrauen Farbschemas der meisten UI-Elemente. Also hab ich's dunkel gemacht.",
+						"text2": "Der Fix für helle Textfarben auf dunklen Hintergründen stammt von "
+					},
+					"Modern": {
+						"heading": "Modern.",
+						"text": "Ein vorwiegend flaches Design für Buttons und Container, mit neuen Icons die sich <small>manchmal</small> sogar bewegen, wenn du mit der Maus drüberfährst!"
+					}
+				},
+				"Download": {
+					"118": {
+						"Mintcraft": {
+							"text": "POIUP§THNÜOGjÜAEg"
+						}
+					},
+					"119": {
+						"Mintcraft": {
+							"text": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+						}
+					},
+					"commonTitle": "Downloads für",
+					"download": "Herunterladen",
+					"selectVersion": "Spielversion"
+				}
+			},
+			"Head": {
+				"description": "Ein Minecraft-Resourcenpaket mit einem dunklen, modernen Design, inspiriert vom Minecraft Launcher und Material Icons.",
+				"title": "Mintcraft."
+			},
+			"Title": {
+				"bottom": "Mintcraft.",
+				"top": "Ein Minecraft-Resourcenpaket."
+			}
 		}
 	}
 }

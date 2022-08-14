@@ -16,6 +16,7 @@
 		"@emotion/styled": "latest",
 		"@mui/icons-material": "latest",
 		"@mui/material": "latest",
+		"@types/react-swipeable-views": "^0.13.1",
 		"date-fns": "^2.29.1",
 		"framer-motion": "^6.5.1",
 		"next": "latest",
@@ -25,6 +26,7 @@
 		"react-icons": "^4.4.0",
 		"react-lottie-player": "^1.4.3",
 		"react-scroll-parallax": "^3.3.1",
+		"react-swipeable-views": "^0.14.0",
 		"sass": "^1.54.0"
 	},
 	"devDependencies": {

@@ -21,27 +21,27 @@ let theme = createTheme({
 			lineHeight: "1",
 		},
 		h2: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 		},
 		h3: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 		},
 		h4: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 		},
 		h5: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 		},
 		h6: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+            fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 		},
@@ -64,6 +64,13 @@ let theme = createTheme({
 		MuiButton: {
 			styleOverrides: {
 				outlined: {
+					borderWidth: "2px !important",
+				},
+			},
+		},
+		MuiToggleButton: {
+			styleOverrides: {
+				root: {
 					borderWidth: "2px !important",
 				},
 			},
