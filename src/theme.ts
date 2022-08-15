@@ -54,6 +54,19 @@ let theme = createTheme({
 				},
 			},
 		},
+        MuiPaper: {
+			styleOverrides: {
+				elevation0: {
+					background: "var(--backgroundPrimary)",
+				},
+				elevation1: {
+					background: "var(--backgroundSecondary)",
+				},
+				elevation2: {
+					background: "var(--backgroundTertiary)",
+				},
+			},
+		},
 		MuiSkeleton: {
 			styleOverrides: {
 				root: {

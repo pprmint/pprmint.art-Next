@@ -25,7 +25,21 @@ import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
-const versions = ["1.19", "1.18", "1.17", "1.16"];
+const DownloadContainer = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+            duration: 0,
+			staggerChildren: 0.05,
+		},
+	},
+};
+
+const DownloadItem = {
+	hidden: { opacity: 0, y: "20px", transition: {duration: 0.5, ease: "circOut"}},
+	show: { opacity: 1, y: "0px", transition: {duration: 0.5, ease: "circOut"}},
+};
 
 const v119 = [
 	{
@@ -72,7 +86,7 @@ export default function Mintcraft() {
 
 	function VersionHeading() {
 		return (
-			<Typography variant="h2" pr="0.7rem">
+			<Typography variant="h2">
 				{t("Content.Download.commonTitle")}
 				&nbsp;
 				<motion.div
@@ -119,15 +133,14 @@ export default function Mintcraft() {
 	) {
 		const t = useTranslations("Project.Mintcraft.Content.Download");
 		return (
-			<Grid item xs={12} sm={3}>
-				<motion.div
-					initial={{ y: "20px", opacity: 0 }}
-					animate={{ y: "0px", opacity: 1 }}
-				>
+			<Grid item xs={6} sm={4} lg={3}>
+				<motion.div variants={DownloadItem}>
 					<Card>
 						<img src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"} />
 						<CardContent sx={{ pt: 0 }}>
-							<Typography variant="h3">{props.name}.</Typography>
+							<Typography variant="h4" component="h3">
+								{props.name}.
+							</Typography>
 							<Typography variant="body2">
 								{t(props.version + "." + props.name + ".text")}
 							</Typography>
@@ -135,6 +148,7 @@ export default function Mintcraft() {
 						<Divider />
 						<CardActions>
 							<Button
+								color="warning"
 								component={Link}
 								size="small"
 								sx={{ mx: "auto" }}
@@ -401,10 +415,14 @@ export default function Mintcraft() {
 					</Box>
 				</Container>
 				<br />
-				<Container>
-					<Grid container spacing={4}>
-						{version === "1.19" && (
-							<>
+				<Container sx={{ minHeight: "60vh" }}>
+					{version === "1.19" && (
+						<motion.div
+							variants={DownloadContainer}
+							initial="hidden"
+							animate="show"
+						>
+							<Grid container spacing={4}>
 								{v119.map((item, index) => (
 									<DownloadCard
 										key={index}
@@ -413,10 +431,16 @@ export default function Mintcraft() {
 										link={item.link}
 									/>
 								))}
-							</>
-						)}
-						{version === "1.18" && (
-							<>
+							</Grid>
+						</motion.div>
+					)}
+					{version === "1.18" && (
+						<motion.div
+							variants={DownloadContainer}
+							initial="hidden"
+							animate="show"
+						>
+							<Grid container spacing={4}>
 								{v118.map((item, index) => (
 									<DownloadCard
 										key={index}
@@ -425,9 +449,9 @@ export default function Mintcraft() {
 										link={item.link}
 									/>
 								))}
-							</>
-						)}
-					</Grid>
+							</Grid>
+						</motion.div>
+					)}
 				</Container>
 			</div>
 			<Footer />
