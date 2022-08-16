@@ -31,7 +31,7 @@ const DownloadContainer = {
 		opacity: 1,
 		transition: {
 			duration: 0,
-			staggerChildren: 0.05,
+			staggerChildren: 0.035,
 		},
 	},
 };
@@ -45,12 +45,15 @@ const DownloadItem = {
 	show: {
 		opacity: 1,
 		y: "0px",
-		transition: { duration: 0.5, ease: "circOut" },
+		transition: {
+			y: { duration: 0.5, ease: "circOut" },
+			opacity: { duration: 0.2 },
+		},
 	},
 	exit: {
 		opacity: 0,
-		y: "-10px",
-		transition: { duration: 0.25 },
+		y: "-20px",
+		transition: { duration: 0.3, ease: "easeIn" },
 	},
 };
 
@@ -58,37 +61,37 @@ const v119 = [
 	{
 		name: "Mintcraft",
 		packVersion: "1.6",
-        type: "Full",
+		type: "Full",
 	},
-    {
-        name: "Mintcraft",
-        packVersion: "1.6",
-    },
+	{
+		name: "Mintcraft",
+		packVersion: "1.6",
+	},
 	{
 		name: "MintBit",
 		packVersion: "1.0",
 		type: "Add-on",
 	},
 	{
-        name: "Sounds",
+		name: "Sounds",
 		packVersion: "1.1",
-        type: "Add-on",
+		type: "Add-on",
 	},
 ];
 const v118 = [
-    {
-        name: "Mintcraft",
-        packVersion: "1.5",
-    },
+	{
+		name: "Mintcraft",
+		packVersion: "1.5",
+	},
 	{
 		name: "MintBit",
 		packVersion: "1.0",
 		type: "Add-on",
 	},
 	{
-        name: "Sounds",
+		name: "Sounds",
 		packVersion: "1.1",
-        type: "Add-on",
+		type: "Add-on",
 	},
 ];
 const v117 = [
@@ -127,38 +130,18 @@ export default function Mintcraft() {
 			<Typography variant="h2">
 				{t("Content.Download.commonTitle")}
 				&nbsp;
-				<motion.div
-					initial={{ y: "-20px" }}
-					animate={{ y: "0px" }}
-					style={{ display: "inline-block" }}
-				>
-					{gameVersion}
-				</motion.div>
+				<AnimatePresence exitBeforeEnter>
+					<motion.div
+						key={gameVersion}
+						initial={{ y: "-20px" }}
+						animate={{ y: "0px" }}
+						exit={{ y: "20px", opacity: 0 }}
+						style={{ display: "inline-block" }}
+					>
+						{gameVersion}
+					</motion.div>
+				</AnimatePresence>
 			</Typography>
-		);
-	}
-
-	function VersionSwitch() {
-		return (
-			<>
-				<Typography variant="overline">
-					{t("Content.Download.selectVersion")}
-				</Typography>
-				<br />
-				<ToggleButtonGroup
-					color="warning"
-					value={gameVersion}
-					exclusive
-					onChange={handleGameVersion}
-					aria-label="game version"
-				>
-					<ToggleButton value="1.19">1.19</ToggleButton>
-					<ToggleButton value="1.18">1.18</ToggleButton>
-					<ToggleButton value="1.17">1.17</ToggleButton>
-					<ToggleButton value="1.16">1.16</ToggleButton>
-				</ToggleButtonGroup>
-				<br />
-			</>
 		);
 	}
 
@@ -171,7 +154,7 @@ export default function Mintcraft() {
 	) {
 		const t = useTranslations("Project.Mintcraft.Content.Download");
 		function DownloadButton() {
-			if (props.type==="Add-on") {
+			if (props.type === "Add-on") {
 				return (
 					<Button
 						color="warning"
@@ -194,7 +177,7 @@ export default function Mintcraft() {
 					</Button>
 				);
 			}
-			if (props.type==="Full") {
+			if (props.type === "Full") {
 				return (
 					<Button
 						color="warning"
@@ -218,7 +201,7 @@ export default function Mintcraft() {
 				);
 			} else {
 				return (
-                    <Button
+					<Button
 						color="warning"
 						component={Link}
 						size="small"
@@ -237,7 +220,7 @@ export default function Mintcraft() {
 					>
 						{t("download")}
 					</Button>
-                )
+				);
 			}
 		}
 
@@ -498,7 +481,23 @@ export default function Mintcraft() {
 							flexDirection: "column",
 						}}
 					>
-						<VersionSwitch />
+						<Typography variant="overline">
+							{t("Content.Download.selectVersion")}
+						</Typography>
+						<br />
+						<ToggleButtonGroup
+							color="warning"
+							value={gameVersion}
+							exclusive
+							onChange={handleGameVersion}
+							aria-label="game version"
+						>
+							<ToggleButton value="1.19">1.19</ToggleButton>
+							<ToggleButton value="1.18">1.18</ToggleButton>
+							<ToggleButton value="1.17">1.17</ToggleButton>
+							<ToggleButton value="1.16">1.16</ToggleButton>
+						</ToggleButtonGroup>
+						<br />
 					</Box>
 					<Box sx={{ flexGrow: 1 }}>
 						<GameVersionHeading />
@@ -510,20 +509,37 @@ export default function Mintcraft() {
 							textAlign: "right",
 						}}
 					>
-						<VersionSwitch />
+						<Typography variant="overline">
+							{t("Content.Download.selectVersion")}
+						</Typography>
+						<br />
+						<ToggleButtonGroup
+							color="warning"
+							value={gameVersion}
+							exclusive
+							onChange={handleGameVersion}
+							aria-label="game version"
+						>
+							<ToggleButton value="1.19">1.19</ToggleButton>
+							<ToggleButton value="1.18">1.18</ToggleButton>
+							<ToggleButton value="1.17">1.17</ToggleButton>
+							<ToggleButton value="1.16">1.16</ToggleButton>
+						</ToggleButtonGroup>
+						<br />
 					</Box>
 				</Container>
 				<br />
 				<Container sx={{ minHeight: "60vh" }}>
-					<AnimatePresence>
+					<AnimatePresence exitBeforeEnter>
 						{/* 1.19 */}
-						<motion.div
-							variants={DownloadContainer}
-							initial="hidden"
-							animate="show"
-							exit="exit"
-						>
-							{gameVersion === "1.19" && (
+						{gameVersion === "1.19" && (
+							<motion.div
+								key={gameVersion}
+								variants={DownloadContainer}
+								initial="hidden"
+								animate="show"
+								exit="exit"
+							>
 								<Grid container spacing={4}>
 									{v119.map((item, index) => (
 										<DownloadCard
@@ -534,16 +550,17 @@ export default function Mintcraft() {
 										/>
 									))}
 								</Grid>
-							)}
-						</motion.div>
+							</motion.div>
+						)}
 						{/* 1.18 */}
-						<motion.div
-							variants={DownloadContainer}
-							initial="hidden"
-							animate="show"
-							exit="exit"
-						>
-							{gameVersion === "1.18" && (
+						{gameVersion === "1.18" && (
+							<motion.div
+								key={gameVersion}
+								variants={DownloadContainer}
+								initial="hidden"
+								animate="show"
+								exit="exit"
+							>
 								<Grid container spacing={4}>
 									{v118.map((item, index) => (
 										<DownloadCard
@@ -554,8 +571,8 @@ export default function Mintcraft() {
 										/>
 									))}
 								</Grid>
-							)}
-						</motion.div>
+							</motion.div>
+						)}
 					</AnimatePresence>
 				</Container>
 			</div>
