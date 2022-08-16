@@ -17,6 +17,7 @@ import {
 	ToggleButtonGroup,
 } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
+import styles from "./mintcraft.module.scss";
 
 import Title from "src/components/Title";
 import Link from "src/components/Link";
@@ -130,17 +131,13 @@ export default function Mintcraft() {
 			<Typography variant="h2">
 				{t("Content.Download.commonTitle")}
 				&nbsp;
-				<AnimatePresence exitBeforeEnter>
-					<motion.div
-						key={gameVersion}
-						initial={{ y: "-20px" }}
-						animate={{ y: "0px" }}
-						exit={{ y: "20px", opacity: 0 }}
-						style={{ display: "inline-block" }}
-					>
-						{gameVersion}
-					</motion.div>
-				</AnimatePresence>
+				<motion.div
+					initial={{ y: "-20px" }}
+					animate={{ y: "0px" }}
+					style={{ display: "inline-block" }}
+				>
+					{gameVersion}
+				</motion.div>
 			</Typography>
 		);
 	}
@@ -153,6 +150,7 @@ export default function Mintcraft() {
 		}>
 	) {
 		const t = useTranslations("Project.Mintcraft.Content.Download");
+
 		function DownloadButton() {
 			if (props.type === "Add-on") {
 				return (
@@ -247,6 +245,7 @@ export default function Mintcraft() {
 
 	return (
 		<motion.div
+			className={styles.container}
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
