@@ -16,7 +16,7 @@ import {
 	ToggleButton,
 	ToggleButtonGroup,
 } from "@mui/material";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Title from "src/components/Title";
 import Link from "src/components/Link";
@@ -30,26 +30,68 @@ const DownloadContainer = {
 	show: {
 		opacity: 1,
 		transition: {
-            duration: 0,
+			duration: 0,
 			staggerChildren: 0.05,
 		},
 	},
 };
 
 const DownloadItem = {
-	hidden: { opacity: 0, y: "20px", transition: {duration: 0.5, ease: "circOut"}},
-	show: { opacity: 1, y: "0px", transition: {duration: 0.5, ease: "circOut"}},
+	hidden: {
+		opacity: 0,
+		y: "20px",
+		transition: { duration: 0.5, ease: "circOut" },
+	},
+	show: {
+		opacity: 1,
+		y: "0px",
+		transition: { duration: 0.5, ease: "circOut" },
+	},
+	exit: {
+		opacity: 0,
+		y: "-10px",
+		transition: { duration: 0.25 },
+	},
 };
 
 const v119 = [
 	{
 		name: "Mintcraft",
-		link: "https://download.pprmint.art/mintcraft/1.19/Mintcraft_1.6_(1.19).zip",
+		packVersion: "1.6",
+        type: "Full",
+	},
+    {
+        name: "Mintcraft",
+        packVersion: "1.6",
+    },
+	{
+		name: "MintBit",
+		packVersion: "1.0",
+		type: "Add-on",
 	},
 	{
-		name: "Mintcraft",
-		link: "https://download.pprmint.art/mintcraft/1.19/Mintcraft_1.6_(1.19).zip",
+        name: "Sounds",
+		packVersion: "1.1",
+        type: "Add-on",
 	},
+];
+const v118 = [
+    {
+        name: "Mintcraft",
+        packVersion: "1.5",
+    },
+	{
+		name: "MintBit",
+		packVersion: "1.0",
+		type: "Add-on",
+	},
+	{
+        name: "Sounds",
+		packVersion: "1.1",
+        type: "Add-on",
+	},
+];
+const v117 = [
 	{
 		name: "Mintcraft",
 		link: "https://download.pprmint.art/mintcraft/1.19/Mintcraft_1.6_(1.19).zip",
@@ -59,14 +101,10 @@ const v119 = [
 		link: "https://download.pprmint.art/mintcraft/1.19/Mintcraft_1.6_(1.19).zip",
 	},
 ];
-const v118 = [
+const v116 = [
 	{
 		name: "Mintcraft",
-		link: "https://download.pprmint.art/mintcraft/1.18/Mintcraft_1.5_(1.18).zip",
-	},
-	{
-		name: "Mintcraft",
-		link: "https://download.pprmint.art/mintcraft/1.18/Mintcraft_1.5_(1.18).zip",
+		link: "https://download.pprmint.art/mintcraft/1.19/Mintcraft_1.6_(1.19).zip",
 	},
 ];
 
@@ -74,17 +112,17 @@ export default function Mintcraft() {
 	const t = useTranslations("Project.Mintcraft");
 	const locale = useLocale();
 
-	const [version, setVersion] = React.useState("1.19");
-	const handleVersion = (
+	const [gameVersion, setGameVersion] = React.useState("1.19");
+	const handleGameVersion = (
 		event: React.MouseEvent<HTMLElement>,
-		newVersion: string | null
+		newGameVersion: string | null
 	) => {
-		if (newVersion !== null) {
-			setVersion(newVersion);
+		if (newGameVersion !== null) {
+			setGameVersion(newGameVersion);
 		}
 	};
 
-	function VersionHeading() {
+	function GameVersionHeading() {
 		return (
 			<Typography variant="h2">
 				{t("Content.Download.commonTitle")}
@@ -94,7 +132,7 @@ export default function Mintcraft() {
 					animate={{ y: "0px" }}
 					style={{ display: "inline-block" }}
 				>
-					{version}
+					{gameVersion}
 				</motion.div>
 			</Typography>
 		);
@@ -109,9 +147,9 @@ export default function Mintcraft() {
 				<br />
 				<ToggleButtonGroup
 					color="warning"
-					value={version}
+					value={gameVersion}
 					exclusive
-					onChange={handleVersion}
+					onChange={handleGameVersion}
 					aria-label="game version"
 				>
 					<ToggleButton value="1.19">1.19</ToggleButton>
@@ -127,11 +165,82 @@ export default function Mintcraft() {
 	function DownloadCard(
 		props: React.PropsWithChildren<{
 			name: string;
-			version: string; // Game version, without dot
-			link: string;
+			packVersion: string; // Pack version
+			type?: string;
 		}>
 	) {
 		const t = useTranslations("Project.Mintcraft.Content.Download");
+		function DownloadButton() {
+			if (props.type==="Add-on") {
+				return (
+					<Button
+						color="warning"
+						component={Link}
+						size="small"
+						sx={{ mx: "auto" }}
+						href={
+							"https://download.pprmint.art/mintcraft/" +
+							gameVersion +
+							"/" +
+							props.name +
+							"_Add-on_" +
+							props.packVersion +
+							"_(" +
+							gameVersion +
+							").zip"
+						}
+					>
+						{t("download")}
+					</Button>
+				);
+			}
+			if (props.type==="Full") {
+				return (
+					<Button
+						color="warning"
+						component={Link}
+						size="small"
+						sx={{ mx: "auto" }}
+						href={
+							"https://download.pprmint.art/mintcraft/" +
+							gameVersion +
+							"/" +
+							props.name +
+							"_" +
+							props.packVersion +
+							"_(FullSauce_" +
+							gameVersion +
+							").zip"
+						}
+					>
+						{t("download")}
+					</Button>
+				);
+			} else {
+				return (
+                    <Button
+						color="warning"
+						component={Link}
+						size="small"
+						sx={{ mx: "auto" }}
+						href={
+							"https://download.pprmint.art/mintcraft/" +
+							gameVersion +
+							"/" +
+							props.name +
+							"_" +
+							props.packVersion +
+							"_(" +
+							gameVersion +
+							").zip"
+						}
+					>
+						{t("download")}
+					</Button>
+                )
+			}
+		}
+
 		return (
 			<Grid item xs={6} sm={4} lg={3}>
 				<motion.div variants={DownloadItem}>
@@ -141,21 +250,11 @@ export default function Mintcraft() {
 							<Typography variant="h4" component="h3">
 								{props.name}.
 							</Typography>
-							<Typography variant="body2">
-								{t(props.version + "." + props.name + ".text")}
-							</Typography>
+							<Typography variant="body2">{props.packVersion}</Typography>
 						</CardContent>
 						<Divider />
 						<CardActions>
-							<Button
-								color="warning"
-								component={Link}
-								size="small"
-								sx={{ mx: "auto" }}
-								href={props.link}
-							>
-								{t("download")}
-							</Button>
+							<DownloadButton />
 						</CardActions>
 					</Card>
 				</motion.div>
@@ -402,7 +501,7 @@ export default function Mintcraft() {
 						<VersionSwitch />
 					</Box>
 					<Box sx={{ flexGrow: 1 }}>
-						<VersionHeading />
+						<GameVersionHeading />
 					</Box>
 					<Box
 						sx={{
@@ -416,42 +515,48 @@ export default function Mintcraft() {
 				</Container>
 				<br />
 				<Container sx={{ minHeight: "60vh" }}>
-					{version === "1.19" && (
+					<AnimatePresence>
+						{/* 1.19 */}
 						<motion.div
 							variants={DownloadContainer}
 							initial="hidden"
 							animate="show"
+							exit="exit"
 						>
-							<Grid container spacing={4}>
-								{v119.map((item, index) => (
-									<DownloadCard
-										key={index}
-										name={item.name}
-										version="119"
-										link={item.link}
-									/>
-								))}
-							</Grid>
+							{gameVersion === "1.19" && (
+								<Grid container spacing={4}>
+									{v119.map((item, index) => (
+										<DownloadCard
+											key={index}
+											name={item.name}
+											packVersion={item.packVersion}
+											type={item.type}
+										/>
+									))}
+								</Grid>
+							)}
 						</motion.div>
-					)}
-					{version === "1.18" && (
+						{/* 1.18 */}
 						<motion.div
 							variants={DownloadContainer}
 							initial="hidden"
 							animate="show"
+							exit="exit"
 						>
-							<Grid container spacing={4}>
-								{v118.map((item, index) => (
-									<DownloadCard
-										key={index}
-										name={item.name}
-										version="118"
-										link={item.link}
-									/>
-								))}
-							</Grid>
+							{gameVersion === "1.18" && (
+								<Grid container spacing={4}>
+									{v118.map((item, index) => (
+										<DownloadCard
+											key={index}
+											name={item.name}
+											packVersion={item.packVersion}
+											type={item.type}
+										/>
+									))}
+								</Grid>
+							)}
 						</motion.div>
-					)}
+					</AnimatePresence>
 				</Container>
 			</div>
 			<Footer />
