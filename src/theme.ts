@@ -42,52 +42,60 @@ let theme = createTheme({
 		},
 	},
 	typography: {
+        allVariants: {
+            fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
+        },
         h1: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			color: "#eee",
 			fontWeight: "600",
-			lineHeight: "1",
+            lineHeight: 1,
 		},
 		h1top: {
 			fontWeight: "300",
 			fontStyle: "italic",
 			fontSize: "2rem",
-			lineHeight: "1",
 		},
 		h2: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
+            marginBottom: "6px",
 		},
 		h3: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
+            marginBottom: "6px",
 		},
 		h4: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
+            marginBottom: "6px",
 		},
 		h5: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
+            marginBottom: "6px",
 		},
 		h6: {
             fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
+            marginBottom: "6px",
 		},
         body1: {
             lineHeight: 1.6,
             color: "#eeeeeec4",
-            fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
         },
         body2: {
             lineHeight: 1.6,
             color: "#eeeeeec4",
-            fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
+        },
+        button: {
+            lineHeight: 1.6,
         },
 	},
 	components: {
@@ -109,8 +117,18 @@ let theme = createTheme({
 				elevation2: {
 					background: "var(--backgroundTertiary)",
 				},
+                outlined: {
+                    borderWidth: "2px !important",
+                },
 			},
 		},
+        MuiDivider: {
+            styleOverrides: {
+                root: {
+                    borderBottomWidth: 2,
+                }
+            },
+        },
 		MuiSkeleton: {
 			styleOverrides: {
 				root: {
@@ -130,6 +148,7 @@ let theme = createTheme({
                     borderRadius: 20,
                 },
                 sizeSmall: {
+                    borderRadius: 16,
                     paddingRight: 16,
                     paddingLeft: 16,
                 },
