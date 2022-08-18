@@ -14,6 +14,7 @@ import {
 	CardActions,
 	ToggleButton,
 	ToggleButtonGroup,
+    CardMedia,
 } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -242,8 +243,8 @@ export default function Mintcraft() {
 			<Grid item xs={6} sm={4} lg={3}>
 				<motion.div variants={DownloadItem}>
 					<Card>
-						<img src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"} />
-						<CardContent sx={{ pt: 0 }}>
+                        <CardMedia component="img" image={"/assets/mintcraft/packs/" + props.name + "/pack.svg"} />
+						<CardContent>
 							<Typography variant="h4" component="h3">
 								{ props.type === "Full" ? (
                                     props.name+" FullSauce"
