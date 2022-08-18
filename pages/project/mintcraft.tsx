@@ -27,6 +27,7 @@ import Footer from "src/components/Footer";
 import { FiExternalLink } from "react-icons/fi";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
+// Props for animated download cards.
 const DownloadContainer = {
 	hidden: { opacity: 0 },
 	show: {
@@ -37,7 +38,6 @@ const DownloadContainer = {
 		},
 	},
 };
-
 const DownloadItem = {
 	hidden: {
 		opacity: 0,
@@ -59,6 +59,10 @@ const DownloadItem = {
 	},
 };
 
+// Available downloads for each game version.
+// Skip <type> prop for standalone pack.
+// "Full" for FullSauce / complete pack with all add-ons integrated.
+// "Add-on" for... well, an add-on.
 const v119 = [
 	{
 		name: "Mintcraft",
@@ -133,16 +137,19 @@ export default function Mintcraft() {
 	const t = useTranslations("Project.Mintcraft");
 	const locale = useLocale();
 
+    // Game version switcher
 	const [gameVersion, setGameVersion] = React.useState("1.19");
-	const handleGameVersion = (
-		event: React.MouseEvent<HTMLElement>,
+    const handleGameVersion = (
+        event: React.MouseEvent<HTMLElement>,
 		newGameVersion: string | null
-	) => {
+        ) => {
+        // Always keep just one version selected.
 		if (newGameVersion !== null) {
 			setGameVersion(newGameVersion);
 		}
 	};
 
+    // Numbers go boing when switching versions.
 	function GameVersionHeading() {
 		return (
 			<Typography variant="h2">
@@ -162,13 +169,14 @@ export default function Mintcraft() {
 	function DownloadCard(
 		props: React.PropsWithChildren<{
 			name: string;
-			packVersion: string; // Pack version
+			packVersion: string;
 			type?: string;
 		}>
 	) {
 		const t = useTranslations("Project.Mintcraft.Content.Download");
 
 		function DownloadButton() {
+            // I'm too lazy to define download links manually, so here the filename will be changed based on the type prop.
 			if (props.type === "Add-on") {
 				return (
 					<Button
