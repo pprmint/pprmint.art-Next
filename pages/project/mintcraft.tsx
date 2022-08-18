@@ -1,5 +1,4 @@
 import * as React from "react";
-import Head from "src/components/Head";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
@@ -18,10 +17,12 @@ import {
 } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 
+import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Link from "src/components/Link";
-import Footer from "src/components/Footer";
 import Image from "next/image";
+import Footer from "src/components/Footer";
+
 import { FiExternalLink } from "react-icons/fi";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
@@ -244,9 +245,14 @@ export default function Mintcraft() {
 						<img src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"} />
 						<CardContent sx={{ pt: 0 }}>
 							<Typography variant="h4" component="h3">
-								{props.name}.
+								{ props.type === "Full" ? (
+                                    props.name+" FullSauce"
+                                ) : (
+                                    props.name
+                                    )
+                                }.
 							</Typography>
-							<Typography variant="body2">{props.packVersion}</Typography>
+							<Typography variant="body2">Version {props.packVersion}</Typography>
 						</CardContent>
 						<Divider />
 						<CardActions>
@@ -497,7 +503,6 @@ export default function Mintcraft() {
 						<Typography variant="overline">
 							{t("Content.Download.selectVersion")}
 						</Typography>
-						<br />
 						<ToggleButtonGroup
 							color="warning"
 							value={gameVersion}
@@ -510,7 +515,7 @@ export default function Mintcraft() {
 							<ToggleButton value="1.17">1.17</ToggleButton>
 							<ToggleButton value="1.16">1.16</ToggleButton>
 						</ToggleButtonGroup>
-						<br />
+                        <br />
 					</Box>
 					<Box sx={{ flexGrow: 1 }}>
 						<GameVersionHeading />
@@ -525,7 +530,6 @@ export default function Mintcraft() {
 						<Typography variant="overline">
 							{t("Content.Download.selectVersion")}
 						</Typography>
-						<br />
 						<ToggleButtonGroup
 							color="warning"
 							value={gameVersion}
@@ -538,7 +542,6 @@ export default function Mintcraft() {
 							<ToggleButton value="1.17">1.17</ToggleButton>
 							<ToggleButton value="1.16">1.16</ToggleButton>
 						</ToggleButtonGroup>
-						<br />
 					</Box>
 				</Container>
 				<br />
