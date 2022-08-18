@@ -17,7 +17,6 @@ import {
 	ToggleButtonGroup,
 } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
-import styles from "./mintcraft.module.scss";
 
 import Title from "src/components/Title";
 import Link from "src/components/Link";
@@ -98,17 +97,33 @@ const v118 = [
 const v117 = [
 	{
 		name: "Mintcraft",
-		link: "https://download.pprmint.art/mintcraft/1.19/Mintcraft_1.6_(1.19).zip",
+		packVersion: "1.3",
 	},
 	{
-		name: "Mintcraft",
-		link: "https://download.pprmint.art/mintcraft/1.19/Mintcraft_1.6_(1.19).zip",
+		name: "MintBit",
+		packVersion: "1.0",
+		type: "Add-on",
+	},
+	{
+		name: "Sounds",
+		packVersion: "1.0",
+		type: "Add-on",
 	},
 ];
 const v116 = [
 	{
 		name: "Mintcraft",
-		link: "https://download.pprmint.art/mintcraft/1.19/Mintcraft_1.6_(1.19).zip",
+		packVersion: "1.1",
+	},
+	{
+		name: "MintBit",
+		packVersion: "1.0",
+		type: "Add-on",
+	},
+	{
+		name: "Sounds",
+		packVersion: "1.0",
+		type: "Add-on",
 	},
 ];
 
@@ -245,7 +260,6 @@ export default function Mintcraft() {
 
 	return (
 		<motion.div
-			className={styles.container}
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
@@ -562,6 +576,48 @@ export default function Mintcraft() {
 							>
 								<Grid container spacing={4}>
 									{v118.map((item, index) => (
+										<DownloadCard
+											key={index}
+											name={item.name}
+											packVersion={item.packVersion}
+											type={item.type}
+										/>
+									))}
+								</Grid>
+							</motion.div>
+						)}
+						{/* 1.17 */}
+						{gameVersion === "1.17" && (
+							<motion.div
+								key={gameVersion}
+								variants={DownloadContainer}
+								initial="hidden"
+								animate="show"
+								exit="exit"
+							>
+								<Grid container spacing={4}>
+									{v117.map((item, index) => (
+										<DownloadCard
+											key={index}
+											name={item.name}
+											packVersion={item.packVersion}
+											type={item.type}
+										/>
+									))}
+								</Grid>
+							</motion.div>
+						)}
+						{/* 1.16 */}
+						{gameVersion === "1.16" && (
+							<motion.div
+								key={gameVersion}
+								variants={DownloadContainer}
+								initial="hidden"
+								animate="show"
+								exit="exit"
+							>
+								<Grid container spacing={4}>
+									{v116.map((item, index) => (
 										<DownloadCard
 											key={index}
 											name={item.name}
