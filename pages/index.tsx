@@ -7,9 +7,10 @@ import { motion } from "framer-motion";
 import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Link from "src/components/Link";
+import Footer from "src/components/Footer";
+
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
-import Footer from "src/components/Footer";
 
 export default function Home() {
 	const t = useTranslations("Home");

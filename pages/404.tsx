@@ -1,5 +1,3 @@
-import * as React from "react";
-import type { NextPage } from "next";
 import { GetStaticPropsContext } from 'next';
 import { useTranslations } from "next-intl";
 import { Container, Typography, Box, Button } from "@mui/material";
