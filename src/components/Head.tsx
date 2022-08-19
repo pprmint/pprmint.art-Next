@@ -5,8 +5,8 @@ import { useLocale } from "next-intl";
 export default function CommonHead(props: {
 	title: string;
 	description: string;
-	ogImg: string; // Images must be placed in /public/og/[locale] and must share the same name.
-	favicon?: string; // Must match respective folder name inside /public/favicons.
+	ogImg: string; // Images must be placed in /public/og/[locale] and must share the same name as the prop.
+	favicon?: string; // Prop must match respective folder name inside /public/favicons.
 	color?: string; // Can't use short HEX codes (#123), must be #123456
 }) {
 	// Output title element as single text node.

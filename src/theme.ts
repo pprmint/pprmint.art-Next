@@ -52,6 +52,7 @@ let theme = createTheme({
             lineHeight: 1,
 		},
 		h1top: {
+            lineHeight: 1,
 			fontWeight: "300",
 			fontStyle: "italic",
 			fontSize: "2rem",
@@ -166,11 +167,8 @@ let theme = createTheme({
 				root: {
 					transition: "250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
 					fontWeight: 600,
-					textDecorationThickness: 1,
-                    textUnderlineOffset: 2,
-					"&:hover": {
-						textDecorationThickness: 2,
-					},
+					textDecorationThickness: 2,
+                    textUnderlineOffset: 1.5,
 				},
 			},
 		},
