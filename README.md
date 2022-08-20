@@ -1,4 +1,4 @@
-# pprmint.art with Next.js and MUI
+# pprmint.art with Next.js and MUI.
 
 ## Setup
 
