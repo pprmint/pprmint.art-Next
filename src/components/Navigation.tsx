@@ -107,6 +107,7 @@ export default function Navigation() {
                                     href={link.path}
                                     scroll={false}
                                     aria-label={link.name}
+                                    key={link.path}
                                 >
                                     {link.icon}
                                 </IconButton>
