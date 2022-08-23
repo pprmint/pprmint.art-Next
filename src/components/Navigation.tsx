@@ -36,7 +36,7 @@ const Links = [
     },
     {
         name: "Works",
-        path: "/",
+        path: "/works",
         icon: <FiImage />,
     },
     {
@@ -46,7 +46,7 @@ const Links = [
     },
     {
         name: "Contact",
-        path: "/",
+        path: "/project",
         icon: <FiMail />,
     },
 ];
@@ -129,7 +129,7 @@ export default function Navigation() {
                     zIndex: 9999,
                 }}
             >
-                <BottomNavigation showLabels value={router.pathname}>
+                <BottomNavigation value={router.pathname}>
                     {Links.map((link) => (
                         <BottomNavigationAction
                             component={NextLinkComposed}
@@ -137,6 +137,7 @@ export default function Navigation() {
                             to={link.path}
                             label={link.name}
                             icon={link.icon}
+                            value={link.path}
                         />
                     ))}
                 </BottomNavigation>

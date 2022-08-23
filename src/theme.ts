@@ -155,6 +155,13 @@ let theme = createTheme({
                 },
 			},
 		},
+        MuiButtonBase: {
+            styleOverrides: {
+                root: {
+                    fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
+                },
+            },
+        },
 		MuiToggleButton: {
 			styleOverrides: {
 				root: {

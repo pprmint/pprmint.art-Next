@@ -22,7 +22,7 @@ export default function Title(
 					},
 				]}
 				style={{
-					minHeight: 500,
+					minHeight: 600,
 					marginBottom: 64,
 					display: "flex",
 					alignItems: "center",
