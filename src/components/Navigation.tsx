@@ -16,6 +16,8 @@ import {
 } from "@mui/material";
 import Lottie from "react-lottie-player";
 import wordmarkJson from "src/animations/wordmark.json";
+
+import { NextLinkComposed } from "src/components/Link";
 import Link from "src/components/Link";
 
 import {
@@ -118,7 +120,6 @@ export default function Navigation() {
             </AppBar>
             {/* Mobile navigation */}
             <Box
-                p={1}
                 sx={{
                     backgroundColor: "var(--backgroundSecondary)",
                     display: { xs: "static", sm: "none" },
@@ -128,24 +129,17 @@ export default function Navigation() {
                     zIndex: 9999,
                 }}
             >
-                <Stack spacing={1} direction="row">
+                <BottomNavigation showLabels value={router.pathname}>
                     {Links.map((link) => (
-                        <Tooltip
-                            title={link.name}
-                            placement="top"
+                        <BottomNavigationAction
+                            component={NextLinkComposed}
                             key={link.path}
-                        >
-                            <IconButton
-                                component={Link}
-                                href={link.path}
-                                scroll={false}
-                                aria-label={link.name}
-                            >
-                                {link.icon}
-                            </IconButton>
-                        </Tooltip>
+                            to={link.path}
+                            label={link.name}
+                            icon={link.icon}
+                        />
                     ))}
-                </Stack>
+                </BottomNavigation>
             </Box>
             <ScrollTop />
         </>
