@@ -10,23 +10,41 @@ import {
     BottomNavigationAction,
     IconButton,
     Paper,
+    Stack,
+    Tooltip,
 } from "@mui/material";
 import Lottie from "react-lottie-player";
 import wordmarkJson from "src/animations/wordmark.json";
 import Link from "src/components/Link";
 
-import { FiChevronUp, FiHeart } from "react-icons/fi";
+import {
+    FiChevronUp,
+    FiHome,
+    FiImage,
+    FiPackage,
+    FiMail,
+} from "react-icons/fi";
 
 const Links = [
     {
         name: "Home",
         path: "/",
-        icon: <FiHeart />,
+        icon: <FiHome />,
     },
     {
-        name: "Privacy",
-        path: "/privacy",
-        icon: <FiChevronUp />,
+        name: "Works",
+        path: "/",
+        icon: <FiImage />,
+    },
+    {
+        name: "Projects",
+        path: "/",
+        icon: <FiPackage />,
+    },
+    {
+        name: "Contact",
+        path: "/",
+        icon: <FiMail />,
     },
 ];
 
@@ -40,9 +58,9 @@ function ScrollTop() {
         <Zoom in={trigger}>
             <Box
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                sx={{ position: "fixed", bottom: 32, right: 32, zIndex: 9999 }}
+                sx={{ position: "fixed", bottom: 28, right: 28, zIndex: 9999 }}
             >
-                <Fab size="medium" aria-label="scroll back to top">
+                <Fab size="large" aria-label="scroll back to top">
                     <FiChevronUp />
                 </Fab>
             </Box>
@@ -52,13 +70,6 @@ function ScrollTop() {
 
 export default function Navigation() {
     const router = useRouter();
-
-    const [value, setValue] = React.useState("/");
-
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        setValue(newValue);
-    };
-
     return (
         <>
             {/* Desktop navigation */}
@@ -81,7 +92,7 @@ export default function Navigation() {
                     />
                 </Link>
                 {Links.map((link) => (
-                    <Link href={link.path} key={link.path}>
+                    <Link href={link.path} key={link.path} scroll={false}>
                         {link.name}
                     </Link>
                 ))}
@@ -98,13 +109,20 @@ export default function Navigation() {
                     zIndex: 9999,
                 }}
             >
-                {Links.map((link) => (
-                    <Link href={link.path} key={link.path}>
-                        <IconButton aria-label="add an alarm">
-                            {link.icon}
-                        </IconButton>
-                    </Link>
-                ))}
+                <Stack spacing={1} direction="row">
+                    {Links.map((link) => (
+                        <Tooltip title={link.name} placement="top" key={link.path}>
+                            <IconButton
+                                component={Link}
+                                href={link.path}
+                                scroll={false}
+                                aria-label={link.name}
+                            >
+                                {link.icon}
+                            </IconButton>
+                        </Tooltip>
+                    ))}
+                </Stack>
             </Box>
             <ScrollTop />
         </>
