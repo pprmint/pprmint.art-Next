@@ -13,8 +13,8 @@ import Footer from "src/components/Footer";
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
 
-export default function Works() {
-	const t = useTranslations("Works");
+export default function Gallery() {
+	const t = useTranslations("Gallery");
 	return (
 		<PageTransition>
 			<Head

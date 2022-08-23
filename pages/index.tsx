@@ -57,7 +57,7 @@ export default function Home() {
                     component={Link}
                     scroll={false}
                     noLinkStyle
-                    href="/project/mintcraft"
+                    href="/projects/mintcraft"
                 >
                     Go to Mintcraft page
                 </Button>

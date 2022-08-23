@@ -134,7 +134,7 @@ const v116 = [
 ];
 
 export default function Mintcraft() {
-	const t = useTranslations("Project.Mintcraft");
+	const t = useTranslations("Projects.Mintcraft");
 	const locale = useLocale();
 
     // Game version switcher
@@ -173,7 +173,7 @@ export default function Mintcraft() {
 			type?: string;
 		}>
 	) {
-		const t = useTranslations("Project.Mintcraft.Content.Download");
+		const t = useTranslations("Projects.Mintcraft.Content.Download");
 
 		function DownloadButton() {
             // I'm too lazy to define download links manually, so here the filename will be changed based on the type prop.

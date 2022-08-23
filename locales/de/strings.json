@@ -23,6 +23,16 @@
 		"privacyPolicy": "Datenschutzerklärung",
 		"switchLocale": "Switch to English"
 	},
+	"Gallery": {
+		"Head": {
+			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
+			"title": "Galerie."
+		},
+		"Title": {
+			"bottom": "Galerie.",
+			"top": "Aktuell in Arbeit:"
+		}
+	},
 	"Home": {
 		"Head": {
 			"description": "Ich lasse Vektorpunkte, Polygone, Keyframes und bunte Monospace-Buchstaben schick aussehen.",
@@ -36,6 +46,10 @@
 		}
 	},
 	"Navigation": {
+		"Pages": {
+			"gallery": "",
+			"home": "Start"
+		},
 		"scrollToTop": "Nach oben scrollen"
 	},
 	"PrivacyPolicy": {
@@ -82,7 +96,11 @@
 			"top": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}"
 		}
 	},
-	"Project": {
+	"Projects": {
+		"Head": {
+			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
+			"title": "Projekte."
+		},
 		"Mintcraft": {
 			"Content": {
 				"About": {
@@ -124,15 +142,9 @@
 				"bottom": "Mintcraft.",
 				"top": "Ein Minecraft-Resourcenpaket."
 			}
-		}
-	},
-	"Works": {
-		"Head": {
-			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
-			"title": "Werke."
 		},
 		"Title": {
-			"bottom": "Werke.",
+			"bottom": "Projekte.",
 			"top": "Aktuell in Arbeit:"
 		}
 	}

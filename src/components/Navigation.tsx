@@ -1,4 +1,5 @@
 import * as React from "react";
+import { GetStaticPropsContext } from "next";
 import { Router, useRouter } from "next/router";
 import {
 	AppBar,
@@ -46,14 +47,14 @@ const Links = [
 		filledIcon: <HomeTwoTone />,
 	},
 	{
-		name: "Works",
-		path: "/works",
+		name: "Gallery",
+		path: "/gallery",
 		outlinedIcon: <ImageOutlined />,
 		filledIcon: <ImageTwoTone />,
 	},
 	{
 		name: "Projects",
-		path: "/project/mintcraft",
+		path: "/projects",
 		outlinedIcon: <FolderZipOutlined />,
 		filledIcon: <FolderZipTwoTone />,
 	},
@@ -164,4 +165,12 @@ export default function Navigation() {
 			{/* <ScrollTop />*/}
 		</>
 	);
+}
+
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+	return {
+		props: {
+			messages: (await import(`locales/${locale}/strings.json`)).default,
+		},
+	};
 }

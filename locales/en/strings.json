@@ -23,6 +23,16 @@
 		"privacyPolicy": "Privacy policy",
 		"switchLocale": "Zu Deutsch wechseln"
 	},
+	"Gallery": {
+		"Head": {
+			"description": "This page is not done yet. Check back later.",
+			"title": "Gallery."
+		},
+		"Title": {
+			"bottom": "Gallery.",
+			"top": "Work in progress:"
+		}
+	},
 	"Home": {
 		"Head": {
 			"description": "I make vector points, polygons, keyframes and colorful monospace letters look neat.",
@@ -36,6 +46,10 @@
 		}
 	},
 	"Navigation": {
+		"Pages": {
+			"gallery": "",
+			"home": "Home"
+		},
 		"scrollToTop": "Scroll to top"
 	},
 	"PrivacyPolicy": {
@@ -82,7 +96,11 @@
 			"top": "Last updated: {revisionDate, date, ::yyyyMMMMd}"
 		}
 	},
-	"Project": {
+	"Projects": {
+		"Head": {
+			"description": "This page is not done yet. Check back later.",
+			"title": "Projects."
+		},
 		"Mintcraft": {
 			"Content": {
 				"About": {
@@ -124,15 +142,9 @@
 				"bottom": "Mintcraft.",
 				"top": "A Minecraft resource pack."
 			}
-		}
-	},
-	"Works": {
-		"Head": {
-			"description": "This page is not done yet. Check back later.",
-			"title": "Works."
 		},
 		"Title": {
-			"bottom": "Works.",
+			"bottom": "Projects.",
 			"top": "Work in progress:"
 		}
 	}
