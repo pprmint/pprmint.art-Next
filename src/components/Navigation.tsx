@@ -12,6 +12,7 @@ import {
     Paper,
     Stack,
     Tooltip,
+    Toolbar,
 } from "@mui/material";
 import Lottie from "react-lottie-player";
 import wordmarkJson from "src/animations/wordmark.json";
@@ -38,7 +39,7 @@ const Links = [
     },
     {
         name: "Projects",
-        path: "/",
+        path: "/project/mintcraft",
         icon: <FiPackage />,
     },
     {
@@ -77,25 +78,37 @@ export default function Navigation() {
                 color="transparent"
                 elevation={0}
                 sx={{
-                    display: { xs: "none", sm: "block" },
-                    position: "absolute",
-                    zIndex: 9999,
                     backgroundImage: "linear-gradient(#111f, #1110)",
                 }}
             >
-                <Link href="/" scroll={false}>
-                    <Lottie
-                        loop={false}
-                        animationData={wordmarkJson}
-                        play
-                        style={{ height: 75, width: "min-width" }}
-                    />
-                </Link>
-                {Links.map((link) => (
-                    <Link href={link.path} key={link.path} scroll={false}>
-                        {link.name}
-                    </Link>
-                ))}
+                <Toolbar>
+                    <Box>
+                        <Link href="/" scroll={false}>
+                            <Lottie
+                                loop={false}
+                                animationData={wordmarkJson}
+                                play
+                                style={{ height: 75, width: "min-width" }}
+                            />
+                        </Link>
+                    </Box>
+                    {/* Box to extend buttons to the right side */}
+                    <Box sx={{ display: {xs: "none", sm: "flex"}, flexGrow: 1 }} />
+                    <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+                        <Stack spacing={1} direction="row">
+                            {Links.map((link) => (
+                                <IconButton
+                                    component={Link}
+                                    href={link.path}
+                                    scroll={false}
+                                    aria-label={link.name}
+                                >
+                                    {link.icon}
+                                </IconButton>
+                            ))}
+                        </Stack>
+                    </Box>
+                </Toolbar>
             </AppBar>
             {/* Mobile navigation */}
             <Box
@@ -111,7 +124,11 @@ export default function Navigation() {
             >
                 <Stack spacing={1} direction="row">
                     {Links.map((link) => (
-                        <Tooltip title={link.name} placement="top" key={link.path}>
+                        <Tooltip
+                            title={link.name}
+                            placement="top"
+                            key={link.path}
+                        >
                             <IconButton
                                 component={Link}
                                 href={link.path}
