@@ -82,7 +82,7 @@ export default function Navigation() {
                 }}
             >
                 <Toolbar>
-                    <Box>
+                    <Box sx={{ flexGrow: { xs: 1, sm: 0 } }}>
                         <Link href="/" scroll={false}>
                             <Lottie
                                 loop={false}
@@ -92,8 +92,13 @@ export default function Navigation() {
                             />
                         </Link>
                     </Box>
-                    {/* Box to extend buttons to the right side */}
-                    <Box sx={{ display: {xs: "none", sm: "flex"}, flexGrow: 1 }} />
+                    {/* Box to extend buttons to the right side. */}
+                    <Box
+                        sx={{
+                            display: { xs: "none", sm: "flex" },
+                            flexGrow: 1,
+                        }}
+                    />
                     <Box sx={{ display: { xs: "none", sm: "flex" } }}>
                         <Stack spacing={1} direction="row">
                             {Links.map((link) => (
