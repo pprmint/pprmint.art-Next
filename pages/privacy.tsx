@@ -4,20 +4,18 @@ import { parseISO } from "date-fns";
 import { Container, Typography, Stack, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 
+import PageTransition from "src/components/PageTransition";
 import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Footer from "src/components/Footer";
 import Link from "../src/components/Link";
+
 import { FiExternalLink } from "react-icons/fi";
 
 export default function PrivacyPolicy() {
 	const t = useTranslations("PrivacyPolicy");
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-		>
+		<PageTransition>
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
@@ -176,7 +174,7 @@ export default function PrivacyPolicy() {
 				</Typography>
 			</Container>
 			<Footer />
-		</motion.div>
+		</PageTransition>
 	);
 }
 
