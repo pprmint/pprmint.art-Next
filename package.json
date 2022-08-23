@@ -14,7 +14,7 @@
 		"@emotion/react": "latest",
 		"@emotion/server": "latest",
 		"@emotion/styled": "latest",
-		"@mui/icons-material": "latest",
+		"@mui/icons-material": "^5.10.2",
 		"@mui/material": "latest",
 		"@types/react-swipeable-views": "^0.13.1",
 		"date-fns": "^2.29.1",

@@ -7,6 +7,16 @@
 		"description": "Überprüfe die URL auf Tippfehler, oder kehre zur Startseite zurück.",
 		"title": "Diese Seite wurde nicht gefunden."
 	},
+	"Contact": {
+		"Head": {
+			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
+			"title": "Kontakt."
+		},
+		"Title": {
+			"bottom": "Kontakt.",
+			"top": "Aktuell in Arbeit:"
+		}
+	},
 	"Footer": {
 		"and": " und ",
 		"madeWith": "Gemacht mit ",
@@ -114,6 +124,16 @@
 				"bottom": "Mintcraft.",
 				"top": "Ein Minecraft-Resourcenpaket."
 			}
+		}
+	},
+	"Works": {
+		"Head": {
+			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
+			"title": "Werke."
+		},
+		"Title": {
+			"bottom": "Werke.",
+			"top": "Aktuell in Arbeit:"
 		}
 	}
 }

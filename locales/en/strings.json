@@ -7,6 +7,16 @@
 		"description": "Check the URL for typos or go back to the home page.",
 		"title": "This page was not found."
 	},
+	"Contact": {
+		"Head": {
+			"description": "This page is not done yet. Check back later.",
+			"title": "Contact."
+		},
+		"Title": {
+			"bottom": "Contact.",
+			"top": "Work in progress:"
+		}
+	},
 	"Footer": {
 		"and": " and ",
 		"madeWith": "Made with ",
@@ -114,6 +124,16 @@
 				"bottom": "Mintcraft.",
 				"top": "A Minecraft resource pack."
 			}
+		}
+	},
+	"Works": {
+		"Head": {
+			"description": "This page is not done yet. Check back later.",
+			"title": "Works."
+		},
+		"Title": {
+			"bottom": "Works.",
+			"top": "Work in progress:"
 		}
 	}
 }

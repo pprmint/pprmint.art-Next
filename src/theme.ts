@@ -155,7 +155,7 @@ let theme = createTheme({
                 },
 			},
 		},
-        MuiButtonBase: {
+        MuiBottomNavigationAction: {
             styleOverrides: {
                 root: {
                     fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
