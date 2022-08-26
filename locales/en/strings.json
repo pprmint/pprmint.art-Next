@@ -4,8 +4,8 @@
 			"title": "Page not found."
 		},
 		"button": "Back to home page",
-		"description": "Check the URL for typos or go back to the home page.",
-		"title": "This page was not found."
+		"description": "Check the URL for typos, or go back to the home page.",
+		"title": "Nothing's here."
 	},
 	"Contact": {
 		"Head": {
