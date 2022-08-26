@@ -130,28 +130,10 @@ export default function Navigation() {
                                     scroll={false}
                                     aria-label={link.name}
                                     key={link.path}
-                                    sx={{ borderRadius: 50 }}
                                 >
                                     {router.pathname === link.path
                                         ? link.filledIcon
                                         : link.outlinedIcon}
-                                    <span
-                                        style={{
-                                            fontSize: "1.1rem",
-                                            lineHeight: 0,
-                                            marginLeft: 8,
-                                            color: "#eee",
-                                            display:
-                                                router.pathname === link.path
-                                                    ? "block"
-                                                    : "none",
-                                            transform: router.pathname === link.path
-                                            ? "translateX(0px)"
-                                            : "translateX(-10px)",
-                                        }}
-                                    >
-                                        {link.name}
-                                    </span>
                                 </IconButton>
                             ))}
                         </Stack>
