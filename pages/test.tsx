@@ -9,10 +9,7 @@ import prideJson from "src/animations/pride_wordmark.json";
 
 export default function Test() {
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
+		<
 		>
 			<Head
 				title="Test page."
@@ -54,6 +51,6 @@ export default function Test() {
 					/>
 				</Box>
 			</Container>
-		</motion.div>
+		</>
 	);
 }

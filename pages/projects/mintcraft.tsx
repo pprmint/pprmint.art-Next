@@ -274,10 +274,7 @@ export default function Mintcraft() {
 	}
 
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
+		<
 		>
 			<Head
 				title={t("Head.title")}
@@ -644,7 +641,7 @@ export default function Mintcraft() {
 				</Container>
 			</div>
 			<Footer />
-		</motion.div>
+		</>
 	);
 }
 

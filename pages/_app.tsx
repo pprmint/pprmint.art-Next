@@ -17,6 +17,7 @@ import "src/global.scss";
 import Navigation from "src/components/Navigation";
 import { AnimatePresence } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
+import PageTransition from "src/components/PageTransition";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -48,7 +49,9 @@ export default function MyApp(props: pageProps) {
 							/>
 						</Head>
 						<ParallaxProvider>
-							<Component {...pageProps} />
+							<PageTransition>
+								<Component {...pageProps} />
+							</PageTransition>
 						</ParallaxProvider>
 					</NextIntlProvider>
 				</AnimatePresence>

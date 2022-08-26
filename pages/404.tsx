@@ -1,4 +1,4 @@
-import { GetStaticPropsContext } from 'next';
+import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Container, Typography, Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
@@ -9,24 +9,47 @@ import Link from "src/components/Link";
 import Head from "src/components/Head";
 import Footer from "src/components/Footer";
 
+// Container for staggered animations
+const AnimContainer = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			duration: 0,
+			staggerChildren: 0.1,
+		},
+	},
+};
+// Container contents
+const Anim = {
+	hidden: {
+		opacity: 0,
+		y: "50px",
+	},
+	show: {
+		opacity: 1,
+		y: "0px",
+		transition: {
+            y: { duration: 1, ease: [0, 0, 0.2, 1] },
+			opacity: { duration: 0.25 },
+		},
+	},
+};
+
 export default function NotFound() {
-    const t = useTranslations("404");
+	const t = useTranslations("404");
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-		>
+		<>
 			<Head
 				title={t("Head.title")}
 				description={t("description")}
 				ogImg="404.png"
-                color="#ff3344"
+				color="#ff3344"
 			/>
 			<Container maxWidth="lg">
 				<Box
 					sx={{
-                        minHeight: "100vh",
+						minHeight: "100vh",
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "center",
@@ -39,64 +62,51 @@ export default function NotFound() {
 						play
 						style={{ maxWidth: "700px", height: "auto" }}
 					/>
-					<Box
-						sx={{
+					<motion.div
+						variants={AnimContainer}
+						initial="hidden"
+						animate="show"
+						style={{
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
 							alignItems: "center",
-							opacity: 0,
-							animation:
-								"opacity 1s var(--easeOut) 0.7s forwards",
 						}}
 					>
-						<Typography
-							variant="h4"
-							component="h1"
-                            align="center"
-							sx={{
-								animation:
-									"shiftFromBottom 1s var(--easeOut) 0.5s forwards",
-							}}
-						>
-							{t("title")}
-						</Typography>
-						<Typography
-							gutterBottom
-                            align="center"
-							sx={{
-								animation:
-									"shiftFromBottom 1s var(--easeOut) 0.6s forwards",
-							}}
-						>
-							{t("description")}
-						</Typography>
-						<Button
-							variant="outlined"
-							color="error"
-							component={Link}
-                            scroll={false}
-							noLinkStyle
-							href="/"
-							sx={{
-								animation:
-									"shiftFromBottom 1s var(--easeOut) 0.7s forwards",
-							}}
-						>
-							{t("button")}
-						</Button>
-					</Box>
+						<motion.div variants={Anim}>
+							<Typography variant="h4" component="h1" align="center">
+								{t("title")}
+							</Typography>
+						</motion.div>
+						<motion.div variants={Anim}>
+							<Typography gutterBottom align="center">
+								{t("description")}
+							</Typography>
+						</motion.div>
+						<motion.div variants={Anim}>
+							<Button
+								variant="outlined"
+								color="error"
+								component={Link}
+								scroll={false}
+								noLinkStyle
+								href="/"
+							>
+								{t("button")}
+							</Button>
+						</motion.div>
+					</motion.div>
 				</Box>
 			</Container>
-            <Footer />
-		</motion.div>
+			<Footer />
+		</>
 	);
-};
+}
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
-    return {
-        props: {
-            messages: (await import(`locales/${locale}/strings.json`)).default
-        }
-    };
+	return {
+		props: {
+			messages: (await import(`locales/${locale}/strings.json`)).default,
+		},
+	};
 }
