@@ -15,7 +15,7 @@ Yes.
 But actually because I wanna:
 
 - [ ] debloat the site and redesign it[^1],
-- [ ] simplify creating new pages[^2],
+- [X] simplify creating new pages[^2],
 - [ ] add individual OpenGraph metadata for every page[^3].
 
 [^1]: Currently, the site lags a ton when opened on low-end hardware, probably due to the abundance of animations.
