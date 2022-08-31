@@ -34,6 +34,24 @@
 		}
 	},
 	"Home": {
+		"Content": {
+			"About": {
+				"heading": "Hiya, ich bin Nicklas.",
+				"text": "Sobald ich mal Lust zu hab, schreib ich hier etwas mehr über mich."
+			},
+			"Code": {
+				"heading": "Ich schreibe Code.",
+				"text": "Das tu ich echt."
+			},
+			"Illustration": {
+				"heading": "Ich mache Illustrationen.",
+				"text": "Und bin für's erste zu faul, hierfür nen Hintergrund zu erstellen."
+			},
+			"Motion": {
+				"heading": "Ich animiere Zeug.",
+				"text": "Leute flippen aus, wenn sich was Rundes dreht."
+			}
+		},
 		"Head": {
 			"description": "Ich lasse Vektorpunkte, Polygone, Keyframes und bunte Monospace-Buchstaben schick aussehen.",
 			"title": "Guten Heute."

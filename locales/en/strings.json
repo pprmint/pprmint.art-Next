@@ -34,6 +34,24 @@
 		}
 	},
 	"Home": {
+		"Content": {
+			"About": {
+				"heading": "Hiya, name's Nick.",
+				"text": "Once I feel like it, I will write more about me right here."
+			},
+			"Code": {
+				"heading": "I write code.",
+				"text": "I really do."
+			},
+			"Illustration": {
+				"heading": "I make illustrations.",
+				"text": "An am too lazy for a background here, for now."
+			},
+			"Motion": {
+				"heading": "I animate stuff.",
+				"text": "People lose their shit when a circular object spins around."
+			}
+		},
 		"Head": {
 			"description": "I make vector points, polygons, keyframes and colorful monospace letters look neat.",
 			"title": "Good today."
