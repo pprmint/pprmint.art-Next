@@ -8,7 +8,12 @@ import {
 	Grid,
 } from "@mui/material";
 import Link from "./Link";
-import { FiCoffee, FiExternalLink, FiHeart, FiGlobe } from "react-icons/fi";
+import {
+	FavoriteTwoTone,
+	CoffeeTwoTone,
+	Language,
+	ArrowOutward,
+} from "@mui/icons-material";
 import { NextIntlProvider, useTranslations } from "next-intl";
 import logo from "../assets/logo.svg";
 import Image from "next/image";
@@ -26,19 +31,11 @@ export default function Footer() {
 						<Grid item xs={12} sm={10}>
 							<Typography variant="body1" color="text.secondary">
 								{t("madeWith")}
-								<FiHeart
-									style={{ color: "var(--redPrimary)" }}
-								/>
+								<FavoriteTwoTone fontSize="inherit" color="error" />
 								{t("and")}
-								<FiCoffee
-									style={{ color: "var(--yellowPrimary)" }}
-								/>
+								<CoffeeTwoTone fontSize="inherit" color="warning" />
 							</Typography>
-							<Typography
-								variant="body2"
-								color="text.secondary"
-								gutterBottom
-							>
+							<Typography variant="body2" color="text.secondary" gutterBottom>
 								{"© "}
 								{new Date().getFullYear()} pprmint.
 							</Typography>
@@ -59,7 +56,7 @@ export default function Footer() {
 											})
 										}
 									>
-										<FiGlobe />
+										<Language fontSize="inherit" />
 										{t("switchLocale", {
 											locale: otherLocale,
 										})}
@@ -83,7 +80,7 @@ export default function Footer() {
 										color="secondary"
 									>
 										YouTube
-										<FiExternalLink />
+										<ArrowOutward fontSize="inherit" />
 									</Link>
 								</Typography>
 								<Typography variant="body2">
@@ -95,7 +92,7 @@ export default function Footer() {
 										color="secondary"
 									>
 										GitHub
-										<FiExternalLink />
+										<ArrowOutward fontSize="inherit" />
 									</Link>
 								</Typography>
 								<Typography variant="body2">
@@ -107,7 +104,7 @@ export default function Footer() {
 										color="secondary"
 									>
 										Patreon
-										<FiExternalLink />
+										<ArrowOutward fontSize="inherit" />
 									</Link>
 								</Typography>
 								<Typography variant="body2">
@@ -119,7 +116,7 @@ export default function Footer() {
 										color="secondary"
 									>
 										Discord
-										<FiExternalLink />
+										<ArrowOutward fontSize="inherit" />
 									</Link>
 								</Typography>
 							</Stack>
