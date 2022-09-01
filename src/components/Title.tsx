@@ -50,15 +50,21 @@ export default function Title(
                 style={{
                     minHeight: 600,
                     marginBottom: 64,
+                    position: "relative",
                     display: "flex",
                     alignItems: "center",
                     overflow: "hidden",
                 }}
             >
                 <ParallaxBannerLayer speed={-20} opacity={[0.75, 0.2]}>
-                    {props.src && <Image src={props.src} layout="fill" />}
+                    {props.src && (
+                        <Image
+                            src={props.src}
+                            objectFit={"cover"}
+                            layout="fill"
+                        />
+                    )}
                 </ParallaxBannerLayer>
-
                 <Container maxWidth="xl">
                     <Box>
                         <Parallax speed={-10}>
