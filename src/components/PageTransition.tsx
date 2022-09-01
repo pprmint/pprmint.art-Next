@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Tweak animations here to update transitions between all pages.
 export default function PageTransition(props: React.PropsWithChildren) {
 	return (
 		<motion.div

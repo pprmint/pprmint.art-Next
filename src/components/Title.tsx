@@ -48,15 +48,14 @@ export default function Title(
         return (
             <ParallaxBanner
                 style={{
-                    minHeight: 600,
-                    marginBottom: 64,
+                    minHeight: "100vh",
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
                     overflow: "hidden",
                 }}
             >
-                <ParallaxBannerLayer speed={-20} opacity={[0.75, 0.2]}>
+                <ParallaxBannerLayer speed={-20} opacity={[0.75, 0.0]}>
                     {props.src && (
                         <Image
                             src={props.src}
