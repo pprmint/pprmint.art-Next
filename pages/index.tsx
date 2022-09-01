@@ -28,7 +28,7 @@ export default function Home() {
 				top={t("Title.top")}
 				bottom={t("Title.bottom")}
 				body={t("Title.description")}
-				src="https://media.pprmint.art/code.png"
+				src="https://media.pprmint.art/code.jpg"
 			>
 				<Button
 					variant="contained"
