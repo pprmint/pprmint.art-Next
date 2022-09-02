@@ -130,7 +130,7 @@ export default function Title(
 							<Box
 								position="absolute"
 								maxWidth="xl"
-								bottom={32}
+								bottom={{xs: 72, sm: 32}}
 								left="50%"
 								sx={{ transform: "translateX(-50%)" }}
 							>
