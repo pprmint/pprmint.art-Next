@@ -124,15 +124,18 @@
 				"About": {
 					"Consistent": {
 						"heading": "Consistent.",
+						"imgAlt": "Beacon container",
 						"text": "No shadows on buttons until you hover your mouse over them, uniform rounded corners on all sides and consistent color palette."
 					},
 					"Dark": {
 						"heading": "Dark.",
+						"imgAlt": "Furnace container.",
 						"text1": "I was never really a fan of the default light-grey color scheme for most of the UI. So I made it dark.",
 						"text2": "Fix for light text colors on dark backgrounds taken from "
 					},
 					"Modern": {
 						"heading": "Modern.",
+						"imgAlt": "Inventory container with recipe book opened.",
 						"text": "A mostly flat design for buttons and containers, featuring redesigned icons that <small>sometimes</small> even move when you hover over them!"
 					}
 				},

@@ -124,15 +124,18 @@
 				"About": {
 					"Consistent": {
 						"heading": "Einheitlich.",
+						"imgAlt": "Leuchtfeuer-Container.",
 						"text": "Keine Schatten auf Buttons, bis du die Maus drüber bewegst, gleichmäßig abgerundete Ecken und eine einheitliche Farbpalette."
 					},
 					"Dark": {
 						"heading": "Dunkel.",
+						"imgAlt": "Ofen-Container.",
 						"text1": "Ich war nie ein großer Fan des normalen dunkelgrauen Farbschemas der meisten UI-Elemente. Also hab ich's dunkel gemacht.",
 						"text2": "Der Fix für helle Textfarben auf dunklen Hintergründen stammt von "
 					},
 					"Modern": {
 						"heading": "Modern.",
+						"imgAlt": "Inventar-Container mit geöffnetem Rezeptbuch.",
 						"text": "Ein vorwiegend flaches Design für Buttons und Container, mit neuen Icons die sich <small>manchmal</small> sogar bewegen, wenn du mit der Maus drüberfährst!"
 					}
 				},

@@ -354,6 +354,7 @@ export default function Mintcraft() {
 									}}
 								>
 									<Image
+                                        alt={t("Content.About.Dark.imgAlt")}
 										src={"/assets/mintcraft/" + locale + "/furnace.png"}
 										width="500px"
 										height="500px"
@@ -417,6 +418,7 @@ export default function Mintcraft() {
 									}}
 								>
 									<Image
+                                        alt={t("Content.About.Consistent.imgAlt")}
 										src={"/assets/mintcraft/" + locale + "/beacon.png"}
 										width="500px"
 										height="500px"
@@ -486,6 +488,7 @@ export default function Mintcraft() {
 									}}
 								>
 									<Image
+                                        alt={t("Content.About.Modern.imgAlt")}
 										src={"/assets/mintcraft/" + locale + "/inventory.png"}
 										width="1000px"
 										height="500px"
