@@ -83,7 +83,9 @@ export default function Home() {
 						justifyContent: "center",
 					}}
 				>
-					<Container sx={{ textAlign: "center", position: "relative" }}>
+					<Container
+						sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
+					>
 						<Typography variant="h2">{t("Content.Code.heading")}</Typography>
 						<Typography variant="body1">{t("Content.Code.text")}</Typography>
 					</Container>
@@ -103,7 +105,13 @@ export default function Home() {
 								right: -400,
 							}}
 						>
-							<img src="/assets/home/code/tags.svg" height="1000px" alt="" />
+							<Image
+								src="/assets/home/code/tags.svg"
+								width="1000px"
+								height="1000px"
+								alt=""
+								layout="fixed"
+							/>
 						</motion.div>
 						<motion.div
 							animate={{ rotate: [0, 360] }}
@@ -114,10 +122,12 @@ export default function Home() {
 								right: -400,
 							}}
 						>
-							<img
+							<Image
 								src="/assets/home/code/brackets.svg"
+								width="1000px"
 								height="1000px"
 								alt=""
+								layout="fixed"
 							/>
 						</motion.div>
 					</Box>

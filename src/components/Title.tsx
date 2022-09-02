@@ -42,8 +42,8 @@ export default function Title(
 		topLevel?: string;
 	}>
 ) {
+    const t = useTranslations("Title");
 	if (props.big) {
-		const t = useTranslations("Title");
 		return (
 			<>
 				<style jsx>{`
@@ -77,6 +77,7 @@ export default function Title(
 							src={props.src}
 							layout="fill"
 							objectFit="cover"
+                            alt=""
 							style={{
 								animation: "background 5s cubic-bezier(0.4, 0, 0.2, 1)",
 								opacity: 0.5,
