@@ -165,5 +165,8 @@
 			"bottom": "Projects.",
 			"top": "Work in progress:"
 		}
+	},
+	"Title": {
+		"scroll": "Scroll down for more"
 	}
 }

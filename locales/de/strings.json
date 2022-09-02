@@ -165,5 +165,8 @@
 			"bottom": "Projekte.",
 			"top": "Aktuell in Arbeit:"
 		}
+	},
+	"Title": {
+		"scroll": "Scroll runter für mehr"
 	}
 }
