@@ -10,10 +10,8 @@ import {
 	ToggleButtonGroup,
 	ToggleButton,
 } from "@mui/material";
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
-import PageTransition from "src/components/PageTransition";
 import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Link from "src/components/Link";
@@ -25,6 +23,7 @@ import { SiGithub } from "react-icons/si";
 export default function Home() {
 	const t = useTranslations("Home");
 	return (
+		<>
 			<Box
 				sx={{
 					height: "100vh",
@@ -60,62 +59,92 @@ export default function Home() {
 						</Button>
 					</Title>
 				</Box>
-				<Box maxWidth="xl" margin="0 auto">
-					<Container
-						sx={{
-							scrollSnapAlign: "start",
-							minHeight: "100vh",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
-					>
-						<Box textAlign="center" zIndex={1}>
-							<Typography variant="h2">
-								{t("Content.Motion.heading")}
-							</Typography>
-							<Typography variant="body1">
-								{t("Content.Motion.text")}
-							</Typography>
-						</Box>
+				<Box
+					sx={{
+						scrollSnapAlign: "start",
+						minHeight: "100vh",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<Container sx={{ textAlign: "center", position: "relative" }}>
+						<Typography variant="h2">{t("Content.Motion.heading")}</Typography>
+						<Typography variant="body1">{t("Content.Motion.text")}</Typography>
 					</Container>
-					<Container
-						sx={{
-							scrollSnapAlign: "start",
-							minHeight: "100vh",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
-					>
-						<Box textAlign="center" zIndex={1}>
-							<Typography variant="h2">{t("Content.Code.heading")}</Typography>
-							<Typography variant="body1">{t("Content.Code.text")}</Typography>
-						</Box>
+				</Box>
+				<Box
+					sx={{
+						position: "relative",
+						scrollSnapAlign: "start",
+						minHeight: "100vh",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<Container sx={{ textAlign: "center", position: "relative" }}>
+						<Typography variant="h2">{t("Content.Code.heading")}</Typography>
+						<Typography variant="body1">{t("Content.Code.text")}</Typography>
 					</Container>
-					<Container
-						sx={{
-							scrollSnapAlign: "start",
-							minHeight: "100vh",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
+					<Box
+						position="absolute"
+						width="100vw"
+						height="100vh"
+						overflow="hidden"
+						sx={{ opacity: 0.5 }}
 					>
-						<Box textAlign="center" zIndex={1}>
-							<Typography variant="h2">
-								{t("Content.Illustration.heading")}
-							</Typography>
-							<Typography variant="body1">
-								{t("Content.Illustration.text")}
-							</Typography>
-						</Box>
+						<motion.div
+							animate={{ rotate: [0, -360] }}
+							transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+							style={{
+								position: "absolute",
+								bottom: -200,
+								right: -400,
+							}}
+						>
+							<img src="/assets/home/code/tags.svg" height="1000px" alt="" />
+						</motion.div>
+						<motion.div
+							animate={{ rotate: [0, 360] }}
+							transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+							style={{
+								position: "absolute",
+								bottom: -200,
+								right: -400,
+							}}
+						>
+							<img
+								src="/assets/home/code/brackets.svg"
+								height="1000px"
+								alt=""
+							/>
+						</motion.div>
+					</Box>
+				</Box>
+				<Box
+					sx={{
+						scrollSnapAlign: "start",
+						minHeight: "100vh",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<Container sx={{ textAlign: "center", position: "relative" }}>
+						<Typography variant="h2">
+							{t("Content.Illustration.heading")}
+						</Typography>
+						<Typography variant="body1">
+							{t("Content.Illustration.text")}
+						</Typography>
 					</Container>
 				</Box>
 				<Box sx={{ scrollSnapAlign: "end" }}>
 					<Footer />
 				</Box>
 			</Box>
+		</>
 	);
 }
 
