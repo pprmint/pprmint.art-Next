@@ -14,7 +14,7 @@ import {
 	CardActions,
 	ToggleButton,
 	ToggleButtonGroup,
-    CardMedia,
+	CardMedia,
 } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -137,19 +137,19 @@ export default function Mintcraft() {
 	const t = useTranslations("Projects.Mintcraft");
 	const locale = useLocale();
 
-    // Game version switcher
+	// Game version switcher
 	const [gameVersion, setGameVersion] = React.useState("1.19");
-    const handleGameVersion = (
-        event: React.MouseEvent<HTMLElement>,
+	const handleGameVersion = (
+		event: React.MouseEvent<HTMLElement>,
 		newGameVersion: string | null
-        ) => {
-        // Always keep just one version selected.
+	) => {
+		// Always keep just one version selected.
 		if (newGameVersion !== null) {
 			setGameVersion(newGameVersion);
 		}
 	};
 
-    // Numbers go boing when switching versions.
+	// Numbers go boing when switching versions.
 	function GameVersionHeading() {
 		return (
 			<Typography variant="h2">
@@ -176,7 +176,7 @@ export default function Mintcraft() {
 		const t = useTranslations("Projects.Mintcraft.Content.Download");
 
 		function DownloadButton() {
-            // I'm too lazy to define download links manually, so here the filename will be changed based on the type prop.
+			// I'm too lazy to define download links manually, so here the filename will be changed based on the type prop.
 			if (props.type === "Add-on") {
 				return (
 					<Button
@@ -251,17 +251,18 @@ export default function Mintcraft() {
 			<Grid item xs={6} sm={4} lg={3}>
 				<motion.div variants={DownloadItem}>
 					<Card>
-                        <CardMedia component="img" image={"/assets/mintcraft/packs/" + props.name + "/pack.svg"} />
+						<CardMedia
+							component="img"
+							image={"/assets/mintcraft/packs/" + props.name + "/pack.svg"}
+						/>
 						<CardContent>
 							<Typography variant="h4" component="h3">
-								{ props.type === "Full" ? (
-                                    props.name+" FullSauce"
-                                ) : (
-                                    props.name
-                                    )
-                                }.
+								{props.type === "Full" ? props.name + " FullSauce" : props.name}
+								.
 							</Typography>
-							<Typography variant="body2">Version {props.packVersion}</Typography>
+							<Typography variant="body2">
+								Version {props.packVersion}
+							</Typography>
 						</CardContent>
 						<Divider />
 						<CardActions>
@@ -274,8 +275,7 @@ export default function Mintcraft() {
 	}
 
 	return (
-		<
-		>
+		<>
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
@@ -521,7 +521,7 @@ export default function Mintcraft() {
 							<ToggleButton value="1.17">1.17</ToggleButton>
 							<ToggleButton value="1.16">1.16</ToggleButton>
 						</ToggleButtonGroup>
-                        <br />
+						<br />
 					</Box>
 					<Box sx={{ flexGrow: 1 }}>
 						<GameVersionHeading />
