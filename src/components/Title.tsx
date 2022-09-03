@@ -42,7 +42,7 @@ export default function Title(
 		topLevel?: string;
 	}>
 ) {
-    const t = useTranslations("Title");
+	const t = useTranslations("Title");
 	if (props.big) {
 		return (
 			<>
@@ -77,8 +77,9 @@ export default function Title(
 							src={props.src}
 							layout="fill"
 							objectFit="cover"
-                            alt=""
+							alt=""
 							style={{
+                                zIndex: -1,
 								animation: "background 5s cubic-bezier(0.4, 0, 0.2, 1)",
 								opacity: 0.5,
 								filter: "blur(5px)",
@@ -121,41 +122,41 @@ export default function Title(
 									<Box
 										sx={{
 											display: "flex",
-											justifyContent: "right",
+											justifyContent: { xs: "center", sm: "right" },
 										}}
 									>
 										{props.children}
 									</Box>
 								</motion.div>
 							</motion.div>
-							<Box
+						</Box>
+						<Box
 								position="absolute"
 								maxWidth="xl"
 								bottom={{xs: 72, sm: 32}}
 								left="50%"
 								sx={{ transform: "translateX(-50%)" }}
 							>
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ duration: 2, delay: 5 }}
+								style={{
+									display: "flex",
+								}}
+							>
+								<Typography variant="overline">{t("scroll")}</Typography>
 								<motion.div
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									transition={{ duration: 2, delay: 5 }}
-									style={{
-										display: "flex",
+									animate={{ y: [0, 10, 0] }}
+									transition={{
+										duration: 1,
+										ease: "easeInOut",
+										repeat: Infinity,
 									}}
 								>
-									<Typography variant="overline">{t("scroll")}</Typography>
-									<motion.div
-										animate={{ y: [0, 10, 0] }}
-										transition={{
-											duration: 1,
-											ease: "easeInOut",
-											repeat: Infinity,
-										}}
-									>
-										<ArrowDownward sx={{ ml: 1 }} />
-									</motion.div>
+									<ArrowDownward sx={{ ml: 1 }} />
 								</motion.div>
-							</Box>
+							</motion.div>
 						</Box>
 					</Container>
 				</Box>
