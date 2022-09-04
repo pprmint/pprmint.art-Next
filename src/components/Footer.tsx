@@ -26,9 +26,9 @@ export default function Footer() {
 		<NextIntlProvider>
 			<Box mt={8}>
 				<Divider />
-				<Container maxWidth="lg" sx={{ py: {xs: 2, sm: 4} }}>
+				<Container maxWidth="lg" sx={{ py: { xs: 2, sm: 4 } }}>
 					<Grid container>
-						<Grid item xs={12} md={10}>
+						<Grid item xs={12} sm={9}>
 							<Typography variant="body1" color="text.secondary">
 								{t("madeWith")}
 								<FavoriteTwoTone fontSize="inherit" color="error" />
@@ -39,11 +39,13 @@ export default function Footer() {
 								{"© "}
 								{new Date().getFullYear()} pprmint.
 							</Typography>
-							<Stack
-								direction={{ xs: "column", sm: "row" }}
-								spacing={2}
-							>
+							<Stack direction="row" spacing={2} mb={1}>
 								{/* Internal links */}
+								<Typography variant="body2">
+									<Link href="/privacy" scroll={false}>
+										{t("privacyPolicy")}
+									</Link>
+								</Typography>
 								<Typography variant="body2">
 									<Link
 										href={route}
@@ -62,15 +64,8 @@ export default function Footer() {
 										})}
 									</Link>
 								</Typography>
-								<Typography variant="body2">
-									<Link href="/privacy" scroll={false}>
-										{t("privacyPolicy")}
-									</Link>
-								</Typography>
-
-								<Divider orientation="vertical" flexItem />
-
-								{/* External links */}
+							</Stack>
+							<Stack direction="row" spacing={2}>
 								<Typography variant="body2">
 									<Link
 										className="external"
@@ -124,9 +119,9 @@ export default function Footer() {
 						<Grid
 							item
 							xs={0}
-							md={2}
+							sm={3}
 							sx={{
-								display: { xs: "none", md: "flex" },
+								display: { xs: "none", sm: "flex" },
 								justifyContent: "right",
 							}}
 						>
