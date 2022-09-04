@@ -27,7 +27,7 @@ export default function Home() {
 			sx={{
 				height: "100vh",
 				overflowY: "auto",
-                overflowX: "hidden",
+				overflowX: "hidden",
 				scrollSnapType: "y mandatory",
 			}}
 		>
@@ -61,6 +61,7 @@ export default function Home() {
 			</Box>
 			<Box
 				sx={{
+					position: "relative",
 					scrollSnapAlign: "start",
 					minHeight: "100vh",
 					display: "flex",
@@ -68,10 +69,92 @@ export default function Home() {
 					justifyContent: "center",
 				}}
 			>
-				<Container sx={{ textAlign: "center", position: "relative" }}>
+				<Container
+					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
+				>
 					<Typography variant="h2">{t("Content.Motion.heading")}</Typography>
 					<Typography variant="body1">{t("Content.Motion.text")}</Typography>
 				</Container>
+				<Box
+					position="absolute"
+					width="100vw"
+					height="100vh"
+					overflow="hidden"
+					sx={{ opacity: 0.5 }}
+				>
+					<motion.div
+						animate={{ y: [0, -150, 0], x: [0, 100, 0] }}
+						transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							bottom: -250,
+							right: -250,
+                            rotate: 34,
+						}}
+					>
+						<Image
+							src="/assets/home/motion/circle.svg"
+							width="1000px"
+							height="1000px"
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ y: [-150, 0, -150], x: [100, 0, 100] }}
+						transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							bottom: -350,
+							right: -350,
+                            rotate: 34,
+						}}
+					>
+						<Image
+							src="/assets/home/motion/rectangle.svg"
+							width="1000px"
+							height="1000px"
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ y: [0, -150, 0], x: [0, 100, 0] }}
+						transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							top: -250,
+							left: -450,
+                            rotate: 34,
+						}}
+					>
+						<Image
+							src="/assets/home/motion/whateverthefuckthisis.svg"
+							width="1000px"
+							height="1000px"
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ y: [-150, 0, -150], x: [100, 0, 100] }}
+						transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							top: -150,
+							left: -350,
+                            rotate: 34,
+						}}
+					>
+						<Image
+							src="/assets/home/motion/diamond.svg"
+							width="1000px"
+							height="1000px"
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+				</Box>
 			</Box>
 			<Box
 				sx={{

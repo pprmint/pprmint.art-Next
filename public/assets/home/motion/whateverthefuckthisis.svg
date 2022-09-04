@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 2050 2050" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-    <g transform="matrix(1,0,0,1,690.879,-2.92152)">
-        <g transform="matrix(1,0,0,7.67482,120,-6316.38)">
+<svg width="100%" height="100%" viewBox="0 0 75 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.488001,0,0,0.488001,-463.12,1.55786e-10)">
+        <g transform="matrix(1,0,0,7.67482,810.879,-6316.38)">
             <rect x="209.333" y="823" width="9.333" height="267" style="fill:rgb(17,119,204);"/>
         </g>
-        <g transform="matrix(1,0,0,1,-1548.76,601.588)">
-            <path d="M1891.96,423L1938.76,367L1826.76,367L1873.56,423L1826.76,479L1938.76,479L1891.96,423Z" style="fill:rgb(17,153,255);stroke:rgb(17,119,204);stroke-width:9.33px;"/>
+        <g transform="matrix(1,0,0,1,-857.879,601.588)">
+            <path d="M1891.96,423L1938.76,367L1826.76,367L1873.56,423L1826.76,479L1938.76,479L1891.96,423Z" style="fill:rgb(17,153,255);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-857.879,601.588)">
+            <path d="M1898.04,423L1948.74,362.333L1816.78,362.333L1867.48,423C1867.48,423 1816.78,483.667 1816.78,483.667L1948.74,483.667L1898.04,423ZM1885.88,423L1928.78,474.333C1928.78,474.333 1836.74,474.333 1836.74,474.333C1836.74,474.333 1879.64,423 1879.64,423L1836.74,371.667C1836.74,371.667 1928.78,371.667 1928.78,371.667C1928.78,371.667 1885.88,423 1885.88,423Z" style="fill:rgb(17,119,204);"/>
         </g>
     </g>
 </svg>
