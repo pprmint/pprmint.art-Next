@@ -79,7 +79,7 @@ export default function Title(
 							objectFit="cover"
 							alt=""
 							style={{
-                                zIndex: -1,
+								zIndex: -1,
 								animation: "background 5s cubic-bezier(0.4, 0, 0.2, 1)",
 								opacity: 0.5,
 								filter: "blur(5px)",
@@ -131,12 +131,12 @@ export default function Title(
 							</motion.div>
 						</Box>
 						<Box
-								position="absolute"
-								maxWidth="xl"
-								bottom={{xs: 72, sm: 32}}
-								left="50%"
-								sx={{ transform: "translateX(-50%)" }}
-							>
+							position="absolute"
+							maxWidth="xl"
+							bottom={{ xs: 72, sm: 32 }}
+							left="50%"
+							sx={{ transform: "translateX(-50%)" }}
+						>
 							<motion.div
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
