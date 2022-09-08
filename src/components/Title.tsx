@@ -95,9 +95,15 @@ export default function Title(
 							>
 								<motion.div variants={Text}>
 									<Typography
-										variant="h1top"
 										color="text.secondary"
-										sx={{ textShadow: "0 4px 10px #1115" }}
+										sx={{
+											textShadow: "0 4px 10px #1115",
+											lineHeight: 1.2,
+											marginBottom: "8px",
+											fontWeight: 300,
+											fontStyle: "italic",
+											fontSize: "2rem",
+										}}
 									>
 										{props.top}
 									</Typography>
@@ -177,7 +183,16 @@ export default function Title(
 				>
 					<motion.div variants={TextContainer} initial="hidden" animate="show">
 						<motion.div variants={Text}>
-							<Typography variant="h1top" color="text.secondary">
+							<Typography
+								color="text.secondary"
+								sx={{
+									lineHeight: 1.2,
+									marginBottom: "8px",
+									fontWeight: 300,
+									fontStyle: "italic",
+									fontSize: "2rem",
+								}}
+							>
 								{props.top}
 							</Typography>
 						</motion.div>

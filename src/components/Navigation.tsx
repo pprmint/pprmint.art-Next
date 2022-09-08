@@ -105,7 +105,7 @@ export default function Navigation() {
 								loop={false}
 								animationData={wordmarkJson}
 								play
-								style={{ height: 75 }}
+								style={{ height: 70 }}
 							/>
 						</Link>
 					</Box>

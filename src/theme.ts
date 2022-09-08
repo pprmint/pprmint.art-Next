@@ -44,47 +44,42 @@ let theme = createTheme({
 	typography: {
 		allVariants: {
 			fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
+            fontFeatureSettings: "'ss01'",
 		},
 		h1: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "Novela, Georgia, Times, serif",
 			color: "#eee",
-			fontWeight: "600",
-			lineHeight: 1.2,
-		},
-		h1top: {
-			lineHeight: 1.2,
-			marginBottom: "8px",
-			fontWeight: "300",
-			fontStyle: "italic",
-			fontSize: "2rem",
+			fontWeight: 900,
+            fontFeatureSettings: "'liga'",
+			lineHeight: 1,
 		},
 		h2: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			fontWeight: 500,
+			fontFamily: "Novela, Georgia, Times, serif",
+			fontWeight: 600,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h3: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			fontWeight: 500,
+			fontFamily: "Novela, Georgia, Times, serif",
+			fontWeight: 600,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h4: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			fontWeight: 500,
+			fontFamily: "Novela, Georgia, Times, serif",
+			fontWeight: 600,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h5: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			fontWeight: 500,
+			fontFamily: "Novela, Georgia, Times, serif",
+			fontWeight: 600,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h6: {
-			fontFamily: "Silka, Roboto, Helvetica, Arial, sans-serif",
-			fontWeight: 500,
+			fontFamily: "Novela, Georgia, Times, serif",
+			fontWeight: 600,
 			color: "#eee",
 			marginBottom: "8px",
 		},
@@ -185,24 +180,6 @@ let theme = createTheme({
 		borderRadius: 8,
 	},
 });
-
-declare module "@mui/material/styles" {
-	interface TypographyVariants {
-		h1top: React.CSSProperties;
-	}
-
-	// allow configuration using `createTheme`
-	interface TypographyVariantsOptions {
-		h1top?: React.CSSProperties;
-	}
-}
-
-// Update the Typography's variant prop options
-declare module "@mui/material/Typography" {
-	interface TypographyPropsVariantOverrides {
-		h1top: true;
-	}
-}
 
 theme = responsiveFontSizes(theme);
 
