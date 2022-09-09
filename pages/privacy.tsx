@@ -28,149 +28,145 @@ export default function PrivacyPolicy() {
 				bottom={t("Title.bottom")}
 			/>
 			<Container maxWidth="md">
-				<Typography variant="h2">{t("Content.Tldr.heading")}</Typography>
-				<Typography>{t("Content.Tldr.text")}</Typography>
-
-				<Divider sx={{ mt: 6, mb: 3 }} />
-
-				<Typography variant="h2">
-					{t("Content.General.heading")}
-				</Typography>
-				<Typography gutterBottom>
-					{t("Content.General.text1")}
-					<br />
-					{t("Content.General.text2")}
-					<br />
-					<Link
-						href=""
-						className="external"
-						color="secondary"
-						scroll={false}
-					>
-						{t.rich("Content.General.example", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<FiExternalLink />
-					</Link>
-				</Typography>
-
-				<Typography variant="h2">
-					{t("Content.Hosting.heading")}
-				</Typography>
-				<Typography gutterBottom>
-					{t.rich("Content.Hosting.text1", {
-						strong: (children) => <strong>{children}</strong>,
-					})}
-					<br />
-					{t.rich("Content.Hosting.text2", {
-						strong: (children) => <strong>{children}</strong>,
-					})}
-					<Container>
+				<section>
+					<Typography variant="h2">{t("Content.Tldr.heading")}</Typography>
+					<Typography>{t("Content.Tldr.text")}</Typography>
+					<Divider sx={{ mt: 6, mb: 3 }} />
+				</section>
+                
+				<section>
+					<Typography variant="h2">{t("Content.General.heading")}</Typography>
+					<Typography gutterBottom>
+						{t("Content.General.text1")}
 						<br />
-						{t.rich("Content.Hosting.Log.domain", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
+						{t("Content.General.text2")}
 						<br />
-						{t.rich("Content.Hosting.Log.ipAddress", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<br />
-						{t.rich("Content.Hosting.Log.accessTime", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<br />
-						{t.rich("Content.Hosting.Log.receivedFile", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<br />
-						{t.rich("Content.Hosting.Log.httpCode", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<br />
-						<Link
-							className="external"
-							color="secondary"
-							href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							HTTP response status codes - HTTP | MDN
-							<FiExternalLink />
-						</Link>
-						<br />
-						{t.rich("Content.Hosting.Log.userAgent", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<br />
-						<Link
-							className="external"
-							color="secondary"
-							href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							User-Agent - HTTP | MDN
-							<FiExternalLink />
-						</Link>
-					</Container>
-					<br />
-					{t("Content.Hosting.text3")}
-					<br />
-					{t("Content.Hosting.text4")}
-					<br />
-					<Stack direction="row" spacing={2}>
-						<Link
-							className="external"
-							color="secondary"
-							href="https://vercel.com/legal/privacy-policy"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							{t("Content.privacyPolicyOf", {
-								provider: "Vercel",
+						<Link href="" className="external" color="secondary" scroll={false}>
+							{t.rich("Content.General.example", {
+								strong: (children) => <strong>{children}</strong>,
 							})}
 							<FiExternalLink />
 						</Link>
+					</Typography>
+				</section>
+
+				<section>
+					<Typography variant="h2">{t("Content.Hosting.heading")}</Typography>
+					<Typography gutterBottom>
+						{t.rich("Content.Hosting.text1", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
+						{t.rich("Content.Hosting.text2", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<Container>
+							<br />
+							{t.rich("Content.Hosting.Log.domain", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+							<br />
+							{t.rich("Content.Hosting.Log.ipAddress", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+							<br />
+							{t.rich("Content.Hosting.Log.accessTime", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+							<br />
+							{t.rich("Content.Hosting.Log.receivedFile", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+							<br />
+							{t.rich("Content.Hosting.Log.httpCode", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+							<br />
+							<Link
+								className="external"
+								color="secondary"
+								href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								HTTP response status codes - HTTP | MDN
+								<FiExternalLink />
+							</Link>
+							<br />
+							{t.rich("Content.Hosting.Log.userAgent", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+							<br />
+							<Link
+								className="external"
+								color="secondary"
+								href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								User-Agent - HTTP | MDN
+								<FiExternalLink />
+							</Link>
+						</Container>
+						<br />
+						{t("Content.Hosting.text3")}
+						<br />
+						{t("Content.Hosting.text4")}
+						<br />
+						<Stack direction="row" spacing={2}>
+							<Link
+								className="external"
+								color="secondary"
+								href="https://vercel.com/legal/privacy-policy"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{t("Content.privacyPolicyOf", {
+									provider: "Vercel",
+								})}
+								<FiExternalLink />
+							</Link>
+							<Link
+								className="external"
+								color="secondary"
+								href="https://www.hetzner.com/legal/privacy-policy"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{t("Content.privacyPolicyOf", {
+									provider: "Hetzner",
+								})}
+								<FiExternalLink />
+							</Link>
+						</Stack>
+					</Typography>
+				</section>
+
+				<section>
+					<Typography variant="h2">{t("Content.Contact.heading")}</Typography>
+					<Typography gutterBottom>
+						{t.rich("Content.Contact.text1", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
+						{t("Content.Contact.text2")}
+						<br />
+						{t.rich("Content.Contact.text3", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+						<br />
 						<Link
 							className="external"
 							color="secondary"
-							href="https://www.hetzner.com/legal/privacy-policy"
+							href="https://www.fastmail.com/about/privacy/"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							{t("Content.privacyPolicyOf", {
-								provider: "Hetzner",
-							})}
+							{t("Content.privacyPolicyOf", { provider: "Fastmail" })}
 							<FiExternalLink />
 						</Link>
-					</Stack>
-				</Typography>
-
-				<Typography variant="h2">
-					{t("Content.Contact.heading")}
-				</Typography>
-				<Typography gutterBottom>
-					{t.rich("Content.Contact.text1", {
-						strong: (children) => <strong>{children}</strong>,
-					})}
-					<br />
-					{t("Content.Contact.text2")}
-					<br />
-					{t.rich("Content.Contact.text3", {
-						strong: (children) => <strong>{children}</strong>,
-					})}
-					<br />
-					<Link
-						className="external"
-						color="secondary"
-						href="https://www.fastmail.com/about/privacy/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						{t("Content.privacyPolicyOf", { provider: "Fastmail" })}
-						<FiExternalLink />
-					</Link>
-				</Typography>
+					</Typography>
+				</section>
 			</Container>
 			<Footer />
 		</>

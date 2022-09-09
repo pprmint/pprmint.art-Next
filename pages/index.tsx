@@ -89,13 +89,13 @@ export default function Home() {
 							position: "absolute",
 							bottom: -250,
 							right: -250,
-                            rotate: 34,
+							rotate: 34,
 						}}
 					>
 						<Image
 							src="/assets/home/motion/circle.svg"
-							width="1000px"
-							height="1000px"
+							width={1000}
+							height={1000}
 							alt=""
 							layout="fixed"
 						/>
@@ -107,13 +107,13 @@ export default function Home() {
 							position: "absolute",
 							bottom: -350,
 							right: -350,
-                            rotate: 34,
+							rotate: 34,
 						}}
 					>
 						<Image
 							src="/assets/home/motion/rectangle.svg"
-							width="1000px"
-							height="1000px"
+							width={1000}
+							height={1000}
 							alt=""
 							layout="fixed"
 						/>
@@ -125,13 +125,13 @@ export default function Home() {
 							position: "absolute",
 							top: -250,
 							left: -450,
-                            rotate: 34,
+							rotate: 34,
 						}}
 					>
 						<Image
 							src="/assets/home/motion/whateverthefuckthisis.svg"
-							width="1000px"
-							height="1000px"
+							width={1000}
+							height={1000}
 							alt=""
 							layout="fixed"
 						/>
@@ -143,13 +143,13 @@ export default function Home() {
 							position: "absolute",
 							top: -150,
 							left: -350,
-                            rotate: 34,
+							rotate: 34,
 						}}
 					>
 						<Image
 							src="/assets/home/motion/diamond.svg"
-							width="1000px"
-							height="1000px"
+							width={1000}
+							height={1000}
 							alt=""
 							layout="fixed"
 						/>
@@ -170,7 +170,10 @@ export default function Home() {
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
 				>
 					<Typography variant="h2">{t("Content.Code.heading")}</Typography>
-					<Typography variant="body1">{t("Content.Code.text")}</Typography>
+					<Typography
+						variant="body1"
+						dangerouslySetInnerHTML={{ __html: t.raw("Content.Code.text") }}
+					/>
 				</Container>
 				<Box
 					position="absolute"
@@ -184,14 +187,14 @@ export default function Home() {
 						transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
 						style={{
 							position: "absolute",
-							bottom: -200,
-							right: -400,
+							top: -250,
+							left: -550,
 						}}
 					>
 						<Image
 							src="/assets/home/code/tags.svg"
-							width="1000px"
-							height="1000px"
+							width={900}
+							height={900}
 							alt=""
 							layout="fixed"
 						/>
@@ -201,14 +204,32 @@ export default function Home() {
 						transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
 						style={{
 							position: "absolute",
-							bottom: -200,
-							right: -400,
+							top: -250,
+							left: -550,
 						}}
 					>
 						<Image
 							src="/assets/home/code/brackets.svg"
-							width="1000px"
-							height="1000px"
+							width={900}
+							height={900}
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ y: [0, 150, 0], x: [0, -50, 0] }}
+						transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							bottom: -50,
+							right: -50,
+                            rotate: 10,
+						}}
+					>
+						<Image
+							src="/assets/home/code/semicolon.svg"
+							width={207}
+							height={770}
 							alt=""
 							layout="fixed"
 						/>
