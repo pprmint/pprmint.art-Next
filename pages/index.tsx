@@ -20,15 +20,27 @@ import Footer from "src/components/Footer";
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
 
+function Gradient() {
+	return (
+		<Box
+			width="100%"
+			height="100%"
+			position="absolute"
+			zIndex={1}
+			sx={{ backgroundImage: "linear-gradient(#1116, #111f)" }}
+		/>
+	);
+}
+
 export default function Home() {
 	const t = useTranslations("Home");
 	return (
 		<Box
 			sx={{
-				height: "100vh",
-				overflowY: "auto",
-				overflowX: "hidden",
-				scrollSnapType: "y mandatory",
+				height: { xs: "100vh", sm: "unset" },
+				overflowY: { xs: "auto", sm: "unset" },
+				overflowX: { xs: "hidden" },
+				scrollSnapType: { xs: "y mandatory", sm: "none" },
 			}}
 		>
 			<Head
@@ -77,11 +89,12 @@ export default function Home() {
 				</Container>
 				<Box
 					position="absolute"
+					zIndex={0}
 					width="100vw"
 					height="100vh"
 					overflow="hidden"
-					sx={{ opacity: 0.5 }}
 				>
+					<Gradient />
 					<motion.div
 						animate={{ y: [0, -150, 0], x: [0, 100, 0] }}
 						transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -177,11 +190,12 @@ export default function Home() {
 				</Container>
 				<Box
 					position="absolute"
+					zIndex={0}
 					width="100vw"
 					height="100vh"
 					overflow="hidden"
-					sx={{ opacity: 0.5 }}
 				>
+					<Gradient />
 					<motion.div
 						animate={{ rotate: [0, -360] }}
 						transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
@@ -222,8 +236,8 @@ export default function Home() {
 						style={{
 							position: "absolute",
 							bottom: -50,
-							right: -50,
-                            rotate: 10,
+							right: -20,
+							rotate: 10,
 						}}
 					>
 						<Image
@@ -238,6 +252,7 @@ export default function Home() {
 			</Box>
 			<Box
 				sx={{
+					position: "relative",
 					scrollSnapAlign: "start",
 					minHeight: "100vh",
 					display: "flex",
@@ -245,14 +260,133 @@ export default function Home() {
 					justifyContent: "center",
 				}}
 			>
-				<Container sx={{ textAlign: "center", position: "relative" }}>
+				<Container
+					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
+				>
 					<Typography variant="h2">
 						{t("Content.Illustration.heading")}
 					</Typography>
-					<Typography variant="body1">
-						{t("Content.Illustration.text")}
-					</Typography>
+					<Typography
+						variant="body1"
+						dangerouslySetInnerHTML={{
+							__html: t.raw("Content.Illustration.text"),
+						}}
+					/>
 				</Container>
+				<Box
+					position="absolute"
+					zIndex={0}
+					width="100vw"
+					height="100vh"
+					overflow="hidden"
+				>
+					<Gradient />
+					<motion.div
+						animate={{ rotate: [0, -20, 0], y: [0, 50, 0], x: [0, -40, 40, 0] }}
+						transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							bottom: "10%",
+							left: "10%",
+						}}
+					>
+						<Image
+							src="/assets/home/vector/square.svg"
+							width={116}
+							height={116}
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ rotate: [0, 45, 0], y: [0, 50, 0], x: [0, 20, -20, 0] }}
+						transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							bottom: "20%",
+							right: -100,
+						}}
+					>
+						<Image
+							src="/assets/home/vector/circle.svg"
+							width={245}
+							height={245}
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ rotate: [0, 15, 0], y: [0, 50, 0], x: [0, -50, 50, 0] }}
+						transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							top: "5%",
+							left: -20,
+						}}
+					>
+						<Image
+							src="/assets/home/vector/curve.svg"
+							width={118}
+							height={209}
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ rotate: [0, -45, 0], y: [0, 50, 0], x: [0, 60, -60, 0] }}
+						transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							top: "15%",
+							left: "40%",
+						}}
+					>
+						<Image
+							src="/assets/home/vector/triangle.svg"
+							width={188}
+							height={166}
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ rotate: [0, 35, 0], y: [0, 50, 0], x: [0, 30, -30, 0] }}
+						transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+						style={{
+							position: "absolute",
+							top: 50,
+							right: "10%",
+						}}
+					>
+						<Image
+							src="/assets/home/vector/line.svg"
+							width={190}
+							height={23}
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+					<motion.div
+						animate={{ x: [0, 300, 100, -100, 0], y: [0, -100, 0, 100, 50, 0] }}
+						transition={{
+							x: { duration: 25, repeat: Infinity, ease: "easeInOut" },
+							y: { duration: 45, repeat: Infinity, ease: "easeInOut" },
+						}}
+						style={{
+							position: "absolute",
+							bottom: 200,
+							right: "25%",
+						}}
+					>
+						<Image
+							src="/assets/home/vector/cursor.svg"
+							width={47}
+							height={61}
+							alt=""
+							layout="fixed"
+						/>
+					</motion.div>
+				</Box>
 			</Box>
 			<Box sx={{ scrollSnapAlign: "end" }}>
 				<Footer />
