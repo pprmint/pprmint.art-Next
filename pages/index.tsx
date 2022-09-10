@@ -27,7 +27,7 @@ function Gradient() {
 			height="100%"
 			position="absolute"
 			zIndex={1}
-			sx={{ backgroundImage: "linear-gradient(#1116, #111f)" }}
+			sx={{ backgroundImage: "linear-gradient(#1116, #111e)" }}
 		/>
 	);
 }
@@ -236,7 +236,7 @@ export default function Home() {
 						style={{
 							position: "absolute",
 							bottom: -50,
-							right: -20,
+							right: -30,
 							rotate: 10,
 						}}
 					>
@@ -282,7 +282,11 @@ export default function Home() {
 				>
 					<Gradient />
 					<motion.div
-						animate={{ rotate: [0, -20, 0], y: [0, 50, 0], x: [0, -40, 40, 0] }}
+						animate={{
+							rotate: [0, -20, 0],
+							y: [0, 50, 0],
+							x: [0, -40, 40, 0],
+						}}
 						transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
 						style={{
 							position: "absolute",
@@ -299,7 +303,11 @@ export default function Home() {
 						/>
 					</motion.div>
 					<motion.div
-						animate={{ rotate: [0, 45, 0], y: [0, 50, 0], x: [0, 20, -20, 0] }}
+						animate={{
+							rotate: [0, 45, 0],
+							y: [0, 50, 0],
+							x: [0, 20, -20, 0],
+						}}
 						transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
 						style={{
 							position: "absolute",
@@ -316,7 +324,11 @@ export default function Home() {
 						/>
 					</motion.div>
 					<motion.div
-						animate={{ rotate: [0, 15, 0], y: [0, 50, 0], x: [0, -50, 50, 0] }}
+						animate={{
+							rotate: [0, 15, 0],
+							y: [0, 50, 0],
+							x: [0, -50, 50, 0],
+						}}
 						transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
 						style={{
 							position: "absolute",
@@ -333,7 +345,11 @@ export default function Home() {
 						/>
 					</motion.div>
 					<motion.div
-						animate={{ rotate: [0, -45, 0], y: [0, 50, 0], x: [0, 60, -60, 0] }}
+						animate={{
+							rotate: [0, -45, 0],
+							y: [0, 50, 0],
+							x: [0, 60, -60, 0],
+						}}
 						transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
 						style={{
 							position: "absolute",
@@ -350,7 +366,11 @@ export default function Home() {
 						/>
 					</motion.div>
 					<motion.div
-						animate={{ rotate: [0, 35, 0], y: [0, 50, 0], x: [0, 30, -30, 0] }}
+						animate={{
+							rotate: [0, 35, 0],
+							y: [0, 50, 0],
+							x: [0, 30, -30, 0],
+						}}
 						transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
 						style={{
 							position: "absolute",
@@ -367,7 +387,10 @@ export default function Home() {
 						/>
 					</motion.div>
 					<motion.div
-						animate={{ x: [0, 300, 100, -100, 0], y: [0, -100, 0, 100, 50, 0] }}
+						animate={{
+							x: [0, 300, 100, -100, 0],
+							y: [0, -100, 0, 100, 50, 0],
+						}}
 						transition={{
 							x: { duration: 25, repeat: Infinity, ease: "easeInOut" },
 							y: { duration: 45, repeat: Infinity, ease: "easeInOut" },
