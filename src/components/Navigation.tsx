@@ -95,7 +95,7 @@ export default function Navigation() {
 				color="transparent"
 				elevation={0}
 				sx={{
-					backgroundImage: "linear-gradient(#111f, #1110)",
+					backgroundImage: "linear-gradient(#111a, #1110)",
 				}}
 			>
 				<Toolbar>
