@@ -66,7 +66,6 @@ export default function Title(
 				<Box
 					style={{
 						minHeight: "100vh",
-						position: "relative",
 						display: "flex",
 						alignItems: "center",
 						overflow: "hidden",
@@ -138,9 +137,9 @@ export default function Title(
 						</Box>
 						<Box
 							position="absolute"
-							maxWidth="xl"
-							bottom={{ xs: 72, sm: 32 }}
-							left="50%"
+                            width="100%"
+							bottom={32}
+                            left="50%"
 							sx={{ transform: "translateX(-50%)" }}
 						>
 							<motion.div
@@ -149,6 +148,7 @@ export default function Title(
 								transition={{ duration: 2, delay: 5 }}
 								style={{
 									display: "flex",
+                                    justifyContent: "center",
 								}}
 							>
 								<Typography variant="overline">{t("scroll")}</Typography>
