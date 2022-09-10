@@ -244,7 +244,7 @@ export function Vector() {
 				style={{
 					position: "absolute",
 					top: "15%",
-					left: "40%",
+					left: "35%",
 				}}
 			>
 				<Image
