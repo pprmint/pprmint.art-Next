@@ -65,6 +65,7 @@ export default function Title(
 				`}</style>
 				<Box
 					style={{
+                        position: "relative",
 						minHeight: "100vh",
 						display: "flex",
 						alignItems: "center",
