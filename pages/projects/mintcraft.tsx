@@ -353,12 +353,19 @@ export default function Mintcraft() {
 										filter: "drop-shadow(0 5px 10px #0005)",
 									}}
 								>
-									<Image
-                                        alt={t("Content.About.Dark.imgAlt")}
-										src={"/assets/mintcraft/" + locale + "/furnace.png"}
-										width="500px"
-										height="500px"
-									/>
+									<motion.div
+										initial={{ opacity: 0, x: 50 }}
+										whileInView={{ opacity: 1, x: 0 }}
+										viewport={{ once: true }}
+                                        transition={{duration: 1, ease: "circOut"}}
+									>
+										<Image
+											alt={t("Content.About.Dark.imgAlt")}
+											src={"/assets/mintcraft/" + locale + "/furnace.png"}
+											width="500px"
+											height="500px"
+										/>
+									</motion.div>
 								</Parallax>
 							</Grid>
 						</Grid>
@@ -417,12 +424,19 @@ export default function Mintcraft() {
 										filter: "drop-shadow(0 5px 10px #0005)",
 									}}
 								>
-									<Image
-                                        alt={t("Content.About.Consistent.imgAlt")}
-										src={"/assets/mintcraft/" + locale + "/beacon.png"}
-										width="500px"
-										height="500px"
-									/>
+									<motion.div
+										initial={{ opacity: 0, x: 50 }}
+										whileInView={{ opacity: 1, x: 0 }}
+										viewport={{ once: true }}
+                                        transition={{duration: 1, ease: "circOut"}}
+									>
+										<Image
+											alt={t("Content.About.Consistent.imgAlt")}
+											src={"/assets/mintcraft/" + locale + "/beacon.png"}
+											width="500px"
+											height="500px"
+										/>
+									</motion.div>
 								</Parallax>
 							</Grid>
 						</Grid>
@@ -487,12 +501,19 @@ export default function Mintcraft() {
 										filter: "drop-shadow(0 5px 10px #0005)",
 									}}
 								>
-									<Image
-                                        alt={t("Content.About.Modern.imgAlt")}
-										src={"/assets/mintcraft/" + locale + "/inventory.png"}
-										width="1000px"
-										height="500px"
-									/>
+									<motion.div
+										initial={{ opacity: 0, x: 50 }}
+										whileInView={{ opacity: 1, x: 0 }}
+										viewport={{ once: true }}
+                                        transition={{duration: 1, ease: "circOut"}}
+									>
+										<Image
+											alt={t("Content.About.Modern.imgAlt")}
+											src={"/assets/mintcraft/" + locale + "/inventory.png"}
+											width="1000px"
+											height="500px"
+										/>
+									</motion.div>
 								</Parallax>
 							</Grid>
 						</Grid>
