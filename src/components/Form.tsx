@@ -49,7 +49,7 @@ export default function ContactForm() {
 						onChange={handleSubject}
 					>
                         {Subject.map((subject) => (
-                            <MenuItem value={subject}>{t("Subject."+subject)}</MenuItem>
+                            <MenuItem key={subject} value={subject}>{t("Subject."+subject)}</MenuItem>
                         ))}
 					</Select>
 				</FormControl>
