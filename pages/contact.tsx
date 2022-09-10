@@ -11,6 +11,7 @@ import Footer from "src/components/Footer";
 
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
+import ContactForm from "src/components/Form";
 
 export default function Contact() {
 	const t = useTranslations("Contact");
@@ -22,6 +23,9 @@ export default function Contact() {
 				ogImg="index.png"
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
+			<Container>
+				<ContactForm />
+			</Container>
 			<Footer />
 		</>
 	);

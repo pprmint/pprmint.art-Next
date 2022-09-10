@@ -107,12 +107,15 @@ let theme = createTheme({
 			styleOverrides: {
 				elevation0: {
 					background: "var(--backgroundPrimary)",
+					backgroundImage: "none !important",
 				},
 				elevation1: {
 					background: "var(--backgroundSecondary)",
+					backgroundImage: "none !important",
 				},
 				elevation2: {
 					background: "var(--backgroundTertiary)",
+					backgroundImage: "none !important",
 				},
 				outlined: {
 					borderWidth: "2px !important",
@@ -175,6 +178,17 @@ let theme = createTheme({
 				},
 			},
 		},
+        MuiOutlinedInput: {
+            styleOverrides: {
+                notchedOutline: {
+                    borderWidth: 2,
+                    borderColor: "#333",
+                    '&:hover': {
+                        borderColor: "#444 !important",
+                    },
+                },
+            },
+        },
 	},
 	shape: {
 		borderRadius: 8,

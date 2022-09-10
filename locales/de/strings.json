@@ -23,6 +23,26 @@
 		"privacyPolicy": "Datenschutzerklärung",
 		"switchLocale": "Switch to English"
 	},
+	"Form": {
+		"Email": {
+			"label": "Email",
+			"placeholder": "mustermax@ppmail.biz"
+		},
+		"Message": {
+			"label": "Nachricht",
+			"placeholder": "Ich sag dir was; Der Knopf hier unten macht absolut gar nix, alsooo... spar's dir."
+		},
+		"Name": {
+			"label": "Name",
+			"placeholder": "Max Mustermann"
+		},
+		"Subject": {
+			"commission": "Auftragsanfrage",
+			"general": "Allgemeine Frage",
+			"label": "Betreff",
+			"privacy": "Datenschutz"
+		}
+	},
 	"Gallery": {
 		"Head": {
 			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",

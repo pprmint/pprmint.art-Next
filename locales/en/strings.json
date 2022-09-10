@@ -23,6 +23,26 @@
 		"privacyPolicy": "Privacy policy",
 		"switchLocale": "Zu Deutsch wechseln"
 	},
+	"Form": {
+		"Email": {
+			"label": "Email",
+			"placeholder": "johns.d@ppmail.biz"
+		},
+		"Message": {
+			"label": "Message",
+			"placeholder": "Tell you what, the button below doesn't do anything, soooo... yeah don't bother."
+		},
+		"Name": {
+			"label": "Name",
+			"placeholder": "John Doe"
+		},
+		"Subject": {
+			"commission": "Commission request",
+			"general": "General question",
+			"label": "Subject",
+			"privacy": "Privacy"
+		}
+	},
 	"Gallery": {
 		"Head": {
 			"description": "This page is not done yet. Check back later.",

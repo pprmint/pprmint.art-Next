@@ -19,7 +19,7 @@ import Footer from "src/components/Footer";
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
 
-import { Motion, Vector, Code } from "src/components/backgrounds";
+import { Motion, Code, Vector } from "src/components/backgrounds";
 
 const TextCont = {
 	hidden: { opacity: 0 },
@@ -27,7 +27,7 @@ const TextCont = {
 		opacity: 1,
 		transition: {
 			duration: 0,
-			staggerChildren: 0.1,
+			staggerChildren: 0.075,
 		},
 	},
 };
@@ -40,7 +40,7 @@ const Text = {
 	},
 };
 
-function FullscreenScrollContainer(props: React.PropsWithChildren) {
+function PageScrollCont(props: React.PropsWithChildren) {
 	return (
 		<Box
 			sx={{
@@ -96,7 +96,31 @@ export default function Home() {
 					</Button>
 				</Title>
 			</Box>
-			<FullscreenScrollContainer>
+            {/* Vector stuff */}
+            <PageScrollCont>
+				<Container
+					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
+				>
+					<motion.div variants={TextCont} initial="hidden" whileInView="show">
+						<motion.div variants={Text}>
+							<Typography variant="h2">
+								{t("Content.Illustration.heading")}
+							</Typography>
+						</motion.div>
+						<motion.div variants={Text}>
+							<Typography
+								variant="body1"
+								dangerouslySetInnerHTML={{
+									__html: t.raw("Content.Illustration.text"),
+								}}
+							/>
+						</motion.div>
+					</motion.div>
+				</Container>
+				<Vector />
+			</PageScrollCont>
+            {/* Motion design */}
+			<PageScrollCont>
 				<Container
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
 				>
@@ -114,35 +138,26 @@ export default function Home() {
 					</motion.div>
 				</Container>
 				<Motion />
-			</FullscreenScrollContainer>
-			<FullscreenScrollContainer>
+			</PageScrollCont>
+			{/* Code */}
+            <PageScrollCont>
 				<Container
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
 				>
-					<Typography variant="h2">{t("Content.Code.heading")}</Typography>
-					<Typography
-						variant="body1"
-						dangerouslySetInnerHTML={{ __html: t.raw("Content.Code.text") }}
-					/>
+					<motion.div variants={TextCont} initial="hidden" whileInView="show">
+						<motion.div variants={Text}>
+							<Typography variant="h2">{t("Content.Code.heading")}</Typography>
+						</motion.div>
+						<motion.div variants={Text}>
+							<Typography
+								variant="body1"
+								dangerouslySetInnerHTML={{ __html: t.raw("Content.Code.text") }}
+							/>
+						</motion.div>
+					</motion.div>
 				</Container>
 				<Code />
-			</FullscreenScrollContainer>
-			<FullscreenScrollContainer>
-				<Container
-					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
-				>
-					<Typography variant="h2">
-						{t("Content.Illustration.heading")}
-					</Typography>
-					<Typography
-						variant="body1"
-						dangerouslySetInnerHTML={{
-							__html: t.raw("Content.Illustration.text"),
-						}}
-					/>
-				</Container>
-				<Vector />
-			</FullscreenScrollContainer>
+			</PageScrollCont>
 			<Box sx={{ scrollSnapAlign: "end" }}>
 				<Footer />
 			</Box>
