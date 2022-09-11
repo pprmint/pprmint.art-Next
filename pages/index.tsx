@@ -62,10 +62,10 @@ export default function Home() {
 	return (
 		<Box
 			sx={{
-				height: { xs: "100vh", sm: "unset" },
-				overflowY: { xs: "auto", sm: "unset" },
-				overflowX: { xs: "hidden" },
-				scrollSnapType: { xs: "y mandatory", sm: "none" },
+				height: "100vh",
+				overflowY: "auto",
+				overflowX: "hidden",
+				scrollSnapType: "y mandatory",
 			}}
 		>
 			<Head
@@ -96,8 +96,8 @@ export default function Home() {
 					</Button>
 				</Title>
 			</Box>
-            {/* Vector stuff */}
-            <PageScrollCont>
+			{/* Vector stuff */}
+			<PageScrollCont>
 				<Container
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
 				>
@@ -119,7 +119,7 @@ export default function Home() {
 				</Container>
 				<Vector />
 			</PageScrollCont>
-            {/* Motion design */}
+			{/* Motion design */}
 			<PageScrollCont>
 				<Container
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
@@ -140,7 +140,7 @@ export default function Home() {
 				<Motion />
 			</PageScrollCont>
 			{/* Code */}
-            <PageScrollCont>
+			<PageScrollCont>
 				<Container
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
 				>
