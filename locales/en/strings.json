@@ -8,6 +8,39 @@
 		"title": "Nothing's here."
 	},
 	"Contact": {
+		"Form": {
+			"Email": {
+				"label": "Email",
+				"placeholder": "johns.d@ppmail.biz"
+			},
+			"Message": {
+				"label": "Message",
+				"placeholder": "Tell you what, the button below doesn't do anything, soooo... yeah don't bother."
+			},
+			"Name": {
+				"label": "Name",
+				"placeholder": "John Doe"
+			},
+			"Subject": {
+				"Dialog": {
+					"General": {
+						"text": "I don't actually offer any commissions yet. I first need to figure out some stuff for this and ask around what's the best way to do commissions, payment, all that stuff.",
+						"title": "Got a confession to make."
+					},
+					"oki": "Alrighty",
+					"title": "Commission request info."
+				},
+				"commission": "Commission request",
+				"commissionAlert": "Before you submit a request, make sure to read my commission guidelines.",
+				"commissionAlertButton": "View guidelines",
+				"general": "General question",
+				"label": "Subject",
+				"privacy": "Privacy"
+			},
+			"submit": "Submit nothing",
+			"submitSnackbar": "Congrats! Nothing happened.",
+			"submitSnackbarButton": "Sick"
+		},
 		"Head": {
 			"description": "This page is not done yet. Check back later.",
 			"title": "Contact."
@@ -22,26 +55,6 @@
 		"madeWith": "Made with ",
 		"privacyPolicy": "Privacy policy",
 		"switchLocale": "Zu Deutsch wechseln"
-	},
-	"Form": {
-		"Email": {
-			"label": "Email",
-			"placeholder": "johns.d@ppmail.biz"
-		},
-		"Message": {
-			"label": "Message",
-			"placeholder": "Tell you what, the button below doesn't do anything, soooo... yeah don't bother."
-		},
-		"Name": {
-			"label": "Name",
-			"placeholder": "John Doe"
-		},
-		"Subject": {
-			"commission": "Commission request",
-			"general": "General question",
-			"label": "Subject",
-			"privacy": "Privacy"
-		}
 	},
 	"Gallery": {
 		"Head": {

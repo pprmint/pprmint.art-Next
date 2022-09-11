@@ -24,6 +24,7 @@
 body {
 	width: 100vw;
 	overflow-x: hidden;
+    padding-right: 0 !important; // Still no clue why MUI does whatever it does when opening menus or dialogs.
 }
 
 .section {

@@ -151,6 +151,27 @@ let theme = createTheme({
 				},
 			},
 		},
+		MuiDialog: {
+			styleOverrides: {
+				paper: {
+					background: "#333",
+				},
+			},
+		},
+		MuiDialogTitle: {
+			styleOverrides: {
+				root: {
+					marginBottom: 0,
+				},
+			},
+		},
+		MuiBackdrop: {
+			styleOverrides: {
+				root: {
+					backgroundColor: "#111a",
+				},
+			},
+		},
 		MuiBottomNavigationAction: {
 			styleOverrides: {
 				root: {
