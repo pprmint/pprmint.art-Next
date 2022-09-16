@@ -24,14 +24,14 @@
 			"Subject": {
 				"Dialog": {
 					"General": {
-						"text": "Ich biete noch keine Auftragsarbeiten an. Zuerst muss ich noch etwas Zeugs klären und umherfragen, wie man Aufträge am besten annimmt, bezahlen lässt, sowas.",
-						"title": "Muss was gestehen."
+						"text": "Ich biete noch keine Kommissionen an. Zuerst muss ich noch etwas Zeugs klären und umherfragen, wie man solche Aufträge am besten annimmt, bezahlen lässt, sowas.",
+						"title": "Ich muss was gestehen."
 					},
 					"oki": "Alles klar",
-					"title": "Infos zu Auftragsanfragen."
+					"title": "Infos zu Kommissionen."
 				},
-				"commission": "Auftragsanfrage",
-				"commissionAlert": "Sieh dir bitte vor dem Versenden einer Anfrage meine Auftragsrichtlinien an.",
+				"commission": "Kommissionsanfrage",
+				"commissionAlert": "Sieh dir bitte vor dem Versenden einer Anfrage meine Kommissionsbedingungen an.",
 				"commissionAlertButton": "Richtlinien ansehen",
 				"general": "Allgemeine Frage",
 				"label": "Betreff",
@@ -92,7 +92,7 @@
 		"Title": {
 			"bottom": "Guten heute<br /> und willkommen.",
 			"button": "Repo ansehen",
-			"description": "Ich habe mich endlich dazu gerissen, mich mit Next.js zu beschäftigen und meine Website damit neu aufzubauen. Die aktuelle React-Seite wird noch für einige Zeit online bleiben, fürs Erste aber keine großen Updates erhalten.",
+			"description": "Ich habe mich endlich dazu durchgerungen, mich mit Next.js zu beschäftigen und meine Website damit neu aufzubauen. Die aktuelle React-Seite wird noch für einige Zeit online bleiben, fürs Erste aber keine großen Updates erhalten.",
 			"top": "Guten heute."
 		}
 	},
