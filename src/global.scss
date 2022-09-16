@@ -32,8 +32,29 @@ body {
 }
 
 ::selection {
-	background-color: #0c6;
+	background-color: var(--greenPrimary);
 	color: #111;
+}
+
+.selection {
+    &.blue {
+        ::selection {
+            background-color: var(--bluePrimary);
+            color: #111;
+        }
+    }
+    &.red {
+        ::selection {
+            background-color: var(--redPrimary);
+            color: #111;
+        }
+    }
+    &.yellow {
+        ::selection {
+            background-color: var(--yellowPrimary);
+            color: #111;
+        }
+    }
 }
 
 :focus-visible {

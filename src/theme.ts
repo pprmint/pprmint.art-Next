@@ -47,9 +47,10 @@ let theme = createTheme({
 			fontFeatureSettings: "'ss01'",
 		},
 		h1: {
-			fontFamily: "Silka, Georgia, Times, serif",
+			fontFamily: "Salome, Georgia, Times, serif",
+            fontStyle: "italic",
 			color: "#eee",
-			fontWeight: 600,
+			fontWeight: 400,
 			fontFeatureSettings: "'liga'",
 			lineHeight: 1,
 		},

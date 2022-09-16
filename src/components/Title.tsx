@@ -1,5 +1,5 @@
 import { GetStaticPropsContext } from "next";
-import { Typography, Container, Box } from "@mui/material";
+import { Typography, Container, Box, Grid } from "@mui/material";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -37,6 +37,7 @@ export default function Title(
 		top: string;
 		bottom: string;
 		big?: boolean;
+		selection?: string;
 		body?: string;
 		src?: string;
 		topLevel?: string;
@@ -49,7 +50,7 @@ export default function Title(
 				<style jsx>{`
 					@keyframes background {
 						from {
-							filter: blur(10px);
+							filter: blur(5px);
 							opacity: 0;
 							scale: 1.1;
 						}
@@ -57,15 +58,18 @@ export default function Title(
 							opacity: 0.5;
 						}
 						to {
-							filter: blur(5px);
+							filter: blur(0px);
 							opacity: 0.5;
 							scale: 1;
 						}
 					}
 				`}</style>
 				<Box
+                    className={props.selection && (
+                        "selection " + props.selection
+                    )}
 					style={{
-                        position: "relative",
+						position: "relative",
 						minHeight: "100vh",
 						display: "flex",
 						alignItems: "center",
@@ -78,69 +82,84 @@ export default function Title(
 							layout="fill"
 							objectFit="cover"
 							alt=""
+							quality={100}
 							style={{
 								zIndex: -1,
 								animation: "background 5s cubic-bezier(0.4, 0, 0.2, 1)",
 								opacity: 0.5,
-								filter: "blur(5px)",
 							}}
 						/>
 					)}
 					<Container maxWidth="xl">
-						<Box>
-							<motion.div
-								variants={TextContainer}
-								initial="hidden"
-								animate="show"
+						<motion.div
+							variants={TextContainer}
+							initial="hidden"
+							animate="show"
+						>
+							<Grid
+								container
+								spacing={{ xs: 2, lg: 8 }}
+								sx={{ alignItems: "center" }}
 							>
-								<motion.div variants={Text}>
-									<Typography
-										color="text.secondary"
-										sx={{
-											textShadow: "0 4px 10px #1115",
-											lineHeight: 1.2,
-											marginBottom: "8px",
-											fontWeight: 300,
-											fontStyle: "italic",
-											fontSize: "2rem",
-										}}
-									>
-										{props.top}
-									</Typography>
-								</motion.div>
-								<motion.div variants={Text}>
-									<Typography
-										variant="h1"
-										gutterBottom
-										sx={{
-											textShadow: "0 4px 10px #1115",
-										}}
-									>
-										{props.bottom}
-									</Typography>
-								</motion.div>
-								<motion.div variants={Text}>
-									<Typography variant="body1" gutterBottom>
-										{props.body}
-									</Typography>
-								</motion.div>
-								<motion.div variants={Text}>
-									<Box
-										sx={{
-											display: "flex",
-											justifyContent: { xs: "center", sm: "right" },
-										}}
-									>
-										{props.children}
-									</Box>
-								</motion.div>
-							</motion.div>
-						</Box>
+								<Grid item xs={12} lg={6}>
+									<motion.div variants={Text}>
+										<Typography
+											variant="h1"
+											gutterBottom
+											textAlign={{ xs: "center", lg: "right" }}
+											sx={{
+												lineHeight: 0.75,
+												textShadow: "0 4px 10px #1115",
+											}}
+										>
+											{props.top}
+										</Typography>
+									</motion.div>
+									<motion.div variants={Text}>
+										<Typography
+											color="text.secondary"
+											textAlign={{ xs: "center", lg: "right" }}
+											sx={{
+												textShadow: "0 4px 10px #1115",
+												lineHeight: 1.2,
+												marginBottom: "8px",
+												fontWeight: 300,
+												fontStyle: "italic",
+												fontSize: "2rem",
+											}}
+										>
+											{props.bottom}
+										</Typography>
+									</motion.div>
+								</Grid>
+								<Grid item xs={12} lg={6}>
+									<motion.div variants={Text}>
+										<Typography
+											variant="body1"
+											textAlign={{ xs: "center", lg: "left" }}
+											gutterBottom
+										>
+											{props.body}
+										</Typography>
+									</motion.div>
+									<motion.div variants={Text}>
+										<Box
+											sx={{
+												display: "flex",
+												justifyContent: { xs: "center", lg: "left" },
+											}}
+										>
+											{props.children}
+										</Box>
+									</motion.div>
+								</Grid>
+							</Grid>
+						</motion.div>
 						<Box
 							position="absolute"
-                            width="100%"
+							width="100%"
 							bottom={32}
-                            left="50%"
+							left="50%"
 							sx={{ transform: "translateX(-50%)" }}
 						>
 							<motion.div
@@ -149,7 +168,7 @@ export default function Title(
 								transition={{ duration: 2, delay: 5 }}
 								style={{
 									display: "flex",
-                                    justifyContent: "center",
+									justifyContent: "center",
 								}}
 							>
 								<Typography variant="overline">{t("scroll")}</Typography>

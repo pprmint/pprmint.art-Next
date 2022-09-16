@@ -8,6 +8,7 @@ import createEmotionCache from "src/createEmotionCache";
 import { NextIntlProvider } from "next-intl";
 
 import "fonts/Silka/silka.css";
+import "fonts/Salome/salome.css";
 import "fonts/BasierCircle/basier_circle.css";
 import "fonts/BasierCircleMono/basier_circle_mono.css"; // No clue where I might use this one.
 

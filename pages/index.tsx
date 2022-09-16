@@ -40,9 +40,10 @@ const Text = {
 	},
 };
 
-function PageScrollCont(props: React.PropsWithChildren) {
+function PageScrollCont(props: React.PropsWithChildren<{ selection: string }>) {
 	return (
 		<Box
+            className={"selection "+props.selection}
 			sx={{
 				position: "relative",
 				scrollSnapAlign: "start",
@@ -76,13 +77,14 @@ export default function Home() {
 			<Box sx={{ scrollSnapAlign: "start" }}>
 				<Title
 					big
+					selection="blue"
 					top={t("Title.top")}
 					bottom={t("Title.bottom")}
 					body={t("Title.description")}
-					src="https://media.pprmint.art/code.jpg"
+					src="https://media.pprmint.art/NextJS.png"
 				>
 					<Button
-						variant="contained"
+						variant="outlined"
 						component={Link}
 						size="large"
 						color="secondary"
@@ -97,7 +99,7 @@ export default function Home() {
 				</Title>
 			</Box>
 			{/* Vector stuff */}
-			<PageScrollCont>
+			<PageScrollCont selection="green">
 				<Container
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
 				>
@@ -120,7 +122,7 @@ export default function Home() {
 				<Vector />
 			</PageScrollCont>
 			{/* Motion design */}
-			<PageScrollCont>
+			<PageScrollCont selection="blue">
 				<Container
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
 				>
@@ -140,7 +142,7 @@ export default function Home() {
 				<Motion />
 			</PageScrollCont>
 			{/* Code */}
-			<PageScrollCont>
+			<PageScrollCont selection="red">
 				<Container
 					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
 				>
