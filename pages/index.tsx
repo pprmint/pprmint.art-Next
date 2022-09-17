@@ -81,7 +81,7 @@ export default function Home() {
 					top={t("Title.top")}
 					bottom={t("Title.bottom")}
 					body={t("Title.description")}
-					src="https://media.pprmint.art/NextJS.png"
+					src="https://media.pprmint.art/Next_js.png"
 				>
 					<Button
 						variant="outlined"
