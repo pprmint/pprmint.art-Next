@@ -69,6 +69,18 @@ export default function Footer() {
 								<Typography variant="body2">
 									<Link
 										className="external"
+										href="https://twitter.com/npprmint"
+										target="_blank"
+										rel="noopener noreferrer"
+										color="secondary"
+									>
+										Twitter
+										<ArrowOutward fontSize="inherit" />
+									</Link>
+								</Typography>
+								<Typography variant="body2">
+									<Link
+										className="external"
 										href="https://youtube.com/c/pprmint"
 										target="_blank"
 										rel="noopener noreferrer"
