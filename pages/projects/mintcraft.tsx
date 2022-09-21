@@ -71,7 +71,7 @@ const v119 = [
 	},
 	{
 		name: "Mintcraft",
-		packVersion: "1.6",
+		packVersion: "1.6.1",
 	},
 	{
 		name: "MintBit",
