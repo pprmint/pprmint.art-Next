@@ -8,4 +8,13 @@ module.exports = {
         locales: ["en", "de"],
         defaultLocale: "en",
     },
+    async redirects() {
+        return [
+            {
+                source: "/mintcraft",
+                destination: "/projects/mintcraft",
+                permanent: true,
+            },
+        ];
+    },
 };
