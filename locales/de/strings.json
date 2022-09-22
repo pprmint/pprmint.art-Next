@@ -83,6 +83,10 @@
 			"Motion": {
 				"heading": "Ich setze Keyframes.",
 				"text": "Leute flippen aus, wenn sich was Rundes dreht."
+			},
+			"Polygons": {
+				"heading": "Ich verzerre Polygone.",
+				"text": "Und bin für's erste zu faul, hierfür nen Hintergrund zu erstellen."
 			}
 		},
 		"Head": {
@@ -152,6 +156,38 @@
 			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
 			"title": "Projekte."
 		},
+		"MintAlt": {
+			"Content": {
+				"Download": {
+					"commonTitle": "Downloads für",
+					"download": "Herunterladen"
+				}
+			},
+			"Head": {
+				"description": "Eine von Material inspirierte Schriftart.",
+				"title": "MintAlternative."
+			},
+			"Title": {
+				"bottom": "MintAlternative.",
+				"top": "Eine von Material inspirierte Schriftart."
+			}
+		},
+		"Mintbit": {
+			"Content": {
+				"Download": {
+					"commonTitle": "Downloads für",
+					"download": "Herunterladen"
+				}
+			},
+			"Head": {
+				"description": "Eine Pixel-Schriftart.",
+				"title": "Eine Pixel-Schrift."
+			},
+			"Title": {
+				"bottom": "Mintbit.",
+				"top": "Eine Pixel-Schrift."
+			}
+		},
 		"Mintcraft": {
 			"Content": {
 				"About": {
@@ -195,6 +231,38 @@
 			"Title": {
 				"bottom": "Mintcraft.",
 				"top": "Ein Minecraft-Resourcenpaket."
+			}
+		},
+		"Mintsans": {
+			"Content": {
+				"Download": {
+					"commonTitle": "Downloads für",
+					"download": "Herunterladen"
+				}
+			},
+			"Head": {
+				"description": "Eine serifenlose Schriftart.",
+				"title": "Mintsans."
+			},
+			"Title": {
+				"bottom": "Mintsans.",
+				"top": "Eine serifenlose Schriftart."
+			}
+		},
+		"StartMenuTiles": {
+			"Content": {
+				"Download": {
+					"commonTitle": "Downloads für",
+					"download": "Herunterladen"
+				}
+			},
+			"Head": {
+				"description": "Eigene und einheitliche Kacheln für dein Start-Menü, wenn du TileIconifier oder Start11 verwendest.",
+				"title": "Start-Menü-Kacheln."
+			},
+			"Title": {
+				"bottom": "Start-Menü-Kacheln.",
+				"top": "Endlich einheitlich."
 			}
 		},
 		"Title": {

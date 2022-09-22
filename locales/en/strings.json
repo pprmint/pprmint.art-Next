@@ -83,6 +83,10 @@
 			"Motion": {
 				"heading": "I place keyframes.",
 				"text": "Motion graphics and design, as well as animation."
+			},
+			"Polygons": {
+				"heading": "I distort polygons.",
+				"text": "And am too lazy for a background here, for now."
 			}
 		},
 		"Head": {
@@ -152,6 +156,38 @@
 			"description": "This page is not done yet. Check back later.",
 			"title": "Projects."
 		},
+		"MintAlt": {
+			"Content": {
+				"Download": {
+					"commonTitle": "Downloads for",
+					"download": "Download"
+				}
+			},
+			"Head": {
+				"description": "A Material-inspired font.",
+				"title": "MintAlternative."
+			},
+			"Title": {
+				"bottom": "MintAlternative.",
+				"top": "A Material-inspired font."
+			}
+		},
+		"Mintbit": {
+			"Content": {
+				"Download": {
+					"commonTitle": "Downloads for",
+					"download": "Download"
+				}
+			},
+			"Head": {
+				"description": "A pixel font.",
+				"title": "A pixel font."
+			},
+			"Title": {
+				"bottom": "Mintbit.",
+				"top": "A pixel font."
+			}
+		},
 		"Mintcraft": {
 			"Content": {
 				"About": {
@@ -195,6 +231,38 @@
 			"Title": {
 				"bottom": "Mintcraft.",
 				"top": "A Minecraft resource pack."
+			}
+		},
+		"Mintsans": {
+			"Content": {
+				"Download": {
+					"commonTitle": "Downloads for",
+					"download": "Download"
+				}
+			},
+			"Head": {
+				"description": "A sans-serif font.",
+				"title": "Mintsans."
+			},
+			"Title": {
+				"bottom": "Mintsans.",
+				"top": "A sans-serif font."
+			}
+		},
+		"StartMenuTiles": {
+			"Content": {
+				"Download": {
+					"commonTitle": "Downloads for",
+					"download": "Download"
+				}
+			},
+			"Head": {
+				"description": "Custom and consistent tile icons for your Start menu, if you use TileIconifier or Start11.",
+				"title": "Start menu tiles."
+			},
+			"Title": {
+				"bottom": "Start menu tiles.",
+				"top": "Finally consistent."
 			}
 		},
 		"Title": {
