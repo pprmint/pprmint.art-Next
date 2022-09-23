@@ -33,11 +33,19 @@ export default function CommonHead(props: {
 			<link rel="shortcut icon" href={"/favicons/"+favicon+"/favicon.ico"} />
 
 			{/* OpenGraph metadata */}
-			<meta content="summary_large_image" name="twitter:card" />
-			<meta property="og:description" content={props.description} />
-			<meta property="og:image" content={"/og/"+locale+"/"+props.ogImg} />
+			<meta property="og:site_name" content="pprmint.art" />
 			<meta property="og:title" content={props.title} />
 			<meta property="og:url" content={""+router.pathname} />
+			<meta property="og:description" content={props.description} />
+			<meta property="og:image" content={"/og/"+locale+"/"+props.ogImg} />
+			
+			{/* Twitter metadata */}
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@npprmint" />
+			<meta name="twitter:creator" content="@npprmint" />
+			<meta name="twitter:title" content={props.title} />
+			<meta name="twitter:description" content={props.description} />
+			<meta name="twitter:image" content={"/og/"+locale+"/"+props.ogImg} />
 		</Head>
 	);
 }
