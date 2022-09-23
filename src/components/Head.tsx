@@ -17,6 +17,7 @@ export default function CommonHead(props: {
 	const { favicon = "pprmint" } = props;
 	const { color = "#00cc66" } = props;
     const locale = useLocale();
+	const domain = "https://next.pprmint.art";
 	return (
 		<Head>
 			{/* Basic metadata */}
@@ -35,9 +36,9 @@ export default function CommonHead(props: {
 			{/* OpenGraph metadata */}
 			<meta property="og:site_name" content="pprmint.art" />
 			<meta property="og:title" content={props.title} />
-			<meta property="og:url" content={""+router.pathname} />
+			<meta property="og:url" content={domain+router.pathname} />
 			<meta property="og:description" content={props.description} />
-			<meta property="og:image" content={"/og/"+locale+"/"+props.ogImg} />
+			<meta property="og:image" content={domain+"/og/"+locale+"/"+props.ogImg} />
 			
 			{/* Twitter metadata */}
 			<meta name="twitter:card" content="summary_large_image" />
@@ -45,7 +46,7 @@ export default function CommonHead(props: {
 			<meta name="twitter:creator" content="@npprmint" />
 			<meta name="twitter:title" content={props.title} />
 			<meta name="twitter:description" content={props.description} />
-			<meta name="twitter:image" content={"/og/"+locale+"/"+props.ogImg} />
+			<meta name="twitter:image" content={domain+"/og/"+locale+"/"+props.ogImg} />
 		</Head>
 	);
 }
