@@ -1,6 +1,6 @@
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
-import { Container, Typography, Box, Button } from "@mui/material";
+import { Container, Typography, Box, Button, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie-player";
 import errorJson from "src/animations/error.json";
@@ -24,13 +24,13 @@ const AnimContainer = {
 const Anim = {
 	hidden: {
 		opacity: 0,
-		y: "50px",
+		x: "50px",
 	},
 	show: {
 		opacity: 1,
-		y: "0px",
+		x: "0px",
 		transition: {
-            y: { duration: 1, ease: [0, 0, 0.2, 1] },
+			x: { duration: 1, ease: [0, 0, 0.2, 1] },
 			opacity: { duration: 0.25 },
 		},
 	},
@@ -46,57 +46,73 @@ export default function NotFound() {
 				ogImg="404.png"
 				color="#ff3344"
 			/>
-			<Container maxWidth="lg">
-				<Box
-					sx={{
-						minHeight: "100vh",
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
-				>
-					<Lottie
-						loop={false}
-						animationData={errorJson}
-						play
-						style={{ maxWidth: "700px", height: "auto" }}
-					/>
-					<motion.div
-						variants={AnimContainer}
-						initial="hidden"
-						animate="show"
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					>
-						<motion.div variants={Anim}>
-							<Typography variant="h4" component="h1" align="center">
-								{t("title")}
-							</Typography>
-						</motion.div>
-						<motion.div variants={Anim}>
-							<Typography gutterBottom align="center">
-								{t("description")}
-							</Typography>
-						</motion.div>
-						<motion.div variants={Anim}>
-							<Button
-								variant="outlined"
-								color="error"
-								component={Link}
-								scroll={false}
-								noLinkStyle
-								href="/"
+			<Container maxWidth="xl">
+				<Grid container spacing={4} minHeight="100vh">
+					<Grid item xs={12} md={6}>
+						<Box
+							sx={{
+                                height: "100%",
+								display: "flex",
+								flexDirection: "column",
+								justifyContent: "center",
+								alignItems: "baseline",
+							}}
+						>
+							<Lottie loop={false} animationData={errorJson} play style={{maxHeight: 300}} />
+						</Box>
+					</Grid>
+					<Grid item xs={12} md={6}>
+						<Box
+							sx={{
+                                height: "100%",
+								display: "flex",
+								flexDirection: "column",
+								justifyContent: "center",
+								alignItems: "baseline",
+							}}
+						>
+							<motion.div
+								variants={AnimContainer}
+								initial="hidden"
+								animate="show"
 							>
-								{t("button")}
-							</Button>
-						</motion.div>
-					</motion.div>
-				</Box>
+								<motion.div variants={Anim}>
+									<Typography
+										variant="h1"
+										gutterBottom
+										sx={{ textAlign: { xs: "center", md: "left" } }}
+									>
+										{t("title")}
+									</Typography>
+								</motion.div>
+								<motion.div variants={Anim}>
+									<Typography
+										variant="h6"
+										component="h2"
+										color="text.secondary"
+                                        gutterBottom
+										sx={{ textAlign: { xs: "center", md: "left" } }}
+									>
+										{t("description")}
+									</Typography>
+								</motion.div>
+								<motion.div variants={Anim}>
+									<Button
+										variant="outlined"
+										color="error"
+										component={Link}
+										scroll={false}
+										noLinkStyle
+										href="/"
+										mx={{ xs: "auto", md: "unset" }}
+									>
+										{t("button")}
+									</Button>
+								</motion.div>
+							</motion.div>
+						</Box>
+					</Grid>
+				</Grid>
 			</Container>
 			<Footer />
 		</>
