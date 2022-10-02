@@ -357,7 +357,7 @@ export default function Mintcraft() {
 										initial={{ opacity: 0, x: 50 }}
 										whileInView={{ opacity: 1, x: 0 }}
 										viewport={{ once: true }}
-                                        transition={{duration: 1, ease: "circOut"}}
+										transition={{ duration: 1, ease: "circOut" }}
 									>
 										<Image
 											alt={t("Content.About.Dark.imgAlt")}
@@ -428,7 +428,7 @@ export default function Mintcraft() {
 										initial={{ opacity: 0, x: 50 }}
 										whileInView={{ opacity: 1, x: 0 }}
 										viewport={{ once: true }}
-                                        transition={{duration: 1, ease: "circOut"}}
+										transition={{ duration: 1, ease: "circOut" }}
 									>
 										<Image
 											alt={t("Content.About.Consistent.imgAlt")}
@@ -505,7 +505,7 @@ export default function Mintcraft() {
 										initial={{ opacity: 0, x: 50 }}
 										whileInView={{ opacity: 1, x: 0 }}
 										viewport={{ once: true }}
-                                        transition={{duration: 1, ease: "circOut"}}
+										transition={{ duration: 1, ease: "circOut" }}
 									>
 										<Image
 											alt={t("Content.About.Modern.imgAlt")}
