@@ -88,7 +88,7 @@ export default function Projects() {
 				ogImg="index.png"
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
-			<Container sx={{ display: "flex", justifyContent: "center" }}>
+			<Container maxWidth="xl" sx={{ display: "flex", justifyContent: "center" }}>
 				<motion.div
 					variants={ProjectsContainer}
 					initial="hidden"
