@@ -47,9 +47,9 @@ let theme = createTheme({
 			fontFeatureSettings: "'ss01'",
 		},
 		h1: {
-            fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+            fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Roboto, Helvetica, Arial, sans-serif",
+            fontWeight: 600,
 			color: "#eee",
-			fontWeight: 600,
 			fontFeatureSettings: "'liga'",
 			lineHeight: 1,
 		},
