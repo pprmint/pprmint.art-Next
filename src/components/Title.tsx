@@ -198,6 +198,7 @@ export default function Title(
 					.decorativeTitle {
 						overflow: hidden;
 						font-family: Salome, Georgia, Times, serif;
+                        font-style: italic;
 						color: #111111;
 						background: linear-gradient(#222, #111);
 						background-clip: text;
