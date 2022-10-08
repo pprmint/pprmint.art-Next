@@ -16,7 +16,7 @@ import {
 	Toolbar,
 } from "@mui/material";
 import Lottie from "react-lottie-player";
-import wordmarkJson from "src/animations/wordmark.json";
+import wordmarkJson from "src/animations/halloween_wordmark.json";
 
 import { NextLinkComposed } from "src/components/Link";
 import Link from "src/components/Link";
