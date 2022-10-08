@@ -2,11 +2,11 @@
 
 ## Setup
 
-`npm install yarn` because yarn is cool.
+`npm install pnpm` because pnpm is cool.
 
-`yarn install` to get a fuckton of packages.
+`pnpm install` to get a fuckton of packages.
 
-`yarn dev` to look at the site on localhost:3000.
+`pnpm dev` to look at the site on localhost:3000.
 
 ## Why are you doing this to yourself?
 
