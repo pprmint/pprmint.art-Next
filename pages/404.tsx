@@ -47,72 +47,55 @@ export default function NotFound() {
 				color="#ff3344"
 			/>
 			<Container maxWidth="xl">
-				<Grid container spacing={4} minHeight="100vh">
-					<Grid item xs={12} md={6}>
-						<Box
-							sx={{
-                                height: "100%",
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "center",
-								alignItems: "baseline",
-							}}
-						>
-							<Lottie loop={false} animationData={errorJson} play style={{maxHeight: 300}} />
-						</Box>
-					</Grid>
-					<Grid item xs={12} md={6}>
-						<Box
-							sx={{
-                                height: "100%",
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "center",
-								alignItems: "baseline",
-							}}
-						>
-							<motion.div
-								variants={AnimContainer}
-								initial="hidden"
-								animate="show"
+				<Box
+					className="selection red"
+					sx={{
+						minHeight: "100vh",
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<Lottie
+						loop={false}
+						animationData={errorJson}
+						play
+						style={{ maxHeight: 404 }}
+					/>
+					<motion.div variants={AnimContainer} initial="hidden" animate="show">
+						<motion.div variants={Anim}>
+							<Typography variant="h1" textAlign="center" gutterBottom>
+								{t("title")}
+							</Typography>
+						</motion.div>
+						<motion.div variants={Anim}>
+							<Typography
+								variant="h6"
+								component="h2"
+								color="text.secondary"
+								textAlign="center"
+								gutterBottom
 							>
-								<motion.div variants={Anim}>
-									<Typography
-										variant="h1"
-										gutterBottom
-										sx={{ textAlign: { xs: "center", md: "left" } }}
-									>
-										{t("title")}
-									</Typography>
-								</motion.div>
-								<motion.div variants={Anim}>
-									<Typography
-										variant="h6"
-										component="h2"
-										color="text.secondary"
-                                        gutterBottom
-										sx={{ textAlign: { xs: "center", md: "left" } }}
-									>
-										{t("description")}
-									</Typography>
-								</motion.div>
-								<motion.div variants={Anim}>
-									<Button
-										variant="outlined"
-										color="error"
-										component={Link}
-										scroll={false}
-										noLinkStyle
-										href="/"
-										mx={{ xs: "auto", md: "unset" }}
-									>
-										{t("button")}
-									</Button>
-								</motion.div>
-							</motion.div>
-						</Box>
-					</Grid>
-				</Grid>
+								{t("description")}
+							</Typography>
+						</motion.div>
+						<motion.div variants={Anim}>
+							<Box width="max-content" mx="auto">
+								<Button
+									variant="outlined"
+									color="error"
+									component={Link}
+									scroll={false}
+									noLinkStyle
+									href="/"
+								>
+									{t("button")}
+								</Button>
+							</Box>
+						</motion.div>
+					</motion.div>
+				</Box>
 			</Container>
 			<Footer />
 		</>
