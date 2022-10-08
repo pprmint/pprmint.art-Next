@@ -66,6 +66,12 @@
 			"top": "Aktuell in Arbeit:"
 		}
 	},
+	"HealthSafety": {
+		"Head": {
+			"description": "pssst.",
+			"title": "Gesundheits- und Sicherheitsinformationen"
+		}
+	},
 	"Home": {
 		"Content": {
 			"About": {

@@ -66,6 +66,12 @@
 			"top": "Work in progress:"
 		}
 	},
+	"HealthSafety": {
+		"Head": {
+			"description": "pssst.",
+			"title": "Health and Safety information"
+		}
+	},
 	"Home": {
 		"Content": {
 			"About": {
