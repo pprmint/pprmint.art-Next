@@ -5,26 +5,27 @@ specifiers:
   '@emotion/react': latest
   '@emotion/server': latest
   '@emotion/styled': latest
-  '@mui/icons-material': ^5.10.9
+  '@mui/icons-material': ^5.10.2
   '@mui/material': latest
-  '@react-three/fiber': ^8.8.10
+  '@react-three/fiber': ^8.7.4
   '@types/node': latest
   '@types/react': latest
   '@types/react-swipeable-views': ^0.13.1
-  date-fns: ^2.29.3
+  clsx: ^1.2.1
+  date-fns: ^2.29.1
   eslint: latest
   eslint-config-next: latest
   framer-motion: ^6.5.1
-  framer-motion-3d: ^7.5.3
+  framer-motion-3d: ^7.3.5
   next: latest
-  next-intl: ^2.7.6
+  next-intl: ^2.7.4
   react: latest
   react-dom: latest
   react-icons: ^4.4.0
   react-lottie-player: ^1.4.3
   react-scroll-parallax: ^3.3.1
   react-swipeable-views: ^0.14.0
-  sass: ^1.55.0
+  sass: ^1.54.0
   three: ^0.144.0
   typescript: latest
 
@@ -37,6 +38,7 @@ dependencies:
   '@mui/material': 5.10.9_ikcgkdnp4bn3rgptamntbhbo7e
   '@react-three/fiber': 8.8.10_ww22p6cticflcq7fk2rysgxj34
   '@types/react-swipeable-views': 0.13.1
+  clsx: 1.2.1
   date-fns: 2.29.3
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   framer-motion-3d: 7.5.3_7zwsgdqoziktpts4vy7vks7ica
