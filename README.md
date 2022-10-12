@@ -16,7 +16,7 @@ But actually because I wanna:
 
 - [ ] debloat the site and redesign it[^1],
 - [X] simplify creating new pages[^2],
-- [ ] add individual OpenGraph metadata for every page[^3].
+- [X] add individual OpenGraph metadata for every page[^3].
 
 [^1]: Currently, the site lags a ton when opened on low-end hardware, probably due to the abundance of animations.
 [^2]: On my current site, I need to add imports and routes manually every time I add a new page. I had to create [a separate file just for routing](https://github.com/pprmint/pprmint.art/blob/main/src/AnimatedRoutes.tsx) because it was a mess to have it all in the [App.tsx](https://github.com/pprmint/pprmint.art/blob/main/src/App.tsx) instead. I also want to especially make it a bit easier for me to create new Works pages with their respective images and translations.
