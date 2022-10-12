@@ -1,11 +1,12 @@
 import Head from "next/head";
 import { AppProps } from "next/app";
-import { ThemeProvider } from "@mui/material";
-import CssBaseline from "@mui/material/CssBaseline";
 import { useRouter } from "next/router";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { AnimatePresence } from "framer-motion";
+import { ParallaxProvider } from "react-scroll-parallax";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "src/createEmotionCache";
-import { NextIntlProvider } from "next-intl";
+import { AbstractIntlMessages, NextIntlProvider } from "next-intl";
 
 import "fonts/Silka/silka.css";
 import "fonts/Salome/salome.css";
@@ -16,8 +17,6 @@ import theme from "src/theme";
 import "src/global.scss";
 
 import Navigation from "src/components/Navigation";
-import { AnimatePresence } from "framer-motion";
-import { ParallaxProvider } from "react-scroll-parallax";
 import PageTransition from "src/components/PageTransition";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -25,6 +24,7 @@ const clientSideEmotionCache = createEmotionCache();
 
 interface pageProps extends AppProps {
 	emotionCache?: EmotionCache;
+	pageProps: { messages: AbstractIntlMessages };
 }
 
 export default function MyApp(props: pageProps) {
