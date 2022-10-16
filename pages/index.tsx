@@ -278,6 +278,7 @@ export default function Home() {
 				<Masonry columns={{ xs: 2, md: 3 }} spacing={0}>
 					{Works2022.map((Work) => (
 						<motion.div
+							key={Work.image}
 							variants={WorksItem}
 							initial="hidden"
 							whileInView="show"
