@@ -96,6 +96,11 @@ let theme = createTheme({
 		},
 	},
 	components: {
+        MuiContainer: {
+            defaultProps: {
+                maxWidth: "xl",
+            },
+        },
 		MuiTypography: {
 			styleOverrides: {
 				gutterBottom: {
