@@ -9,8 +9,15 @@ import {
 	Typography,
 	ToggleButtonGroup,
 	ToggleButton,
+	Grid,
+	Card,
+	CardContent,
+	CardActions,
+	CardMedia,
+	ButtonBase,
 } from "@mui/material";
 import { motion } from "framer-motion";
+import Masonry from "@mui/lab/Masonry";
 import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Link from "src/components/Link";
@@ -19,41 +26,188 @@ import Footer from "src/components/Footer";
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
 
-import { Motion, Code, Vector } from "src/components/backgrounds";
+// Tentative, will likely be replaced with something blog-like
+const Works2022 = [
+	{
+		image: "https://media.pprmint.art/2022/Pimples/Confusing_POST.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Pyramid/pyramid.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Platonic/platonic_edit_mirrored.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Nextjs/NextJS.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/What/whatb.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/SolarSystem/Solar_System_2.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Flap/Flap.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Swirl/Swirl_1080p_E.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Lights/N-720.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Book/Cover-720.png",
+		path: "#",
+		width: 2481,
+		height: 3508,
+	},
+	{
+		image: "https://media.pprmint.art/2022/MintBanners/MINT_Night-720.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/WiiRemake/WiiRemake-720.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Geoices/geoballs-720.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/SUSE/suse-720.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Statistics/statistics-720.png",
+		path: "#",
+		width: 2000,
+		height: 2000,
+	},
+	{
+		image: "https://media.pprmint.art/2022/iPad/iPad-720.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/ArchWall/Arch_Qogir-720.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
+		image: "https://media.pprmint.art/2022/Ford/Ford-720.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+];
 
-const TextCont = {
+const ProjectGrid = [
+	{ strings: "Mintcraft", path: "mintcraft" },
+	{ strings: "StartMenuTiles", path: "startmenutiles" },
+	{ strings: "Mintsans", path: "mintsans" },
+	{ strings: "Mintbit", path: "mintbit" },
+	{ strings: "MintAlt", path: "mintalt" },
+];
+
+// Props for animated download cards.
+const WorksContainer = {
 	hidden: { opacity: 0 },
 	show: {
 		opacity: 1,
 		transition: {
 			duration: 0,
-			staggerChildren: 0.075,
+			staggerChildren: 0.035,
 		},
 	},
 };
-const Text = {
-	hidden: { opacity: 0, y: "50px" },
+const WorksItem = {
+	hidden: {
+		boxShadow: "0 0 0px #0000",
+		opacity: 0,
+		y: "20px",
+		transition: { duration: 0.5, ease: "circOut" },
+	},
 	show: {
 		opacity: 1,
 		y: "0px",
-		transition: { duration: 0.75, ease: "circOut" },
+		zIndex: 0,
+		transition: {
+			y: { duration: 0.5, ease: "circOut" },
+			opacity: { duration: 0.2 },
+		},
+	},
+	hovered: {
+		boxShadow: "0 0 20px #0005",
+		scale: 1.05,
+		zIndex: 1,
+		transition: {
+			duration: 0.5,
+			ease: "circOut",
+		},
 	},
 };
 
-function PageScrollCont(props: React.PropsWithChildren<{ selection: string }>) {
+function ProjectCard(props: { strings: string; path: string }) {
+	const t = useTranslations("Projects");
 	return (
-		<Box
-            className={"selection "+props.selection}
-			sx={{
-				position: "relative",
-				scrollSnapAlign: "start",
-				minHeight: "100vh",
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-			}}
-		>
-			{props.children}
+		<Box>
+			<Card sx={{ width: "33vw", maxWidth: 550, minWidth: 250 }}>
+				<CardMedia component="img" src="https://media.pprmint.art/test.png" />
+				<CardContent>
+					<Typography variant="h3">
+						{t(props.strings + ".Head.title")}
+					</Typography>
+					<Typography variant="body2">
+						{t(props.strings + ".Head.description")}
+					</Typography>
+				</CardContent>
+				<CardActions>
+					<Button
+						variant="text"
+						LinkComponent={Link}
+						href={"/projects/" + props.path}
+					>
+						Go to page
+					</Button>
+				</CardActions>
+			</Card>
 		</Box>
 	);
 }
@@ -61,14 +215,7 @@ function PageScrollCont(props: React.PropsWithChildren<{ selection: string }>) {
 export default function Home() {
 	const t = useTranslations("Home");
 	return (
-		<Box
-			sx={{
-				height: "100vh",
-				overflowY: "auto",
-				overflowX: "hidden",
-				scrollSnapType: "y mandatory",
-			}}
-		>
+		<>
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
@@ -98,72 +245,60 @@ export default function Home() {
 					</Button>
 				</Title>
 			</Box>
-			{/* Vector stuff */}
-			<PageScrollCont selection="green">
-				<Container
-					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
-				>
-					<motion.div variants={TextCont} initial="hidden" whileInView="show">
-						<motion.div variants={Text}>
-							<Typography variant="h2">
-								{t("Content.Illustration.heading")}
-							</Typography>
-						</motion.div>
-						<motion.div variants={Text}>
-							<Typography
-								variant="body1"
-								dangerouslySetInnerHTML={{
-									__html: t.raw("Content.Illustration.text"),
-								}}
-							/>
-						</motion.div>
-					</motion.div>
+			<section>
+				<Container>
+					<Typography variant="h2">{t("Content.Featured.heading")}</Typography>
+					<Typography>{t("Content.Featured.text")}</Typography>
 				</Container>
-				<Vector />
-			</PageScrollCont>
-			{/* Motion design */}
-			<PageScrollCont selection="blue">
-				<Container
-					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
+				<Box
+					sx={{
+						display: "flex",
+						gap: 3,
+						p: { xs: 2, sm: 3 },
+						overflow: "auto",
+						width: "100%",
+						scrollSnapType: "x mandatory",
+						scrollbarWidth: "none",
+						"& > *": {
+							scrollSnapAlign: "center",
+						},
+						"::-webkit-scrollbar": { display: "none" },
+					}}
 				>
-					<motion.div variants={TextCont} initial="hidden" whileInView="show">
-						<motion.div variants={Text}>
-							<Typography variant="h2">
-								{t("Content.Motion.heading")}
-							</Typography>
+					{ProjectGrid.map((Project) => (
+						<ProjectCard
+							key={Project.path}
+							strings={Project.strings}
+							path={Project.path}
+						/>
+					))}
+				</Box>
+			</section>
+			<motion.div variants={WorksContainer} initial="hidden" animate="show">
+				<Masonry columns={{ xs: 2, md: 3 }} spacing={0}>
+					{Works2022.map((Work) => (
+						<motion.div
+							variants={WorksItem}
+							initial="hidden"
+							whileInView="show"
+							whileHover="hovered"
+						>
+							<ButtonBase>
+								<Box lineHeight={0}>
+									<Image
+										src={Work.image}
+										layout="intrinsic"
+										width={Work.width}
+										height={Work.height}
+									/>
+								</Box>
+							</ButtonBase>
 						</motion.div>
-						<motion.div variants={Text}>
-							<Typography variant="body1">
-								{t("Content.Motion.text")}
-							</Typography>
-						</motion.div>
-					</motion.div>
-				</Container>
-				<Motion />
-			</PageScrollCont>
-			{/* Code */}
-			<PageScrollCont selection="red">
-				<Container
-					sx={{ textAlign: "center", position: "relative", zIndex: 1 }}
-				>
-					<motion.div variants={TextCont} initial="hidden" whileInView="show">
-						<motion.div variants={Text}>
-							<Typography variant="h2">{t("Content.Code.heading")}</Typography>
-						</motion.div>
-						<motion.div variants={Text}>
-							<Typography
-								variant="body1"
-								dangerouslySetInnerHTML={{ __html: t.raw("Content.Code.text") }}
-							/>
-						</motion.div>
-					</motion.div>
-				</Container>
-				<Code />
-			</PageScrollCont>
-			<Box sx={{ scrollSnapAlign: "end" }}>
-				<Footer />
-			</Box>
-		</Box>
+					))}
+				</Masonry>
+			</motion.div>
+			<Footer />
+		</>
 	);
 }
 
