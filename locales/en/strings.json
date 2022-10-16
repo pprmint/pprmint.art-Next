@@ -74,25 +74,9 @@
 	},
 	"Home": {
 		"Content": {
-			"About": {
-				"heading": "Hiya, name's Nick.",
-				"text": "Once I feel like it, I will write more about me right here."
-			},
-			"Code": {
-				"heading": "I write code.",
-				"text": "I feel most at home around HTML tags and a fuckton of curly brackets and semicolons. <small>That's a lie.</small> Building my own website allows me to combine my skills into one project. The cool thing about it is that others can then explore and interact with it.<br>\nStatistics revealed that the stress is largely on \"can.\""
-			},
-			"Illustration": {
-				"heading": "I draw vector paths.",
-				"text": "And am too lazy for a background here, for now."
-			},
-			"Motion": {
-				"heading": "I place keyframes.",
-				"text": "Motion graphics and design, as well as animation."
-			},
-			"Polygons": {
-				"heading": "I distort polygons.",
-				"text": "And am too lazy for a background here, for now."
+			"Featured": {
+				"heading": "Featured projects.",
+				"text": "These are some of my brigger projects that I'm very proud of."
 			}
 		},
 		"Head": {

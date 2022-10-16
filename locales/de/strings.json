@@ -74,25 +74,9 @@
 	},
 	"Home": {
 		"Content": {
-			"About": {
-				"heading": "Hiya, ich bin Nicklas.",
-				"text": "Sobald ich mal Lust zu hab, schreib ich hier etwas mehr über mich."
-			},
-			"Code": {
-				"heading": "Ich schreibe Code.",
-				"text": "Umgeben von HTML-Tags und einem Arsch voll geschweifter Klammern und Semikolons fühle ich mich daheim. <small>Das ist 'ne Lüge.</small> Meine eigene Website zu entwickeln erlaubt es mir, meine Fähigkeiten in einem Projekt zu vereinen. Das Tolle daran ist, dass andere es dann erkunden und damit interagieren können.<br>\nStatistiken ergaben, dass die Betonung sehr stark auf \"können\" liegt."
-			},
-			"Illustration": {
-				"heading": "Ich zeichne Vektorpfade.",
-				"text": "Und bin für's erste zu faul, hierfür nen Hintergrund zu erstellen."
-			},
-			"Motion": {
-				"heading": "Ich setze Keyframes.",
-				"text": "Leute flippen aus, wenn sich was Rundes dreht."
-			},
-			"Polygons": {
-				"heading": "Ich verzerre Polygone.",
-				"text": "Und bin für's erste zu faul, hierfür nen Hintergrund zu erstellen."
+			"Featured": {
+				"heading": "Vorgestellte Projekte.",
+				"text": "Das sind einige meiner Projekte, auf die ich sehr stolz bin."
 			}
 		},
 		"Head": {
