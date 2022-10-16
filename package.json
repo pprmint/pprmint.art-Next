@@ -10,12 +10,14 @@
 		"post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
 	},
 	"dependencies": {
+		"@babel/core": "7.0.0",
 		"@emotion/cache": "latest",
 		"@emotion/react": "latest",
 		"@emotion/server": "latest",
 		"@emotion/styled": "latest",
 		"@mui/icons-material": "^5.10.2",
-		"@mui/material": "latest",
+		"@mui/lab": "5.0.0-alpha.103",
+		"@mui/material": "^5.10.9",
 		"@react-three/fiber": "^8.7.4",
 		"@types/react-swipeable-views": "^0.13.1",
 		"clsx": "^1.2.1",
