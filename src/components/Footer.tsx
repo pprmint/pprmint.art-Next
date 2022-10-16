@@ -26,7 +26,7 @@ export default function Footer() {
 		<NextIntlProvider>
 			<Box mt={8}>
 				<Divider />
-				<Container maxWidth="xl" sx={{ py: { xs: 2, sm: 4 } }}>
+				<Container sx={{ py: { xs: 2, sm: 4 } }}>
 					<Grid container>
 						<Grid item xs={12} sm={10}>
 							<Typography variant="body1" color="text.secondary">

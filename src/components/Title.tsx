@@ -93,7 +93,7 @@ export default function Title(
 							}}
 						/>
 					)}
-					<Container maxWidth="xl">
+					<Container>
 						<motion.div
 							variants={TextContainer}
 							initial="hidden"

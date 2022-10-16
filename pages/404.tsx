@@ -46,7 +46,7 @@ export default function NotFound() {
 				ogImg="404.png"
 				color="#ff3344"
 			/>
-			<Container maxWidth="xl">
+			<Container>
 				<Box
 					className="selection red"
 					sx={{

@@ -284,7 +284,7 @@ export default function Mintcraft() {
 				color="#ffbb22"
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
-			<div className="section" id="bold_claims">
+			<section id="bold_claims">
 				<ParallaxBanner
 					layers={[
 						{
@@ -301,7 +301,7 @@ export default function Mintcraft() {
 						overflow: "hidden",
 					}}
 				>
-					<Container maxWidth="xl">
+					<Container>
 						<Grid container spacing={8}>
 							<Grid
 								item
@@ -387,7 +387,7 @@ export default function Mintcraft() {
 						overflow: "hidden",
 					}}
 				>
-					<Container maxWidth="xl">
+					<Container>
 						<Grid container spacing={8}>
 							<Grid
 								item
@@ -458,7 +458,7 @@ export default function Mintcraft() {
 						overflow: "hidden",
 					}}
 				>
-					<Container maxWidth="xl">
+					<Container>
 						<Grid container spacing={8}>
 							<Grid
 								item
@@ -519,8 +519,8 @@ export default function Mintcraft() {
 						</Grid>
 					</Container>
 				</ParallaxBanner>
-			</div>
-			<div className="section" id="downloads">
+			</section>
+			<section id="downloads">
 				<Container
 					sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
 				>
@@ -663,7 +663,7 @@ export default function Mintcraft() {
 						)}
 					</AnimatePresence>
 				</Container>
-			</div>
+			</section>
 			<Footer />
 		</>
 	);

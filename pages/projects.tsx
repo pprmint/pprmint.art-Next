@@ -19,9 +19,6 @@ import Title from "src/components/Title";
 import Link from "src/components/Link";
 import Footer from "src/components/Footer";
 
-import { FiExternalLink } from "react-icons/fi";
-import { SiGithub } from "react-icons/si";
-
 const ProjectGrid = [
 	{ strings: "Mintcraft", path: "mintcraft" },
 	{ strings: "StartMenuTiles", path: "startmenutiles" },
@@ -88,7 +85,7 @@ export default function Projects() {
 				ogImg="index.png"
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
-			<Container maxWidth="xl" sx={{ display: "flex", justifyContent: "center" }}>
+			<Container sx={{ display: "flex", justifyContent: "center" }}>
 				<motion.div
 					variants={ProjectsContainer}
 					initial="hidden"
