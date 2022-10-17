@@ -77,6 +77,13 @@
 			"Featured": {
 				"heading": "Vorgestellte Projekte.",
 				"text": "Das sind einige meiner Projekte, auf die ich sehr stolz bin."
+			},
+			"Works": {
+				"Columns": {
+					"columns": "Spalten",
+					"description": "Anzahl der Spalten"
+				},
+				"heading": "Werke aus "
 			}
 		},
 		"Head": {

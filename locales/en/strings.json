@@ -77,6 +77,13 @@
 			"Featured": {
 				"heading": "Featured projects.",
 				"text": "These are some of my brigger projects that I'm very proud of."
+			},
+			"Works": {
+				"Columns": {
+					"columns": "columns",
+					"description": "Amount of columns"
+				},
+				"heading": "Works of "
 			}
 		},
 		"Head": {

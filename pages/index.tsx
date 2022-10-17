@@ -15,6 +15,8 @@ import {
 	CardActions,
 	CardMedia,
 	ButtonBase,
+	Slider,
+	Stack,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import Masonry from "@mui/lab/Masonry";
@@ -173,17 +175,7 @@ const WorksItem = {
 			opacity: { duration: 0.2 },
 		},
 	},
-	hovered: {
-		boxShadow: "0 0 20px #0005",
-		scale: 1.05,
-		zIndex: 1,
-		transition: {
-			duration: 0.5,
-			ease: "circOut",
-		},
-	},
 };
-
 function ProjectCard(props: { strings: string; path: string }) {
 	const t = useTranslations("Projects");
 	return (
@@ -214,6 +206,12 @@ function ProjectCard(props: { strings: string; path: string }) {
 
 export default function Home() {
 	const t = useTranslations("Home");
+	const [columnSize, setColumnSize] = React.useState<
+		number | string | Array<number | string>
+	>(3);
+	const handleSizeChange = (event: Event, newValue: number | number[]) => {
+		setColumnSize(newValue);
+	};
 	return (
 		<>
 			<Head
@@ -248,7 +246,7 @@ export default function Home() {
 			<section>
 				<Container>
 					<Typography variant="h2">{t("Content.Featured.heading")}</Typography>
-					<Typography>{t("Content.Featured.text")}</Typography>
+					<Typography gutterBottom>{t("Content.Featured.text")}</Typography>
 				</Container>
 				<Box
 					sx={{
@@ -274,30 +272,56 @@ export default function Home() {
 					))}
 				</Box>
 			</section>
-			<motion.div variants={WorksContainer} initial="hidden" animate="show">
-				<Masonry columns={{ xs: 2, md: 3 }} spacing={0}>
-					{Works2022.map((Work) => (
-						<motion.div
-							key={Work.image}
-							variants={WorksItem}
-							initial="hidden"
-							whileInView="show"
-							whileHover="hovered"
-						>
-							<ButtonBase>
-								<Box lineHeight={0}>
-									<Image
-										src={Work.image}
-										layout="intrinsic"
-										width={Work.width}
-										height={Work.height}
-									/>
-								</Box>
-							</ButtonBase>
-						</motion.div>
-					))}
-				</Masonry>
-			</motion.div>
+			<section>
+				<Container>
+					<Grid container spacing={2}>
+						<Grid item xs={12} md={8}>
+							<Typography variant="h2" gutterBottom>
+								{t("Content.Works.heading")}2022
+							</Typography>
+						</Grid>
+						<Grid item xs={12} md={4}>
+							<Typography variant="overline">
+								{t("Content.Works.Columns.description")}
+							</Typography>
+							<Slider
+								aria-label={t("Content.Works.Columns.columns")}
+								value={typeof columnSize === "number" ? columnSize : 0}
+								valueLabelDisplay="auto"
+								valueLabelFormat={
+									columnSize + " " + t("Content.Works.Columns.columns")
+								}
+								onChange={handleSizeChange}
+								min={2}
+								max={12}
+							/>
+						</Grid>
+					</Grid>
+				</Container>
+				<motion.div variants={WorksContainer} initial="hidden" animate="show">
+					<Masonry columns={columnSize} spacing={0}>
+						{Works2022.map((Work) => (
+							<motion.div
+								key={Work.image}
+								variants={WorksItem}
+								initial="hidden"
+								whileInView="show"
+							>
+								<ButtonBase>
+									<Box lineHeight={0}>
+										<Image
+											src={Work.image}
+											layout="intrinsic"
+											width={Work.width}
+											height={Work.height}
+										/>
+									</Box>
+								</ButtonBase>
+							</motion.div>
+						))}
+					</Masonry>
+				</motion.div>
+			</section>
 			<Footer />
 		</>
 	);
