@@ -292,7 +292,7 @@ export default function Home() {
 									columnSize + " " + t("Content.Works.Columns.columns")
 								}
 								onChange={handleSizeChange}
-								min={2}
+								min={1}
 								max={12}
 							/>
 						</Grid>
