@@ -70,30 +70,18 @@ export default function Title(
 					}
 				`}</style>
 				<ParallaxBanner style={{ minHeight: "100vh" }}>
-					{props.src && (
-						<ParallaxBannerLayer speed={-40} opacity={[1, 0]}>
-							<Image
-								src={props.src}
-								layout="fill"
-								objectFit="cover"
-								alt=""
-								quality={100}
-								style={{
-									zIndex: -1,
-									animation: "background 5s cubic-bezier(0.4, 0, 0.2, 1)",
-								}}
-							/>
-						</ParallaxBannerLayer>
-					)}
+					<ParallaxBannerLayer speed={-40} opacity={[1, 0]}>
+						{props.children}
+					</ParallaxBannerLayer>
 					<ParallaxBannerLayer>
 						<Box
 							className={props.selection && "selection " + props.selection}
-                            minHeight="100vh"
+							minHeight="100vh"
 							position="relative"
 							display="flex"
 							alignItems="flex-end"
 							overflow="hidden"
-                            p={{xs: 0, md: 4, lg: 8}}
+							p={{ xs: 0, md: 4, lg: 8 }}
 						>
 							<Container maxWidth={false}>
 								<motion.div
@@ -101,64 +89,35 @@ export default function Title(
 									initial="hidden"
 									whileInView="show"
 								>
-									<Grid
-										container
-										spacing={{ xs: 2, lg: 8 }}
-										sx={{ alignItems: "center" }}
-									>
-										<Grid item xs={12} lg={6}>
-											<motion.div variants={Text}>
-												<Typography
-													variant="h1"
-													gutterBottom
-													textAlign={{ xs: "center", lg: "left" }}
-													sx={{
-														lineHeight: 0.75,
-														textShadow: "0 4px 10px #1115",
-													}}
-												>
-													{props.top}
-												</Typography>
-											</motion.div>
-											<motion.div variants={Text}>
-												<Typography
-													color="text.secondary"
-													textAlign={{ xs: "center", lg: "left" }}
-													sx={{
-														textShadow: "0 4px 10px #1115",
-														lineHeight: 1.2,
-														marginBottom: "8px",
-														fontWeight: 300,
-														fontStyle: "italic",
-														fontSize: "2rem",
-													}}
-												>
-													{props.bottom}
-												</Typography>
-											</motion.div>
-										</Grid>
-										<Grid item xs={12} lg={6}>
-											<motion.div variants={Text}>
-												<Typography
-													variant="body1"
-													textAlign={{ xs: "center", lg: "right" }}
-													gutterBottom
-												>
-													{props.body}
-												</Typography>
-											</motion.div>
-											<motion.div variants={Text}>
-												<Box
-													sx={{
-														display: "flex",
-														justifyContent: { xs: "center", lg: "right" },
-													}}
-												>
-													{props.children}
-												</Box>
-											</motion.div>
-										</Grid>
-									</Grid>
+									<motion.div variants={Text}>
+										<Typography
+											variant="h1"
+											gutterBottom
+											textAlign={{ xs: "center", lg: "left" }}
+											sx={{
+												lineHeight: 0.75,
+												textShadow: "0 4px 10px #1115",
+											}}
+										>
+											{props.top}
+										</Typography>
+									</motion.div>
+									<motion.div variants={Text}>
+										<Typography
+											color="text.secondary"
+											textAlign={{ xs: "center", lg: "left" }}
+											sx={{
+												textShadow: "0 4px 10px #1115",
+												lineHeight: 1.2,
+												marginBottom: "8px",
+												fontWeight: 300,
+												fontStyle: "italic",
+												fontSize: "2rem",
+											}}
+										>
+											{props.bottom}
+										</Typography>
+									</motion.div>
 								</motion.div>
 							</Container>
 						</Box>

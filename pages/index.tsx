@@ -222,11 +222,18 @@ export default function Home() {
 			<Box sx={{ scrollSnapAlign: "start" }}>
 				<Title
 					big
-					selection="blue"
 					top={t("Title.top")}
 					bottom={t("Title.bottom")}
-					src="https://media.pprmint.art/Next_js.png"
 				>
+					<video
+						src="https://media.pprmint.art/hero.mp4"
+						width="100%"
+						height="100%"
+						style={{ objectFit: "cover" }}
+						autoPlay
+						muted
+						loop
+					/>
 				</Title>
 			</Box>
 			<section>
