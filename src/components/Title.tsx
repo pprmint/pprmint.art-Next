@@ -60,135 +60,110 @@ export default function Title(
 							scale: 1.1;
 						}
 						50% {
-							opacity: 0.5;
+							opacity: 1;
 						}
 						to {
 							filter: blur(0px);
-							opacity: 0.5;
+							opacity: 1;
 							scale: 1;
 						}
 					}
 				`}</style>
-				<Box
-					className={props.selection && "selection " + props.selection}
-					style={{
-						position: "relative",
-						minHeight: "100vh",
-						display: "flex",
-						alignItems: "center",
-						overflow: "hidden",
-					}}
-				>
+				<ParallaxBanner style={{ minHeight: "100vh" }}>
 					{props.src && (
-						<Image
-							src={props.src}
-							layout="fill"
-							objectFit="cover"
-							alt=""
-							quality={100}
-							style={{
-								zIndex: -1,
-								animation: "background 5s cubic-bezier(0.4, 0, 0.2, 1)",
-								opacity: 0.5,
-							}}
-						/>
-					)}
-					<Container>
-						<motion.div
-							variants={TextContainer}
-							initial="hidden"
-							whileInView="show"
-						>
-							<Grid
-								container
-								spacing={{ xs: 2, lg: 8 }}
-								sx={{ alignItems: "center" }}
-							>
-								<Grid item xs={12} lg={6}>
-									<motion.div variants={Text}>
-										<Typography
-											variant="h1"
-											gutterBottom
-											textAlign={{ xs: "center", lg: "right" }}
-											sx={{
-												lineHeight: 0.75,
-												textShadow: "0 4px 10px #1115",
-											}}
-										>
-											{props.top}
-										</Typography>
-									</motion.div>
-									<motion.div variants={Text}>
-										<Typography
-											color="text.secondary"
-											textAlign={{ xs: "center", lg: "right" }}
-											sx={{
-												textShadow: "0 4px 10px #1115",
-												lineHeight: 1.2,
-												marginBottom: "8px",
-												fontWeight: 300,
-												fontStyle: "italic",
-												fontSize: "2rem",
-											}}
-										>
-											{props.bottom}
-										</Typography>
-									</motion.div>
-								</Grid>
-								<Grid item xs={12} lg={6}>
-									<motion.div variants={Text}>
-										<Typography
-											variant="body1"
-											textAlign={{ xs: "center", lg: "left" }}
-											gutterBottom
-										>
-											{props.body}
-										</Typography>
-									</motion.div>
-									<motion.div variants={Text}>
-										<Box
-											sx={{
-												display: "flex",
-												justifyContent: { xs: "center", lg: "left" },
-											}}
-										>
-											{props.children}
-										</Box>
-									</motion.div>
-								</Grid>
-							</Grid>
-						</motion.div>
-						<Box
-							position="absolute"
-							width="100%"
-							bottom={32}
-							left="50%"
-							sx={{ transform: "translateX(-50%)" }}
-						>
-							<motion.div
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								transition={{ duration: 2, delay: 5 }}
+						<ParallaxBannerLayer speed={-40} opacity={[1, 0]}>
+							<Image
+								src={props.src}
+								layout="fill"
+								objectFit="cover"
+								alt=""
+								quality={100}
 								style={{
-									display: "flex",
-									justifyContent: "center",
+									zIndex: -1,
+									animation: "background 5s cubic-bezier(0.4, 0, 0.2, 1)",
 								}}
-							>
-								<Typography variant="overline">{t("scroll")}</Typography>
+							/>
+						</ParallaxBannerLayer>
+					)}
+					<ParallaxBannerLayer>
+						<Box
+							className={props.selection && "selection " + props.selection}
+                            minHeight="100vh"
+							position="relative"
+							display="flex"
+							alignItems="flex-end"
+							overflow="hidden"
+                            p={{xs: 0, md: 4, lg: 8}}
+						>
+							<Container maxWidth={false}>
 								<motion.div
-									animate={{ y: [0, 10, 0] }}
-									transition={{
-										duration: 1,
-										ease: "easeInOut",
-										repeat: Infinity,
-									}}
+									variants={TextContainer}
+									initial="hidden"
+									whileInView="show"
 								>
-									<ArrowDownward sx={{ ml: 1 }} />
+									<Grid
+										container
+										spacing={{ xs: 2, lg: 8 }}
+										sx={{ alignItems: "center" }}
+									>
+										<Grid item xs={12} lg={6}>
+											<motion.div variants={Text}>
+												<Typography
+													variant="h1"
+													gutterBottom
+													textAlign={{ xs: "center", lg: "left" }}
+													sx={{
+														lineHeight: 0.75,
+														textShadow: "0 4px 10px #1115",
+													}}
+												>
+													{props.top}
+												</Typography>
+											</motion.div>
+											<motion.div variants={Text}>
+												<Typography
+													color="text.secondary"
+													textAlign={{ xs: "center", lg: "left" }}
+													sx={{
+														textShadow: "0 4px 10px #1115",
+														lineHeight: 1.2,
+														marginBottom: "8px",
+														fontWeight: 300,
+														fontStyle: "italic",
+														fontSize: "2rem",
+													}}
+												>
+													{props.bottom}
+												</Typography>
+											</motion.div>
+										</Grid>
+										<Grid item xs={12} lg={6}>
+											<motion.div variants={Text}>
+												<Typography
+													variant="body1"
+													textAlign={{ xs: "center", lg: "right" }}
+													gutterBottom
+												>
+													{props.body}
+												</Typography>
+											</motion.div>
+											<motion.div variants={Text}>
+												<Box
+													sx={{
+														display: "flex",
+														justifyContent: { xs: "center", lg: "right" },
+													}}
+												>
+													{props.children}
+												</Box>
+											</motion.div>
+										</Grid>
+									</Grid>
 								</motion.div>
-							</motion.div>
+							</Container>
 						</Box>
-					</Container>
-				</Box>
+					</ParallaxBannerLayer>
+				</ParallaxBanner>
 			</>
 		);
 	} else {
@@ -198,7 +173,7 @@ export default function Title(
 					.decorativeTitle {
 						overflow: hidden;
 						font-family: Salome, Georgia, Times, serif;
-                        font-style: italic;
+						font-style: italic;
 						color: #111111;
 						background: linear-gradient(#222, #111);
 						background-clip: text;
@@ -225,7 +200,7 @@ export default function Title(
 							maxWidth={false}
 							sx={{
 								maxWidth: "max-content",
-                                height: "100%",
+								height: "100%",
 								display: "flex",
 								alignItems: "center",
 							}}

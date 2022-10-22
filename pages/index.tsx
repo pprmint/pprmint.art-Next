@@ -225,22 +225,8 @@ export default function Home() {
 					selection="blue"
 					top={t("Title.top")}
 					bottom={t("Title.bottom")}
-					body={t("Title.description")}
 					src="https://media.pprmint.art/Next_js.png"
 				>
-					<Button
-						variant="outlined"
-						component={Link}
-						size="large"
-						color="secondary"
-						href="https://github.com/pprmint/pprmint.art-Next"
-						target="_blank"
-						rel="noopener noreferrer"
-						startIcon={<SiGithub />}
-						endIcon={<FiExternalLink />}
-					>
-						{t("Title.button")}
-					</Button>
 				</Title>
 			</Box>
 			<section>
