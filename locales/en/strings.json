@@ -1,11 +1,15 @@
 {
 	"404": {
+		"Content": {
+			"complete": "complete",
+			"main": "Your browser ran into a missing page and needs to return to the home page. We're not collecting any error info, and then we'll return for you.",
+			"moreInfo": "For no information about this issue and impossible fixes, visit",
+			"stopCode": "Stop code: ",
+			"support": "If you call a support person, give them this info:"
+		},
 		"Head": {
 			"title": "Page not found."
-		},
-		"button": "Back to home page",
-		"description": "Check the URL for typos, or go back to the home page.",
-		"title": "Nothing's here."
+		}
 	},
 	"Contact": {
 		"Form": {

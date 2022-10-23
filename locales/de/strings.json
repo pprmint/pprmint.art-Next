@@ -1,11 +1,15 @@
 {
 	"404": {
+		"Content": {
+			"complete": "abgeschlossen",
+			"main": "Ihr Browser ist auf eine fehlende Seite gestoßen und muss zur Startseite zurückkehren. Es werden keine Fehlerinformationen gesammelt, und dann wird die Startseite aufgerufen.",
+			"moreInfo": "Für keine weiteren Informationen zu diesem Problem und unmöglichen Lösungen finden Sie unter",
+			"stopCode": "Stillstandcode: ",
+			"support": "Halten Sie folgende Infos bereit, wenn Sie den Support anrufen:"
+		},
 		"Head": {
 			"title": "Seite nicht gefunden."
-		},
-		"button": "Zurück zur Startseite",
-		"description": "Überprüfe die URL auf Tippfehler, oder kehre zur Startseite zurück.",
-		"title": "Nüscht da."
+		}
 	},
 	"Contact": {
 		"Form": {

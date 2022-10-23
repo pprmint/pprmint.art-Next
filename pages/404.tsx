@@ -1,6 +1,7 @@
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
-import { Container, Typography, Box, Button, Grid } from "@mui/material";
+import Image from "next/image";
+import { Container, Typography, Box, Button, Grid, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie-player";
 import errorJson from "src/animations/error.json";
@@ -8,33 +9,25 @@ import errorJson from "src/animations/error.json";
 import Link from "src/components/Link";
 import Head from "src/components/Head";
 import Footer from "src/components/Footer";
+import NoSSR from "src/components/NoSSR";
 
-// Container for staggered animations
-const AnimContainer = {
-	hidden: { opacity: 0 },
-	show: {
-		opacity: 1,
-		transition: {
-			duration: 0,
-			staggerChildren: 0.1,
-		},
-	},
-};
-// Container contents
-const Anim = {
-	hidden: {
-		opacity: 0,
-		x: "50px",
-	},
-	show: {
-		opacity: 1,
-		x: "0px",
-		transition: {
-			x: { duration: 1, ease: [0, 0, 0.2, 1] },
-			opacity: { duration: 0.25 },
-		},
-	},
-};
+const StopCodes = [
+	"I_HATE_WINDOWS",
+	"WII_DISC_CHANNEL",
+	"NO_CLUE",
+	"LAUGHING_MY_ASS_OFF",
+	"ROLLING_ON_THE_FLOOR_LAUGHING",
+	"ILYGF",
+	"FORTY_TWO",
+	"PROBABLY_JUST_CURIOSITY",
+	"TYPO_MAYBE",
+    "CCKMINT",
+];
+
+function randomIntForText(min: number, max: number) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+const randomTextInt = randomIntForText(0, 8);
 
 export default function NotFound() {
 	const t = useTranslations("404");
@@ -44,59 +37,86 @@ export default function NotFound() {
 				title={t("Head.title")}
 				description={t("description")}
 				ogImg="404.png"
-				color="#ff3344"
+				color="#1199ff"
 			/>
-			<Container>
-				<Box
-					className="selection red"
-					sx={{
-						minHeight: "100vh",
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
+			<Box
+				p={8}
+				className="selection blue"
+				minHeight="100vh"
+				display="flex"
+				flexDirection="column"
+				justifyContent="center"
+				sx={{ backgroundColor: "#1199ff" }}
+			>
+				<Typography
+					gutterBottom
+					fontSize="8rem"
+					color="#fff"
+					fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
 				>
-					<Lottie
-						loop={false}
-						animationData={errorJson}
-						play
-						style={{ maxHeight: 404 }}
-					/>
-					<motion.div variants={AnimContainer} initial="hidden" animate="show">
-						<motion.div variants={Anim}>
-							<Typography variant="h1" textAlign="center" gutterBottom>
-								{t("title")}
-							</Typography>
-						</motion.div>
-						<motion.div variants={Anim}>
+					{":("}
+				</Typography>
+				<Typography
+					fontSize="2rem"
+					color="#fff"
+					gutterBottom
+					fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
+				>
+					{t("Content.main")}
+				</Typography>
+				<Typography
+					fontSize="2rem"
+					color="#fff"
+					gutterBottom
+					fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
+				>
+					0% {t("Content.complete")}
+				</Typography>
+				<Stack direction="row" spacing={2}>
+					<Box>
+						<Image
+							src="/assets/qr.svg"
+							layout="fixed"
+							width={150}
+							height={150}
+						/>
+					</Box>
+					<Box>
+						<Typography
+							fontSize="1.5rem"
+							color="#fff"
+							fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
+						>
+							{t("Content.moreInfo")}
+						</Typography>
+						<Typography
+							fontSize="1.5rem"
+							color="#fff"
+							gutterBottom
+							fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
+						>
+							https://twitter.com/npprmint
+						</Typography>
+						<Typography
+							fontSize="1rem"
+							color="#fff"
+							fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
+						>
+							{t("Content.support")}
+						</Typography>
+						<NoSSR>
 							<Typography
-								variant="h6"
-								component="h2"
-								color="text.secondary"
-								textAlign="center"
-								gutterBottom
+								fontSize="1rem"
+								color="#fff"
+								fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
 							>
-								{t("description")}
+								{t("Content.stopCode")}
+								{StopCodes[randomTextInt]}
 							</Typography>
-						</motion.div>
-						<motion.div variants={Anim}>
-							<Box width="max-content" mx="auto">
-								<Button
-									variant="outlined"
-									color="error"
-									component={Link}
-									scroll={false}
-									noLinkStyle
-									href="/"
-								>
-									{t("button")}
-								</Button>
-							</Box>
-						</motion.div>
-					</motion.div>
-				</Box>
-			</Container>
+						</NoSSR>
+					</Box>
+				</Stack>
+			</Box>
 			<Footer />
 		</>
 	);
