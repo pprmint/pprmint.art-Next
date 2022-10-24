@@ -31,6 +31,12 @@ import { SiGithub } from "react-icons/si";
 // Tentative, will likely be replaced with something blog-like
 const Works2022 = [
 	{
+		image: "https://media.pprmint.art/2022/Landscape/Landscape.png",
+		path: "#",
+		width: 1920,
+		height: 1080,
+	},
+	{
 		image: "https://media.pprmint.art/2022/Pimples/Confusing_POST.png",
 		path: "#",
 		width: 1920,
