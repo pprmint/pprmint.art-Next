@@ -43,41 +43,41 @@ let theme = createTheme({
 	},
 	typography: {
 		allVariants: {
-			fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
+			fontFamily: "'Basier Square', Roboto, Helvetica, Arial, sans-serif",
 			fontFeatureSettings: "'ss01'",
 		},
 		h1: {
-            fontFamily: "'Cabinet Grotesk', Silka, 'Red Hat Display', Metropolis, 'Clarity City', Roboto, Helvetica, Arial, sans-serif",
-            fontWeight: 700,
+            fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Roboto, Helvetica, Arial, sans-serif",
+            fontWeight: 500,
 			color: "#eee",
 			lineHeight: 1,
 		},
 		h2: {
-			fontFamily: "'Cabinet Grotesk', Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h3: {
-			fontFamily: "'Cabinet Grotesk', Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h4: {
-			fontFamily: "'Cabinet Grotesk', Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h5: {
-			fontFamily: "'Cabinet Grotesk', Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h6: {
-			fontFamily: "'Cabinet Grotesk', Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
@@ -94,6 +94,9 @@ let theme = createTheme({
 			lineHeight: 1.6,
 		},
 	},
+    shape: {
+        borderRadius: 8,
+    },
 	components: {
         MuiContainer: {
             defaultProps: {
@@ -139,19 +142,11 @@ let theme = createTheme({
 		},
 		MuiButton: {
 			styleOverrides: {
+                root: {
+                    borderRadius: 4,
+                },
 				outlined: {
 					borderWidth: "2px !important",
-				},
-				sizeLarge: {
-					borderRadius: 22,
-				},
-				sizeMedium: {
-					borderRadius: 20,
-				},
-				sizeSmall: {
-					borderRadius: 16,
-					paddingRight: 16,
-					paddingLeft: 16,
 				},
 			},
 		},
@@ -211,9 +206,6 @@ let theme = createTheme({
 				},
 			},
 		},
-	},
-	shape: {
-		borderRadius: 8,
 	},
 });
 

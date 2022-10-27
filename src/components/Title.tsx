@@ -104,16 +104,13 @@ export default function Title(
 									</motion.div>
 									<motion.div variants={Text}>
 										<Typography
+											fontFamily="Basier Square Narrow, Roboto, Helvetica, Arial, sans-serif"
 											color="text.secondary"
 											textAlign={{ xs: "center", lg: "left" }}
-											sx={{
-												textShadow: "0 4px 10px #1115",
-												lineHeight: 1.2,
-												marginBottom: "8px",
-												fontWeight: 300,
-												fontStyle: "italic",
-												fontSize: "2rem",
-											}}
+											lineHeight={1.2}
+											marginBottom="8px"
+											fontWeight={300}
+											fontSize="2rem"
 										>
 											{props.bottom}
 										</Typography>
@@ -128,70 +125,25 @@ export default function Title(
 	} else {
 		return (
 			<>
-				<style jsx>{`
-					.decorativeTitle {
-						overflow: hidden;
-						font-family: Salome, Georgia, Times, serif;
-						font-style: italic;
-						color: #111111;
-						background: linear-gradient(#222, #111);
-						background-clip: text;
-						-webkit-text-stroke: 4px transparent;
-						white-space: nowrap;
-						font-size: 20rem;
-						user-select: none;
-						line-height: 1.25;
-						position: absolute;
-						top: 130px;
-						left: 50%;
-						transform: translateX(-50%);
-					}
-				`}</style>
-				<ParallaxBanner style={{ minHeight: 400 }}>
-					<ParallaxBannerLayer
-						speed={10}
-						style={{ width: "100%", position: "relative" }}
-					>
-						<span className="decorativeTitle">{props.bottom}</span>
-					</ParallaxBannerLayer>
-					<ParallaxBannerLayer>
-						<Container
-							maxWidth={false}
-							sx={{
-								maxWidth: "max-content",
-								height: "100%",
-								display: "flex",
-								alignItems: "center",
-							}}
-						>
-							<motion.div
-								variants={TextContainer}
-								initial="hidden"
-								animate="show"
+				<Container sx={{ py: 12 }}>
+					<motion.div variants={TextContainer} initial="hidden" animate="show">
+						<motion.div variants={Text}>
+							<Typography
+								fontFamily="Basier Square Narrow, Roboto, Helvetica, Arial, sans-serif"
+								color="text.secondary"
+								lineHeight={1.2}
+								marginBottom="8px"
+								fontWeight={300}
+								fontSize="2.25rem"
 							>
-								<motion.div variants={Text}>
-									<Typography
-										color="text.secondary"
-										sx={{
-											lineHeight: 1.2,
-											marginBottom: "8px",
-											fontWeight: 300,
-											fontStyle: "italic",
-											fontSize: "2rem",
-										}}
-									>
-										{props.top}
-									</Typography>
-								</motion.div>
-								<motion.div variants={Text}>
-									<Typography variant="h1" gutterBottom>
-										{props.bottom}
-									</Typography>
-								</motion.div>
-							</motion.div>
-						</Container>
-					</ParallaxBannerLayer>
-				</ParallaxBanner>
+								{props.top}
+							</Typography>
+						</motion.div>
+						<motion.div variants={Text}>
+							<Typography variant="h1">{props.bottom}</Typography>
+						</motion.div>
+					</motion.div>
+				</Container>
 			</>
 		);
 	}

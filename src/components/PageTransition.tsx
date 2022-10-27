@@ -7,7 +7,7 @@ export default function PageTransition(props: React.PropsWithChildren) {
 			initial={{
                 opacity: 0,
 				x: 40,
-				clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
 			}}
 			animate={{
                 opacity: 1,
