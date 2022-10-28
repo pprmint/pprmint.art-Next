@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "next/link";
 import { GetStaticPropsContext } from "next";
 import { Router, useRouter } from "next/router";
 import {
@@ -17,9 +18,6 @@ import {
 } from "@mui/material";
 import Lottie from "react-lottie-player";
 import wordmarkJson from "src/animations/halloween_wordmark.json";
-
-import { NextLinkComposed } from "src/components/Link";
-import Link from "src/components/Link";
 
 import {
 	FiChevronUp,

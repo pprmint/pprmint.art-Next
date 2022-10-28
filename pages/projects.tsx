@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import {
@@ -16,8 +17,8 @@ import { motion } from "framer-motion";
 
 import Head from "src/components/Head";
 import Title from "src/components/Title";
-import Link from "src/components/Link";
 import Footer from "src/components/Footer";
+import { Masonry } from "@mui/lab";
 
 const ProjectGrid = [
 	{ strings: "Mintcraft", path: "mintcraft" },
@@ -54,24 +55,30 @@ const ProjectsItem = {
 	},
 };
 
-function ProjectCard(props: { strings: string, path: string }) {
+function ProjectCard(props: { strings: string; path: string }) {
 	const t = useTranslations("Projects");
 	return (
-		<Grid item xs={12} md={6} lg={4}>
-			<motion.div variants={ProjectsItem}>
-				<Card sx={{ width: "100%" }}>
-					<CardContent>
-						<Typography variant="h3">{t(props.strings + ".Head.title")}</Typography>
-						<Typography variant="body2">{t(props.strings + ".Head.description")}</Typography>
-					</CardContent>
-					<CardActions>
-						<Button variant="text" LinkComponent={Link} href={"/projects/"+props.path}>
-							Go to page
-						</Button>
-					</CardActions>
-				</Card>
-			</motion.div>
-		</Grid>
+		<motion.div variants={ProjectsItem}>
+			<Card>
+				<CardContent>
+					<Typography variant="h3">
+						{t(props.strings + ".Head.title")}
+					</Typography>
+					<Typography variant="body2">
+						{t(props.strings + ".Head.description")}
+					</Typography>
+				</CardContent>
+				<CardActions>
+					<Button
+						variant="text"
+						LinkComponent={Link}
+						href={"/projects/" + props.path}
+					>
+						Go to page
+					</Button>
+				</CardActions>
+			</Card>
+		</motion.div>
 	);
 }
 
@@ -82,20 +89,28 @@ export default function Projects() {
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
-				ogImg="index.png"
+				ogImg="projects.png"
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
-			<Container sx={{ display: "flex", justifyContent: "center" }}>
+			<Container>
 				<motion.div
 					variants={ProjectsContainer}
 					initial="hidden"
 					animate="show"
 				>
-					<Grid container spacing={4}>
+					<Masonry
+						spacing={4}
+						columns={{ xs: 1, sm: 2, md: 3 }}
+						sx={{ width: "unset" }}
+					>
 						{ProjectGrid.map((Project) => (
-							<ProjectCard key={Project.path} strings={Project.strings} path={Project.path} />
+							<ProjectCard
+								key={Project.path}
+								strings={Project.strings}
+								path={Project.path}
+							/>
 						))}
-					</Grid>
+					</Masonry>
 				</motion.div>
 			</Container>
 			<Footer />

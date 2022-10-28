@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import {
 	Box,
@@ -7,7 +8,6 @@ import {
 	Container,
 	Grid,
 } from "@mui/material";
-import Link from "./Link";
 import {
 	FavoriteTwoTone,
 	CoffeeTwoTone,
@@ -41,11 +41,11 @@ export default function Footer() {
 							</Typography>
 							<Stack direction="row" spacing={2} mb={1}>
 								{/* Internal links */}
+									<Link href="privacy" scroll={false}>
 								<Typography variant="body2">
-									<Link href="/privacy" scroll={false}>
 										{t("privacyPolicy")}
-									</Link>
 								</Typography>
+									</Link>
 								<Typography variant="body2">
 									<Link
 										href={route}
@@ -58,7 +58,7 @@ export default function Footer() {
 											})
 										}
 									>
-										<Language fontSize="inherit" />
+										{/* <Language fontSize="inherit" /> */}
 										{t("switchLocale", {
 											locale: otherLocale,
 										})}
@@ -140,8 +140,8 @@ export default function Footer() {
 							<Image
 								src="/assets/logo.svg"
 								alt="pprmint. logo"
-								width="70px"
-								height="70px"
+								width={70}
+								height={70}
 							/>
 						</Grid>
 					</Grid>

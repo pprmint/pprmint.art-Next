@@ -91,7 +91,7 @@
 			}
 		},
 		"Head": {
-			"description": "I make vector points, polygons, keyframes and colorful monospace letters look neat.",
+			"description": "I make things with vector points, polygons and code.",
 			"title": "Good today."
 		},
 		"Title": {
@@ -270,8 +270,5 @@
 			"bottom": "Projects.",
 			"top": "Work in progress:"
 		}
-	},
-	"Title": {
-		"scroll": "Scroll down for more"
 	}
 }

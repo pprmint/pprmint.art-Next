@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Container, Box, Button, Typography } from "@mui/material";
@@ -6,7 +7,6 @@ import { motion } from "framer-motion";
 
 import Head from "src/components/Head";
 import Title from "src/components/Title";
-import Link from "src/components/Link";
 import Footer from "src/components/Footer";
 
 import { FiExternalLink } from "react-icons/fi";

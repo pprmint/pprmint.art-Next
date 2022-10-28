@@ -91,7 +91,7 @@
 			}
 		},
 		"Head": {
-			"description": "Ich lasse Vektorpunkte, Polygone, Keyframes und bunte Monospace-Buchstaben schick aussehen.",
+			"description": "Ich mache Dinge mit Vektorpunkten, Polygonen und Code.",
 			"title": "Guten Heute."
 		},
 		"Title": {
@@ -270,8 +270,5 @@
 			"bottom": "Projekte.",
 			"top": "Aktuell in Arbeit:"
 		}
-	},
-	"Title": {
-		"scroll": "Scroll runter für mehr"
 	}
 }

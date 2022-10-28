@@ -9,8 +9,7 @@ import prideJson from "src/animations/pride_wordmark.json";
 
 export default function Test() {
 	return (
-		<
-		>
+		<>
 			<Head
 				title="Test page."
 				description="I make vector points, polygons, keyframes and colorful monospace letters look neat."
@@ -33,9 +32,7 @@ export default function Test() {
 						style={{ width: "100%", maxWidth: 900 }}
 					/>
 				</Box>
-				<Typography variant="h2">
-					Wordmark animation for pride month
-				</Typography>
+				<Typography variant="h2">Wordmark animation for pride month</Typography>
 				<Box
 					sx={{
 						display: "flex",

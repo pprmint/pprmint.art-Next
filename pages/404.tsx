@@ -1,12 +1,12 @@
+import Link from "next/link";
+import Image from "next/image";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Container, Typography, Box, Button, Grid, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie-player";
 import errorJson from "src/animations/error.json";
 
-import Link from "src/components/Link";
 import Head from "src/components/Head";
 import Footer from "src/components/Footer";
 import NoSSR from "src/components/NoSSR";
@@ -76,7 +76,7 @@ export default function NotFound() {
 					<Box>
 						<Image
 							src="/assets/qr.svg"
-							layout="fixed"
+                            alt="QR Code."
 							width={150}
 							height={150}
 						/>

@@ -1,6 +1,8 @@
 import * as React from "react";
-import { GetStaticPropsContext } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { GetStaticPropsContext } from "next";
 import { useLocale } from "next-intl";
 import {
 	Container,
@@ -20,8 +22,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import Head from "src/components/Head";
 import Title from "src/components/Title";
-import Link from "src/components/Link";
-import Image from "next/image";
 import Footer from "src/components/Footer";
 
 import { FiExternalLink } from "react-icons/fi";
@@ -362,8 +362,8 @@ export default function Mintcraft() {
 										<Image
 											alt={t("Content.About.Dark.imgAlt")}
 											src={"/assets/mintcraft/" + locale + "/furnace.png"}
-											width="500px"
-											height="500px"
+											width={500}
+											height={500}
 										/>
 									</motion.div>
 								</Parallax>
@@ -433,8 +433,8 @@ export default function Mintcraft() {
 										<Image
 											alt={t("Content.About.Consistent.imgAlt")}
 											src={"/assets/mintcraft/" + locale + "/beacon.png"}
-											width="500px"
-											height="500px"
+											width={500}
+											height={500}
 										/>
 									</motion.div>
 								</Parallax>
@@ -510,8 +510,8 @@ export default function Mintcraft() {
 										<Image
 											alt={t("Content.About.Modern.imgAlt")}
 											src={"/assets/mintcraft/" + locale + "/inventory.png"}
-											width="1000px"
-											height="500px"
+											width={1000}
+											height={500}
 										/>
 									</motion.div>
 								</Parallax>

@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import {
@@ -22,7 +23,6 @@ import { motion } from "framer-motion";
 import Masonry from "@mui/lab/Masonry";
 import Head from "src/components/Head";
 import Title from "src/components/Title";
-import Link from "src/components/Link";
 import Footer from "src/components/Footer";
 
 import { FiExternalLink } from "react-icons/fi";
@@ -154,7 +154,7 @@ const ProjectGrid = [
 	{ strings: "MintAlt", path: "mintalt" },
 ];
 
-// Props for animated download cards.
+// Props for animated work images.
 const WorksContainer = {
 	hidden: { opacity: 0 },
 	show: {
@@ -166,6 +166,35 @@ const WorksContainer = {
 	},
 };
 const WorksItem = {
+	hidden: {
+		boxShadow: "0 0 0px #0000",
+		opacity: 0,
+		y: "20px",
+		transition: { duration: 0.5, ease: "circOut" },
+	},
+	show: {
+		opacity: 1,
+		y: "0px",
+		zIndex: 0,
+		transition: {
+			y: { duration: 0.5, ease: "circOut" },
+			opacity: { duration: 0.2 },
+		},
+	},
+};
+
+// Props for animated project cards.
+const ProjectsContainer = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			duration: 0,
+			staggerChildren: 0.035,
+		},
+	},
+};
+const ProjectsItem = {
 	hidden: {
 		boxShadow: "0 0 0px #0000",
 		opacity: 0,
@@ -226,17 +255,13 @@ export default function Home() {
 				ogImg="index.png"
 			/>
 			<Box sx={{ scrollSnapAlign: "start" }}>
-				<Title
-					big
-					top={t("Title.top")}
-					bottom={t("Title.bottom")}
-				>
+				<Title big top={t("Title.top")} bottom={t("Title.bottom")}>
 					<video
 						src="https://media.pprmint.art/hero.mp4"
 						width="100%"
 						height="100%"
 						style={{ objectFit: "cover" }}
-                                                playsInline
+						playsInline
 						autoPlay
 						muted
 						loop
@@ -248,29 +273,37 @@ export default function Home() {
 					<Typography variant="h2">{t("Content.Featured.heading")}</Typography>
 					<Typography gutterBottom>{t("Content.Featured.text")}</Typography>
 				</Container>
-				<Box
-					sx={{
-						display: "flex",
-						gap: 3,
-						p: { xs: 2, sm: 3 },
-						overflow: "auto",
-						width: "100%",
-						scrollSnapType: "x mandatory",
-						scrollbarWidth: "none",
-						"& > *": {
-							scrollSnapAlign: "center",
-						},
-						"::-webkit-scrollbar": { display: "none" },
-					}}
+				<motion.div
+					variants={ProjectsContainer}
+					initial="hidden"
+					whileInView="show"
 				>
-					{ProjectGrid.map((Project) => (
-						<ProjectCard
-							key={Project.path}
-							strings={Project.strings}
-							path={Project.path}
-						/>
-					))}
-				</Box>
+					<Box
+						sx={{
+							display: "flex",
+							gap: 3,
+							p: { xs: 2, sm: 3 },
+							overflow: "auto",
+							width: "100%",
+							scrollSnapType: "x mandatory",
+							scrollbarWidth: "none",
+							"& > *": {
+								scrollSnapAlign: "center",
+							},
+							"::-webkit-scrollbar": { display: "none" },
+						}}
+					>
+						{ProjectGrid.map((Project) => (
+							<motion.div key={Project.path} variants={ProjectsItem}>
+								<ProjectCard
+									key={Project.path}
+									strings={Project.strings}
+									path={Project.path}
+								/>
+							</motion.div>
+						))}
+					</Box>
+				</motion.div>
 			</section>
 			<section>
 				<Container>
@@ -299,27 +332,32 @@ export default function Home() {
 					</Grid>
 				</Container>
 				<motion.div variants={WorksContainer} initial="hidden" animate="show">
-					<Masonry columns={columnSize} spacing={0}>
-						{Works2022.map((Work) => (
-							<motion.div
-								key={Work.image}
-								variants={WorksItem}
-								initial="hidden"
-								whileInView="show"
-							>
-								<ButtonBase>
-									<Box lineHeight={0}>
+					<Box>
+						<Masonry spacing={0} columns={columnSize}>
+							{Works2022.map((Work) => (
+								<motion.div
+									key={Work.image}
+									variants={WorksItem}
+									initial="hidden"
+									whileInView="show"
+								>
+									<ButtonBase sx={{ width: "100%" }}>
 										<Image
 											src={Work.image}
-											layout="intrinsic"
+											alt={Work.image}
 											width={Work.width}
 											height={Work.height}
+											style={{
+												width: "100%",
+												height: "100%",
+												objectFit: "cover",
+											}}
 										/>
-									</Box>
-								</ButtonBase>
-							</motion.div>
-						))}
-					</Masonry>
+									</ButtonBase>
+								</motion.div>
+							))}
+						</Masonry>
+					</Box>
 				</motion.div>
 			</section>
 			<Footer />
