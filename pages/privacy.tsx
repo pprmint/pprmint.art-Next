@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
 			<Title
 				top={t(
 					"Title.top",
-					{ revisionDate: parseISO("2022-08-09T") } // YYYY-MM-DD
+					{ revisionDate: parseISO("2022-10-28T") } // YYYY-MM-DD
 				)}
 				bottom={t("Title.bottom")}
 			/>
