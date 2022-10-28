@@ -142,12 +142,15 @@ let theme = createTheme({
 		},
 		MuiButton: {
 			styleOverrides: {
-                root: {
-                    borderRadius: 4,
-                },
 				outlined: {
 					borderWidth: "2px !important",
 				},
+                sizeMedium: {
+                    borderRadius: 4,
+                },
+                sizeSmall: {
+                    borderRadius: 3,
+                }
 			},
 		},
 		MuiDialog: {
