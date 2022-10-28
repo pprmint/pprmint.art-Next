@@ -48,7 +48,7 @@ export function Motion() {
 					width={1000}
 					height={1000}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -66,7 +66,7 @@ export function Motion() {
 					width={1000}
 					height={1000}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -84,7 +84,7 @@ export function Motion() {
 					width={1000}
 					height={1000}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -102,7 +102,7 @@ export function Motion() {
 					width={1000}
 					height={1000}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 		</Wrapper>
@@ -126,7 +126,7 @@ export function Code() {
 					width={900}
 					height={900}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -143,7 +143,7 @@ export function Code() {
 					width={900}
 					height={900}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -161,7 +161,7 @@ export function Code() {
 					width={207}
 					height={770}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 		</Wrapper>
@@ -189,7 +189,7 @@ export function Vector() {
 					width={116}
 					height={116}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -210,7 +210,7 @@ export function Vector() {
 					width={245}
 					height={245}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -231,7 +231,7 @@ export function Vector() {
 					width={118}
 					height={209}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -252,7 +252,7 @@ export function Vector() {
 					width={188}
 					height={166}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -273,7 +273,7 @@ export function Vector() {
 					width={190}
 					height={23}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 			<motion.div
@@ -296,7 +296,7 @@ export function Vector() {
 					width={47}
 					height={61}
 					alt=""
-					layout="fixed"
+					
 				/>
 			</motion.div>
 		</Wrapper>
