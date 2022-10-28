@@ -105,6 +105,7 @@ export default function Title(
 									<motion.div variants={Text}>
 										<Typography
 											fontFamily="Basier Square Narrow, Roboto, Helvetica, Arial, sans-serif"
+                                            fontStyle="italic"
 											color="text.secondary"
 											textAlign={{ xs: "center", lg: "left" }}
 											lineHeight={1.2}
@@ -125,11 +126,12 @@ export default function Title(
 	} else {
 		return (
 			<>
-				<Container sx={{ py: 12 }}>
+				<Container sx={{ py: 14 }}>
 					<motion.div variants={TextContainer} initial="hidden" animate="show">
 						<motion.div variants={Text}>
 							<Typography
 								fontFamily="Basier Square Narrow, Roboto, Helvetica, Arial, sans-serif"
+                                fontStyle="italic"
 								color="text.secondary"
 								lineHeight={1.2}
 								marginBottom="8px"
