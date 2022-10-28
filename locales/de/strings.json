@@ -139,7 +139,7 @@
 			},
 			"Tldr": {
 				"heading": "Die Kurzfassung:",
-				"text": "Server-Logs sind die einzigen Dinger, die Informationen über dich speichern, oder genauer über den Browser und das Gerät, dass du gerade verwendest. Die eigentliche Website wird von Vercel gehostet, während einige Bilder, Videos und Downloads von meinem Webspace bei Hetzner stammen."
+				"text": "Server-Logs sind die einzigen Dinger, die Informationen über dich speichern, oder genauer über den Browser und das Gerät, welches du gerade verwendest. Die eigentliche Website wird von Vercel gehostet, während einige Bilder, Videos und Downloads von meinem Webspace bei Hetzner stammen."
 			},
 			"privacyPolicyOf": "Datenschutzerklärung von {provider}"
 		},
