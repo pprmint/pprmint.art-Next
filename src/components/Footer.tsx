@@ -31,7 +31,13 @@ export default function Footer() {
 						<Grid item xs={12} sm={10}>
 							<Typography variant="body1" color="text.secondary">
 								{t("madeWith")}
-								<FavoriteTwoTone fontSize="inherit" color="error" />
+								<Link
+									href="https://awfiquily.vercel.app/"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FavoriteTwoTone fontSize="inherit" color="error" />
+								</Link>
 								{t("and")}
 								<CoffeeTwoTone fontSize="inherit" color="warning" />
 							</Typography>
@@ -41,11 +47,9 @@ export default function Footer() {
 							</Typography>
 							<Stack direction="row" spacing={2} mb={1}>
 								{/* Internal links */}
-									<Link href="privacy" scroll={false}>
-								<Typography variant="body2">
-										{t("privacyPolicy")}
-								</Typography>
-									</Link>
+								<Link href="privacy" scroll={false}>
+									<Typography variant="body2">{t("privacyPolicy")}</Typography>
+								</Link>
 								<Typography variant="body2">
 									<Link
 										href={route}
