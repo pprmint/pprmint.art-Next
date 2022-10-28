@@ -109,7 +109,7 @@ export default function Title(
 											textAlign={{ xs: "center", lg: "left" }}
 											lineHeight={1.2}
 											marginBottom="8px"
-											fontWeight={300}
+											fontWeight={400}
 											fontSize="2rem"
 										>
 											{props.bottom}
@@ -133,7 +133,7 @@ export default function Title(
 								color="text.secondary"
 								lineHeight={1.2}
 								marginBottom="8px"
-								fontWeight={300}
+								fontWeight={400}
 								fontSize="2.25rem"
 							>
 								{props.top}
