@@ -17,7 +17,7 @@ export default function CommonHead(props: {
 	const { favicon = "pprmint" } = props;
 	const { color = "#00cc66" } = props;
     const locale = useLocale();
-	const domain = "https://next.pprmint.art";
+	const domain = "https://pprmint.art";
 	return (
 		<Head>
 			{/* Basic metadata */}
