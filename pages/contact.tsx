@@ -20,7 +20,7 @@ export default function Contact() {
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
-				ogImg="index.png"
+				ogImg="contact.png"
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
 			<Container>

@@ -16,7 +16,7 @@ export default function Gallery() {
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
-				ogImg="index.png"
+				ogImg="gallery.png"
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
 			<Footer />
