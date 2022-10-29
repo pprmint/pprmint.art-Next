@@ -46,7 +46,7 @@
 			"submitSnackbarButton": "Sick"
 		},
 		"Head": {
-			"description": "This page is not done yet. Check back later.",
+			"description": "Send me a message, be it about commissions, what I ate for breakfast today or something entirely different.",
 			"title": "Contact."
 		},
 		"Title": {
@@ -62,7 +62,7 @@
 	},
 	"Gallery": {
 		"Head": {
-			"description": "This page is not done yet. Check back later.",
+			"description": "Look at some of my graphics and animations, fresh out of the oven.",
 			"title": "Gallery."
 		},
 		"Title": {
@@ -154,7 +154,7 @@
 	},
 	"Projects": {
 		"Head": {
-			"description": "This page is not done yet. Check back later.",
+			"description": "Other stuff I worked on and things that you can download and use for yourself.",
 			"title": "Projects."
 		},
 		"MintAlt": {

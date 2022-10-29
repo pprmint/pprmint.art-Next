@@ -46,7 +46,7 @@
 			"submitSnackbarButton": "Krass"
 		},
 		"Head": {
-			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
+			"description": "Schreibe mir eine Nachricht, sei es über Kommissionen, was ich heute zum Frühstück gegessen habe, oder etwas ganz anderes.",
 			"title": "Kontakt."
 		},
 		"Title": {
@@ -62,7 +62,7 @@
 	},
 	"Gallery": {
 		"Head": {
-			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
+			"description": "Schau dir meine Grafiken und Animationen an, frisch aus dem Ofen.",
 			"title": "Galerie."
 		},
 		"Title": {
@@ -154,7 +154,7 @@
 	},
 	"Projects": {
 		"Head": {
-			"description": "Diese Seite ist noch nicht fertig. Schau später nochmal rein.",
+			"description": "Andere Dinge, an denen ich gearbeitet habe, und solche, die du selbst herunterladen und verwenden kannst.",
 			"title": "Projekte."
 		},
 		"MintAlt": {
