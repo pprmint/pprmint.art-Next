@@ -2,7 +2,7 @@ import Image from "next/image";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Container, Box, Button, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import PageTransition from "src/components/PageTransition";
 import Head from "src/components/Head";

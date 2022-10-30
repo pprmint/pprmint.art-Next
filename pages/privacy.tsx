@@ -2,7 +2,7 @@ import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { parseISO } from "date-fns";
 import { Container, Typography, Stack, Divider } from "@mui/material";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import Head from "src/components/Head";
 import Title from "src/components/Title";

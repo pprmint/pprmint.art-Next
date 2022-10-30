@@ -18,7 +18,7 @@ import {
 	ToggleButtonGroup,
 	CardMedia,
 } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 import Head from "src/components/Head";
 import Title from "src/components/Title";
@@ -155,13 +155,13 @@ export default function Mintcraft() {
 			<Typography variant="h2">
 				{t("Content.Download.commonTitle")}
 				&nbsp;
-				<motion.div
+				<m.div
 					initial={{ y: "-20px" }}
 					animate={{ y: "0px" }}
 					style={{ display: "inline-block" }}
 				>
 					{gameVersion}
-				</motion.div>
+				</m.div>
 			</Typography>
 		);
 	}
@@ -249,7 +249,7 @@ export default function Mintcraft() {
 
 		return (
 			<Grid item xs={6} sm={4} lg={3}>
-				<motion.div variants={DownloadItem}>
+				<m.div variants={DownloadItem}>
 					<Card>
 						<CardMedia
 							component="img"
@@ -269,7 +269,7 @@ export default function Mintcraft() {
 							<DownloadButton />
 						</CardActions>
 					</Card>
-				</motion.div>
+				</m.div>
 			</Grid>
 		);
 	}
@@ -353,7 +353,7 @@ export default function Mintcraft() {
 										filter: "drop-shadow(0 5px 10px #0005)",
 									}}
 								>
-									<motion.div
+									<m.div
 										initial={{ opacity: 0, x: 50 }}
 										whileInView={{ opacity: 1, x: 0 }}
 										viewport={{ once: true }}
@@ -365,7 +365,7 @@ export default function Mintcraft() {
 											width={500}
 											height={500}
 										/>
-									</motion.div>
+									</m.div>
 								</Parallax>
 							</Grid>
 						</Grid>
@@ -424,7 +424,7 @@ export default function Mintcraft() {
 										filter: "drop-shadow(0 5px 10px #0005)",
 									}}
 								>
-									<motion.div
+									<m.div
 										initial={{ opacity: 0, x: 50 }}
 										whileInView={{ opacity: 1, x: 0 }}
 										viewport={{ once: true }}
@@ -436,7 +436,7 @@ export default function Mintcraft() {
 											width={500}
 											height={500}
 										/>
-									</motion.div>
+									</m.div>
 								</Parallax>
 							</Grid>
 						</Grid>
@@ -501,7 +501,7 @@ export default function Mintcraft() {
 										filter: "drop-shadow(0 5px 10px #0005)",
 									}}
 								>
-									<motion.div
+									<m.div
 										initial={{ opacity: 0, x: 50 }}
 										whileInView={{ opacity: 1, x: 0 }}
 										viewport={{ once: true }}
@@ -513,7 +513,7 @@ export default function Mintcraft() {
 											width={1000}
 											height={500}
 										/>
-									</motion.div>
+									</m.div>
 								</Parallax>
 							</Grid>
 						</Grid>
@@ -579,7 +579,7 @@ export default function Mintcraft() {
 					<AnimatePresence exitBeforeEnter>
 						{/* 1.19 */}
 						{gameVersion === "1.19" && (
-							<motion.div
+							<m.div
 								key={gameVersion}
 								variants={DownloadContainer}
 								initial="hidden"
@@ -596,11 +596,11 @@ export default function Mintcraft() {
 										/>
 									))}
 								</Grid>
-							</motion.div>
+							</m.div>
 						)}
 						{/* 1.18 */}
 						{gameVersion === "1.18" && (
-							<motion.div
+							<m.div
 								key={gameVersion}
 								variants={DownloadContainer}
 								initial="hidden"
@@ -617,11 +617,11 @@ export default function Mintcraft() {
 										/>
 									))}
 								</Grid>
-							</motion.div>
+							</m.div>
 						)}
 						{/* 1.17 */}
 						{gameVersion === "1.17" && (
-							<motion.div
+							<m.div
 								key={gameVersion}
 								variants={DownloadContainer}
 								initial="hidden"
@@ -638,11 +638,11 @@ export default function Mintcraft() {
 										/>
 									))}
 								</Grid>
-							</motion.div>
+							</m.div>
 						)}
 						{/* 1.16 */}
 						{gameVersion === "1.16" && (
-							<motion.div
+							<m.div
 								key={gameVersion}
 								variants={DownloadContainer}
 								initial="hidden"
@@ -659,7 +659,7 @@ export default function Mintcraft() {
 										/>
 									))}
 								</Grid>
-							</motion.div>
+							</m.div>
 						)}
 					</AnimatePresence>
 				</Container>

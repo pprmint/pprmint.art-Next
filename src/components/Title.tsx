@@ -1,7 +1,7 @@
 import { GetStaticPropsContext } from "next";
 import { Typography, Container, Box, Grid } from "@mui/material";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ArrowDownward } from "@mui/icons-material";
 import {
@@ -84,12 +84,12 @@ export default function Title(
 							p={{ xs: 0, md: 4, lg: 8 }}
 						>
 							<Container maxWidth={false}>
-								<motion.div
+								<m.div
 									variants={TextContainer}
 									initial="hidden"
 									whileInView="show"
 								>
-									<motion.div variants={Text}>
+									<m.div variants={Text}>
 										<Typography
 											variant="h1"
 											gutterBottom
@@ -101,8 +101,8 @@ export default function Title(
 										>
 											{props.top}
 										</Typography>
-									</motion.div>
-									<motion.div variants={Text}>
+									</m.div>
+									<m.div variants={Text}>
 										<Typography
 											fontFamily="Basier Square Narrow, Roboto, Helvetica, Arial, sans-serif"
                                             fontStyle="italic"
@@ -115,8 +115,8 @@ export default function Title(
 										>
 											{props.bottom}
 										</Typography>
-									</motion.div>
-								</motion.div>
+									</m.div>
+								</m.div>
 							</Container>
 						</Box>
 					</ParallaxBannerLayer>
@@ -127,8 +127,8 @@ export default function Title(
 		return (
 			<>
 				<Container sx={{ py: 14 }}>
-					<motion.div variants={TextContainer} initial="hidden" animate="show">
-						<motion.div variants={Text}>
+					<m.div variants={TextContainer} initial="hidden" animate="show">
+						<m.div variants={Text}>
 							<Typography
 								fontFamily="Basier Square Narrow, Roboto, Helvetica, Arial, sans-serif"
                                 fontStyle="italic"
@@ -140,11 +140,11 @@ export default function Title(
 							>
 								{props.top}
 							</Typography>
-						</motion.div>
-						<motion.div variants={Text}>
+						</m.div>
+						<m.div variants={Text}>
 							<Typography variant="h1">{props.bottom}</Typography>
-						</motion.div>
-					</motion.div>
+						</m.div>
+					</m.div>
 				</Container>
 			</>
 		);

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Container, Box, Button, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Lottie from "react-lottie-player";

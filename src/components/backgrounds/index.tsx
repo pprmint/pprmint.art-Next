@@ -1,6 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Box } from "@mui/material";
 
 function Gradient() {
@@ -33,7 +33,7 @@ function Wrapper(props: React.PropsWithChildren) {
 export function Motion() {
 	return (
 		<Wrapper>
-			<motion.div
+			<m.div
 				animate={{ y: [0, -150, 0], x: [0, 100, 0] }}
 				transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
 				style={{
@@ -50,8 +50,8 @@ export function Motion() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{ y: [-150, 0, -150], x: [100, 0, 100] }}
 				transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
 				style={{
@@ -68,8 +68,8 @@ export function Motion() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{ y: [0, -150, 0], x: [0, 100, 0] }}
 				transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
 				style={{
@@ -86,8 +86,8 @@ export function Motion() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{ y: [-150, 0, -150], x: [100, 0, 100] }}
 				transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
 				style={{
@@ -104,7 +104,7 @@ export function Motion() {
 					alt=""
 					
 				/>
-			</motion.div>
+			</m.div>
 		</Wrapper>
 	);
 }
@@ -112,7 +112,7 @@ export function Motion() {
 export function Code() {
 	return (
 		<Wrapper>
-			<motion.div
+			<m.div
 				animate={{ rotate: [0, -360] }}
 				transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
 				style={{
@@ -128,8 +128,8 @@ export function Code() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{ rotate: [0, 360] }}
 				transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
 				style={{
@@ -145,8 +145,8 @@ export function Code() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{ y: [0, 150, 0], x: [0, -50, 0] }}
 				transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
 				style={{
@@ -163,7 +163,7 @@ export function Code() {
 					alt=""
 					
 				/>
-			</motion.div>
+			</m.div>
 		</Wrapper>
 	);
 }
@@ -171,7 +171,7 @@ export function Code() {
 export function Vector() {
 	return (
 		<Wrapper>
-			<motion.div
+			<m.div
 				animate={{
 					rotate: [0, -20, 0],
 					y: [0, 50, 0],
@@ -191,8 +191,8 @@ export function Vector() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{
 					rotate: [0, 45, 0],
 					y: [0, 50, 0],
@@ -212,8 +212,8 @@ export function Vector() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{
 					rotate: [0, 15, 0],
 					y: [0, 50, 0],
@@ -233,8 +233,8 @@ export function Vector() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{
 					rotate: [0, -45, 0],
 					y: [0, 50, 0],
@@ -254,8 +254,8 @@ export function Vector() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{
 					rotate: [0, 35, 0],
 					y: [0, 50, 0],
@@ -275,8 +275,8 @@ export function Vector() {
 					alt=""
 					
 				/>
-			</motion.div>
-			<motion.div
+			</m.div>
+			<m.div
 				animate={{
 					x: [0, 300, 100, -100, 0],
 					y: [0, -100, 0, 100, 50, 0],
@@ -298,7 +298,7 @@ export function Vector() {
 					alt=""
 					
 				/>
-			</motion.div>
+			</m.div>
 		</Wrapper>
 	);
 }

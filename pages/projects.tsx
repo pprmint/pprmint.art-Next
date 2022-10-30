@@ -13,7 +13,7 @@ import {
 	CardContent,
 	CardActions,
 } from "@mui/material";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import Head from "src/components/Head";
 import Title from "src/components/Title";
@@ -58,7 +58,7 @@ const ProjectsItem = {
 function ProjectCard(props: { strings: string; path: string }) {
 	const t = useTranslations("Projects");
 	return (
-		<motion.div variants={ProjectsItem}>
+		<m.div variants={ProjectsItem}>
 			<Card>
 				<CardContent>
 					<Typography variant="h3">
@@ -78,7 +78,7 @@ function ProjectCard(props: { strings: string; path: string }) {
 					</Button>
 				</CardActions>
 			</Card>
-		</motion.div>
+		</m.div>
 	);
 }
 
@@ -93,7 +93,7 @@ export default function Projects() {
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
 			<Container>
-				<motion.div
+				<m.div
 					variants={ProjectsContainer}
 					initial="hidden"
 					animate="show"
@@ -111,7 +111,7 @@ export default function Projects() {
 							/>
 						))}
 					</Masonry>
-				</motion.div>
+				</m.div>
 			</Container>
 			<Footer />
 		</>

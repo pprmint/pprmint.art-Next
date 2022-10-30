@@ -19,7 +19,7 @@ import {
 	Slider,
 	Stack,
 } from "@mui/material";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Masonry from "@mui/lab/Masonry";
 import Head from "src/components/Head";
 import Title from "src/components/Title";
@@ -273,7 +273,7 @@ export default function Home() {
 					<Typography variant="h2">{t("Content.Featured.heading")}</Typography>
 					<Typography gutterBottom>{t("Content.Featured.text")}</Typography>
 				</Container>
-				<motion.div
+				<m.div
 					variants={ProjectsContainer}
 					initial="hidden"
 					whileInView="show"
@@ -294,16 +294,16 @@ export default function Home() {
 						}}
 					>
 						{ProjectGrid.map((Project) => (
-							<motion.div key={Project.path} variants={ProjectsItem}>
+							<m.div key={Project.path} variants={ProjectsItem}>
 								<ProjectCard
 									key={Project.path}
 									strings={Project.strings}
 									path={Project.path}
 								/>
-							</motion.div>
+							</m.div>
 						))}
 					</Box>
-				</motion.div>
+				</m.div>
 			</section>
 			<section>
 				<Container>
@@ -331,11 +331,11 @@ export default function Home() {
 						</Grid>
 					</Grid>
 				</Container>
-				<motion.div variants={WorksContainer} initial="hidden" animate="show">
+				<m.div variants={WorksContainer} initial="hidden" animate="show">
 					<Box>
 						<Masonry spacing={0} columns={columnSize}>
 							{Works2022.map((Work) => (
-								<motion.div
+								<m.div
 									key={Work.image}
 									variants={WorksItem}
 									initial="hidden"
@@ -354,11 +354,11 @@ export default function Home() {
 											}}
 										/>
 									</ButtonBase>
-								</motion.div>
+								</m.div>
 							))}
 						</Masonry>
 					</Box>
-				</motion.div>
+				</m.div>
 			</section>
 			<Footer />
 		</>

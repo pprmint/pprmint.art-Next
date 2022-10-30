@@ -65,13 +65,13 @@ const Links = [
 ];
 
 function ScrollTop() {
-	const trigger = useScrollTrigger({
+	const fabTrigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 75,
 	});
 
 	return (
-		<Zoom in={trigger}>
+		<Zoom in={fabTrigger}>
 			<Box
 				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
 				sx={{ position: "fixed", bottom: 28, right: 28, zIndex: 9999 }}

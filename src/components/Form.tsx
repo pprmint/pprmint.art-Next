@@ -24,7 +24,7 @@ import {
 } from "@mui/material";
 import { InfoOutlined, SendOutlined } from "@mui/icons-material";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const FormContainer = {
 	hidden: { opacity: 0 },
@@ -91,27 +91,29 @@ export default function ContactForm() {
 
 	return (
 		<Box component="form">
-			<motion.div variants={FormContainer} initial="hidden" animate="show">
+			<m.div variants={FormContainer} initial="hidden" animate="show">
 				<Stack spacing={2}>
-					<motion.div variants={FormItem}>
-						<TextField fullWidth
+					<m.div variants={FormItem}>
+						<TextField
+							fullWidth
 							required
 							id="name"
 							label={t("Name.label")}
 							variant="outlined"
 							placeholder={t("Name.placeholder")}
 						/>
-					</motion.div>
-					<motion.div variants={FormItem}>
-						<TextField fullWidth
+					</m.div>
+					<m.div variants={FormItem}>
+						<TextField
+							fullWidth
 							required
 							id="email"
 							label={t("Email.label")}
 							variant="outlined"
 							placeholder={t("Email.placeholder")}
 						/>
-					</motion.div>
-					<motion.div variants={FormItem}>
+					</m.div>
+					<m.div variants={FormItem}>
 						<FormControl fullWidth>
 							<InputLabel id="demo-simple-select-label">
 								{t("Subject.label")}
@@ -131,7 +133,7 @@ export default function ContactForm() {
 								))}
 							</Select>
 						</FormControl>
-					</motion.div>
+					</m.div>
 					{subject === "commission" && (
 						<>
 							<Box
@@ -187,8 +189,9 @@ export default function ContactForm() {
 							</Dialog>
 						</>
 					)}
-					<motion.div variants={FormItem}>
-						<TextField fullWidth
+					<m.div variants={FormItem}>
+						<TextField
+							fullWidth
 							multiline
 							rows={4}
 							required
@@ -197,19 +200,21 @@ export default function ContactForm() {
 							variant="outlined"
 							placeholder={t("Message.placeholder")}
 						/>
-					</motion.div>
+					</m.div>
 				</Stack>
-			</motion.div>
-			<Box mt={3} display="flex" justifyContent="right">
-				<Button
-					size="large"
-					variant="contained"
-					endIcon={<SendOutlined />}
-					onClick={handleSnackbarOpen}
-				>
-					{t("submit")}
-				</Button>
-			</Box>
+				<Box mt={3} display="flex" justifyContent="right">
+					<m.div variants={FormItem}>
+						<Button
+							size="large"
+							variant="contained"
+							endIcon={<SendOutlined />}
+							onClick={handleSnackbarOpen}
+						>
+							{t("submit")}
+						</Button>
+					</m.div>
+				</Box>
+			</m.div>
 			<Snackbar
 				open={openSnackbar}
 				autoHideDuration={6000}

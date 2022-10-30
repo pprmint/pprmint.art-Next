@@ -1,9 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function PageTransition(props: React.PropsWithChildren) {
 	return (
-		<motion.div
+		<m.div
 			initial={{
                 opacity: 0,
 				x: 40,
@@ -23,6 +23,6 @@ export default function PageTransition(props: React.PropsWithChildren) {
 			}}
 		>
 			{props.children}
-		</motion.div>
+		</m.div>
 	);
 }

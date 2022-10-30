@@ -2,7 +2,7 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { ThemeProvider, CssBaseline } from "@mui/material";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, domAnimation, LazyMotion } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "src/createEmotionCache";
@@ -36,27 +36,29 @@ export default function MyApp(props: pageProps) {
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<Navigation />
-				<AnimatePresence
-					exitBeforeEnter
-					onExitComplete={() => window.scrollTo(0, 0)}
-				>
-					<NextIntlProvider
-						messages={pageProps.messages}
-						key={location.pathname}
+				<LazyMotion features={domAnimation}>
+					<AnimatePresence
+						exitBeforeEnter
+						onExitComplete={() => window.scrollTo(0, 0)}
 					>
-						<Head>
-							<meta
-								name="viewport"
-								content="initial-scale=1, width=device-width"
-							/>
-						</Head>
-						<ParallaxProvider>
-							<PageTransition>
-								<Component {...pageProps} />
-							</PageTransition>
-						</ParallaxProvider>
-					</NextIntlProvider>
-				</AnimatePresence>
+						<NextIntlProvider
+							messages={pageProps.messages}
+							key={location.pathname}
+						>
+							<Head>
+								<meta
+									name="viewport"
+									content="initial-scale=1, width=device-width"
+								/>
+							</Head>
+							<ParallaxProvider>
+								<PageTransition>
+									<Component {...pageProps} />
+								</PageTransition>
+							</ParallaxProvider>
+						</NextIntlProvider>
+					</AnimatePresence>
+				</LazyMotion>
 			</ThemeProvider>
 		</CacheProvider>
 	);
