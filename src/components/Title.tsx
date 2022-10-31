@@ -2,7 +2,6 @@ import { GetStaticPropsContext } from "next";
 import { Typography, Container, Box, Grid } from "@mui/material";
 import Image from "next/image";
 import { m } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { ArrowDownward } from "@mui/icons-material";
 import {
 	Parallax,
@@ -48,7 +47,6 @@ export default function Title(
 		topLevel?: string;
 	}>
 ) {
-	const t = useTranslations("Title");
 	if (props.big) {
 		return (
 			<>
@@ -149,12 +147,4 @@ export default function Title(
 			</>
 		);
 	}
-}
-
-export async function getStaticProps({ locale }: GetStaticPropsContext) {
-	return {
-		props: {
-			messages: (await import(`locales/${locale}/strings.json`)).default,
-		},
-	};
 }
