@@ -1,4 +1,5 @@
 import { GetStaticPropsContext } from "next";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { parseISO } from "date-fns";
 import { Container, Typography, Stack, Divider } from "@mui/material";
@@ -7,7 +8,6 @@ import { m } from "framer-motion";
 import Head from "src/components/Head";
 import Title from "src/components/Title";
 import Footer from "src/components/Footer";
-import Link from "../src/components/Link";
 
 import { FiExternalLink } from "react-icons/fi";
 
@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
 					<Typography>{t("Content.Tldr.text")}</Typography>
 					<Divider sx={{ mt: 6, mb: 3 }} />
 				</section>
-                
+
 				<section>
 					<Typography variant="h2">{t("Content.General.heading")}</Typography>
 					<Typography gutterBottom>
@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
 						<br />
 						{t("Content.General.text2")}
 						<br />
-						<Link href="" className="external" color="secondary" scroll={false}>
+						<Link href="" className="external" scroll={false}>
 							{t.rich("Content.General.example", {
 								strong: (children) => <strong>{children}</strong>,
 							})}
@@ -84,7 +84,6 @@ export default function PrivacyPolicy() {
 							<br />
 							<Link
 								className="external"
-								color="secondary"
 								href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -99,7 +98,6 @@ export default function PrivacyPolicy() {
 							<br />
 							<Link
 								className="external"
-								color="secondary"
 								href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -116,7 +114,6 @@ export default function PrivacyPolicy() {
 						<Stack direction="row" spacing={2}>
 							<Link
 								className="external"
-								color="secondary"
 								href="https://vercel.com/legal/privacy-policy"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -128,7 +125,6 @@ export default function PrivacyPolicy() {
 							</Link>
 							<Link
 								className="external"
-								color="secondary"
 								href="https://www.hetzner.com/legal/privacy-policy"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -157,7 +153,6 @@ export default function PrivacyPolicy() {
 						<br />
 						<Link
 							className="external"
-							color="secondary"
 							href="https://www.fastmail.com/about/privacy/"
 							target="_blank"
 							rel="noopener noreferrer"

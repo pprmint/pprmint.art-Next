@@ -47,9 +47,11 @@ export default function Footer() {
 							</Typography>
 							<Stack direction="row" spacing={2} mb={1}>
 								{/* Internal links */}
-								<Link href="privacy" scroll={false}>
-									<Typography variant="body2">{t("privacyPolicy")}</Typography>
-								</Link>
+								<Typography variant="body2">
+									<Link href="privacy" scroll={false}>
+										{t("privacyPolicy")}
+									</Link>
+								</Typography>
 								<Typography variant="body2">
 									<Link
 										href={route}

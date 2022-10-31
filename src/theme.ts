@@ -169,16 +169,6 @@ let theme = createTheme({
 				},
 			},
 		},
-		MuiLink: {
-			styleOverrides: {
-				root: {
-					transition: "250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-					fontWeight: 600,
-					textDecorationThickness: 2,
-					textUnderlineOffset: 1.5,
-				},
-			},
-		},
 		MuiOutlinedInput: {
 			styleOverrides: {
 				notchedOutline: {

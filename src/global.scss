@@ -1,16 +1,29 @@
 :root {
 	// Main color palette
 	--greenPrimary: #0c6;
-	--greenSecondary: #095;
+	--greenSecondary: #00B359;
+	--greenTertiary: #008C46;
+	--greenDark: #004D26;
+
 	--redPrimary: #f34;
-	--redSecondary: #b23;
+	--redSecondary: #E62E3D;
+	--redTertiary: #BF2633;
+	--redDark: #801922;
+
 	--bluePrimary: #19f;
-	--blueSecondary: #17c;
+	--blueSecondary: #1089E6;
+	--blueTertiary: #0D72BF;
+	--blueDark: #094C80;
+
 	--yellowPrimary: #fb2;
-	--yellowSecondary: #d92;
+	--yellowSecondary: #E6AA1E;
+	--yellowTertiary: #BF8D19;
+	--yellowDark: #805E11;
+
 	--textPrimary: #bbb;
 	--textSecondary: #eee;
 	--textTertiary: #fff;
+
 	--backgroundPrimary: #111;
 	--backgroundSecondary: #222;
 	--backgroundTertiary: #333;
@@ -62,26 +75,27 @@ section {
 	outline-offset: 2px;
 	transition: outline-offset 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.MuiLink-root.external:focus-visible {
+a.external:focus-visible {
     outline: 2px dotted #19f;
     outline-offset: 2px;
     transition: outline-offset 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-p .MuiLink-root {
-    padding: initial 3px;
+p a {
+    transition: all .25s var(--easeOut);
+    font-weight: 500;
+    color: var(--greenPrimary);
+    text-decoration: underline dotted 2px var(--greenDark);
 	&:hover {
-        border-radius: 2px;
-		color: #111;
-		box-shadow: inset 0 -20px 0px var(--greenPrimary);
-		text-decoration: underline 2px var(--greenPrimary);
+        text-decoration: underline 2px var(--greenPrimary);
 	}
 }
 
-p .MuiLink-root.external {
+p a.external {
+    color: var(--bluePrimary);
+    text-decoration: underline dotted 2px var(--blueDark);
 	&:hover {
-		box-shadow: inset 0 -20px 0px var(--bluePrimary) !important;
-		text-decoration: underline 2px var(--bluePrimary) !important;
+        text-decoration: underline 2px var(--bluePrimary);
 	}
 }
 
@@ -102,12 +116,9 @@ p {
 		position: relative;
 		top: 2px;
 	}
-	.MuiLink-root svg {
-		margin-right: 5px;
-	}
-	.MuiLink-root.external svg {
+	a.external svg {
 		margin-right: 0;
-		margin-left: 5px;
+		margin-left: 3px;
 	}
 }
 
