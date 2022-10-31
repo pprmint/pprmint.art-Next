@@ -70,6 +70,7 @@ function ProjectCard(props: { strings: string; path: string }) {
 				</CardContent>
 				<CardActions>
 					<Button
+						size="large"
 						variant="text"
 						LinkComponent={Link}
 						href={"/projects/" + props.path}
@@ -93,11 +94,7 @@ export default function Projects() {
 			/>
 			<Title top={t("Title.top")} bottom={t("Title.bottom")} />
 			<Container>
-				<m.div
-					variants={ProjectsContainer}
-					initial="hidden"
-					animate="show"
-				>
+				<m.div variants={ProjectsContainer} initial="hidden" animate="show">
 					<Masonry
 						spacing={4}
 						columns={{ xs: 1, sm: 2, md: 3 }}

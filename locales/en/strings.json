@@ -51,7 +51,7 @@
 		},
 		"Title": {
 			"bottom": "Contact.",
-			"top": "Work in progress:"
+			"top": "Send me a message."
 		}
 	},
 	"Footer": {
@@ -67,7 +67,7 @@
 		},
 		"Title": {
 			"bottom": "Gallery.",
-			"top": "Work in progress:"
+			"top": "Look at some of my graphics and animations."
 		}
 	},
 	"HealthSafety": {
@@ -250,6 +250,12 @@
 				"top": "A sans-serif font."
 			}
 		},
+		"Overview": {
+			"Head": {
+				"description": "For an overview of other things I've worked on, from websites to stuff you can download and use yourself, see the projects page.",
+				"title": "There's more."
+			}
+		},
 		"StartMenuTiles": {
 			"Content": {
 				"Download": {
@@ -268,7 +274,8 @@
 		},
 		"Title": {
 			"bottom": "Projects.",
-			"top": "Work in progress:"
-		}
+			"top": "Other stuff I've worked on."
+		},
+		"moreInfo": "More info"
 	}
 }

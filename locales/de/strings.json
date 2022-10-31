@@ -51,7 +51,7 @@
 		},
 		"Title": {
 			"bottom": "Kontakt.",
-			"top": "Aktuell in Arbeit:"
+			"top": "Schreibe mir eine Nachricht."
 		}
 	},
 	"Footer": {
@@ -67,7 +67,7 @@
 		},
 		"Title": {
 			"bottom": "Galerie.",
-			"top": "Aktuell in Arbeit:"
+			"top": "Schau dir meine Grafiken und Animationen an."
 		}
 	},
 	"HealthSafety": {
@@ -250,6 +250,12 @@
 				"top": "Eine serifenlose Schriftart."
 			}
 		},
+		"Overview": {
+			"Head": {
+				"description": "Einen Überblick über andere Dinge, an denen ich gearbeitet habe, von Websites bis hin zu Sachen, die du herunterladen und selbst verwenden kannst, findest du auf der Projekte-Seite.",
+				"title": "Es gibt noch mehr."
+			}
+		},
 		"StartMenuTiles": {
 			"Content": {
 				"Download": {
@@ -268,7 +274,8 @@
 		},
 		"Title": {
 			"bottom": "Projekte.",
-			"top": "Aktuell in Arbeit:"
-		}
+			"top": "Andere Dinge, an denen ich gearbeitet habe."
+		},
+		"moreInfo": "Weitere Infos"
 	}
 }

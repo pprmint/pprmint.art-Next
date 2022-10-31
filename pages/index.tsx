@@ -147,11 +147,9 @@ const Works2022 = [
 ];
 
 const ProjectGrid = [
-	{ strings: "Mintcraft", path: "mintcraft" },
-	{ strings: "StartMenuTiles", path: "startmenutiles" },
-	{ strings: "Mintsans", path: "mintsans" },
-	{ strings: "Mintbit", path: "mintbit" },
-	{ strings: "MintAlt", path: "mintalt" },
+	{ strings: "Mintcraft", path: "mintcraft", image: "https://media.pprmint.art/test.png" },
+	{ strings: "StartMenuTiles", path: "startmenutiles", image: "https://media.pprmint.art/test.png" },
+	{ strings: "Mintsans", path: "mintsans", image: "https://media.pprmint.art/test.png" },
 ];
 
 // Props for animated work images.
@@ -211,12 +209,14 @@ const ProjectsItem = {
 		},
 	},
 };
-function ProjectCard(props: { strings: string; path: string }) {
+function ProjectCard(props: { strings: string; path: string; image?: string }) {
 	const t = useTranslations("Projects");
 	return (
 		<Box>
 			<Card sx={{ width: "33vw", maxWidth: 550, minWidth: 250 }}>
-				<CardMedia component="img" src="https://media.pprmint.art/test.png" />
+				{props.image && (
+					<CardMedia component="img" src="https://media.pprmint.art/test.png" />
+				)}
 				<CardContent>
 					<Typography variant="h3">
 						{t(props.strings + ".Head.title")}
@@ -227,11 +227,12 @@ function ProjectCard(props: { strings: string; path: string }) {
 				</CardContent>
 				<CardActions>
 					<Button
+						size="large"
 						variant="text"
 						LinkComponent={Link}
 						href={"/projects/" + props.path}
 					>
-						Go to page
+						{t("moreInfo")}
 					</Button>
 				</CardActions>
 			</Card>
@@ -273,15 +274,11 @@ export default function Home() {
 					<Typography variant="h2">{t("Content.Featured.heading")}</Typography>
 					<Typography gutterBottom>{t("Content.Featured.text")}</Typography>
 				</Container>
-				<m.div
-					variants={ProjectsContainer}
-					initial="hidden"
-					whileInView="show"
-				>
+				<m.div variants={ProjectsContainer} initial="hidden" whileInView="show">
 					<Box
 						sx={{
 							display: "flex",
-							gap: 3,
+							gap: 4,
 							p: { xs: 2, sm: 3 },
 							overflow: "auto",
 							width: "100%",
@@ -295,13 +292,12 @@ export default function Home() {
 					>
 						{ProjectGrid.map((Project) => (
 							<m.div key={Project.path} variants={ProjectsItem}>
-								<ProjectCard
-									key={Project.path}
-									strings={Project.strings}
-									path={Project.path}
-								/>
+								<ProjectCard strings={Project.strings} path={Project.path} image={Project.image} />
 							</m.div>
 						))}
+						<m.div variants={ProjectsItem}>
+							<ProjectCard strings="Overview" path="" />
+						</m.div>
 					</Box>
 				</m.div>
 			</section>
