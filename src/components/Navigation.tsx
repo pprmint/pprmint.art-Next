@@ -86,6 +86,10 @@ function ScrollTop() {
 
 export default function Navigation() {
 	const router = useRouter();
+	const navTrigger = useScrollTrigger({
+		disableHysteresis: true,
+		threshold: 0,
+	});
 	return (
 		<>
 			{/* Desktop navigation */}
@@ -93,7 +97,9 @@ export default function Navigation() {
 				color="transparent"
 				elevation={0}
 				sx={{
-					backgroundImage: "linear-gradient(#111a, #1110)",
+                    transition: "all .2s",
+                    backdropFilter: navTrigger ? "blur(20px) brightness(.3) contrast(.9)" : "none",
+                    boxShadow: navTrigger ? "inset 0 -2px 0 #ffffff12" : "inset 0 -2px 0 #fff0",
 				}}
 			>
 				<Toolbar>
