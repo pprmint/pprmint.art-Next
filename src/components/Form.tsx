@@ -83,12 +83,6 @@ export default function ContactForm() {
 		setSnackbarOpen(false);
 	};
 
-	// uhh
-	function radius() {
-		if (subject === "commission") return "8px 8px 0px 0px";
-		return "8";
-	}
-
 	return (
 		<Box component="form">
 			<m.div variants={FormContainer} initial="hidden" animate="show">
@@ -119,7 +113,6 @@ export default function ContactForm() {
 								{t("Subject.label")}
 							</InputLabel>
 							<Select
-								sx={{ borderRadius: radius }}
 								labelId="demo-simple-select-label"
 								id="demo-simple-select"
 								value={subject}
@@ -146,7 +139,6 @@ export default function ContactForm() {
 								sx={{
 									border: "2px solid #333",
 									borderTop: 0,
-									borderRadius: "0 0 8px 8px",
 								}}
 							>
 								<InfoOutlined color="secondary" />

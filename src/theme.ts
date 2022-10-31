@@ -15,30 +15,30 @@ let theme = createTheme({
 		// Green
 		primary: {
 			main: "#0c6",
-			dark: "#095",
+			dark: "#004D26",
 		},
 		success: {
 			main: "#0c6",
-			dark: "#095",
+			dark: "#004D26",
 		},
 		// Blue
 		secondary: {
 			main: "#19f",
-			dark: "#17c",
+			dark: "#094C80",
 		},
 		info: {
 			main: "#19f",
-			dark: "#17c",
+			dark: "#094C80",
 		},
 		// Yellow
 		warning: {
 			main: "#fb2",
-			dark: "#d92",
+			dark: "#805E11",
 		},
 		// Red
 		error: {
 			main: "#f34",
-			dark: "#b23",
+			dark: "#801922",
 		},
 	},
 	typography: {
@@ -47,37 +47,43 @@ let theme = createTheme({
 			fontFeatureSettings: "'ss01'",
 		},
 		h1: {
-            fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Roboto, Helvetica, Arial, sans-serif",
-            fontWeight: 500,
+			fontFamily:
+				"Silka, 'Red Hat Display', Metropolis, 'Clarity City', Roboto, Helvetica, Arial, sans-serif",
+			fontWeight: 500,
 			color: "#eee",
 			lineHeight: 1,
 		},
 		h2: {
-			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily:
+				"Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h3: {
-			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily:
+				"Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h4: {
-			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily:
+				"Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h5: {
-			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily:
+				"Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
 		},
 		h6: {
-			fontFamily: "Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
+			fontFamily:
+				"Silka, 'Red Hat Display', Metropolis, 'Clarity City', Times, sans-serif",
 			fontWeight: 500,
 			color: "#eee",
 			marginBottom: "8px",
@@ -94,49 +100,14 @@ let theme = createTheme({
 			lineHeight: 1.6,
 		},
 	},
-    shape: {
-        borderRadius: 8,
-    },
+	shape: {
+		borderRadius: 0,
+	},
 	components: {
-        MuiContainer: {
-            defaultProps: {
-                maxWidth: "xl",
-            },
-        },
-		MuiTypography: {
-			styleOverrides: {
-				gutterBottom: {
-					marginBottom: 18,
-				},
-			},
-		},
-		MuiPaper: {
-			styleOverrides: {
-				elevation0: {
-					background: "var(--backgroundPrimary)",
-				},
-				elevation1: {
-					background: "var(--backgroundSecondary)",
-				},
-				elevation2: {
-					background: "var(--backgroundTertiary)",
-				},
-				outlined: {
-					borderWidth: "2px !important",
-				},
-			},
-		},
-		MuiDivider: {
+		MuiBackdrop: {
 			styleOverrides: {
 				root: {
-					borderBottomWidth: 2,
-				},
-			},
-		},
-		MuiSkeleton: {
-			styleOverrides: {
-				root: {
-					backgroundColor: "transparent",
+					backgroundColor: "#111a",
 				},
 			},
 		},
@@ -145,12 +116,29 @@ let theme = createTheme({
 				outlined: {
 					borderWidth: "2px !important",
 				},
-                sizeMedium: {
-                    borderRadius: 4,
+				sizeLarge: {
+					padding: "12px 18px",
+				},
+			},
+		},
+		MuiCardContent: {
+			styleOverrides: {
+				root: {
+                    padding: "18px 18px 12px 18px",
                 },
-                sizeSmall: {
-                    borderRadius: 3,
-                }
+			},
+		},
+		MuiCardActions: {
+			styleOverrides: {
+				root: {
+					padding: 0,
+                    justifyContent: "end",
+				},
+			},
+		},
+		MuiContainer: {
+			defaultProps: {
+				maxWidth: "xl",
 			},
 		},
 		MuiDialog: {
@@ -167,10 +155,10 @@ let theme = createTheme({
 				},
 			},
 		},
-		MuiBackdrop: {
+		MuiDivider: {
 			styleOverrides: {
 				root: {
-					backgroundColor: "#111a",
+					borderBottomWidth: 2,
 				},
 			},
 		},
@@ -178,13 +166,6 @@ let theme = createTheme({
 			styleOverrides: {
 				root: {
 					fontFamily: "'Basier Circle', Roboto, Helvetica, Arial, sans-serif",
-				},
-			},
-		},
-		MuiToggleButton: {
-			styleOverrides: {
-				root: {
-					borderWidth: "2px !important",
 				},
 			},
 		},
@@ -206,6 +187,44 @@ let theme = createTheme({
 					"&:hover": {
 						borderColor: "#444 !important",
 					},
+				},
+			},
+		},
+		MuiPaper: {
+			styleOverrides: {
+				elevation0: {
+					background: "var(--backgroundPrimary)",
+				},
+				elevation1: {
+					background: "var(--backgroundSecondary)",
+				},
+				elevation2: {
+					background: "var(--backgroundTertiary)",
+				},
+				outlined: {
+					borderWidth: "2px !important",
+					borderColor: "var(--backgroundTertiary)",
+				},
+			},
+		},
+		MuiSkeleton: {
+			styleOverrides: {
+				root: {
+					backgroundColor: "transparent",
+				},
+			},
+		},
+		MuiToggleButton: {
+			styleOverrides: {
+				root: {
+					borderWidth: "2px !important",
+				},
+			},
+		},
+		MuiTypography: {
+			styleOverrides: {
+				gutterBottom: {
+					marginBottom: 18,
 				},
 			},
 		},
