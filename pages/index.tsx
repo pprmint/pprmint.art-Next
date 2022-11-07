@@ -215,7 +215,7 @@ function ProjectCard(props: { strings: string; path: string; image?: string }) {
 		<Box>
 			<Card sx={{ width: "33vw", maxWidth: 550, minWidth: 250 }}>
 				{props.image && (
-					<CardMedia component="img" src="https://static.pprmint.art/image/test.png" />
+					<CardMedia component="img" src={props.image} />
 				)}
 				<CardContent>
 					<Typography variant="h3">
