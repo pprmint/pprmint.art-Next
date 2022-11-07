@@ -2,7 +2,7 @@
 module.exports = {
     reactStrictMode: true,
     images: {
-        domains: ["media.pprmint.art"],
+        domains: ["static.pprmint.art"],
     },
     i18n: {
         locales: ["en", "de"],

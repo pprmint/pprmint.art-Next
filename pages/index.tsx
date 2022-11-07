@@ -31,115 +31,115 @@ import { SiGithub } from "react-icons/si";
 // Tentative, will likely be replaced with something blog-like
 const Works2022 = [
 	{
-		image: "https://media.pprmint.art/2022/Landscape/Landscape.png",
+		image: "https://static.pprmint.art/works/2022/Landscape/Landscape.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Pimples/Confusing_POST.png",
+		image: "https://static.pprmint.art/works/2022/Pimples/Confusing_POST.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Pyramid/pyramid.png",
+		image: "https://static.pprmint.art/works/2022/Pyramid/pyramid.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Platonic/platonic_edit_mirrored.png",
+		image: "https://static.pprmint.art/works/2022/Platonic/platonic_edit_mirrored.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Nextjs/NextJS.png",
+		image: "https://static.pprmint.art/works/2022/Nextjs/NextJS.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/What/whatb.png",
+		image: "https://static.pprmint.art/works/2022/What/whatb.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/SolarSystem/Solar_System_2.png",
+		image: "https://static.pprmint.art/works/2022/SolarSystem/Solar_System_2.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Flap/Flap.png",
+		image: "https://static.pprmint.art/works/2022/Flap/Flap.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Swirl/Swirl_1080p_E.png",
+		image: "https://static.pprmint.art/works/2022/Swirl/Swirl_1080p_E.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Lights/N-720.png",
+		image: "https://static.pprmint.art/works/2022/Lights/N-720.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Book/Cover-720.png",
+		image: "https://static.pprmint.art/works/2022/Book/Cover-720.png",
 		path: "#",
 		width: 2481,
 		height: 3508,
 	},
 	{
-		image: "https://media.pprmint.art/2022/MintBanners/MINT_Night-720.png",
+		image: "https://static.pprmint.art/works/2022/MintBanners/MINT_Night-720.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/WiiRemake/WiiRemake-720.png",
+		image: "https://static.pprmint.art/works/2022/WiiRemake/WiiRemake-720.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Geoices/geoballs-720.png",
+		image: "https://static.pprmint.art/works/2022/Geoices/geoballs-720.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/SUSE/suse-720.png",
+		image: "https://static.pprmint.art/works/2022/SUSE/suse-720.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Statistics/statistics-720.png",
+		image: "https://static.pprmint.art/works/2022/Statistics/statistics-720.png",
 		path: "#",
 		width: 2000,
 		height: 2000,
 	},
 	{
-		image: "https://media.pprmint.art/2022/iPad/iPad-720.png",
+		image: "https://static.pprmint.art/works/2022/iPad/iPad-720.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/ArchWall/Arch_Qogir-720.png",
+		image: "https://static.pprmint.art/works/2022/ArchWall/Arch_Qogir-720.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
 	},
 	{
-		image: "https://media.pprmint.art/2022/Ford/Ford-720.png",
+		image: "https://static.pprmint.art/works/2022/Ford/Ford-720.png",
 		path: "#",
 		width: 1920,
 		height: 1080,
@@ -147,9 +147,9 @@ const Works2022 = [
 ];
 
 const ProjectGrid = [
-	{ strings: "Mintcraft", path: "mintcraft", image: "https://media.pprmint.art/test.png" },
-	{ strings: "StartMenuTiles", path: "startmenutiles", image: "https://media.pprmint.art/test.png" },
-	{ strings: "Mintsans", path: "mintsans", image: "https://media.pprmint.art/test.png" },
+	{ strings: "Mintcraft", path: "mintcraft", image: "https://static.pprmint.art/images/test.png" },
+	{ strings: "StartMenuTiles", path: "startmenutiles", image: "https://static.pprmint.art/images/test.png" },
+	{ strings: "Mintsans", path: "mintsans", image: "https://static.pprmint.art/images/test.png" },
 ];
 
 // Props for animated work images.
@@ -215,7 +215,7 @@ function ProjectCard(props: { strings: string; path: string; image?: string }) {
 		<Box>
 			<Card sx={{ width: "33vw", maxWidth: 550, minWidth: 250 }}>
 				{props.image && (
-					<CardMedia component="img" src="https://media.pprmint.art/test.png" />
+					<CardMedia component="img" src="https://static.pprmint.art/image/test.png" />
 				)}
 				<CardContent>
 					<Typography variant="h3">
@@ -258,7 +258,7 @@ export default function Home() {
 			<Box sx={{ scrollSnapAlign: "start" }}>
 				<Title big top={t("Title.top")} bottom={t("Title.bottom")}>
 					<video
-						src="https://media.pprmint.art/hero.mp4"
+						src="https://static.pprmint.art/videos/hero.mp4"
 						width="100%"
 						height="100%"
 						style={{ objectFit: "cover" }}
