@@ -4,7 +4,6 @@ import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Container, Typography, Box, Button, Grid, Stack } from "@mui/material";
 import { m } from "framer-motion";
-import Lottie from "react-lottie-player";
 import errorJson from "src/animations/error.json";
 
 import Head from "components/Head";
