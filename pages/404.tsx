@@ -7,9 +7,9 @@ import { m } from "framer-motion";
 import Lottie from "react-lottie-player";
 import errorJson from "src/animations/error.json";
 
-import Head from "src/components/Head";
-import Footer from "src/components/Footer";
-import NoSSR from "src/components/NoSSR";
+import Head from "components/Head";
+import Footer from "components/Footer";
+import NoSSR from "components/NoSSR";
 
 const StopCodes = [
 	"I_HATE_WINDOWS",

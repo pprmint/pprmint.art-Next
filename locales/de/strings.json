@@ -56,19 +56,7 @@
 	},
 	"Footer": {
 		"and": " und ",
-		"madeWith": "Gemacht mit ",
-		"privacyPolicy": "Datenschutzerklärung",
-		"switchLocale": "Switch to English"
-	},
-	"Gallery": {
-		"Head": {
-			"description": "Schau dir meine Grafiken und Animationen an, frisch aus dem Ofen.",
-			"title": "Galerie."
-		},
-		"Title": {
-			"bottom": "Galerie.",
-			"top": "Schau dir meine Grafiken und Animationen an."
-		}
+		"madeWith": "Gemacht mit "
 	},
 	"HealthSafety": {
 		"Head": {
@@ -95,10 +83,9 @@
 			"title": "Guten Heute."
 		},
 		"Title": {
-			"bottom": "Ich mache Dinge mit Vektorpunkten, Polygonen und Code.",
-			"button": "Repo ansehen",
+			"button": "Mehr Infos",
 			"description": "Ich habe angefangen, meine Website von Grund auf mit Next.js neu zu bauen. Vieles ist noch in Arbeit, weshalb die normale React-Seite noch für eine Weile online bleiben wird.",
-			"top": "Heya."
+			"slogan": "Ich mache Dinge mit <br />\nVektoren, Polygonen und Code."
 		}
 	},
 	"Navigation": {
@@ -106,7 +93,15 @@
 			"gallery": "",
 			"home": "Start"
 		},
-		"scrollToTop": "Nach oben scrollen"
+		"privacyPolicy": "Datenschutzerklärung",
+		"scrollToTop": "Nach oben scrollen",
+		"switchLocale": "Switch to English"
+	},
+	"Overview": {
+		"Head": {
+			"description": "Überblick über meine drei Spezialgebiete.",
+			"title": "Überblick."
+		}
 	},
 	"PrivacyPolicy": {
 		"Content": {

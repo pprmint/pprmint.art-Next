@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Container, Box, Button, Typography } from "@mui/material";
 import { m } from "framer-motion";
-import Head from "src/components/Head";
-import Title from "src/components/Title";
+import Head from "components/Head";
+import Title from "components/Title";
 import Lottie from "react-lottie-player";
 import wordmarkJson from "src/animations/wordmark.json";
 import prideJson from "src/animations/pride_wordmark.json";

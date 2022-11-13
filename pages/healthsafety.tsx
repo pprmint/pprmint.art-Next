@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 import { Container, Box, Button, Typography } from "@mui/material";
 import { m } from "framer-motion";
 
-import Head from "src/components/Head";
-import Title from "src/components/Title";
-import Footer from "src/components/Footer";
+import Head from "components/Head";
+import Title from "components/Title";
+import Footer from "components/Footer";
 
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";

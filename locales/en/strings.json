@@ -56,19 +56,7 @@
 	},
 	"Footer": {
 		"and": " and ",
-		"madeWith": "Made with ",
-		"privacyPolicy": "Privacy policy",
-		"switchLocale": "Zu Deutsch wechseln"
-	},
-	"Gallery": {
-		"Head": {
-			"description": "Look at some of my graphics and animations, fresh out of the oven.",
-			"title": "Gallery."
-		},
-		"Title": {
-			"bottom": "Gallery.",
-			"top": "Look at some of my graphics and animations."
-		}
+		"madeWith": "Made with "
 	},
 	"HealthSafety": {
 		"Head": {
@@ -95,10 +83,9 @@
 			"title": "Good today."
 		},
 		"Title": {
-			"bottom": "I make things with vector points, polygons and code.",
-			"button": "Check out repo",
+			"button": "Learn more",
 			"description": "I started rebuilding my website from scratch using Next.js. It's still work in progress for the most part, therefore the regular React site will remain online for some more time.",
-			"top": "Hiya."
+			"slogan": "I make things with<br />\nvectors, polygons and code."
 		}
 	},
 	"Navigation": {
@@ -106,7 +93,15 @@
 			"gallery": "",
 			"home": "Home"
 		},
-		"scrollToTop": "Scroll to top"
+		"privacyPolicy": "Privacy policy",
+		"scrollToTop": "Scroll to top",
+		"switchLocale": "Zu Deutsch wechseln"
+	},
+	"Overview": {
+		"Head": {
+			"description": "Overview of my three specialties.",
+			"title": "Overview."
+		}
 	},
 	"PrivacyPolicy": {
 		"Content": {
