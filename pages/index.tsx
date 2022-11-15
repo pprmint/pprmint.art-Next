@@ -20,7 +20,7 @@ const ColumnContainer = {
 		opacity: 1,
 		transition: {
 			duration: 0,
-			staggerChildren: 0.1,
+			staggerChildren: 0.05,
 		},
 	},
 };
