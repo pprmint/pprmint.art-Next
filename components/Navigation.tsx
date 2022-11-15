@@ -4,7 +4,7 @@ import { GetStaticPropsContext } from "next";
 import { Router, useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import Lottie from "lottie-react";
-import logo from "src/animations/wordmark.json";
+import logo from "animations/wordmark.json";
 import Button from "./Button";
 import { Favorite, Cafe } from "@carbon/icons-react";
 
@@ -34,10 +34,10 @@ export default function Navigation() {
 	}
 
 	return (
-		<div className="z-10 fixed w-full flex h-15 pl-5 pr-7 items-center">
+		<div className="z-10 fixed w-full flex px-9 items-center">
 			<div className="mr-auto">
 				<Link href="/">
-					<Lottie animationData={logo} loop={false} className="h-20" />
+					<Lottie animationData={logo} loop={false} className="h-24 w-56" />
 				</Link>
 			</div>
 			<div className="flex gap-7 text-white">
