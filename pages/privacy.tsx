@@ -11,6 +11,36 @@ import Footer from "components/Footer";
 import { FiExternalLink } from "react-icons/fi";
 import { ArrowUpRight } from "@carbon/icons-react";
 
+const SectionContainer = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			duration: 0,
+			staggerChildren: 0.05,
+		},
+	},
+};
+const Section = {
+	hidden: {
+		y: 100,
+		opacity: 0,
+	},
+	show: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			y: { duration: 0.75, ease: "circOut" },
+			opacity: { duration: 0.25 },
+		},
+	},
+	exit: {
+		y: -100,
+		opacity: 0,
+		transition: { duration: 0.3, ease: "easeIn" },
+	},
+};
+
 export default function PrivacyPolicy() {
 	const t = useTranslations("PrivacyPolicy");
 	return (
@@ -20,8 +50,14 @@ export default function PrivacyPolicy() {
 				description={t("Head.description")}
 				ogImg="privacy.png"
 			/>
-			<div className="py-40 max-w-6xl mx-auto">
-				<section className="py-5">
+			<m.div
+				variants={SectionContainer}
+				initial="hidden"
+				animate="show"
+				exit="exit"
+				className="py-40 max-w-6xl mx-auto px-6"
+			>
+				<m.div variants={Section} className="py-5">
 					<h1 className="font-sans font-bold text-white text-6xl pb-2">
 						{t("Title.bottom")}
 					</h1>
@@ -31,9 +67,10 @@ export default function PrivacyPolicy() {
 							{ revisionDate: parseISO("2022-10-28T") } // YYYY-MM-DD
 						)}
 					</h2>
-				</section>
-				<section className="py-5">
-					<div className="bg-gradient-to-br from-black-light1 to-black border border-black-light2 rounded-xl p-6">
+				</m.div>
+
+				<m.div variants={Section} className="py-5">
+					<div className="bg-gradient-to-br from-black-light1 to-black border-2 border-black-light2 rounded-xl p-6">
 						<h3 className="font-sans font-bold text-white text-3xl pb-2">
 							{t("Content.Tldr.heading")}
 						</h3>
@@ -41,9 +78,9 @@ export default function PrivacyPolicy() {
 							{t("Content.Tldr.text")}
 						</p>
 					</div>
-				</section>
+				</m.div>
 
-				<section className="py-5">
+				<m.div variants={Section} className="py-5">
 					<h3 className="font-sans font-bold text-white text-3xl pb-2">
 						{t("Content.General.heading")}
 					</h3>
@@ -52,16 +89,20 @@ export default function PrivacyPolicy() {
 						<br />
 						{t("Content.General.text2")}
 						<br />
-						<Link href="" className="external" scroll={false}>
+						<Link
+							href=""
+							className="flex items-end font-medium text-blue underline decoration-dotted decoration-2 decoration-blue-dark3 hover:decoration-blue"
+							scroll={false}
+						>
 							{t.rich("Content.General.example", {
 								strong: (children) => <strong>{children}</strong>,
 							})}
 							<ArrowUpRight />
 						</Link>
 					</p>
-				</section>
+				</m.div>
 
-				<section className="py-5">
+				<m.div variants={Section} className="py-5">
 					<h3 className="font-sans font-bold text-white text-3xl pb-2">
 						{t("Content.Hosting.heading")}
 					</h3>
@@ -69,87 +110,113 @@ export default function PrivacyPolicy() {
 						{t.rich("Content.Hosting.text1", {
 							strong: (children) => <strong>{children}</strong>,
 						})}
-						<br />
+					</p>
+					<br />
+					<p className="font-sans text-white-dark2">
 						{t.rich("Content.Hosting.text2", {
 							strong: (children) => <strong>{children}</strong>,
 						})}
+					</p>
+					<br />
+					<div className="pl-3">
+						<p className="font-sans text-white-dark2">
+							{t.rich("Content.Hosting.Log.domain", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+						</p>
 						<br />
-						{t.rich("Content.Hosting.Log.domain", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
+						<p className="font-sans text-white-dark2">
+							{t.rich("Content.Hosting.Log.ipAddress", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+						</p>
 						<br />
-						{t.rich("Content.Hosting.Log.ipAddress", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
+						<p className="font-sans text-white-dark2">
+							{t.rich("Content.Hosting.Log.accessTime", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+						</p>
 						<br />
-						{t.rich("Content.Hosting.Log.accessTime", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
+						<p className="font-sans text-white-dark2">
+							{t.rich("Content.Hosting.Log.receivedFile", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+						</p>
 						<br />
-						{t.rich("Content.Hosting.Log.receivedFile", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<br />
-						{t.rich("Content.Hosting.Log.httpCode", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<br />
-						<Link
-							className="external"
-							href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							HTTP response status codes - HTTP | MDN
-							<ArrowUpRight />
-						</Link>
-						<br />
-						{t.rich("Content.Hosting.Log.userAgent", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
-						<br />
-						<Link
-							className="external"
-							href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							User-Agent - HTTP | MDN
-							<ArrowUpRight />
-						</Link>
-						<br />
+						<p className="font-sans text-white-dark2">
+							{t.rich("Content.Hosting.Log.httpCode", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+						</p>
+						<p className="font-sans text-white-dark2">
+							<Link
+								className="flex items-end font-medium text-blue underline decoration-dotted decoration-2 decoration-blue-dark3 hover:decoration-blue"
+								href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								HTTP response status codes - HTTP | MDN
+								<ArrowUpRight />
+							</Link>
+						</p>
+
+						<p className="font-sans text-white-dark2">
+							<br />
+							{t.rich("Content.Hosting.Log.userAgent", {
+								strong: (children) => <strong>{children}</strong>,
+							})}
+							<br />
+						</p>
+						<p className="font-sans text-white-dark2">
+							<Link
+								className="flex items-end font-medium text-blue underline decoration-dotted decoration-2 decoration-blue-dark3 hover:decoration-blue"
+								href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								User-Agent - HTTP | MDN
+								<ArrowUpRight />
+							</Link>
+						</p>
+					</div>
+					<br />
+					<p className="font-sans text-white-dark2">
 						{t("Content.Hosting.text3")}
 						<br />
+					</p>
+					<p className="font-sans text-white-dark2">
 						{t("Content.Hosting.text4")}
 						<br />
-						<div>
-							<Link
-								className="external"
-								href="https://vercel.com/legal/privacy-policy"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								{t("Content.privacyPolicyOf", {
-									provider: "Vercel",
-								})}
-								<ArrowUpRight />
-							</Link>
-							<Link
-								className="external"
-								href="https://www.hetzner.com/legal/privacy-policy"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								{t("Content.privacyPolicyOf", {
-									provider: "Hetzner",
-								})}
-								<ArrowUpRight />
-							</Link>
-						</div>
 					</p>
-				</section>
+					<p className="font-sans text-white-dark2">
+						<Link
+							className="flex items-end font-medium text-blue underline decoration-dotted decoration-2 decoration-blue-dark3 hover:decoration-blue"
+							href="https://vercel.com/legal/privacy-policy"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{t("Content.privacyPolicyOf", {
+								provider: "Vercel",
+							})}
+							<ArrowUpRight />
+						</Link>
+					</p>
+					<p className="font-sans text-white-dark2">
+						<Link
+							className="flex items-end font-medium text-blue underline decoration-dotted decoration-2 decoration-blue-dark3 hover:decoration-blue"
+							href="https://www.hetzner.com/legal/privacy-policy"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{t("Content.privacyPolicyOf", {
+								provider: "Hetzner",
+							})}
+							<ArrowUpRight />
+						</Link>
+					</p>
+				</m.div>
 
-				<section className="py-5">
+				<m.div variants={Section} className="py-5">
 					<h3 className="font-sans font-bold text-white text-3xl pb-2">
 						{t("Content.Contact.heading")}
 					</h3>
@@ -165,7 +232,7 @@ export default function PrivacyPolicy() {
 						})}
 						<br />
 						<Link
-							className="external"
+							className="flex items-end font-medium text-blue underline decoration-dotted decoration-2 decoration-blue-dark3 hover:decoration-blue"
 							href="https://www.fastmail.com/about/privacy/"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -174,8 +241,8 @@ export default function PrivacyPolicy() {
 							<ArrowUpRight />
 						</Link>
 					</p>
-				</section>
-			</div>
+				</m.div>
+			</m.div>
 		</>
 	);
 }
