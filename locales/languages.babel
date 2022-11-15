@@ -26,7 +26,7 @@
                                 <name>Content</name>
                                 <children>
                                     <concept_node>
-                                        <name>complete</name>
+                                        <name>info</name>
                                         <definition_loaded>false</definition_loaded>
                                         <description/>
                                         <comment/>
@@ -43,7 +43,7 @@
                                         </translations>
                                     </concept_node>
                                     <concept_node>
-                                        <name>main</name>
+                                        <name>notFound</name>
                                         <definition_loaded>false</definition_loaded>
                                         <description/>
                                         <comment/>
@@ -60,41 +60,7 @@
                                         </translations>
                                     </concept_node>
                                     <concept_node>
-                                        <name>moreInfo</name>
-                                        <definition_loaded>false</definition_loaded>
-                                        <description/>
-                                        <comment/>
-                                        <default_text/>
-                                        <translations>
-                                            <translation>
-                                                <language>de-DE</language>
-                                                <approved>false</approved>
-                                            </translation>
-                                            <translation>
-                                                <language>en-US</language>
-                                                <approved>false</approved>
-                                            </translation>
-                                        </translations>
-                                    </concept_node>
-                                    <concept_node>
-                                        <name>stopCode</name>
-                                        <definition_loaded>false</definition_loaded>
-                                        <description/>
-                                        <comment/>
-                                        <default_text/>
-                                        <translations>
-                                            <translation>
-                                                <language>de-DE</language>
-                                                <approved>false</approved>
-                                            </translation>
-                                            <translation>
-                                                <language>en-US</language>
-                                                <approved>false</approved>
-                                            </translation>
-                                        </translations>
-                                    </concept_node>
-                                    <concept_node>
-                                        <name>support</name>
+                                        <name>returnHome</name>
                                         <definition_loaded>false</definition_loaded>
                                         <description/>
                                         <comment/>
@@ -115,6 +81,23 @@
                             <folder_node>
                                 <name>Head</name>
                                 <children>
+                                    <concept_node>
+                                        <name>description</name>
+                                        <definition_loaded>false</definition_loaded>
+                                        <description/>
+                                        <comment/>
+                                        <default_text/>
+                                        <translations>
+                                            <translation>
+                                                <language>de-DE</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>en-US</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                        </translations>
+                                    </concept_node>
                                     <concept_node>
                                         <name>title</name>
                                         <definition_loaded>false</definition_loaded>

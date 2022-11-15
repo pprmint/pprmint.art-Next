@@ -5,10 +5,7 @@ import { parseISO } from "date-fns";
 import { m } from "framer-motion";
 
 import Head from "components/Head";
-import Title from "components/Title";
-import Footer from "components/Footer";
 
-import { FiExternalLink } from "react-icons/fi";
 import { ArrowUpRight } from "@carbon/icons-react";
 
 const SectionContainer = {

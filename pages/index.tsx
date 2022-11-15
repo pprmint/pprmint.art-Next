@@ -7,8 +7,6 @@ import { m } from "framer-motion";
 
 import Head from "components/Head";
 import Button from "components/Button";
-import Title from "components/Title";
-import Footer from "components/Footer";
 
 import backgroundImage from "public/assets/background.svg";
 

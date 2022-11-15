@@ -4,8 +4,6 @@ import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
 
 import Head from "components/Head";
-import Title from "components/Title";
-import Footer from "components/Footer";
 
 const ColumnContainer = {
 	hidden: { opacity: 0 },

@@ -1,13 +1,12 @@
 {
 	"404": {
 		"Content": {
-			"complete": "complete",
-			"main": "Your browser ran into a missing page and needs to return to the home page. We're not collecting any error info, and then we'll return for you.",
-			"moreInfo": "For no information about this issue and impossible fixes, visit",
-			"stopCode": "Stop code: ",
-			"support": "If you call a support person, give them this info:"
+			"info": "Either the URL you entered contains typos, or the page doesn't exist anymore.",
+			"notFound": "This page was not found.",
+			"returnHome": "Go to home page"
 		},
 		"Head": {
+			"description": "Page not found.",
 			"title": "Page not found."
 		}
 	},

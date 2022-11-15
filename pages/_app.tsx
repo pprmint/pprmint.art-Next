@@ -2,7 +2,6 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
-import { ParallaxProvider } from "react-scroll-parallax";
 import { AbstractIntlMessages, NextIntlProvider } from "next-intl";
 
 import "fonts/Aspekta/aspekta.css";
