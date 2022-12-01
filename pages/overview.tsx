@@ -49,11 +49,11 @@ export default function Gallery() {
 				initial="hidden"
 				animate="show"
 				exit="exit"
-				className="grid grid-cols-3 overflow-hidden"
+				className="lg:grid lg:grid-cols-3 overflow-hidden"
 			>
 				<m.div
 					variants={Column}
-					className="flex justify-center h-screen relative"
+					className="flex justify-center h-[33.3vh] lg:h-screen relative"
 				>
 					<Image
 						src="https://static.pprmint.art/works/2022/iPad/iPad.png"
@@ -71,10 +71,10 @@ export default function Gallery() {
 				</m.div>
 				<m.div
 					variants={Column}
-					className="flex justify-center h-screen relative"
+					className="flex justify-center h-[33.3vh] lg:h-screen relative"
 				>
 					<Image
-						src="https://static.pprmint.art/works/2022/Pimples/Confusing_POST.png"
+						src="https://static.pprmint.art/works/2022/PurpleQuartz/Purple_Quartz.png"
 						width={1920}
 						height={1080}
 						alt="Test image"
@@ -89,7 +89,7 @@ export default function Gallery() {
 				</m.div>
 				<m.div
 					variants={Column}
-					className="flex justify-center h-screen relative"
+					className="flex justify-center h-[33.3vh] lg:h-screen relative"
 				>
 					<Image
 						src="https://static.pprmint.art/images/code.png"
