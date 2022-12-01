@@ -9,8 +9,7 @@ import Head from "components/Head";
 import Button from "components/Button";
 
 import backgroundImage from "public/assets/background.svg";
-
-import { ArrowRight } from "@carbon/icons-react";
+import { ArrowRight } from "phosphor-react";
 
 const ColumnContainer = {
 	hidden: { opacity: 0 },
@@ -70,7 +69,7 @@ export default function Home() {
 					</m.div>
 					<m.div variants={Column}>
 						<Button href="/overview" large>
-							{t("Title.button")} <ArrowRight size={24} />
+							{t("Title.button")} <ArrowRight />
 						</Button>
 					</m.div>
 				</div>

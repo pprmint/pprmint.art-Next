@@ -53,10 +53,6 @@
 			"top": "Send me a message."
 		}
 	},
-	"Footer": {
-		"and": " and ",
-		"madeWith": "Made with "
-	},
 	"HealthSafety": {
 		"Head": {
 			"description": "pssst.",
@@ -94,7 +90,9 @@
 		},
 		"privacyPolicy": "Privacy policy",
 		"scrollToTop": "Scroll to top",
-		"switchLocale": "Zu Deutsch wechseln"
+		"switchLocale": "Zu Deutsch wechseln",
+        "and": " and ",
+		"madeWith": "Made with "
 	},
 	"Overview": {
 		"Head": {

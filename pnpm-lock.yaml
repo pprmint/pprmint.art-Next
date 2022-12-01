@@ -1,8 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@carbon/icons-react': ^11.11.0
-  '@types/carbon__icons-react': ^11.10.0
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
@@ -14,15 +12,15 @@ specifiers:
   lottie-react: ^2.3.1
   next: 13.0.2
   next-intl: ^2.9.1
+  phosphor-react: ^1.4.1
   postcss: ^8.4.18
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.7.1
   tailwindcss: ^3.2.2
   typescript: 4.8.4
 
 dependencies:
-  '@carbon/icons-react': 11.11.0_react@18.2.0
-  '@types/carbon__icons-react': 11.10.0
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
@@ -33,8 +31,10 @@ dependencies:
   lottie-react: 2.3.1_biqbaboplfbrettd7655fr4n2y
   next: 13.0.2_biqbaboplfbrettd7655fr4n2y
   next-intl: 2.9.1_next@13.0.2+react@18.2.0
+  phosphor-react: 1.4.1_react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.7.1_react@18.2.0
   typescript: 4.8.4
 
 devDependencies:
@@ -57,27 +57,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.10
-    dev: false
-
-  /@carbon/icon-helpers/10.34.0:
-    resolution: {integrity: sha512-Ov9EBc1tR/DDrMI0pN1drj2jb27ISmYFBLdDji+aivVJkLPy8R/jikJOsOBgIq2kUjQJYNN199k2acHKjZdYIg==}
-    dev: false
-
-  /@carbon/icons-react/11.11.0_react@18.2.0:
-    resolution: {integrity: sha512-Kbm/PHJCVdIByVCIlZ4f2KUdUPfQLurR5CoaZ18Sj0cwd7JqebBPCyhq/xVXlTwxBqAuCmos3vWM9+VLn/ixeQ==}
-    requiresBuild: true
-    peerDependencies:
-      react: '>=16'
-    dependencies:
-      '@carbon/icon-helpers': 10.34.0
-      '@carbon/telemetry': 0.1.0
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@carbon/telemetry/0.1.0:
-    resolution: {integrity: sha512-kNWt0bkgPwGW0i5h7HFuljbKRXPvIhsKbB+1tEURAYLXoJg9iJLF1eGvWN5iVoFCS2zje4GR3OGOsvvKVe7Hlg==}
-    hasBin: true
     dev: false
 
   /@emotion/is-prop-valid/0.8.8:
@@ -377,10 +356,6 @@ packages:
     resolution: {integrity: sha512-rEUrBSGIoSFuYxwBYtlUFMlE2CwGhmW+w9355/5oduSw8e5h2+Tj4UrAGNNgP9915++wj5vkQo0UuOBqOAq4nw==}
     dependencies:
       tslib: 2.4.1
-    dev: false
-
-  /@types/carbon__icons-react/11.10.0:
-    resolution: {integrity: sha512-nLGzVu6+kKYu1PJ/bPY4bXxLeDm4eg+9XqUbQd1ee4FRvb7GI/duKa6B3lz5wbC/QtvalzJV68rhzR+HnhBfDg==}
     dev: false
 
   /@types/json5/0.0.29:
@@ -1892,6 +1867,15 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
+  /phosphor-react/1.4.1_react@18.2.0:
+    resolution: {integrity: sha512-gO5j7U0xZrdglTAYDYPACU4xDOFBTJmptrrB/GeR+tHhCZF3nUMyGmV/0hnloKjuTrOmpSFlbfOY78H39rgjUQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
@@ -2026,6 +2010,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-icons/4.7.1_react@18.2.0:
+    resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:
