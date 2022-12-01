@@ -6,7 +6,7 @@ import { m } from "framer-motion";
 
 import Head from "components/Head";
 
-import { ArrowUpRight } from "@carbon/icons-react";
+import { ArrowUpRight } from "phosphor-react";
 
 const SectionContainer = {
 	hidden: { opacity: 0 },
@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
 							{t.rich("Content.General.example", {
 								strong: (children) => <strong>{children}</strong>,
 							})}
-							<ArrowUpRight />
+							<ArrowUpRight weight="bold" />
 						</Link>
 					</p>
 				</m.div>
@@ -153,7 +153,7 @@ export default function PrivacyPolicy() {
 								rel="noopener noreferrer"
 							>
 								HTTP response status codes - HTTP | MDN
-								<ArrowUpRight />
+								<ArrowUpRight weight="bold" />
 							</Link>
 						</p>
 
@@ -172,7 +172,7 @@ export default function PrivacyPolicy() {
 								rel="noopener noreferrer"
 							>
 								User-Agent - HTTP | MDN
-								<ArrowUpRight />
+								<ArrowUpRight weight="bold" />
 							</Link>
 						</p>
 					</div>
@@ -195,7 +195,7 @@ export default function PrivacyPolicy() {
 							{t("Content.privacyPolicyOf", {
 								provider: "Vercel",
 							})}
-							<ArrowUpRight />
+							<ArrowUpRight weight="bold" />
 						</Link>
 					</p>
 					<p className="font-sans text-white-dark2">
@@ -208,7 +208,7 @@ export default function PrivacyPolicy() {
 							{t("Content.privacyPolicyOf", {
 								provider: "Hetzner",
 							})}
-							<ArrowUpRight />
+							<ArrowUpRight weight="bold" />
 						</Link>
 					</p>
 				</m.div>
@@ -235,7 +235,7 @@ export default function PrivacyPolicy() {
 							rel="noopener noreferrer"
 						>
 							{t("Content.privacyPolicyOf", { provider: "Fastmail" })}
-							<ArrowUpRight />
+							<ArrowUpRight weight="bold" />
 						</Link>
 					</p>
 				</m.div>

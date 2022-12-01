@@ -6,7 +6,7 @@ import { m } from "framer-motion";
 
 import Head from "components/Head";
 import Button from "components/Button";
-import { Home } from "@carbon/icons-react";
+import { House } from "phosphor-react";
 
 const SectionContainer = {
 	hidden: { opacity: 0 },
@@ -72,7 +72,7 @@ export default function NotFound() {
 				</m.div>
 				<m.div variants={Section}>
 					<Button href="/" large>
-						{t("Content.returnHome")} <Home size={24} />
+						{t("Content.returnHome")} <House size={24} />
 					</Button>
 				</m.div>
 			</m.div>
