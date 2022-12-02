@@ -103,7 +103,7 @@ export default function Navigation() {
 				<div className="flex flex-col gap-3">
 					<div className="grid gap-1 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
 						{Pages.map((Page) => (
-							<Link href={Page.link} onClick={handleClose}>
+							<Link key={Page.link} href={Page.link} onClick={handleClose}>
 								<Navlink strings={Page.strings} />
 							</Link>
 						))}
