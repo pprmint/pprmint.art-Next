@@ -109,7 +109,7 @@ export default function Navigation() {
 						))}
 					</div>
 					<hr className="border-dotted border-white-dark2" />
-					<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 h-full lg:grid-cols-3">
+					<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
 						<Link href="/privacy" onClick={handleClose}>
 							<Navlink strings="PrivacyPolicy.Head" />
 						</Link>
@@ -202,7 +202,7 @@ export default function Navigation() {
 						initial="hidden"
 						animate="show"
 						exit="exit"
-						className="origin-top-right fixed top-0 sm:top-6 right-0 sm:right-6 w-full sm:w-auto z-50"
+						className="origin-top-right fixed top-0 sm:top-6 left-0 sm:left-6 md:left-auto right-0 sm:right-6 w-full sm:w-auto z-50"
 					>
 						<Menu />
 					</m.div>
