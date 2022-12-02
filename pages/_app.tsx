@@ -28,8 +28,8 @@ export default function App({ Component, pageProps }: AppProps) {
 				<meta name="twitter:creator" content="@npprmint" />
 			</Head>
 			<NextIntlProvider messages={pageProps.messages}>
-				<Navigation />
 				<LazyMotion features={domAnimation}>
+				<Navigation />
 					<AnimatePresence
 						exitBeforeEnter
 						onExitComplete={() => window.scrollTo(0, 0)}

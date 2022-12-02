@@ -45,7 +45,7 @@
 			"submitSnackbarButton": "Sick"
 		},
 		"Head": {
-			"description": "Send me a message, be it about commissions, what I ate for breakfast today or something entirely different.",
+			"description": "Get in touch via email or Twitter DMs.",
 			"title": "Contact."
 		},
 		"Title": {
@@ -84,13 +84,16 @@
 		}
 	},
 	"Navigation": {
-		"Pages": {
-			"gallery": "",
-			"home": "Home"
+		"Home": {
+			"title": "Home page.",
+			"description": "That borderline useless page with a singular button."
 		},
 		"privacyPolicy": "Privacy policy",
-		"scrollToTop": "Scroll to top",
-		"switchLocale": "Zu Deutsch wechseln",
+		"workInProgress": "work in progress",
+		"SwitchLocale": {
+            "title": "Zu Deutsch wechseln",
+            "description": "Du verstehst nicht mal Bahnhof? Klick hier."
+        },
         "and": " and ",
 		"madeWith": "Made with "
 	},
@@ -136,7 +139,7 @@
 			"privacyPolicyOf": "{provider}'s privacy policy"
 		},
 		"Head": {
-			"description": "Learn more about what information is processed upon your visit and by whom. Spoiler: It's not that much.",
+			"description": "Learn about what data is processed upon your visit.",
 			"title": "Privacy policy."
 		},
 		"Title": {
@@ -146,7 +149,7 @@
 	},
 	"Projects": {
 		"Head": {
-			"description": "Other stuff I've worked on and things that you can download and use for yourself.",
+			"description": "Other stuff I've worked on, and downloads.",
 			"title": "Projects."
 		},
 		"MintAlt": {

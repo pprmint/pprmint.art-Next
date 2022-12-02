@@ -45,7 +45,7 @@
 			"submitSnackbarButton": "Krass"
 		},
 		"Head": {
-			"description": "Schreibe mir eine Nachricht, sei es über Kommissionen, was ich heute zum Frühstück gegessen habe, oder etwas ganz anderes.",
+			"description": "Kontaktiere mich per Email oder Twitter-Nachricht.",
 			"title": "Kontakt."
 		},
 		"Title": {
@@ -84,13 +84,16 @@
 		}
 	},
 	"Navigation": {
-		"Pages": {
-			"gallery": "",
-			"home": "Start"
+		"Home": {
+			"title": "Startseite.",
+			"description": "Diese grenzwertig nutzlose Seite mit einem einzigen Knopf."
 		},
 		"privacyPolicy": "Datenschutzerklärung",
-		"scrollToTop": "Nach oben scrollen",
-		"switchLocale": "Switch to English",
+		"workInProgress": "in Arbeit",
+		"SwitchLocale": {
+			"title": "Switch to English.",
+			"description": "What you're reading doesn't make a lick of sense to you? Click here."
+		},
 		"and": " und ",
 		"madeWith": "Gemacht mit "
 	},
@@ -136,7 +139,7 @@
 			"privacyPolicyOf": "Datenschutzerklärung von {provider}"
 		},
 		"Head": {
-			"description": "Erfahre mehr darüber, welche Informationen bei deinem Besuch von wem verarbeitet werden. Spoiler: Es ist nicht viel.",
+			"description": "Erfahre, welche Daten bei deinem Besuch verarbeitet werden.",
 			"title": "Datenschutzerklärung."
 		},
 		"Title": {
@@ -146,7 +149,7 @@
 	},
 	"Projects": {
 		"Head": {
-			"description": "Andere Dinge, an denen ich gearbeitet habe, und solche, die du selbst herunterladen und verwenden kannst.",
+			"description": "Andere Dinge, an denen ich gearbeitet habe, und Downloads.",
 			"title": "Projekte."
 		},
 		"MintAlt": {
