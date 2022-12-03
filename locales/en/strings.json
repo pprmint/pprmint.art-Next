@@ -53,6 +53,12 @@
 			"top": "Send me a message."
 		}
 	},
+	"Gallery": {
+		"Head": {
+			"description": "Stimulate your visual senses like no chewing gum can.",
+			"title": "Gallery"
+		}
+	},
 	"HealthSafety": {
 		"Head": {
 			"description": "pssst.",
@@ -85,17 +91,17 @@
 	},
 	"Navigation": {
 		"Home": {
-			"title": "Home page.",
-			"description": "That borderline useless page with a singular button."
+			"description": "That borderline useless page with a singular button.",
+			"title": "Home page."
 		},
-		"privacyPolicy": "Privacy policy",
-		"workInProgress": "work in progress",
 		"SwitchLocale": {
-            "title": "Zu Deutsch wechseln",
-            "description": "Du verstehst nicht mal Bahnhof? Klick hier."
-        },
-        "and": " and ",
-		"madeWith": "Made with "
+			"description": "Du verstehst nicht mal Bahnhof? Klick hier.",
+			"title": "Zu Deutsch wechseln"
+		},
+		"and": " and ",
+		"madeWith": "Made with ",
+		"privacyPolicy": "Privacy policy",
+		"workInProgress": "work in progress"
 	},
 	"Overview": {
 		"Head": {

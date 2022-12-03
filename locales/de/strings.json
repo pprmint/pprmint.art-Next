@@ -53,6 +53,12 @@
 			"top": "Schreibe mir eine Nachricht."
 		}
 	},
+	"Gallery": {
+		"Head": {
+			"description": "Stimuliere deine visuellen Sinne, wie es kein Kaugummi kann.",
+			"title": "Galerie"
+		}
+	},
 	"HealthSafety": {
 		"Head": {
 			"description": "pssst.",
@@ -85,17 +91,17 @@
 	},
 	"Navigation": {
 		"Home": {
-			"title": "Startseite.",
-			"description": "Diese grenzwertig nutzlose Seite mit einem einzigen Knopf."
+			"description": "Diese grenzwertig nutzlose Seite mit einem einzigen Knopf.",
+			"title": "Startseite."
 		},
-		"privacyPolicy": "Datenschutzerklärung",
-		"workInProgress": "in Arbeit",
 		"SwitchLocale": {
-			"title": "Switch to English.",
-			"description": "What you're reading doesn't make a lick of sense to you? Click here."
+			"description": "What you're reading doesn't make a lick of sense to you? Click here.",
+			"title": "Switch to English."
 		},
 		"and": " und ",
-		"madeWith": "Gemacht mit "
+		"madeWith": "Gemacht mit ",
+		"privacyPolicy": "Datenschutzerklärung",
+		"workInProgress": "in Arbeit"
 	},
 	"Overview": {
 		"Head": {
