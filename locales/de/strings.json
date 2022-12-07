@@ -128,21 +128,24 @@
 					"accessTime": "<strong>Zugriffszeit: </strong>Die Zeit zu welcher der Client (also dein Browser) eine Datei vom Server erhielt. Falls es dich interessiert: Das Format ist DD/MMMM/YYYY: HH:MM:SS +GMT.",
 					"domain": "<strong>Domain: </strong>pprmint.art. Ich weiß, ich kann's selbst kaum glauben.",
 					"httpCode": "<strong>HTTP-Antwort-Code: </strong>Meist ist das \"200 OK\" denn ♪ hier ist alles super ♪. Möchtest du mehr über die verschiedenen Codes der HTTP-Welt erfahren:",
-					"ipAddress": "<strong>IP-Adresse: </strong>Das Ding, womit sich dein Router da draußen identifiziert. Hetzner muss IP-Adressen anonymisieren, was sie tun, indem sie das letzte Oktett mit einer zufälligen Zahl ersetzen.",
+					"ipAddress": "<strong>IP-Adresse: </strong>Das Ding, mit welchem du dich im Internet identifizierst. Hetzner anonymisiert IP-Adressen, indem sie das letzte Oktett mit einer zufälligen Zahl ersetzen.",
 					"receivedFile": "<strong>Erhaltene Datei: </strong>Na rate mal.",
 					"userAgent": "<strong>User-Agent: </strong>Damit erfährt der Server beispielsweise, welcher Browser, welches Betriebssystem und welche Rendering-Engine für den Zugriff auf etwas verwendet wurde. Außerdem kann ich dir sagen, dass Windows 11 dort immer noch als \"Windows NT 10.0; Win64; x64\" bezeichnet wird. Weitere Informationen über den User-Agent-Header findest du hier:"
 				},
 				"heading": "Hosting.",
-				"text1": "Die Website selbst wird von <strong>Vercel</strong> gehostet, die Server-Logs mit deiner IP-Adresse und Systemkonfiguration behalten. Sie werden zur \"Verbesserung\" ihrer Dienste und Plattform sowie zur Erkennung von Bedrohungen verwendet.",
-				"text2": "Einige Bilder, Videos und andere Dateien, die du herunterladen kannst, werden auf meinem Webspace von <strong>Hetzner</strong> gehostet. Wenn dein Browser auf Dateien von dort zugreift, wird das vom Server protokolliert. Für volle Transparenz ist hier was ein solcher Log-Eintrag enthalten kann:",
-				"text3": "Jeder Log-Eintrag wird für bis zu 7 Tage gespeichert.",
-				"text4": "Solltest du selbst Hetzner nicht benutzen: Die Protokolle erscheinen in einer riesigen, scrollbaren Liste, in absteigender Reihenfolge von unten (neueste) nach oben (älteste). Wenn ich wollte, könnte ich diese Protokolle speichern, damit Hetzner am Ende eines jedes Monats Statistiken erstellt, aber ich habe das kürzlich deaktiviert und auch alle übrigen Dateien manuell vom Server gelöscht."
+				"text1": "Zur Bereitstellung der Website werden mehrere Webhosting-Anbieter verwendet, um auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO mit modernen Webtechnologien arbeiten zu können, sowie Medien und Downloads in Originalqualität und ohne Bandbreiteneinschränkungen anzubieten.",
+				"text2": "Für die eigentliche Website verwende ich <strong>Vercel</strong>, eine Cloud-Deployment-Plattform, bereitgestellt von Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA).",
+				"text3": "Medien wie Bilder und Videos sowie zum Download angebotene Dateien werden auf Server der <strong>Hetzner Online GmbH</strong> (Industriestraße 25, 91710 Gunzenhausen, Deutschland) gespeichert.",
+				"text4": "Die Website selbst sammelt keine personenbezogenen Daten und verzichtet auf Analyse-Tools. Jedoch werden von den Hosting-Anbietern beim Besuch automatisch Informationen erfasst und in Log-Dateien gespeichert. Diese Logs enthalten u. a. Folgendes:",
+				"text5": "Log-Einträge werden von Hetzner für 7 Tage gespeichert. Vercel behält Daten so lange, wie es nötig ist, um ihre Dienste bereitzustellen. Daten werden, wenn möglich, regelmäßig gelöscht. Sollte eine Löschung nicht möglich sein, werden Daten sicher und isoliert gespeichert, bis eine Löschung möglich ist.",
+				"text6": "Weitere Informationen findest du in den Datenschutzerklärungen von Hetzner und Vercel, sowie dem Data Privacy Addendum von Vercel."
 			},
 			"Tldr": {
 				"heading": "Die Kurzfassung:",
 				"text": "Server-Logs sind die einzigen Dinger, die Informationen über dich speichern, oder genauer über den Browser und das Gerät, welches du gerade verwendest. Die eigentliche Website wird von Vercel gehostet, während einige Bilder, Videos und Downloads von meinem Webspace bei Hetzner stammen."
 			},
-			"privacyPolicyOf": "Datenschutzerklärung von {provider}"
+			"privacyPolicyOf": "Datenschutzerklärung von {provider}",
+			"dpaOf": "Data Processing Agreement von {provider}"
 		},
 		"Head": {
 			"description": "Erfahre, welche Daten bei deinem Besuch verarbeitet werden.",

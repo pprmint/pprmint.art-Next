@@ -61,7 +61,7 @@ export default function PrivacyPolicy() {
 					<h2 className="font-sans text-white-dark2 text-4xl">
 						{t(
 							"Title.top",
-							{ revisionDate: parseISO("2022-10-28T") } // YYYY-MM-DD
+							{ revisionDate: parseISO("2022-12-07T") } // YYYY-MM-DD
 						)}
 					</h2>
 				</m.div>
@@ -104,9 +104,7 @@ export default function PrivacyPolicy() {
 						{t("Content.Hosting.heading")}
 					</h3>
 					<p className="font-sans text-white-dark2">
-						{t.rich("Content.Hosting.text1", {
-							strong: (children) => <strong>{children}</strong>,
-						})}
+						{t("Content.Hosting.text1")}
 					</p>
 					<br />
 					<p className="font-sans text-white-dark2">
@@ -114,7 +112,17 @@ export default function PrivacyPolicy() {
 							strong: (children) => <strong>{children}</strong>,
 						})}
 					</p>
+                    <br />
+					<p className="font-sans text-white-dark2">
+						{t.rich("Content.Hosting.text3", {
+							strong: (children) => <strong>{children}</strong>,
+						})}
+					</p>
 					<br />
+                    <p className="font-sans text-white-dark2">
+						{t("Content.Hosting.text4")}
+					</p>
+                    <br />
 					<div className="pl-3">
 						<p className="font-sans text-white-dark2">
 							{t.rich("Content.Hosting.Log.domain", {
@@ -178,11 +186,11 @@ export default function PrivacyPolicy() {
 					</div>
 					<br />
 					<p className="font-sans text-white-dark2">
-						{t("Content.Hosting.text3")}
+						{t("Content.Hosting.text5")}
 						<br />
 					</p>
 					<p className="font-sans text-white-dark2">
-						{t("Content.Hosting.text4")}
+						{t("Content.Hosting.text6")}
 						<br />
 					</p>
 					<p className="font-sans text-white-dark2">
@@ -193,6 +201,19 @@ export default function PrivacyPolicy() {
 							rel="noopener noreferrer"
 						>
 							{t("Content.privacyPolicyOf", {
+								provider: "Vercel",
+							})}
+							<ArrowUpRight weight="bold" />
+						</Link>
+					</p>
+					<p className="font-sans text-white-dark2">
+						<Link
+							className="flex items-end font-medium text-blue underline decoration-dotted decoration-2 decoration-blue-dark3 hover:decoration-blue"
+							href="https://vercel.com/legal/dpa"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{t("Content.dpaOf", {
 								provider: "Vercel",
 							})}
 							<ArrowUpRight weight="bold" />
