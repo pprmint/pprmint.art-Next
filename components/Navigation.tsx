@@ -191,19 +191,19 @@ export default function Navigation() {
 
 	return (
 		<>
-			<div className="bg-gradient-to-b from-black to-transparent z-50 fixed w-full flex px-6 md:px-9 items-center">
+			<div className="bg-gradient-to-b from-black to-transparent z-50 fixed w-full flex items-start">
 				<div className="mr-auto">
 					<Link href="/" scroll={false}>
 						<Lottie
 							animationData={logo}
 							loop={false}
-							className="h-20 md:h-24 w-52 md:w-56"
+							className="w-48 md:w-56 h-16 md:h-24 my-2 md:my-0 ml-6 md:ml-9"
 						/>
 					</Link>
 				</div>
 				<button
 					onClick={handleOpen}
-					className="text-white p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
+					className="text-white p-3 mt-3 md:mt-6 mr-3 md:mr-6 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
 				>
 					<List weight="bold" />
 				</button>
