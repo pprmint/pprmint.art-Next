@@ -101,6 +101,7 @@
 		"and": " and ",
 		"madeWith": "Made with ",
 		"privacyPolicy": "Privacy policy",
+		"whereToGo": "Where do you want to go?",
 		"workInProgress": "work in progress"
 	},
 	"Overview": {
@@ -144,8 +145,8 @@
 				"heading": "TL;DR:",
 				"text": "Server logs are the only things that store information about you, or rather about the browser and device you're currently using. The actual site is hosted by Vercel, with some images, videos and downloads coming from my webspace on Hetzner."
 			},
-			"privacyPolicyOf": "{provider}'s privacy policy",
-			"dpaOf": "{provider}'s Data Processing Agreement"
+			"dpaOf": "{provider}'s Data Processing Agreement",
+			"privacyPolicyOf": "{provider}'s privacy policy"
 		},
 		"Head": {
 			"description": "Learn about what data is processed upon your visit.",

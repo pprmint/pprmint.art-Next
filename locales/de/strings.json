@@ -101,6 +101,7 @@
 		"and": " und ",
 		"madeWith": "Gemacht mit ",
 		"privacyPolicy": "Datenschutzerklärung",
+		"whereToGo": "Wo darf's hingehen?",
 		"workInProgress": "in Arbeit"
 	},
 	"Overview": {
@@ -144,8 +145,8 @@
 				"heading": "Die Kurzfassung:",
 				"text": "Server-Logs sind die einzigen Dinger, die Informationen über dich speichern, oder genauer über den Browser und das Gerät, welches du gerade verwendest. Die eigentliche Website wird von Vercel gehostet, während einige Bilder, Videos und Downloads von meinem Webspace bei Hetzner stammen."
 			},
-			"privacyPolicyOf": "Datenschutzerklärung von {provider}",
-			"dpaOf": "Data Processing Agreement von {provider}"
+			"dpaOf": "Data Processing Agreement von {provider}",
+			"privacyPolicyOf": "Datenschutzerklärung von {provider}"
 		},
 		"Head": {
 			"description": "Erfahre, welche Daten bei deinem Besuch verarbeitet werden.",
