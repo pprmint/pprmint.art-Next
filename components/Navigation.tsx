@@ -11,7 +11,7 @@ import logo from "animations/wordmark.json";
 
 import Button from "./Button";
 
-import { Coffee, Heart, X } from "phosphor-react";
+import { Coffee, Heart, List, X } from "phosphor-react";
 import { SiGithub, SiTumblr, SiTwitter, SiYoutube } from "react-icons/si";
 
 const NavigationAnimation = {
@@ -91,30 +91,32 @@ export default function Navigation() {
 	function Menu() {
 		const t = useTranslations("Navigation");
 		return (
-			<div className="bg-black-light1 border border-black-light2 sm:rounded-xl p-3 shadow-2xl shadow-black">
-				<div className="flex flex-row pb-3">
-					<h1 className="flex-grow pl-3 text-white text-xl font-bold">
-						Navigation
-						<span className="text-sm font-normal pl-3">
-							{t("workInProgress")}
-						</span>
+			<div className="bg-black-light1 border-b sm:border border-black-light2 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen overflow-auto">
+				<div className="flex flex-row pb-3 items-center">
+					<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
+						{t("whereToGo")}
 					</h1>
 					<button
 						onClick={handleClose}
-						className="text-white p-2 hover:bg-red-dark3 rounded-full duration-75 active:scale-90"
+						className="text-white p-3 hover:bg-red-dark3 rounded-full duration-75 active:scale-90"
 					>
 						<X weight="bold" />
 					</button>
 				</div>
-				<div className="flex flex-col gap-3">
+				<div className="flex flex-col gap-3 pb-3">
 					<div className="grid gap-1 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
 						{Pages.map((Page) => (
-							<Link key={Page.link} href={Page.link} onClick={handleClose} scroll={false}>
+							<Link
+								key={Page.link}
+								href={Page.link}
+								onClick={handleClose}
+								scroll={false}
+							>
 								<Navlink strings={Page.strings} />
 							</Link>
 						))}
 					</div>
-					<hr className="border-dotted border-white-dark2" />
+					<hr className="border-dotted border-white-dark2 mx-3" />
 					<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
 						<Link href="/privacy" onClick={handleClose} scroll={false}>
 							<Navlink strings="PrivacyPolicy.Head" />
@@ -125,7 +127,7 @@ export default function Navigation() {
 					</div>
 				</div>
 
-				<div className="flex items-end">
+				<div className="flex flex-col sm:flex-row sm:items-end">
 					<div className="p-3 text-white-dark2 text-xs flex-grow">
 						<p className="flex flex-row items-center">
 							{t("madeWith")}
@@ -189,17 +191,22 @@ export default function Navigation() {
 
 	return (
 		<>
-			<div className="z-10 fixed w-full flex px-9 items-center">
+			<div className="bg-gradient-to-b from-black to-transparent z-50 fixed w-full flex px-6 md:px-9 items-center">
 				<div className="mr-auto">
-					<Link href="/">
-						<Lottie animationData={logo} loop={false} className="h-24 w-56" />
+					<Link href="/" scroll={false}>
+						<Lottie
+							animationData={logo}
+							loop={false}
+							className="h-20 md:h-24 w-52 md:w-56"
+						/>
 					</Link>
 				</div>
-				<div className="flex gap-7 text-white">
-					<p onClick={handleOpen} className="hover:font-bold cursor-pointer">
-						Menu
-					</p>
-				</div>
+				<button
+					onClick={handleOpen}
+					className="text-white p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
+				>
+					<List weight="bold" />
+				</button>
 			</div>
 			<AnimatePresence>
 				{open && (
