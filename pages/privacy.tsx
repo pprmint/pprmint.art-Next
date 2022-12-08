@@ -56,11 +56,11 @@ export default function PrivacyPolicy() {
 				>
 					<m.div variants={Section} className="py-5">
 						<h1 className="font-bold text-white text-5xl md:text-6xl pb-3">
-							{t("Title.bottom")}
+							{t("Head.title")}
 						</h1>
 						<h2 className="text-white-dark2 text-3xl md:text-4xl">
 							{t(
-								"Title.top",
+								"Content.lastUpdated",
 								{ revisionDate: parseISO("2022-12-07T") } // YYYY-MM-DD
 							)}
 						</h2>

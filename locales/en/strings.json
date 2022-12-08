@@ -7,7 +7,7 @@
 		},
 		"Head": {
 			"description": "Page not found.",
-			"title": "Page not found."
+			"title": "Page not found"
 		}
 	},
 	"Contact": {
@@ -46,11 +46,7 @@
 		},
 		"Head": {
 			"description": "Get in touch via email or Twitter DMs.",
-			"title": "Contact."
-		},
-		"Title": {
-			"bottom": "Contact.",
-			"top": "Send me a message."
+			"title": "Contact"
 		}
 	},
 	"Gallery": {
@@ -67,32 +63,18 @@
 	},
 	"Home": {
 		"Content": {
-			"Featured": {
-				"heading": "Featured projects.",
-				"text": "These are some of my brigger projects that I'm very proud of."
-			},
-			"Works": {
-				"Columns": {
-					"columns": "columns",
-					"description": "Amount of columns"
-				},
-				"heading": "Works of "
-			}
+			"button": "Learn more",
+			"slogan": "I make things with<br />\nvector points, polygons and code."
 		},
 		"Head": {
 			"description": "I make things with vector points, polygons and code.",
-			"title": "Good today."
-		},
-		"Title": {
-			"button": "Learn more",
-			"description": "I started rebuilding my website from scratch using Next.js. It's still work in progress for the most part, therefore the regular React site will remain online for some more time.",
-			"slogan": "I make things with<br />\nvectors, polygons and code."
+			"title": "Hiya"
 		}
 	},
 	"Navigation": {
 		"Home": {
 			"description": "That borderline useless page with a singular button.",
-			"title": "Home page."
+			"title": "Home page"
 		},
 		"SwitchLocale": {
 			"description": "Du verstehst nicht mal Bahnhof? Klick hier.",
@@ -100,14 +82,12 @@
 		},
 		"and": " and ",
 		"madeWith": "Made with ",
-		"privacyPolicy": "Privacy policy",
-		"whereToGo": "Where do you want to go?",
-		"workInProgress": "work in progress"
+		"whereToGo": "Where do you want to go?"
 	},
 	"Overview": {
 		"Head": {
-			"description": "Overview of my three specialties.",
-			"title": "Overview."
+			"description": "My three specialties described on one page.",
+			"title": "Overview"
 		}
 	},
 	"PrivacyPolicy": {
@@ -146,21 +126,18 @@
 				"text": "Server logs are the only things that store information about you, or rather about the browser and device you're currently using. The actual site is hosted by Vercel, with some images, videos and downloads coming from my webspace on Hetzner."
 			},
 			"dpaOf": "{provider}'s Data Processing Agreement",
+			"lastUpdated": "Last updated: {revisionDate, date, ::yyyyMMMMd}",
 			"privacyPolicyOf": "{provider}'s privacy policy"
 		},
 		"Head": {
 			"description": "Learn about what data is processed upon your visit.",
-			"title": "Privacy policy."
-		},
-		"Title": {
-			"bottom": "Privacy policy.",
-			"top": "Last updated: {revisionDate, date, ::yyyyMMMMd}"
+			"title": "Privacy policy"
 		}
 	},
 	"Projects": {
 		"Head": {
 			"description": "Other stuff I've worked on, and downloads.",
-			"title": "Projects."
+			"title": "Projects"
 		},
 		"MintAlt": {
 			"Content": {
@@ -276,10 +253,6 @@
 				"bottom": "Start menu tiles.",
 				"top": "Finally consistent."
 			}
-		},
-		"Title": {
-			"bottom": "Projects.",
-			"top": "Other stuff I've worked on."
 		},
 		"moreInfo": "More info"
 	}

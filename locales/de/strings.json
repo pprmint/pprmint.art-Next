@@ -7,7 +7,7 @@
 		},
 		"Head": {
 			"description": "Seite nicht gefunden.",
-			"title": "Seite nicht gefunden."
+			"title": "Seite nicht gefunden"
 		}
 	},
 	"Contact": {
@@ -46,11 +46,7 @@
 		},
 		"Head": {
 			"description": "Kontaktiere mich per Email oder Twitter-Nachricht.",
-			"title": "Kontakt."
-		},
-		"Title": {
-			"bottom": "Kontakt.",
-			"top": "Schreibe mir eine Nachricht."
+			"title": "Kontakt"
 		}
 	},
 	"Gallery": {
@@ -67,47 +63,31 @@
 	},
 	"Home": {
 		"Content": {
-			"Featured": {
-				"heading": "Vorgestellte Projekte.",
-				"text": "Das sind einige meiner Projekte, auf die ich sehr stolz bin."
-			},
-			"Works": {
-				"Columns": {
-					"columns": "Spalten",
-					"description": "Anzahl der Spalten"
-				},
-				"heading": "Werke aus "
-			}
+			"button": "Mehr Infos",
+			"slogan": "Ich mache Dinge mit <br />\nVektorpunkten, Polygonen und Code."
 		},
 		"Head": {
 			"description": "Ich mache Dinge mit Vektorpunkten, Polygonen und Code.",
-			"title": "Guten Heute."
-		},
-		"Title": {
-			"button": "Mehr Infos",
-			"description": "Ich habe angefangen, meine Website von Grund auf mit Next.js neu zu bauen. Vieles ist noch in Arbeit, weshalb die normale React-Seite noch für eine Weile online bleiben wird.",
-			"slogan": "Ich mache Dinge mit <br />\nVektoren, Polygonen und Code."
+			"title": "Heya"
 		}
 	},
 	"Navigation": {
 		"Home": {
 			"description": "Diese grenzwertig nutzlose Seite mit einem einzigen Knopf.",
-			"title": "Startseite."
+			"title": "Startseite"
 		},
 		"SwitchLocale": {
 			"description": "What you're reading doesn't make a lick of sense to you? Click here.",
-			"title": "Switch to English."
+			"title": "Switch to English"
 		},
 		"and": " und ",
 		"madeWith": "Gemacht mit ",
-		"privacyPolicy": "Datenschutzerklärung",
-		"whereToGo": "Wo darf's hingehen?",
-		"workInProgress": "in Arbeit"
+		"whereToGo": "Wo darf's hingehen?"
 	},
 	"Overview": {
 		"Head": {
-			"description": "Überblick über meine drei Spezialgebiete.",
-			"title": "Überblick."
+			"description": "Meine drei Spezialgebiete auf einer Seite zusammengefasst.",
+			"title": "Überblick"
 		}
 	},
 	"PrivacyPolicy": {
@@ -146,21 +126,18 @@
 				"text": "Server-Logs sind die einzigen Dinger, die Informationen über dich speichern, oder genauer über den Browser und das Gerät, welches du gerade verwendest. Die eigentliche Website wird von Vercel gehostet, während einige Bilder, Videos und Downloads von meinem Webspace bei Hetzner stammen."
 			},
 			"dpaOf": "Data Processing Agreement von {provider}",
+			"lastUpdated": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}",
 			"privacyPolicyOf": "Datenschutzerklärung von {provider}"
 		},
 		"Head": {
 			"description": "Erfahre, welche Daten bei deinem Besuch verarbeitet werden.",
-			"title": "Datenschutzerklärung."
-		},
-		"Title": {
-			"bottom": "Daten­schutz­erklärung.",
-			"top": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}"
+			"title": "Datenschutzerklärung"
 		}
 	},
 	"Projects": {
 		"Head": {
 			"description": "Andere Dinge, an denen ich gearbeitet habe, und Downloads.",
-			"title": "Projekte."
+			"title": "Projekte"
 		},
 		"MintAlt": {
 			"Content": {
@@ -276,10 +253,6 @@
 				"bottom": "Start-Menü-Kacheln.",
 				"top": "Endlich einheitlich."
 			}
-		},
-		"Title": {
-			"bottom": "Projekte.",
-			"top": "Andere Dinge, an denen ich gearbeitet habe."
 		},
 		"moreInfo": "Weitere Infos"
 	}

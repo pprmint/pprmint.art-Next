@@ -64,12 +64,12 @@ export default function Home() {
 					<m.div variants={Column} className="grow">
 						<p
 							className="font-sans text-5xl text-white font-bold"
-							dangerouslySetInnerHTML={{ __html: t.raw("Title.slogan") }}
+							dangerouslySetInnerHTML={{ __html: t.raw("Content.slogan") }}
 						/>
 					</m.div>
 					<m.div variants={Column}>
 						<Button href="/overview" large>
-							{t("Title.button")} <ArrowRight />
+							{t("Content.button")} <ArrowRight />
 						</Button>
 					</m.div>
 				</div>
