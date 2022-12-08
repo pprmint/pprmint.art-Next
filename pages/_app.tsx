@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				<meta name="twitter:site" content="@npprmint" />
 				<meta name="twitter:creator" content="@npprmint" />
 				<noscript>
-					<div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-5xl w-4/5 rounded-lg bg-black-light1 font-sans text-white-dark2">
+					<div className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-5xl w-4/5 rounded-lg bg-black-light1 font-sans text-white-dark2">
 						<div className="bg-red-dark3 rounded-t-lg">
 							<h1 className="font-sans font-bold text-white text-4xl md:text-5xl pb-2 p-5 md:p-10 ">
 								JavaScript seems to be disabled.
