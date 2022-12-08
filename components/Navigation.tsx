@@ -3,13 +3,16 @@ import Link from "next/link";
 import { GetStaticPropsContext } from "next";
 import { Router, useRouter } from "next/router";
 import { useTranslations } from "next-intl";
+import { AnimatePresence, m } from "framer-motion";
+import * as Portal from "@radix-ui/react-portal";
 import Lottie from "lottie-react";
+
 import logo from "animations/wordmark.json";
+
 import Button from "./Button";
 
 import { Coffee, Heart, X } from "phosphor-react";
 import { SiGithub, SiTumblr, SiTwitter, SiYoutube } from "react-icons/si";
-import { AnimatePresence, m } from "framer-motion";
 
 const NavigationAnimation = {
 	hidden: {
@@ -54,6 +57,18 @@ const Pages = [
 	},
 ];
 
+function Navlink(props: { strings: string }) {
+	const t = useTranslations();
+	return (
+		<button className="text-left hover:bg-black-light2 px-3 py-2 duration-75 rounded-md active:scale-[.97] w-full md:w-72 h-full">
+			<span className="font-bold text-white">
+				{t(props.strings + ".title")}
+			</span>
+			<p className="text-white-dark2">{t(props.strings + ".description")}</p>
+		</button>
+	);
+}
+
 export default function Navigation() {
 	const t = useTranslations("Navigation");
 	const { locale, locales, route } = useRouter();
@@ -63,23 +78,14 @@ export default function Navigation() {
 
 	const handleOpen = () => {
 		setOpen(true);
+		document.body.classList.add("overflow-hidden");
 	};
 
-	const handleClose = () => {
+	const handleClose = async () => {
 		setOpen(false);
+		await new Promise((r) => setTimeout(r, 200));
+		document.body.classList.remove("overflow-hidden");
 	};
-
-	function Navlink(props: { strings: string }) {
-		const t = useTranslations();
-		return (
-			<button className="text-left hover:bg-black-light2 px-3 py-2 duration-75 rounded-md active:scale-[.97] w-full md:w-72 h-full">
-				<span className="font-bold text-white">
-					{t(props.strings + ".title")}
-				</span>
-				<p className="text-white-dark2">{t(props.strings + ".description")}</p>
-			</button>
-		);
-	}
 
 	// Work in progress
 	function Menu() {
@@ -197,15 +203,25 @@ export default function Navigation() {
 			</div>
 			<AnimatePresence>
 				{open && (
-					<m.div
-						variants={NavigationAnimation}
-						initial="hidden"
-						animate="show"
-						exit="exit"
-						className="origin-top-right fixed top-0 sm:top-6 left-0 sm:left-6 md:left-auto right-0 sm:right-6 w-full sm:w-auto z-50"
-					>
-						<Menu />
-					</m.div>
+					<Portal.Root>
+						<m.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 0.7 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.2 }}
+							className="fixed top-0 left-0 bg-black w-screen h-screen"
+							onClick={handleClose}
+						/>
+						<m.div
+							variants={NavigationAnimation}
+							initial="hidden"
+							animate="show"
+							exit="exit"
+							className="origin-top-right fixed top-0 sm:top-6 left-0 sm:left-6 md:left-auto right-0 sm:right-6 w-full sm:w-auto z-50"
+						>
+							<Menu />
+						</m.div>
+					</Portal.Root>
 				)}
 			</AnimatePresence>
 		</>
