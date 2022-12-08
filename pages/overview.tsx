@@ -35,7 +35,7 @@ const Column = {
 	},
 };
 
-export default function Gallery() {
+export default function Overview() {
 	const t = useTranslations("Overview");
 	return (
 		<>
