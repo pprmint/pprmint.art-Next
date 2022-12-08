@@ -109,17 +109,17 @@ export default function Navigation() {
 				<div className="flex flex-col gap-3">
 					<div className="grid gap-1 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
 						{Pages.map((Page) => (
-							<Link key={Page.link} href={Page.link} onClick={handleClose}>
+							<Link key={Page.link} href={Page.link} onClick={handleClose} scroll={false}>
 								<Navlink strings={Page.strings} />
 							</Link>
 						))}
 					</div>
 					<hr className="border-dotted border-white-dark2" />
 					<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
-						<Link href="/privacy" onClick={handleClose}>
+						<Link href="/privacy" onClick={handleClose} scroll={false}>
 							<Navlink strings="PrivacyPolicy.Head" />
 						</Link>
-						<Link href={route} locale={otherLocale}>
+						<Link href={route} locale={otherLocale} scroll={false}>
 							<Navlink strings="Navigation.SwitchLocale" />
 						</Link>
 					</div>
