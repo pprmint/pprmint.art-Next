@@ -60,10 +60,10 @@ export default function Home() {
 					alt="Dotted background"
 					className="z-0 object-cover"
 				/>
-				<div className="absolute flex items-end gap-6 w-full p-12">
+				<div className="absolute flex items-center md:items-end gap-6 w-full p-6 md:p-9 flex-col md:flex-row text-center md:text-left">
 					<m.div variants={Column} className="grow">
 						<p
-							className="font-sans text-5xl text-white font-bold"
+							className="font-sans text-4xl md:text-5xl text-white font-bold"
 							dangerouslySetInnerHTML={{ __html: t.raw("Content.slogan") }}
 						/>
 					</m.div>

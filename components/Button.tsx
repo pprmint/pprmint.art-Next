@@ -8,7 +8,7 @@ export default function Button(
 	}>
 ) {
 	const size = props.large
-		? "rounded-xl text-2xl pt-3 pb-3 px-6 font-normal hover:font-bold"
+		? "rounded-xl text-xl md:text-2xl pt-3 pb-3 px-6 font-normal hover:font-bold"
 		: "rounded-md pt-1 pb-1.5 px-4 font-normal";
 	return (
 		<Link
