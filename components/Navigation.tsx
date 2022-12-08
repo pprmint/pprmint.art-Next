@@ -44,7 +44,7 @@ const Pages = [
 		strings: "Overview.Head",
 	},
 	{
-		link: "/",
+		link: "/gallery",
 		strings: "Gallery.Head",
 	},
 	{
