@@ -221,7 +221,7 @@ export default function Gallery() {
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
-				ogImg="privacy.png"
+				ogImg="gallery.png"
 			/>
 			<main className="py-40 font-sans text-white-dark2">
 				<m.div

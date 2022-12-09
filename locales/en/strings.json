@@ -12,6 +12,7 @@
 	},
 	"Contact": {
 		"Form": {
+            "heading": "Send email",
 			"Email": {
 				"label": "Email",
 				"placeholder": "johns.d@ppmail.biz"
@@ -44,6 +45,11 @@
 			"submitSnackbar": "Congrats! Nothing happened.",
 			"submitSnackbarButton": "Sick"
 		},
+        "Other": {
+            "heading": "Other options",
+            "text": "If emails aren't your thing, I can't blame you. Feel free to message me on other platforms:",
+            "twitter": "Message on Twitter"
+        },
 		"Head": {
 			"description": "Get in touch via email or Twitter DMs.",
 			"title": "Contact"

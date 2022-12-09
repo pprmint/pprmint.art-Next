@@ -68,9 +68,11 @@ export default function Home() {
 						/>
 					</m.div>
 					<m.div variants={Column}>
-						<Button href="/overview" large>
-							{t("Content.button")} <ArrowRight />
-						</Button>
+						<Link href="/overview" scroll={false}>
+							<Button large>
+								{t("Content.button")} <ArrowRight />
+							</Button>
+						</Link>
 					</m.div>
 				</div>
 			</m.div>

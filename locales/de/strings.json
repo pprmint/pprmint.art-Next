@@ -12,6 +12,7 @@
 	},
 	"Contact": {
 		"Form": {
+            "heading": "Email senden",
 			"Email": {
 				"label": "Email",
 				"placeholder": "mustermax@ppmail.biz"
@@ -44,6 +45,11 @@
 			"submitSnackbar": "Glückwunsch! Nix ist passiert.",
 			"submitSnackbarButton": "Krass"
 		},
+        "Other": {
+            "heading": "Andere Möglichkeiten",
+            "text": "Wenn Emails nicht dein Ding sind, nehm' ich dir das nicht übel. Hier sind andere Wege, mit denen du mich kontaktieren kannst:",
+            "twitter": "Nachricht auf Twitter"
+        },
 		"Head": {
 			"description": "Kontaktiere mich per Email oder Twitter-Nachricht.",
 			"title": "Kontakt"

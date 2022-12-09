@@ -52,7 +52,7 @@ const Pages = [
 		strings: "Projects.Head",
 	},
 	{
-		link: "/",
+		link: "/contact",
 		strings: "Contact.Head",
 	},
 ];

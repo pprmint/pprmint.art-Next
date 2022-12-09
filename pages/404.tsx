@@ -71,9 +71,11 @@ export default function NotFound() {
 					</h3>
 				</m.div>
 				<m.div variants={Section}>
-					<Button href="/" large>
-						{t("Content.returnHome")} <House size={24} />
-					</Button>
+					<Link href="/" scroll={false}>
+						<Button large>
+							{t("Content.returnHome")} <House size={24} />
+						</Button>
+					</Link>
 				</m.div>
 			</m.div>
 		</>
