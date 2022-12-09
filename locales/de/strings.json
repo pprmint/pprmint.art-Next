@@ -1,14 +1,14 @@
 {
 	"404": {
 		"Content": {
-			"complete": "abgeschlossen",
-			"main": "Ihr Browser ist auf eine fehlende Seite gestoßen und muss zur Startseite zurückkehren. Es werden keine Fehlerinformationen gesammelt, und dann wird die Startseite aufgerufen.",
-			"moreInfo": "Für keine weiteren Informationen zu diesem Problem und unmöglichen Lösungen finden Sie unter",
-			"stopCode": "Stillstandcode: ",
-			"support": "Halten Sie folgende Infos bereit, wenn Sie den Support anrufen:"
+			"error": "Fehler",
+			"info": "Entweder enthält deine URL Tippfehler, oder die Seite existiert nicht mehr.",
+			"notFound": "Diese Seite wurde nicht gefunden.",
+			"returnHome": "Zur Startseite"
 		},
 		"Head": {
-			"title": "Seite nicht gefunden."
+			"description": "Seite nicht gefunden.",
+			"title": "Seite nicht gefunden"
 		}
 	},
 	"Contact": {
@@ -41,33 +41,28 @@
 				"label": "Betreff",
 				"privacy": "Datenschutz"
 			},
+			"heading": "Email senden",
 			"submit": "Nichts versenden",
 			"submitSnackbar": "Glückwunsch! Nix ist passiert.",
 			"submitSnackbarButton": "Krass"
 		},
 		"Head": {
-			"description": "Schreibe mir eine Nachricht, sei es über Kommissionen, was ich heute zum Frühstück gegessen habe, oder etwas ganz anderes.",
-			"title": "Kontakt."
+			"description": "Kontaktiere mich per Email oder Twitter-Nachricht.",
+			"title": "Kontakt"
 		},
-		"Title": {
-			"bottom": "Kontakt.",
-			"top": "Schreibe mir eine Nachricht."
+		"Other": {
+			"heading": "Andere Möglichkeiten",
+			"text": "Wenn Emails nicht dein Ding sind, nehm' ich dir das nicht übel. Hier sind andere Wege, mit denen du mich kontaktieren kannst:",
+			"twitter": "Nachricht auf Twitter"
 		}
 	},
-	"Footer": {
-		"and": " und ",
-		"madeWith": "Gemacht mit ",
-		"privacyPolicy": "Datenschutzerklärung",
-		"switchLocale": "Switch to English"
-	},
 	"Gallery": {
-		"Head": {
-			"description": "Schau dir meine Grafiken und Animationen an, frisch aus dem Ofen.",
-			"title": "Galerie."
+		"Content": {
+			"gridSize": "Rastergröße"
 		},
-		"Title": {
-			"bottom": "Galerie.",
-			"top": "Schau dir meine Grafiken und Animationen an."
+		"Head": {
+			"description": "Stimuliere deine visuellen Sinne, wie es kein Kaugummi kann.",
+			"title": "Galerie"
 		}
 	},
 	"HealthSafety": {
@@ -78,35 +73,32 @@
 	},
 	"Home": {
 		"Content": {
-			"Featured": {
-				"heading": "Vorgestellte Projekte.",
-				"text": "Das sind einige meiner Projekte, auf die ich sehr stolz bin."
-			},
-			"Works": {
-				"Columns": {
-					"columns": "Spalten",
-					"description": "Anzahl der Spalten"
-				},
-				"heading": "Werke aus "
-			}
+			"button": "Mehr Infos",
+			"slogan": "Ich mache Dinge mit <br />\nVektorpunkten, Polygonen und Code."
 		},
 		"Head": {
 			"description": "Ich mache Dinge mit Vektorpunkten, Polygonen und Code.",
-			"title": "Guten Heute."
-		},
-		"Title": {
-			"bottom": "Ich mache Dinge mit Vektorpunkten, Polygonen und Code.",
-			"button": "Repo ansehen",
-			"description": "Ich habe angefangen, meine Website von Grund auf mit Next.js neu zu bauen. Vieles ist noch in Arbeit, weshalb die normale React-Seite noch für eine Weile online bleiben wird.",
-			"top": "Heya."
+			"title": "Heya"
 		}
 	},
 	"Navigation": {
-		"Pages": {
-			"gallery": "",
-			"home": "Start"
+		"Home": {
+			"description": "Diese grenzwertig nutzlose Seite mit einem einzigen Knopf.",
+			"title": "Startseite"
 		},
-		"scrollToTop": "Nach oben scrollen"
+		"SwitchLocale": {
+			"description": "What you're reading doesn't make a lick of sense to you? Click here.",
+			"title": "Switch to English"
+		},
+		"and": " und ",
+		"madeWith": "Gemacht mit ",
+		"whereToGo": "Wo darf's hingehen?"
+	},
+	"Overview": {
+		"Head": {
+			"description": "Meine drei Spezialgebiete auf einer Seite zusammengefasst.",
+			"title": "Überblick"
+		}
 	},
 	"PrivacyPolicy": {
 		"Content": {
@@ -127,35 +119,35 @@
 					"accessTime": "<strong>Zugriffszeit: </strong>Die Zeit zu welcher der Client (also dein Browser) eine Datei vom Server erhielt. Falls es dich interessiert: Das Format ist DD/MMMM/YYYY: HH:MM:SS +GMT.",
 					"domain": "<strong>Domain: </strong>pprmint.art. Ich weiß, ich kann's selbst kaum glauben.",
 					"httpCode": "<strong>HTTP-Antwort-Code: </strong>Meist ist das \"200 OK\" denn ♪ hier ist alles super ♪. Möchtest du mehr über die verschiedenen Codes der HTTP-Welt erfahren:",
-					"ipAddress": "<strong>IP-Adresse: </strong>Das Ding, womit sich dein Router da draußen identifiziert. Hetzner muss IP-Adressen anonymisieren, was sie tun, indem sie das letzte Oktett mit einer zufälligen Zahl ersetzen.",
+					"ipAddress": "<strong>IP-Adresse: </strong>Das Ding, mit welchem du dich im Internet identifizierst. Hetzner anonymisiert IP-Adressen, indem sie das letzte Oktett mit einer zufälligen Zahl ersetzen.",
 					"receivedFile": "<strong>Erhaltene Datei: </strong>Na rate mal.",
 					"userAgent": "<strong>User-Agent: </strong>Damit erfährt der Server beispielsweise, welcher Browser, welches Betriebssystem und welche Rendering-Engine für den Zugriff auf etwas verwendet wurde. Außerdem kann ich dir sagen, dass Windows 11 dort immer noch als \"Windows NT 10.0; Win64; x64\" bezeichnet wird. Weitere Informationen über den User-Agent-Header findest du hier:"
 				},
 				"heading": "Hosting.",
-				"text1": "Die Website selbst wird von <strong>Vercel</strong> gehostet, die Server-Logs mit deiner IP-Adresse und Systemkonfiguration behalten. Sie werden zur \"Verbesserung\" ihrer Dienste und Plattform sowie zur Erkennung von Bedrohungen verwendet.",
-				"text2": "Einige Bilder, Videos und andere Dateien, die du herunterladen kannst, werden auf meinem Webspace von <strong>Hetzner</strong> gehostet. Wenn dein Browser auf Dateien von dort zugreift, wird das vom Server protokolliert. Für volle Transparenz ist hier was ein solcher Log-Eintrag enthalten kann:",
-				"text3": "Jeder Log-Eintrag wird für bis zu 7 Tage gespeichert.",
-				"text4": "Solltest du selbst Hetzner nicht benutzen: Die Protokolle erscheinen in einer riesigen, scrollbaren Liste, in absteigender Reihenfolge von unten (neueste) nach oben (älteste). Wenn ich wollte, könnte ich diese Protokolle speichern, damit Hetzner am Ende eines jedes Monats Statistiken erstellt, aber ich habe das kürzlich deaktiviert und auch alle übrigen Dateien manuell vom Server gelöscht."
+				"text1": "Zur Bereitstellung der Website werden mehrere Webhosting-Anbieter verwendet, um auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO mit modernen Webtechnologien arbeiten zu können, sowie Medien und Downloads in Originalqualität und ohne Bandbreiteneinschränkungen anzubieten.",
+				"text2": "Für die eigentliche Website verwende ich <strong>Vercel</strong>, eine Cloud-Deployment-Plattform, bereitgestellt von Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA).",
+				"text3": "Medien wie Bilder und Videos sowie zum Download angebotene Dateien werden auf Server der <strong>Hetzner Online GmbH</strong> (Industriestraße 25, 91710 Gunzenhausen, Deutschland) gespeichert.",
+				"text4": "Die Website selbst sammelt keine personenbezogenen Daten und verzichtet auf Analyse-Tools. Jedoch werden von den Hosting-Anbietern beim Besuch automatisch Informationen erfasst und in Log-Dateien gespeichert. Diese Logs enthalten u. a. Folgendes:",
+				"text5": "Log-Einträge werden von Hetzner für 7 Tage gespeichert. Vercel behält Daten so lange, wie es nötig ist, um ihre Dienste bereitzustellen. Daten werden, wenn möglich, regelmäßig gelöscht. Sollte eine Löschung nicht möglich sein, werden Daten sicher und isoliert gespeichert, bis eine Löschung möglich ist.",
+				"text6": "Weitere Informationen findest du in den Datenschutzerklärungen von Hetzner und Vercel, sowie dem Data Privacy Addendum von Vercel."
 			},
 			"Tldr": {
 				"heading": "Die Kurzfassung:",
 				"text": "Server-Logs sind die einzigen Dinger, die Informationen über dich speichern, oder genauer über den Browser und das Gerät, welches du gerade verwendest. Die eigentliche Website wird von Vercel gehostet, während einige Bilder, Videos und Downloads von meinem Webspace bei Hetzner stammen."
 			},
+			"dpaOf": "Data Processing Agreement von {provider}",
+			"lastUpdated": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}",
 			"privacyPolicyOf": "Datenschutzerklärung von {provider}"
 		},
 		"Head": {
-			"description": "Erfahre mehr darüber, welche Informationen bei deinem Besuch von wem verarbeitet werden. Spoiler: Es ist nicht viel.",
-			"title": "Datenschutzerklärung."
-		},
-		"Title": {
-			"bottom": "Daten­schutz­erklärung.",
-			"top": "Zuletzt aktualisiert: {revisionDate, date, ::yyyyMMMMd}"
+			"description": "Erfahre, welche Daten bei deinem Besuch verarbeitet werden.",
+			"title": "Daten­schutz­erklärung"
 		}
 	},
 	"Projects": {
 		"Head": {
-			"description": "Andere Dinge, an denen ich gearbeitet habe, und solche, die du selbst herunterladen und verwenden kannst.",
-			"title": "Projekte."
+			"description": "Andere Dinge, an denen ich gearbeitet habe, und Downloads.",
+			"title": "Projekte"
 		},
 		"MintAlt": {
 			"Content": {
@@ -165,12 +157,8 @@
 				}
 			},
 			"Head": {
-				"description": "Eine von Material inspirierte Schriftart.",
-				"title": "MintAlternative."
-			},
-			"Title": {
-				"bottom": "MintAlternative.",
-				"top": "Eine von Material inspirierte Schriftart."
+				"description": "Eine von Material-Symbolen inspirierte Schriftart.",
+				"title": "MintAlternative"
 			}
 		},
 		"Mintbit": {
@@ -181,12 +169,8 @@
 				}
 			},
 			"Head": {
-				"description": "Eine Pixel-Schriftart.",
-				"title": "Eine Pixel-Schrift."
-			},
-			"Title": {
-				"bottom": "Mintbit.",
-				"top": "Eine Pixel-Schrift."
+				"description": "Eine Pixel-Schriftart, erstellt für Mintcraft.",
+				"title": "Mintbit"
 			}
 		},
 		"Mintcraft": {
@@ -226,12 +210,8 @@
 				}
 			},
 			"Head": {
-				"description": "Ein Minecraft-Resourcenpaket mit einem dunklen, modernen Design, inspiriert vom Minecraft Launcher und Material Icons.",
-				"title": "Mintcraft."
-			},
-			"Title": {
-				"bottom": "Mintcraft.",
-				"top": "Ein Minecraft-Resourcenpaket."
+				"description": "Ein dunkles und modernes Minecraft-UI-Resourcenpaket.",
+				"title": "Mintcraft"
 			}
 		},
 		"Mintsans": {
@@ -242,18 +222,8 @@
 				}
 			},
 			"Head": {
-				"description": "Eine serifenlose Schriftart.",
-				"title": "Mintsans."
-			},
-			"Title": {
-				"bottom": "Mintsans.",
-				"top": "Eine serifenlose Schriftart."
-			}
-		},
-		"Overview": {
-			"Head": {
-				"description": "Einen Überblick über andere Dinge, an denen ich gearbeitet habe, von Websites bis hin zu Sachen, die du herunterladen und selbst verwenden kannst, findest du auf der Projekte-Seite.",
-				"title": "Es gibt noch mehr."
+				"description": "Eine serifenlose und (bald) groteske Schriftart.",
+				"title": "Mintsans"
 			}
 		},
 		"StartMenuTiles": {
@@ -264,17 +234,9 @@
 				}
 			},
 			"Head": {
-				"description": "Eigene und einheitliche Kacheln für dein Start-Menü, wenn du TileIconifier oder Start11 verwendest.",
-				"title": "Start-Menü-Kacheln."
-			},
-			"Title": {
-				"bottom": "Start-Menü-Kacheln.",
-				"top": "Endlich einheitlich."
+				"description": "Einheitliche Kacheln für dein Start-Menü in Windows 10.",
+				"title": "Start-Menü-Kacheln"
 			}
-		},
-		"Title": {
-			"bottom": "Projekte.",
-			"top": "Andere Dinge, an denen ich gearbeitet habe."
 		},
 		"moreInfo": "Weitere Infos"
 	}

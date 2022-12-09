@@ -2,32 +2,41 @@ import Link from "next/link";
 import Image from "next/image";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
-import { Container, Typography, Box, Button, Grid, Stack } from "@mui/material";
 import { m } from "framer-motion";
-import Lottie from "react-lottie-player";
-import errorJson from "src/animations/error.json";
 
-import Head from "src/components/Head";
-import Footer from "src/components/Footer";
-import NoSSR from "src/components/NoSSR";
+import Head from "components/Head";
+import Button from "components/Button";
+import { House } from "phosphor-react";
 
-const StopCodes = [
-	"I_HATE_WINDOWS",
-	"WII_DISC_CHANNEL",
-	"NO_CLUE",
-	"LAUGHING_MY_ASS_OFF",
-	"ROLLING_ON_THE_FLOOR_LAUGHING",
-	"ILYGF",
-	"FORTY_TWO",
-	"PROBABLY_JUST_CURIOSITY",
-	"TYPO_MAYBE",
-    "CCKMINT",
-];
-
-function randomIntForText(min: number, max: number) {
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
-const randomTextInt = randomIntForText(0, 8);
+const SectionContainer = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			duration: 0,
+			staggerChildren: 0.05,
+		},
+	},
+};
+const Section = {
+	hidden: {
+		y: 100,
+		opacity: 0,
+	},
+	show: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			y: { duration: 0.75, ease: "circOut" },
+			opacity: { duration: 0.25 },
+		},
+	},
+	exit: {
+		y: -100,
+		opacity: 0,
+		transition: { duration: 0.3, ease: "easeIn" },
+	},
+};
 
 export default function NotFound() {
 	const t = useTranslations("404");
@@ -35,89 +44,40 @@ export default function NotFound() {
 		<>
 			<Head
 				title={t("Head.title")}
-				description={t("description")}
+				description={t("Head.title")}
 				ogImg="404.png"
 				color="#1199ff"
 			/>
-			<Box
-				p={8}
-				className="selection blue"
-				minHeight="100vh"
-				display="flex"
-				flexDirection="column"
-				justifyContent="center"
-				sx={{ backgroundColor: "#1199ff" }}
+			<m.div
+				variants={SectionContainer}
+				initial="hidden"
+				animate="show"
+				exit="exit"
+				className="py-40 max-w-6xl h-screen px-6 mx-auto flex flex-col justify-center items-center"
 			>
-				<Typography
-					gutterBottom
-					fontSize="8rem"
-					color="#fff"
-					fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
-				>
-					{":("}
-				</Typography>
-				<Typography
-					fontSize="2rem"
-					color="#fff"
-					gutterBottom
-					fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
-				>
-					{t("Content.main")}
-				</Typography>
-				<Typography
-					fontSize="2rem"
-					color="#fff"
-					gutterBottom
-					fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
-				>
-					0% {t("Content.complete")}
-				</Typography>
-				<Stack direction="row" spacing={2}>
-					<Box>
-						<Image
-							src="/assets/qr.svg"
-                            alt="QR Code."
-							width={150}
-							height={150}
-						/>
-					</Box>
-					<Box>
-						<Typography
-							fontSize="1.5rem"
-							color="#fff"
-							fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
-						>
-							{t("Content.moreInfo")}
-						</Typography>
-						<Typography
-							fontSize="1.5rem"
-							color="#fff"
-							gutterBottom
-							fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
-						>
-							https://twitter.com/npprmint
-						</Typography>
-						<Typography
-							fontSize="1rem"
-							color="#fff"
-							fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
-						>
-							{t("Content.support")}
-						</Typography>
-						<NoSSR>
-							<Typography
-								fontSize="1rem"
-								color="#fff"
-								fontFamily="'Segoe UI Variable', 'Segoe UI', sans-serif"
-							>
-								{t("Content.stopCode")}
-								{StopCodes[randomTextInt]}
-							</Typography>
-						</NoSSR>
-					</Box>
-				</Stack>
-			</Box>
-			<Footer />
+				<m.div variants={Section}>
+					<h1 className="font-thin text-red text-9xl pb-2 text-center">
+						{t("Content.error")}: <span className="font-normal font-pixel">404</span>
+					</h1>
+				</m.div>
+				<m.div variants={Section}>
+					<h2 className="font-sans font-bold text-white text-6xl pb-2 text-center">
+						{t("Content.notFound")}
+					</h2>
+				</m.div>
+				<m.div variants={Section} className="pb-12">
+					<h3 className="font-sans text-white-dark2 text-2xl text-center">
+						{t("Content.info")}
+					</h3>
+				</m.div>
+				<m.div variants={Section}>
+					<Link href="/" scroll={false}>
+						<Button large>
+							{t("Content.returnHome")} <House size={24} />
+						</Button>
+					</Link>
+				</m.div>
+			</m.div>
 		</>
 	);
 }
