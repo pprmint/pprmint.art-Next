@@ -236,7 +236,7 @@ export default function Gallery() {
 								{t("Head.title")}
 							</h1>
 							<div className="flex flex-col w-full md:max-w-xl">
-                                <span className="mb-3">{t("Content.gridSize")}</span>
+								<span className="mb-3">{t("Content.gridSize")}</span>
 								<StyledSlider
 									label="Columns"
 									min={1}
@@ -252,40 +252,31 @@ export default function Gallery() {
 							<m.div
 								variants={Section}
 								key={Work.caption}
-								className="aspect-video relative"
+								className="aspect-video relative group"
 							>
-								<m.div
-									initial={{
-										opacity: 0,
-										y: 10,
-									}}
-									whileHover={{
-										opacity: 1,
-										y: 0,
-									}}
-									transition={{ duration: 0.3, ease: "easeOut" }}
-									className="absolute w-full h-full bg-gradient-to-t from-black to-transparent flex items-end"
-								>
-									<div className="p-3 md:p-6 flex-grow">
-										<h2 className="text-white font-bold text-md">
-											{Work.caption}
-										</h2>
-									</div>
-									<div className="flex p-1.5 md:p-3 gap-1">
-										<Link href={Work.src} target="_blank">
-											<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-												<ArrowsOut weight="bold" />
-											</button>
-										</Link>
-										{Work.tumblr && (
-											<Link href={Work.tumblr} target="_blank">
+								<div className="absolute w-full h-full bg-gradient-to-t from-black to-transparent flex items-end opacity-0 hover:opacity-100 duration-300">
+									<div className="flex items-end w-full translate-y-12 group-hover:translate-y-0 duration-300 ease-out">
+										<div className="p-6 flex-grow">
+											<h2 className="text-white font-bold text-md">
+												{Work.caption}
+											</h2>
+										</div>
+										<div className="flex p-3 gap-1">
+											<Link href={Work.src} target="_blank">
 												<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-													<Article weight="bold" />
+													<ArrowsOut weight="bold" />
 												</button>
 											</Link>
-										)}
+											{Work.tumblr && (
+												<Link href={Work.tumblr} target="_blank">
+													<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
+														<Article weight="bold" />
+													</button>
+												</Link>
+											)}
+										</div>
 									</div>
-								</m.div>
+								</div>
 								<Image
 									src={Work.src}
 									width={Work.width}
