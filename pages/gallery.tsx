@@ -236,7 +236,7 @@ export default function Gallery() {
 								{t("Head.title")}
 							</h1>
 							<div className="flex flex-col w-full md:max-w-xl">
-                                <span className="mb-3">{t("Content.columnCount")}</span>
+                                <span className="mb-3">{t("Content.gridSize")}</span>
 								<StyledSlider
 									label="Columns"
 									min={1}
