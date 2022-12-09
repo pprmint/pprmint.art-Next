@@ -157,12 +157,8 @@
 				}
 			},
 			"Head": {
-				"description": "Eine von Material inspirierte Schriftart.",
-				"title": "MintAlternative."
-			},
-			"Title": {
-				"bottom": "MintAlternative.",
-				"top": "Eine von Material inspirierte Schriftart."
+				"description": "Eine von Material-Symbolen inspirierte Schriftart.",
+				"title": "MintAlternative"
 			}
 		},
 		"Mintbit": {
@@ -173,12 +169,8 @@
 				}
 			},
 			"Head": {
-				"description": "Eine Pixel-Schriftart.",
-				"title": "Eine Pixel-Schrift."
-			},
-			"Title": {
-				"bottom": "Mintbit.",
-				"top": "Eine Pixel-Schrift."
+				"description": "Eine Pixel-Schriftart, erstellt für Mintcraft.",
+				"title": "Mintbit"
 			}
 		},
 		"Mintcraft": {
@@ -218,12 +210,8 @@
 				}
 			},
 			"Head": {
-				"description": "Ein Minecraft-Resourcenpaket mit einem dunklen, modernen Design, inspiriert vom Minecraft Launcher und Material Icons.",
-				"title": "Mintcraft."
-			},
-			"Title": {
-				"bottom": "Mintcraft.",
-				"top": "Ein Minecraft-Resourcenpaket."
+				"description": "Ein dunkles und modernes Minecraft-UI-Resourcenpaket.",
+				"title": "Mintcraft"
 			}
 		},
 		"Mintsans": {
@@ -234,18 +222,8 @@
 				}
 			},
 			"Head": {
-				"description": "Eine serifenlose Schriftart.",
-				"title": "Mintsans."
-			},
-			"Title": {
-				"bottom": "Mintsans.",
-				"top": "Eine serifenlose Schriftart."
-			}
-		},
-		"Overview": {
-			"Head": {
-				"description": "Einen Überblick über andere Dinge, an denen ich gearbeitet habe, von Websites bis hin zu Sachen, die du herunterladen und selbst verwenden kannst, findest du auf der Projekte-Seite.",
-				"title": "Es gibt noch mehr."
+				"description": "Eine serifenlose und (bald) groteske Schriftart.",
+				"title": "Mintsans"
 			}
 		},
 		"StartMenuTiles": {
@@ -256,12 +234,8 @@
 				}
 			},
 			"Head": {
-				"description": "Eigene und einheitliche Kacheln für dein Start-Menü, wenn du TileIconifier oder Start11 verwendest.",
+				"description": "Einheitliche Kacheln für dein Start-Menü in Windows 10.",
 				"title": "Start-Menü-Kacheln."
-			},
-			"Title": {
-				"bottom": "Start-Menü-Kacheln.",
-				"top": "Endlich einheitlich."
 			}
 		},
 		"moreInfo": "Weitere Infos"

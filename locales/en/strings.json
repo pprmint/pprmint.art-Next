@@ -157,12 +157,8 @@
 				}
 			},
 			"Head": {
-				"description": "A Material-inspired font.",
-				"title": "MintAlternative."
-			},
-			"Title": {
-				"bottom": "MintAlternative.",
-				"top": "A Material-inspired font."
+				"description": "A font inspired by Material icons.",
+				"title": "MintAlternative"
 			}
 		},
 		"Mintbit": {
@@ -173,12 +169,8 @@
 				}
 			},
 			"Head": {
-				"description": "A pixel font.",
-				"title": "A pixel font."
-			},
-			"Title": {
-				"bottom": "Mintbit.",
-				"top": "A pixel font."
+				"description": "A pixel font, made for Mintcraft.",
+				"title": "Mintbit"
 			}
 		},
 		"Mintcraft": {
@@ -218,12 +210,8 @@
 				}
 			},
 			"Head": {
-				"description": "A Minecraft resource pack with a dark and modern design, inspired by the Minecraft Launcher and Material Icons.",
-				"title": "Mintcraft."
-			},
-			"Title": {
-				"bottom": "Mintcraft.",
-				"top": "A Minecraft resource pack."
+				"description": "A dark and modern Minecraft UI resource pack.",
+				"title": "Mintcraft"
 			}
 		},
 		"Mintsans": {
@@ -234,18 +222,8 @@
 				}
 			},
 			"Head": {
-				"description": "A sans-serif font.",
-				"title": "Mintsans."
-			},
-			"Title": {
-				"bottom": "Mintsans.",
-				"top": "A sans-serif font."
-			}
-		},
-		"Overview": {
-			"Head": {
-				"description": "For an overview of other things I've worked on, from websites to stuff you can download and use yourself, see the projects page.",
-				"title": "There's more."
+				"description": "A sans-serif and (soon) grotesque font.",
+				"title": "Mintsans"
 			}
 		},
 		"StartMenuTiles": {
@@ -256,12 +234,8 @@
 				}
 			},
 			"Head": {
-				"description": "Custom and consistent tile icons for your Start menu, if you use TileIconifier or Start11.",
+				"description": "Consistent tile icons for your Windows 10 Start menu.",
 				"title": "Start menu tiles."
-			},
-			"Title": {
-				"bottom": "Start menu tiles.",
-				"top": "Finally consistent."
 			}
 		},
 		"moreInfo": "More info"

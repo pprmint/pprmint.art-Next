@@ -11,7 +11,7 @@ import logo from "animations/wordmark.json";
 
 import Button from "./Button";
 
-import { Coffee, Heart, List, X } from "phosphor-react";
+import { ArrowUUpLeft, Coffee, Heart, List, X } from "phosphor-react";
 import { SiGithub, SiTumblr, SiTwitter, SiYoutube } from "react-icons/si";
 
 const NavigationAnimation = {
@@ -47,13 +47,36 @@ const Pages = [
 		link: "/gallery",
 		strings: "Gallery.Head",
 	},
-	{
-		link: "/",
-		strings: "Projects.Head",
-	},
+	// Hidden until I can bother rewriting this to support onClick events.
+	// {
+	// 	link: "/",
+	// 	strings: "Projects.Head",
+	// },
 	{
 		link: "/contact",
 		strings: "Contact.Head",
+	},
+];
+const Projects = [
+	{
+		link: "/projects/mintcraft",
+		strings: "Projects.Mintcraft.Head",
+	},
+	{
+		link: "/projects/mintsans",
+		strings: "Projects.Mintsans.Head",
+	},
+	{
+		link: "/projects/mintbit",
+		strings: "Projects.Mintbit.Head",
+	},
+	{
+		link: "/projects/mintalt",
+		strings: "Projects.MintAlt.Head",
+	},
+	{
+		link: "/projects/startmenutiles",
+		strings: "Projects.StartMenuTiles.Head",
 	},
 ];
 
@@ -74,30 +97,29 @@ export default function Navigation() {
 	const { locale, locales, route } = useRouter();
 	const otherLocale = locales?.find((cur) => cur !== locale);
 
-	const [open, setOpen] = React.useState(false);
-
-	const handleOpen = () => {
-		setOpen(true);
+	const [menuOpen, setMenuOpen] = React.useState(false);
+	const handleMenuOpen = () => {
+		setMenuOpen(true);
 		document.body.classList.add("overflow-hidden");
 	};
-
-	const handleClose = async () => {
-		setOpen(false);
+	const handleMenuClose = async () => {
+		setMenuOpen(false);
 		await new Promise((r) => setTimeout(r, 200));
 		document.body.classList.remove("overflow-hidden");
+		setProjectsMenuOpen(false);
 	};
+	const [projectsMenuOpen, setProjectsMenuOpen] = React.useState(false);
 
-	// Work in progress
-	function Menu() {
+	function PageMenu() {
 		const t = useTranslations("Navigation");
 		return (
-			<div className="bg-black-light1 border-b sm:border border-black-light2 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen overflow-auto">
+			<div>
 				<div className="flex flex-row pb-3 items-center">
 					<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
 						{t("whereToGo")}
 					</h1>
 					<button
-						onClick={handleClose}
+						onClick={handleMenuClose}
 						className="text-white p-3 hover:bg-red-dark3 rounded-full duration-75 active:scale-90"
 					>
 						<X weight="bold" />
@@ -109,16 +131,19 @@ export default function Navigation() {
 							<Link
 								key={Page.link}
 								href={Page.link}
-								onClick={handleClose}
+								onClick={handleMenuClose}
 								scroll={false}
 							>
 								<Navlink strings={Page.strings} />
 							</Link>
 						))}
+						<Link href="" onClick={() => setProjectsMenuOpen(true)}>
+							<Navlink strings="Projects.Head" />
+						</Link>
 					</div>
 					<hr className="border-dotted border-white-dark2 mx-3" />
 					<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
-						<Link href="/privacy" onClick={handleClose} scroll={false}>
+						<Link href="/privacy" onClick={handleMenuClose} scroll={false}>
 							<Navlink strings="PrivacyPolicy.Head" />
 						</Link>
 						<Link href={route} locale={otherLocale} scroll={false}>
@@ -126,64 +151,103 @@ export default function Navigation() {
 						</Link>
 					</div>
 				</div>
+			</div>
+		);
+	}
 
-				<div className="flex flex-col sm:flex-row sm:items-end">
-					<div className="p-3 text-white-dark2 text-xs flex-grow">
-						<p className="flex flex-row items-center">
-							{t("madeWith")}
+	// *Very* work in progress
+	function ProjectsMenu() {
+		const t = useTranslations("Projects");
+		return (
+			<div>
+				<div className="flex flex-row pb-3 items-center">
+					<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
+						{t("Head.title")}
+					</h1>
+					<button
+						onClick={() => setProjectsMenuOpen(false)}
+						className="text-white p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
+					>
+						<ArrowUUpLeft weight="bold" />
+					</button>
+				</div>
+				<div className="flex flex-col gap-3 pb-3">
+					<div className="grid gap-1 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
+						{Projects.map((Project) => (
 							<Link
-								href="https://awfiquily.vercel.app/"
-								target="_blank"
-								rel="noopener noreferrer"
+								key={Project.link}
+								href={Project.link}
+								onClick={handleMenuClose}
+								scroll={false}
 							>
-								<Heart weight="fill" className="mx-1 text-red" />
+								<Navlink strings={Project.strings} />
 							</Link>
-							{t("and")}
-							<Coffee weight="fill" className="mx-1 text-yellow" />
-						</p>
-						<p>
-							{"© "}
-							{new Date().getFullYear()} pprmint.
-						</p>
+						))}
 					</div>
-					<div className="col text-white text-xl">
+				</div>
+			</div>
+		);
+	}
+
+	function Footer() {
+		const t = useTranslations("Navigation");
+		return (
+			<div className="flex flex-col sm:flex-row sm:items-end">
+				<div className="p-3 text-white-dark2 text-xs flex-grow">
+					<p className="flex flex-row items-center">
+						{t("madeWith")}
 						<Link
-							href="https://twitter.com/npprmint"
+							href="https://awfiquily.vercel.app/"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-								<SiTwitter />
-							</button>
+							<Heart weight="fill" className="mx-1 text-red" />
 						</Link>
-						<Link
-							href="https://youtube.com/@pprmint"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-								<SiYoutube />
-							</button>
-						</Link>
-						<Link
-							href="https://blog.pprmint.art"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-								<SiTumblr />
-							</button>
-						</Link>
-						<Link
-							href="https://github.com/pprmint"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-								<SiGithub />
-							</button>
-						</Link>
-					</div>
+						{t("and")}
+						<Coffee weight="fill" className="mx-1 text-yellow" />
+					</p>
+					<p>
+						{"© "}
+						{new Date().getFullYear()} pprmint.
+					</p>
+				</div>
+				<div className="col text-white text-xl">
+					<Link
+						href="https://twitter.com/npprmint"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
+							<SiTwitter />
+						</button>
+					</Link>
+					<Link
+						href="https://youtube.com/@pprmint"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
+							<SiYoutube />
+						</button>
+					</Link>
+					<Link
+						href="https://blog.pprmint.art"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
+							<SiTumblr />
+						</button>
+					</Link>
+					<Link
+						href="https://github.com/pprmint"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
+							<SiGithub />
+						</button>
+					</Link>
 				</div>
 			</div>
 		);
@@ -202,14 +266,14 @@ export default function Navigation() {
 					</Link>
 				</div>
 				<button
-					onClick={handleOpen}
+					onClick={handleMenuOpen}
 					className="text-white p-3 mt-3 md:mt-6 mr-3 md:mr-6 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
 				>
 					<List weight="bold" />
 				</button>
 			</div>
 			<AnimatePresence>
-				{open && (
+				{menuOpen && (
 					<Portal.Root>
 						<m.div
 							initial={{ opacity: 0 }}
@@ -217,7 +281,7 @@ export default function Navigation() {
 							exit={{ opacity: 0 }}
 							transition={{ duration: 0.2 }}
 							className="fixed top-0 left-0 bg-black w-screen h-screen"
-							onClick={handleClose}
+							onClick={handleMenuClose}
 						/>
 						<m.div
 							variants={NavigationAnimation}
@@ -226,7 +290,23 @@ export default function Navigation() {
 							exit="exit"
 							className="origin-top-right fixed top-0 sm:top-6 left-0 sm:left-6 md:left-auto right-0 sm:right-6 w-full sm:w-auto z-50"
 						>
-							<Menu />
+							<div className="bg-black-light1 border-b sm:border border-black-light2 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen overflow-y-auto overflow-x-hidden">
+								<AnimatePresence mode="wait">
+									{projectsMenuOpen ? (
+										<m.div
+											initial={{ x: 100, opacity: 0 }}
+											animate={{ x: 0, opacity: 1 }}
+											exit={{ x: -100, opacity: 0 }}
+											transition={{ duration: 0.3, ease: "circOut" }}
+										>
+											<ProjectsMenu />
+										</m.div>
+									) : (
+										<PageMenu />
+									)}
+								</AnimatePresence>
+								<Footer />
+							</div>
 						</m.div>
 					</Portal.Root>
 				)}
