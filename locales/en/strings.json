@@ -53,7 +53,10 @@
 		"Head": {
 			"description": "Stimulate your visual senses like no chewing gum can.",
 			"title": "Gallery"
-		}
+		},
+        "Content": {
+            "columnCount": "Amount of columns"
+        }
 	},
 	"HealthSafety": {
 		"Head": {
