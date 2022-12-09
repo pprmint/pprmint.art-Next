@@ -37,4 +37,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 # BabelEdit nonsense
-/locales/*/languages.babel
+*/languages.babel
