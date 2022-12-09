@@ -1,6 +1,7 @@
 {
 	"404": {
 		"Content": {
+			"error": "Error",
 			"info": "Either the URL you entered contains typos, or the page doesn't exist anymore.",
 			"notFound": "This page was not found.",
 			"returnHome": "Go to home page"
@@ -12,7 +13,6 @@
 	},
 	"Contact": {
 		"Form": {
-            "heading": "Send email",
 			"Email": {
 				"label": "Email",
 				"placeholder": "johns.d@ppmail.biz"
@@ -41,28 +41,29 @@
 				"label": "Subject",
 				"privacy": "Privacy"
 			},
+			"heading": "Send email",
 			"submit": "Submit nothing",
 			"submitSnackbar": "Congrats! Nothing happened.",
 			"submitSnackbarButton": "Sick"
 		},
-        "Other": {
-            "heading": "Other options",
-            "text": "If emails aren't your thing, I can't blame you. Feel free to message me on other platforms:",
-            "twitter": "Message on Twitter"
-        },
 		"Head": {
 			"description": "Get in touch via email or Twitter DMs.",
 			"title": "Contact"
+		},
+		"Other": {
+			"heading": "Other options",
+			"text": "If emails aren't your thing, I can't blame you. Feel free to message me on other platforms:",
+			"twitter": "Message on Twitter"
 		}
 	},
 	"Gallery": {
+		"Content": {
+			"gridSize": "Grid size"
+		},
 		"Head": {
 			"description": "Stimulate your visual senses like no chewing gum can.",
 			"title": "Gallery"
-		},
-        "Content": {
-            "columnCount": "Amount of columns"
-        }
+		}
 	},
 	"HealthSafety": {
 		"Head": {

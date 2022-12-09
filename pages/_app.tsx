@@ -5,6 +5,7 @@ import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { AbstractIntlMessages, NextIntlProvider } from "next-intl";
 
 import "fonts/Aspekta/aspekta.css";
+import "fonts/MintBit/MintBit.css";
 
 import "styles/globals.css";
 

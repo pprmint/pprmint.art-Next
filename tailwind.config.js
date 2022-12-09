@@ -51,6 +51,11 @@ module.exports = {
 					"Arial",
 					"sans-serif",
 				],
+				pixel: [
+					"MintBit",
+					"Roboto Mono",
+					"monospace",
+				],
 			},
 		},
 	},

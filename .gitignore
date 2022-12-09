@@ -36,5 +36,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# Some shit that GitPod adds I think
-core.*
+# BabelEdit nonsense
+/locales/*/languages.babel

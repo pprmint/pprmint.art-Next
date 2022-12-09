@@ -56,8 +56,8 @@ export default function NotFound() {
 				className="py-40 max-w-6xl h-screen px-6 mx-auto flex flex-col justify-center items-center"
 			>
 				<m.div variants={Section}>
-					<h1 className="font-sans font-bold text-red text-9xl pb-2 text-center">
-						404
+					<h1 className="font-thin text-red text-9xl pb-2 text-center">
+						{t("Content.error")}: <span className="font-normal font-pixel">404</span>
 					</h1>
 				</m.div>
 				<m.div variants={Section}>
