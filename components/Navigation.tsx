@@ -9,8 +9,6 @@ import Lottie from "lottie-react";
 
 import logo from "animations/wordmark.json";
 
-import Button from "./Button";
-
 import { ArrowUUpLeft, Coffee, Heart, List, X } from "phosphor-react";
 import { SiGithub, SiTumblr, SiTwitter, SiYoutube } from "react-icons/si";
 
@@ -108,69 +106,17 @@ export default function Navigation() {
 		document.body.classList.remove("overflow-hidden");
 		setProjectsMenuOpen(false);
 	};
-	const [projectsMenuOpen, setProjectsMenuOpen] = React.useState(false);
 
-	function PageMenu() {
-		const t = useTranslations("Navigation");
-		return (
-			<div>
-				<div className="flex flex-row pb-3 items-center">
-					<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
-						{t("whereToGo")}
-					</h1>
-					<button
-						onClick={handleMenuClose}
-						className="text-white p-3 hover:bg-red-dark3 rounded-full duration-75 active:scale-90"
-					>
-						<X weight="bold" />
-					</button>
-				</div>
-				<div className="flex flex-col gap-3 pb-3">
-					<div className="grid gap-1 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
-						{Pages.map((Page) => (
-							<Link
-								key={Page.link}
-								href={Page.link}
-								onClick={handleMenuClose}
-								scroll={false}
-							>
-								<Navlink strings={Page.strings} />
-							</Link>
-						))}
-						<Link href="" onClick={() => setProjectsMenuOpen(true)}>
-							<Navlink strings="Projects.Head" />
-						</Link>
-					</div>
-					<hr className="border-dotted border-white-dark2 mx-3" />
-					<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
-						<Link href="/privacy" onClick={handleMenuClose} scroll={false}>
-							<Navlink strings="PrivacyPolicy.Head" />
-						</Link>
-						<Link href={route} locale={otherLocale} scroll={false}>
-							<Navlink strings="Navigation.SwitchLocale" />
-						</Link>
-					</div>
-				</div>
-			</div>
-		);
-	}
+	const [projectsMenuOpen, setProjectsMenuOpen] = React.useState(false);
+    const handleProjectsMenuToggle = () => {
+		projectsMenuOpen ? setProjectsMenuOpen(false) : setProjectsMenuOpen(true);
+	};
 
 	// *Very* work in progress
 	function ProjectsMenu() {
 		const t = useTranslations("Projects");
 		return (
-			<div>
-				<div className="flex flex-row pb-3 items-center">
-					<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
-						{t("Head.title")}
-					</h1>
-					<button
-						onClick={() => setProjectsMenuOpen(false)}
-						className="text-white p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
-					>
-						<ArrowUUpLeft weight="bold" />
-					</button>
-				</div>
+			<div className="absolute">
 				<div className="flex flex-col gap-3 pb-3">
 					<div className="grid gap-1 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
 						{Projects.map((Project) => (
@@ -291,20 +237,60 @@ export default function Navigation() {
 							className="origin-top-right fixed top-0 sm:top-6 left-0 sm:left-6 md:left-auto right-0 sm:right-6 w-full sm:w-auto z-50"
 						>
 							<div className="bg-black-light1 border-b sm:border border-black-light2 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen overflow-y-auto overflow-x-hidden">
-								<AnimatePresence mode="wait">
-									{projectsMenuOpen ? (
-										<m.div
-											initial={{ x: 100, opacity: 0 }}
-											animate={{ x: 0, opacity: 1 }}
-											exit={{ x: -100, opacity: 0 }}
-											transition={{ duration: 0.3, ease: "circOut" }}
+								<div className="flex flex-row pb-3 items-center">
+									<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
+										{t("whereToGo")}
+									</h1>
+									<button
+										onClick={handleMenuClose}
+										className="text-white p-3 hover:bg-red-dark3 rounded-full duration-75 active:scale-90"
+									>
+										<X weight="bold" />
+									</button>
+								</div>
+								<div className="flex flex-col gap-3 pb-3">
+									<div className="grid gap-1 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
+										{Pages.map((Page) => (
+											<Link
+												key={Page.link}
+												href={Page.link}
+												onClick={handleMenuClose}
+												scroll={false}
+											>
+												<Navlink strings={Page.strings} />
+											</Link>
+										))}
+										<Link href="" onClick={handleProjectsMenuToggle}>
+											<Navlink strings="Projects.Head" />
+										</Link>
+									</div>
+									<AnimatePresence mode="wait">
+										{projectsMenuOpen && (
+											<m.div
+												initial={{ height: "0px" }}
+												animate={{ height: "190px" }}
+												exit={{ height: "0%" }}
+                                                transition={{duration: .3, ease: "circOut"}}
+                                                className="relative overflow-hidden"
+											>
+												<ProjectsMenu />
+											</m.div>
+										)}
+									</AnimatePresence>
+									<hr className="border-dotted border-white-dark2 mx-3" />
+									<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
+										<Link
+											href="/privacy"
+											onClick={handleMenuClose}
+											scroll={false}
 										>
-											<ProjectsMenu />
-										</m.div>
-									) : (
-										<PageMenu />
-									)}
-								</AnimatePresence>
+											<Navlink strings="PrivacyPolicy.Head" />
+										</Link>
+										<Link href={route} locale={otherLocale} scroll={false}>
+											<Navlink strings="Navigation.SwitchLocale" />
+										</Link>
+									</div>
+								</div>
 								<Footer />
 							</div>
 						</m.div>
