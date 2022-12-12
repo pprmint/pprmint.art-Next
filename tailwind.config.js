@@ -5,6 +5,11 @@ module.exports = {
 		"./pages/**/*.{js,ts,jsx,tsx}",
 		"./components/**/*.{js,ts,jsx,tsx}",
 	],
+	safelist: [
+		{
+			pattern: /grid-cols-./,
+		},
+	],
 	theme: {
 		extend: {
 			colors: {
@@ -51,11 +56,7 @@ module.exports = {
 					"Arial",
 					"sans-serif",
 				],
-				pixel: [
-					"MintBit",
-					"Roboto Mono",
-					"monospace",
-				],
+				pixel: ["MintBit", "Roboto Mono", "monospace"],
 			},
 		},
 	},

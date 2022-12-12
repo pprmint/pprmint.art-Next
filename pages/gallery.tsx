@@ -4,10 +4,10 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 import { m } from "framer-motion";
+import * as Slider from "@radix-ui/react-slider";
 
 import Head from "components/Head";
 import { ArrowsOut, Article } from "phosphor-react";
-import StyledSlider from "components/Slider";
 
 const SectionContainer = {
 	hidden: { opacity: 0 },
@@ -215,7 +215,8 @@ const Works2022 = [
 
 export default function Gallery() {
 	const t = useTranslations("Gallery");
-	const cols = React.useState(3);
+	const [cols, setCols] = React.useState([4]);
+	const gridCols = `grid-cols-${cols}`;
 	return (
 		<>
 			<Head
@@ -236,18 +237,27 @@ export default function Gallery() {
 								{t("Head.title")}
 							</h1>
 							<div className="flex flex-col w-full md:max-w-xl">
-								<span className="mb-3">{t("Content.gridSize")}</span>
-								<StyledSlider
-									label="Columns"
+								<span className="mb-3 text-right">
+									{t("Content.gridSize")}:{" "}
+									<span className="text-white font-bold">{cols}</span>
+								</span>
+								<Slider.Root
+									className="group relative flex items-center select-none touch-none w-full rounded-full"
+									value={cols}
+									onValueChange={setCols}
 									min={1}
-									default={[3]}
 									max={6}
 									step={1}
-								/>
+								>
+									<Slider.Track className="relative duration-200 ease-out bg-green-dark3 flex-grow h-0.5 group-hover:h-3 rounded-full">
+										<Slider.Range className="absolute top-1/2 -translate-y-1/2 bg-green h-3 rounded-full group-hover:rounded-l-full" />
+									</Slider.Track>
+									<Slider.Thumb className="block duration-100 h-0 group-hover:h-5 w-0 group-hover:w-5 bg-green ring-0 group-hover:ring-8 ring-black rounded-full outline-none" />
+								</Slider.Root>
 							</div>
 						</section>
 					</m.div>
-					<section className="py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+					<section className={"py-5 grid " + gridCols}>
 						{Works2022.map((Work) => (
 							<m.div
 								variants={Section}
