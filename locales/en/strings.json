@@ -1,13 +1,22 @@
 {
 	"404": {
 		"Content": {
-			"error": "Error",
+			"Random": {
+				"1": "Nope, not here.",
+				"2": "poof, gone.",
+				"3": "Gone with the wind.",
+				"4": "Rule #1: It wasn't me.",
+				"5": "A whole lot of nothing.",
+				"6": "Nobody can hear you.",
+				"7": "Curiosity satiated?",
+				"8": "What are ya looking for?"
+			},
+			"error": "Error: ",
 			"info": "Either the URL you entered contains typos, or the page doesn't exist anymore.",
-			"notFound": "This page was not found.",
 			"returnHome": "Go to home page"
 		},
 		"Head": {
-			"description": "Page not found.",
+			"description": "Either the URL you entered contains typos, or the page doesn't exist anymore.",
 			"title": "Page not found"
 		}
 	},

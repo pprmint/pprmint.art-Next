@@ -1,13 +1,22 @@
 {
 	"404": {
 		"Content": {
-			"error": "Fehler",
+			"Random": {
+				"1": "Nö, hier nicht.",
+				"2": "poof, weg.",
+				"3": "Vom Winde verweht.",
+				"4": "Regel 1: Ich war's nicht.",
+				"5": "Eine ganze Menge nix.",
+				"6": "Niemand kann dich hören.",
+				"7": "Neugierde gesättigt?",
+				"8": "Was suchst du denn?"
+			},
+			"error": "Fehler: ",
 			"info": "Entweder enthält deine URL Tippfehler, oder die Seite existiert nicht mehr.",
-			"notFound": "Diese Seite wurde nicht gefunden.",
 			"returnHome": "Zur Startseite"
 		},
 		"Head": {
-			"description": "Seite nicht gefunden.",
+			"description": "Entweder enthält deine URL Tippfehler, oder die Seite existiert nicht mehr.",
 			"title": "Seite nicht gefunden"
 		}
 	},
