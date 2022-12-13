@@ -243,7 +243,7 @@ export default function Mintcraft() {
 			<div className="flex rounded-md duration-100 border-2 border-yellow overflow-hidden">
 				{Versions.map((v) => (
 					<button
-						id={v}
+						key={v}
 						onClick={() => setGameVersion(v)}
 						className={
 							(gameVersion === v
