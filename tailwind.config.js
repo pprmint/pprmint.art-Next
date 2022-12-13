@@ -7,6 +7,7 @@ module.exports = {
 	],
 	safelist: [
 		{
+			pattern: /bg-./,
 			pattern: /grid-cols-./,
 		},
 	],
