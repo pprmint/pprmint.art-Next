@@ -51,7 +51,6 @@ export default function NotFound() {
 			<Head
 				title={t("Head.title")}
 				description={t("Head.title")}
-				ogImg="404.png"
 				color="#1199ff"
 			/>
 			<m.div

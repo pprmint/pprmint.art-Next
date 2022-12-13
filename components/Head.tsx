@@ -1,11 +1,11 @@
-import Head from "next/head";
+import NextHead from "next/head";
 import { useRouter } from "next/router";
 import { useLocale } from "next-intl";
 
-export default function CommonHead(props: {
+export default function Head(props: {
 	title: string;
 	description: string;
-	ogImg: string; // Images must be placed in /public/og/[locale] and must share the same name as the prop.
+	ogImg?: string; // Images must be placed in /og/[locale] and must share the same name as the prop. If not provided, defaults to [pagename].png
 	favicon?: string; // Prop must match respective folder name inside /public/favicons.
 	color?: string; // Can't use short HEX codes (#123), must be #123456
 }) {
@@ -16,33 +16,72 @@ export default function CommonHead(props: {
 	// Default props if not passed in the element.
 	const { favicon = "pprmint" } = props;
 	const { color = "#00cc66" } = props;
-    const locale = useLocale();
+	const locale = useLocale();
 	const domain = "https://pprmint.art";
+	const { ogImg = router.pathname + ".png" } = props;
 	return (
-		<Head>
+		<NextHead>
 			{/* Basic metadata */}
 			<title>{title}</title>
 			<meta name="description" content={props.description} />
 			<meta name="theme-color" content={color} />
 
 			{/* Favicons and other things for different platforms */}
-			<link rel="apple-touch-icon" sizes="180x180" href={"/favicons/"+favicon+"/apple-touch-icon.png"} />
-			<link rel="icon" type="image/png" sizes="32x32" href={"/favicons/"+favicon+"/favicon-32x32.png"} />
-			<link rel="icon" type="image/png" sizes="16x16" href={"/favicons/"+favicon+"/favicon-16x16.png"} />
-			<link rel="manifest" href={"/favicons/"+favicon+"/site.webmanifest"} />
-			<link rel="mask-icon" href={"/favicons/"+favicon+"/safari-pinnedtab.svg"} color={color} />
-			<link rel="shortcut icon" href={"/favicons/"+favicon+"/favicon.ico"} />
+			<link
+				rel="apple-touch-icon"
+				sizes="180x180"
+				href={"/favicons/" + favicon + "/apple-touch-icon.png"}
+			/>
+			<link
+				rel="icon"
+				type="image/png"
+				sizes="32x32"
+				href={"/favicons/" + favicon + "/favicon-32x32.png"}
+			/>
+			<link
+				rel="icon"
+				type="image/png"
+				sizes="16x16"
+				href={"/favicons/" + favicon + "/favicon-16x16.png"}
+			/>
+			<link
+				rel="manifest"
+				href={"/favicons/" + favicon + "/site.webmanifest"}
+			/>
+			<link
+				rel="mask-icon"
+				href={"/favicons/" + favicon + "/safari-pinnedtab.svg"}
+				color={color}
+			/>
+			<link
+				rel="shortcut icon"
+				href={"/favicons/" + favicon + "/favicon.ico"}
+			/>
 
 			{/* OpenGraph metadata */}
 			<meta property="og:title" content={props.title + "."} />
-			<meta property="og:url" content={domain+router.pathname} />
+			<meta property="og:url" content={domain + router.pathname} />
 			<meta property="og:description" content={props.description} />
-			<meta property="og:image" content={"https://static.pprmint.art/og/pprmint/"+locale+"/"+props.ogImg} />
-			
+			<meta
+				property="og:image"
+				content={
+					"https://static.pprmint.art/og/pprmint/" +
+					locale +
+					ogImg
+				}
+			/>
+
 			{/* Twitter metadata */}
 			<meta name="twitter:title" content={props.title + "."} />
 			<meta name="twitter:description" content={props.description} />
-			<meta name="twitter:image" content={"https://static.pprmint.art/og/pprmint/"+locale+"/"+props.ogImg} />
-		</Head>
+			<meta
+				name="twitter:image"
+				content={
+					"https://static.pprmint.art/og/pprmint/" +
+					locale +
+					ogImg
+				}
+			/>
+		</NextHead>
 	);
 }

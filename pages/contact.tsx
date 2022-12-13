@@ -77,7 +77,6 @@ export default function Contact() {
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
-				ogImg="contact.png"
 			/>
 			<main className="py-40 max-w-6xl mx-auto px-6 md:px-9 font-sans text-white-dark2">
 				<m.div

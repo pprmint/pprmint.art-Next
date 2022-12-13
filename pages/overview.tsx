@@ -42,7 +42,6 @@ export default function Overview() {
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
-				ogImg="gallery.png"
 			/>
 			<m.div
 				variants={ColumnContainer}
