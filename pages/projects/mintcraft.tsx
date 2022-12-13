@@ -250,6 +250,7 @@ export default function Mintcraft() {
 			<div className="flex">
 				{Versions.map((v) => (
 					<button
+                        id={v}
 						onClick={() => setGameVersion(v)}
 						className={
 							(gameVersion === v
