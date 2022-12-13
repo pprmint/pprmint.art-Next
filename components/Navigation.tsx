@@ -82,7 +82,7 @@ const Projects = [
 // Button
 function Navlink(props: React.PropsWithChildren) {
 	return (
-		<button className={"text-left hover:bg-black-light2 px-3 py-2 duration-75 rounded-md active:scale-[.97] w-full md:w-72 h-full"}>
+		<button className="text-left hover:bg-black-light2 px-3 py-2 duration-75 rounded-md active:scale-[.97] w-full md:w-72 h-full">
 			{props.children}
 		</button>
 	);
@@ -226,6 +226,7 @@ function Navigation() {
 														href={Project.link}
 														onClick={handleMenuClose}
 														scroll={false}
+                                                        className={route === Project.link ? "ring-2 ring-black-light2 rounded-md pointer-events-none" : ""}
 													>
 														<Navlink>
 															<span className="font-bold text-white">
