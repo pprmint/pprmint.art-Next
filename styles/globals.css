@@ -6,9 +6,13 @@ body {
 	width: 100vw;
 	overflow-x: hidden;
 	background: #111;
-	letter-spacing: 0.03rem;
     line-height: 1.5rem;
+    letter-spacing: 0.035rem;
 	font-feature-settings: "ss01", "ss05", "ss06", "ss07", "ss08", "ss09", "ss10", "ss11";
+}
+
+h1 {
+    hyphens: auto;
 }
 
 a {
