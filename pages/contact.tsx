@@ -6,6 +6,7 @@ import { m } from "framer-motion";
 
 import Head from "components/Head";
 import Button from "components/Button";
+
 import { PaperPlaneRight } from "phosphor-react";
 
 const SectionContainer = {
