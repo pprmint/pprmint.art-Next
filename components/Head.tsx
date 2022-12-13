@@ -17,7 +17,7 @@ export default function Head(props: {
 	const { color = "#00cc66" } = props;
 	const locale = useLocale();
 	const domain = "https://pprmint.art";
-	const ogImg = `${domain}/api/og?title=${props.title}&description=${props.description}`;
+	const ogImg = `${domain}/api/og?title=${props.title}.&description=${props.description}`;
 	return (
 		<NextHead>
 			{/* Basic metadata */}
