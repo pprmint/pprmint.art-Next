@@ -41,27 +41,27 @@ const Section = {
 const DownloadContainer = {
 	show: {
 		transition: {
-			staggerChildren: 0.035,
+			staggerChildren: 0.05,
 		},
 	},
 };
 const DownloadItem = {
 	hidden: {
 		opacity: 0,
-		y: "20px",
-		transition: { duration: 0.5, ease: "circOut" },
+		y: 30,
+		transition: { duration: 0.75, ease: "circOut" },
 	},
 	show: {
 		opacity: 1,
-		y: "0px",
+		y: 0,
 		transition: {
-			y: { duration: 0.5, ease: "circOut" },
-			opacity: { duration: 0.2 },
+			y: { duration: 0.75, ease: "circOut" },
+			opacity: { duration: 0.25 },
 		},
 	},
 	exit: {
 		opacity: 0,
-		y: "-20px",
+		y: -20,
 		transition: { duration: 0.3, ease: "easeIn" },
 	},
 };
@@ -145,15 +145,6 @@ export default function Mintcraft() {
 	const t = useTranslations("Projects.Mintcraft");
 
 	const [gameVersion, setGameVersion] = React.useState("1.19");
-	const handleGameVersion = (
-		event: React.MouseEvent<HTMLElement>,
-		newGameVersion: string | null
-	) => {
-		// Always keep just one version selected.
-		if (newGameVersion !== null) {
-			setGameVersion(newGameVersion);
-		}
-	};
 
 	function DownloadCard(
 		props: React.PropsWithChildren<{
@@ -232,14 +223,16 @@ export default function Mintcraft() {
 					height={500}
 					alt={props.name + "Icon"}
 				/>
-				<div className="p-3">
-					<h3>
-						{props.type === "Full" ? props.name + " FullSauce" : props.name}.
+				<div className="p-3 md:p-6">
+					<h3 className="font-bold text-3xl text-white">
+						{props.type === "Full" ? props.name + " FullSauce" : props.name}
 					</h3>
 					<p>Version {props.packVersion}</p>
 				</div>
-				<hr />
-				<DownloadButton />
+				<hr className="border-black-light2" />
+				<div className="flex justify-center p-3">
+					<DownloadButton />
+				</div>
 			</m.div>
 		);
 	}
@@ -247,16 +240,16 @@ export default function Mintcraft() {
 	function VersionSwitch() {
 		const Versions = ["1.19", "1.18", "1.17", "1.16"];
 		return (
-			<div className="flex">
+			<div className="flex rounded-md duration-100 border-2 border-yellow overflow-hidden">
 				{Versions.map((v) => (
 					<button
-                        id={v}
+						id={v}
 						onClick={() => setGameVersion(v)}
 						className={
 							(gameVersion === v
-								? "bg-black-light2 font-bold pointer-events-none"
+								? "bg-yellow-dark3 font-bold pointer-events-none"
 								: "bg-transparent") +
-							" hover:bg-black-light1 active:bg-black-light2 hover:font-bold duration-100 text-white w-16 h-12"
+							" hover:bg-black-light2 active:bg-yellow-dark3 hover:font-bold duration-100 text-white w-16 h-12"
 						}
 					>
 						{v}
@@ -282,7 +275,7 @@ export default function Mintcraft() {
 						</h1>
 					</m.div>
 					<m.div variants={Section} className="py-5">
-						<div className="flex gap-6 pb-3">
+						<div className="flex flex-col sm:flex-row gap-6 pb-6">
 							<h2 className="font-bold text-white text-3xl flex-grow">
 								{t("Content.Download.commonTitle")}
 								&nbsp;
