@@ -45,7 +45,6 @@ export default function Home() {
 			<Head
 				title={t("Head.title")}
 				description={t("Head.description")}
-				ogImg="/index.png"
 			/>
 			<m.div
 				variants={ColumnContainer}

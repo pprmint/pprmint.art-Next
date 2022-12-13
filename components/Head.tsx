@@ -5,7 +5,6 @@ import { useLocale } from "next-intl";
 export default function Head(props: {
 	title: string;
 	description: string;
-	ogImg?: string; // Images must be placed in /og/[locale] and must share the same name as the prop. If not provided, defaults to [pagename].png
 	favicon?: string; // Prop must match respective folder name inside /public/favicons.
 	color?: string; // Can't use short HEX codes (#123), must be #123456
 }) {
@@ -18,7 +17,7 @@ export default function Head(props: {
 	const { color = "#00cc66" } = props;
 	const locale = useLocale();
 	const domain = "https://pprmint.art";
-	const { ogImg = router.pathname + ".png" } = props;
+	const ogImg = `${domain}/api/og?title=${props.title}&description=${props.description}`;
 	return (
 		<NextHead>
 			{/* Basic metadata */}
@@ -64,24 +63,13 @@ export default function Head(props: {
 			<meta property="og:description" content={props.description} />
 			<meta
 				property="og:image"
-				content={
-					"https://static.pprmint.art/og/pprmint/" +
-					locale +
-					ogImg
-				}
+				content={ogImg}
 			/>
 
 			{/* Twitter metadata */}
 			<meta name="twitter:title" content={props.title + "."} />
 			<meta name="twitter:description" content={props.description} />
-			<meta
-				name="twitter:image"
-				content={
-					"https://static.pprmint.art/og/pprmint/" +
-					locale +
-					ogImg
-				}
-			/>
+			<meta name="twitter:image" content={ogImg} />
 		</NextHead>
 	);
 }
