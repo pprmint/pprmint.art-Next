@@ -1,12 +1,14 @@
 import * as React from "react";
 import { GetStaticPropsContext } from "next";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, m } from "framer-motion";
+import { ParallaxBanner } from "react-scroll-parallax";
 
 import Head from "components/Head";
 import Button from "components/Button";
+import { Info } from "phosphor-react";
 
 const SectionContainer = {
 	hidden: { opacity: 0 },
@@ -171,7 +173,7 @@ export default function Mintcraft() {
 							gameVersion +
 							").zip"
 						}
-                        className="w-fit"
+						className="w-fit"
 					>
 						<Button>{t("download")}</Button>
 					</Link>
@@ -191,7 +193,7 @@ export default function Mintcraft() {
 							gameVersion +
 							").zip"
 						}
-                        className="w-fit"
+						className="w-fit"
 					>
 						<Button>{t("download")}</Button>
 					</Link>
@@ -210,7 +212,7 @@ export default function Mintcraft() {
 							gameVersion +
 							").zip"
 						}
-                        className="w-fit"
+						className="w-fit"
 					>
 						<Button>{t("download")}</Button>
 					</Link>
@@ -230,6 +232,7 @@ export default function Mintcraft() {
 					alt={props.name + "Icon"}
 					className="h-44 sm:h-full w-auto aspect-square"
 				/>
+                {props.type === "Full" && <Info weight="bold" className="absolute top-0 right-0 text-yellow" />}
 				<div className="flex flex-col justify-center sm:items-center sm:text-center p-6">
 					<h3 className="font-bold text-3xl text-white">
 						{props.type === "Full" ? props.name + " FullSauce" : props.name}
@@ -277,6 +280,9 @@ export default function Mintcraft() {
 						<h1 className="font-bold text-white text-5xl md:text-6xl pb-3">
 							{t("Head.title")}
 						</h1>
+					</m.div>
+					<m.div variants={Section} className="py-5">
+						<ParallaxBanner></ParallaxBanner>
 					</m.div>
 					<m.div variants={Section} className="py-5">
 						<div className="flex flex-col sm:flex-row gap-6 pb-6">
