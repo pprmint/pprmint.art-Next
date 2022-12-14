@@ -171,6 +171,7 @@ export default function Mintcraft() {
 							gameVersion +
 							").zip"
 						}
+                        className="w-fit"
 					>
 						<Button>{t("download")}</Button>
 					</Link>
@@ -190,6 +191,7 @@ export default function Mintcraft() {
 							gameVersion +
 							").zip"
 						}
+                        className="w-fit"
 					>
 						<Button>{t("download")}</Button>
 					</Link>
@@ -208,6 +210,7 @@ export default function Mintcraft() {
 							gameVersion +
 							").zip"
 						}
+                        className="w-fit"
 					>
 						<Button>{t("download")}</Button>
 					</Link>
@@ -216,21 +219,22 @@ export default function Mintcraft() {
 		}
 
 		return (
-			<m.div variants={DownloadItem} className="bg-black-light1 rounded-md">
+			<m.div
+				variants={DownloadItem}
+				className="bg-black-light1 rounded-md flex flex-row sm:flex-col h-fit overflow-hidden ring-2 ring-black-light2 ring-inset"
+			>
 				<Image
 					src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"}
 					width={500}
 					height={500}
 					alt={props.name + "Icon"}
+					className="h-44 sm:h-full w-auto aspect-square"
 				/>
-				<div className="p-3 md:p-6">
+				<div className="flex flex-col justify-center sm:items-center sm:text-center p-6">
 					<h3 className="font-bold text-3xl text-white">
 						{props.type === "Full" ? props.name + " FullSauce" : props.name}
 					</h3>
-					<p>Version {props.packVersion}</p>
-				</div>
-				<hr className="border-black-light2" />
-				<div className="flex justify-center p-3">
+					<p className="pb-6">Version {props.packVersion}</p>
 					<DownloadButton />
 				</div>
 			</m.div>
@@ -249,7 +253,7 @@ export default function Mintcraft() {
 							(gameVersion === v
 								? "bg-yellow-dark3 font-bold pointer-events-none"
 								: "bg-transparent") +
-							" hover:bg-black-light2 active:bg-yellow-dark3 hover:font-bold duration-100 text-white w-16 h-12"
+							" hover:bg-black-light2 active:bg-yellow-dark3 hover:font-bold duration-100 text-white sm:w-16 w-full h-12"
 						}
 					>
 						{v}
@@ -297,7 +301,7 @@ export default function Mintcraft() {
 								initial="hidden"
 								animate="show"
 								exit="exit"
-								className="grid grid-cols-1 gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-4"
+								className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
 							>
 								{gameVersion === "1.19" && (
 									<>
