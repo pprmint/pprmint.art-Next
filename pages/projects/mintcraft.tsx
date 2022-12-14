@@ -193,7 +193,7 @@ export default function Mintcraft() {
 							gameVersion +
 							").zip"
 						}
-						className="w-fit"
+                        className="w-fit"
 					>
 						<Button>{t("download")}</Button>
 					</Link>
