@@ -53,11 +53,13 @@ export default function Home() {
 				exit="exit"
 				className="h-screen w-screen flex items-end relative overflow-hidden"
 			>
-				<Image
-					src={backgroundImage}
-					fill
-					alt="Dotted background"
-					className="z-0 object-cover"
+				<video
+					src="https://static.pprmint.art/videos/hero.mp4"
+                    autoPlay
+                    playsInline
+                    muted
+                    loop
+					className="absolute w-full h-full object-cover"
 				/>
 				<div className="absolute flex items-center md:items-end gap-6 w-full p-6 md:p-9 flex-col md:flex-row text-center md:text-left">
 					<m.div variants={Column} className="grow">
