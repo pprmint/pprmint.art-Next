@@ -18,7 +18,7 @@
     "date-fns": "^2.29.3",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
-    "framer-motion": "^7.9.1",
+    "framer-motion": "7.6.18",
     "lottie-react": "^2.3.1",
     "next": "13.0.2",
     "next-intl": "^2.10.2",
