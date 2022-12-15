@@ -14,35 +14,8 @@ function randomIntForString(min: number, max: number) {
 }
 const randomStringInt = randomIntForString(1, 8);
 
-const SectionContainer = {
-	hidden: { opacity: 0 },
-	show: {
-		opacity: 1,
-		transition: {
-			duration: 0,
-			staggerChildren: 0.05,
-		},
-	},
-};
-const Section = {
-	hidden: {
-		y: 100,
-		opacity: 0,
-	},
-	show: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			y: { duration: 0.75, ease: "circOut" },
-			opacity: { duration: 0.25 },
-		},
-	},
-	exit: {
-		y: -100,
-		opacity: 0,
-		transition: { duration: 0.3, ease: "easeIn" },
-	},
-};
+import { SectionContainer, Section } from "components/sectionAnimations";
+
 
 export default function NotFound() {
 	const t = useTranslations("404");
@@ -58,7 +31,7 @@ export default function NotFound() {
 				initial="hidden"
 				animate="show"
 				exit="exit"
-				className="py-40 max-w-6xl h-screen px-6 mx-auto flex flex-col justify-center items-center"
+				className="py-40 max-w-7xl h-screen px-6 mx-auto flex flex-col justify-center items-center"
 			>
 				<m.div variants={Section}>
 					<h1 className="font-thin text-red text-7xl md:text-9xl pb-6 text-center">

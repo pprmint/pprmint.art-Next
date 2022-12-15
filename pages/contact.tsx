@@ -9,35 +9,8 @@ import Button from "components/Button";
 
 import { PaperPlaneRight } from "phosphor-react";
 
-const SectionContainer = {
-	hidden: { opacity: 0 },
-	show: {
-		opacity: 1,
-		transition: {
-			duration: 0,
-			staggerChildren: 0.05,
-		},
-	},
-};
-const Section = {
-	hidden: {
-		y: 100,
-		opacity: 0,
-	},
-	show: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			y: { duration: 0.75, ease: "circOut" },
-			opacity: { duration: 0.25 },
-		},
-	},
-	exit: {
-		y: -100,
-		opacity: 0,
-		transition: { duration: 0.3, ease: "easeIn" },
-	},
-};
+import { SectionContainer, Section } from "components/sectionAnimations";
+
 
 function Form() {
 	const t = useTranslations("Contact.Form");
@@ -79,7 +52,7 @@ export default function Contact() {
 				title={t("Head.title")}
 				description={t("Head.description")}
 			/>
-			<main className="py-40 max-w-6xl mx-auto px-6 md:px-9 font-sans text-white-dark2">
+			<main className="py-40 max-w-7xl mx-auto px-6 md:px-9 font-sans text-white-dark2">
 				<m.div
 					variants={SectionContainer}
 					initial="hidden"

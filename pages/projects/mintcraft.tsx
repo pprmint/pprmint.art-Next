@@ -11,35 +11,7 @@ import Head from "components/Head";
 import Button from "components/Button";
 import { Info } from "phosphor-react";
 
-const SectionContainer = {
-	hidden: { opacity: 0 },
-	show: {
-		opacity: 1,
-		transition: {
-			duration: 0,
-			staggerChildren: 0.05,
-		},
-	},
-};
-const Section = {
-	hidden: {
-		y: 100,
-		opacity: 0,
-	},
-	show: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			y: { duration: 0.75, ease: "circOut" },
-			opacity: { duration: 0.25 },
-		},
-	},
-	exit: {
-		y: -100,
-		opacity: 0,
-		transition: { duration: 0.3, ease: "easeIn" },
-	},
-};
+import { SectionContainer, Section } from "components/sectionAnimations";
 
 const DownloadContainer = {
 	show: {
@@ -69,7 +41,6 @@ const DownloadItem = {
 	},
 };
 
-// Again, I should put these in a JSON file or sth.
 // Available downloads for each game version.
 // Skip <type> prop for standalone pack.
 // "Full" for FullSauce / complete pack with all add-ons integrated.
@@ -190,43 +161,41 @@ export default function Mintcraft() {
 		return (
 			<m.div
 				variants={DownloadItem}
-				className="bg-black-light1 rounded-md flex flex-row sm:flex-col h-fit overflow-hidden ring-2 ring-black-light2 ring-inset"
+				className="relative bg-black-light1 rounded-md flex flex-col lg:flex-row ring-2 ring-inset overflow-hidden ring-black-light2"
 			>
-				<div className="relative">
-					{props.type === "Full" && (
-						<Tooltip.Provider>
-							<Tooltip.Root delayDuration={200}>
-								<Tooltip.Trigger className="absolute top-0 right-0 p-3 cursor-help">
-									<Info weight="bold" className="text-yellow" />
-								</Tooltip.Trigger>
-								<Tooltip.Portal>
-									<Tooltip.Content>
-										<m.div
-											className="text-white bg-black-light2 px-4 py-1.5 rounded-full drop-shadow-lg"
-											initial={{ opacity: 0, y: -10 }}
-											animate={{ opacity: 1, y: 0 }}
-											transition={{
-												opcaity: { duration: 0.2 },
-												y: { duration: 0.5, ease: "backOut" },
-											}}
-										>
-											{t("fullSauceInfo")}
-											<Tooltip.Arrow className="fill-black-light2" />
-										</m.div>
-									</Tooltip.Content>
-								</Tooltip.Portal>
-							</Tooltip.Root>
-						</Tooltip.Provider>
-					)}
-					<Image
-						src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"}
-						width={500}
-						height={500}
-						alt={props.name + "Icon"}
-						className="h-44 sm:h-full w-auto aspect-square"
-					/>
-				</div>
-				<div className="flex flex-col justify-center sm:items-center sm:text-center p-6">
+				{props.type === "Full" && (
+					<Tooltip.Provider>
+						<Tooltip.Root delayDuration={200}>
+							<Tooltip.Trigger className="absolute top-0 right-0 p-3 cursor-help">
+								<Info weight="bold" className="text-yellow" />
+							</Tooltip.Trigger>
+							<Tooltip.Portal>
+								<Tooltip.Content>
+									<m.div
+										className="text-white bg-black-light2 px-4 py-1.5 rounded-full drop-shadow-lg"
+										initial={{ opacity: 0, y: -10 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{
+											opcaity: { duration: 0.2 },
+											y: { duration: 0.5, ease: "backOut" },
+										}}
+									>
+										{t("fullSauceInfo")}
+										<Tooltip.Arrow className="fill-black-light2" />
+									</m.div>
+								</Tooltip.Content>
+							</Tooltip.Portal>
+						</Tooltip.Root>
+					</Tooltip.Provider>
+				)}
+				<Image
+					src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"}
+					width={64}
+					height={64}
+					alt={props.name + "Icon"}
+					className="max-h-44 w-auto"
+				/>
+				<div className="p-6">
 					<h3 className="font-bold text-3xl text-white">
 						{props.type === "Full" ? props.name + " FullSauce" : props.name}
 					</h3>
@@ -264,7 +233,7 @@ export default function Mintcraft() {
 	return (
 		<>
 			<Head title={t("Head.title")} description={t("Head.description")} />
-			<main className="py-40 max-w-6xl mx-auto px-6 md:px-9 font-sans text-white-dark2">
+			<main className="py-40 max-w-7xl mx-auto px-6 md:px-9 font-sans text-white-dark2">
 				<m.div
 					variants={SectionContainer}
 					initial="hidden"
@@ -302,7 +271,7 @@ export default function Mintcraft() {
 								initial="hidden"
 								animate="show"
 								exit="exit"
-								className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+								className="grid grid-cols-1 sm:grid-cols-2 gap-6"
 							>
 								{gameVersion === "1.19" && (
 									<>
