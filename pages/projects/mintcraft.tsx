@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, m } from "framer-motion";
 import { ParallaxBanner } from "react-scroll-parallax";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 import Head from "components/Head";
 import Button from "components/Button";
@@ -193,7 +194,7 @@ export default function Mintcraft() {
 							gameVersion +
 							").zip"
 						}
-                        className="w-fit"
+						className="w-fit"
 					>
 						<Button>{t("download")}</Button>
 					</Link>
@@ -225,14 +226,33 @@ export default function Mintcraft() {
 				variants={DownloadItem}
 				className="bg-black-light1 rounded-md flex flex-row sm:flex-col h-fit overflow-hidden ring-2 ring-black-light2 ring-inset"
 			>
-				<Image
-					src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"}
-					width={500}
-					height={500}
-					alt={props.name + "Icon"}
-					className="h-44 sm:h-full w-auto aspect-square"
-				/>
-                {props.type === "Full" && <Info weight="bold" className="absolute top-0 right-0 text-yellow" />}
+				<div className="relative">
+					{props.type === "Full" && (
+						<Tooltip.Provider>
+							<Tooltip.Root>
+								<Tooltip.Trigger className="absolute top-0 right-0">
+									<Info
+										weight="bold"
+										className="text-yellow"
+									/>
+								</Tooltip.Trigger>
+								<Tooltip.Portal>
+									<Tooltip.Content className="text-white">
+                                        The FullSauce pack contains Mintcraft and all add-ons in one package.
+										<Tooltip.Arrow />
+									</Tooltip.Content>
+								</Tooltip.Portal>
+							</Tooltip.Root>
+						</Tooltip.Provider>
+					)}
+					<Image
+						src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"}
+						width={500}
+						height={500}
+						alt={props.name + "Icon"}
+						className="h-44 sm:h-full w-auto aspect-square"
+					/>
+				</div>
 				<div className="flex flex-col justify-center sm:items-center sm:text-center p-6">
 					<h3 className="font-bold text-3xl text-white">
 						{props.type === "Full" ? props.name + " FullSauce" : props.name}
