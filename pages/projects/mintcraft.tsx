@@ -9,7 +9,7 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 
 import Head from "components/Head";
 import Button from "components/Button";
-import { Info } from "phosphor-react";
+import { Question } from "phosphor-react";
 
 import { SectionContainer, Section } from "components/sectionAnimations";
 
@@ -36,8 +36,11 @@ const DownloadItem = {
 	},
 	exit: {
 		opacity: 0,
-		y: -20,
-		transition: { duration: 0.3, ease: "easeIn" },
+		y: -15,
+		transition: {
+			y: { duration: 0.2, ease: "easeIn" },
+			opacity: { duration: 0.2, ease: "linear" },
+		},
 	},
 };
 
@@ -161,13 +164,13 @@ export default function Mintcraft() {
 		return (
 			<m.div
 				variants={DownloadItem}
-				className="relative bg-black-light1 rounded-md flex flex-col lg:flex-row ring-2 ring-inset overflow-hidden ring-black-light2"
+				className="relative bg-black-light1 rounded-lg flex flex-col lg:flex-row ring-2 ring-inset overflow-hidden ring-black-light2"
 			>
 				{props.type === "Full" && (
 					<Tooltip.Provider>
 						<Tooltip.Root delayDuration={200}>
-							<Tooltip.Trigger className="absolute top-0 right-0 p-3 cursor-help">
-								<Info weight="bold" className="text-yellow" />
+							<Tooltip.Trigger className="absolute top-0 right-0 p-3 cursor-help text-yellow">
+								<Question weight="bold" size={20} />
 							</Tooltip.Trigger>
 							<Tooltip.Portal>
 								<Tooltip.Content>
@@ -193,14 +196,14 @@ export default function Mintcraft() {
 					width={64}
 					height={64}
 					alt={props.name + "Icon"}
-					className="max-h-44 w-auto"
+					className="h-auto lg:h-44 w-full lg:w-auto"
 				/>
-				<div className="p-6">
+				<div className="flex flex-col w-full h-full p-6">
 					<h3 className="font-bold text-3xl text-white">
 						{props.type === "Full" ? props.name + " FullSauce" : props.name}
 					</h3>
 					<p className="pb-6">Version {props.packVersion}</p>
-					<Link href={dlLink} className="w-fit">
+					<Link href={dlLink} className="w-fit mt-auto ml-auto">
 						<Button>{t("download")}</Button>
 					</Link>
 				</div>
@@ -211,7 +214,7 @@ export default function Mintcraft() {
 	function VersionSwitch() {
 		const Versions = ["1.19", "1.18", "1.17", "1.16"];
 		return (
-			<div className="flex rounded-md duration-100 border-2 border-yellow overflow-hidden">
+			<div className="flex rounded-lg duration-100 border-2 border-yellow overflow-hidden">
 				{Versions.map((v) => (
 					<button
 						key={v}
@@ -220,7 +223,7 @@ export default function Mintcraft() {
 							(gameVersion === v
 								? "bg-yellow-dark3 font-bold pointer-events-none"
 								: "bg-transparent") +
-							" hover:bg-black-light2 active:bg-yellow-dark3 hover:font-bold duration-100 text-white sm:w-16 w-full h-12"
+							" hover:bg-black-light2 active:bg-yellow-dark3 hover:font-bold duration-100 text-white sm:w-16 w-full h-10"
 						}
 					>
 						{v}
@@ -253,13 +256,7 @@ export default function Mintcraft() {
 							<h2 className="font-bold text-white text-3xl flex-grow">
 								{t("Content.Download.commonTitle")}
 								&nbsp;
-								<m.div
-									initial={{ y: "-20px" }}
-									animate={{ y: "0px" }}
-									style={{ display: "inline-block" }}
-								>
-									{gameVersion}
-								</m.div>
+								{gameVersion}
 							</h2>
 							<VersionSwitch />
 						</div>
@@ -271,7 +268,7 @@ export default function Mintcraft() {
 								initial="hidden"
 								animate="show"
 								exit="exit"
-								className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+								className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-6"
 							>
 								{gameVersion === "1.19" && (
 									<>
