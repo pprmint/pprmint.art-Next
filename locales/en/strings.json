@@ -203,18 +203,9 @@
 					}
 				},
 				"Download": {
-					"118": {
-						"Mintcraft": {
-							"text": "afgahaetujaehj"
-						}
-					},
-					"119": {
-						"Mintcraft": {
-							"text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-						}
-					},
 					"commonTitle": "Downloads for",
 					"download": "Download",
+                    "fullSauceInfo": "This pack contains Mintcraft with all add-ons.",
 					"selectVersion": "Game version"
 				}
 			},

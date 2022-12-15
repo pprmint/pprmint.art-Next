@@ -157,70 +157,36 @@ export default function Mintcraft() {
 		}>
 	) {
 		const t = useTranslations("Projects.Mintcraft.Content.Download");
-
-		function DownloadButton() {
-			// I'm too lazy to define download links manually, so here the filename will be changed based on the type prop.
-			if (props.type === "Add-on") {
-				return (
-					<Link
-						href={
-							"https://download.pprmint.art/mintcraft/" +
-							gameVersion +
-							"/" +
-							props.name +
-							"_Add-on_" +
-							props.packVersion +
-							"_(" +
-							gameVersion +
-							").zip"
-						}
-						className="w-fit"
-					>
-						<Button>{t("download")}</Button>
-					</Link>
-				);
-			}
-			if (props.type === "Full") {
-				return (
-					<Link
-						href={
-							"https://download.pprmint.art/mintcraft/" +
-							gameVersion +
-							"/" +
-							props.name +
-							"_" +
-							props.packVersion +
-							"_(FullSauce_" +
-							gameVersion +
-							").zip"
-						}
-						className="w-fit"
-					>
-						<Button>{t("download")}</Button>
-					</Link>
-				);
-			} else {
-				return (
-					<Link
-						href={
-							"https://download.pprmint.art/mintcraft/" +
-							gameVersion +
-							"/" +
-							props.name +
-							"_" +
-							props.packVersion +
-							"_(" +
-							gameVersion +
-							").zip"
-						}
-						className="w-fit"
-					>
-						<Button>{t("download")}</Button>
-					</Link>
-				);
-			}
-		}
-
+		const dlLink =
+			props.type === "Add-on"
+				? "https://download.pprmint.art/mintcraft/" +
+				  gameVersion +
+				  "/" +
+				  props.name +
+				  "_Add-on_" +
+				  props.packVersion +
+				  "_(" +
+				  gameVersion +
+				  ").zip"
+				: props.type === "Full"
+				? "https://download.pprmint.art/mintcraft/" +
+				  gameVersion +
+				  "/" +
+				  props.name +
+				  "_" +
+				  props.packVersion +
+				  "_(FullSauce_" +
+				  gameVersion +
+				  ").zip"
+				: "https://download.pprmint.art/mintcraft/" +
+				  gameVersion +
+				  "/" +
+				  props.name +
+				  "_" +
+				  props.packVersion +
+				  "_(" +
+				  gameVersion +
+				  ").zip";
 		return (
 			<m.div
 				variants={DownloadItem}
@@ -229,17 +195,24 @@ export default function Mintcraft() {
 				<div className="relative">
 					{props.type === "Full" && (
 						<Tooltip.Provider>
-							<Tooltip.Root>
-								<Tooltip.Trigger className="absolute top-0 right-0">
-									<Info
-										weight="bold"
-										className="text-yellow"
-									/>
+							<Tooltip.Root delayDuration={200}>
+								<Tooltip.Trigger className="absolute top-0 right-0 p-3 cursor-help">
+									<Info weight="bold" className="text-yellow" />
 								</Tooltip.Trigger>
 								<Tooltip.Portal>
-									<Tooltip.Content className="text-white">
-                                        The FullSauce pack contains Mintcraft and all add-ons in one package.
-										<Tooltip.Arrow />
+									<Tooltip.Content>
+										<m.div
+											className="text-white bg-black-light2 px-4 py-1.5 rounded-full drop-shadow-lg"
+											initial={{ opacity: 0, y: -10 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{
+												opcaity: { duration: 0.2 },
+												y: { duration: 0.5, ease: "backOut" },
+											}}
+										>
+											{t("fullSauceInfo")}
+											<Tooltip.Arrow className="fill-black-light2" />
+										</m.div>
 									</Tooltip.Content>
 								</Tooltip.Portal>
 							</Tooltip.Root>
@@ -258,7 +231,9 @@ export default function Mintcraft() {
 						{props.type === "Full" ? props.name + " FullSauce" : props.name}
 					</h3>
 					<p className="pb-6">Version {props.packVersion}</p>
-					<DownloadButton />
+					<Link href={dlLink} className="w-fit">
+						<Button>{t("download")}</Button>
+					</Link>
 				</div>
 			</m.div>
 		);
