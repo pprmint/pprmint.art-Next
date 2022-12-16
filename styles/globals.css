@@ -11,7 +11,7 @@ body {
 h1, h2, h3, h4, h5, h6, p, span, button {
     hyphens: auto;
     line-height: 1.5rem;
-    letter-spacing: 0.035rem;
+    letter-spacing: 0.03rem;
 	font-feature-settings: "ss01", "ss05", "ss06", "ss07", "ss08", "ss09", "ss10", "ss11";
 }
 
