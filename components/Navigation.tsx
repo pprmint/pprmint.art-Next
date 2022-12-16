@@ -9,7 +9,14 @@ import Lottie from "lottie-react";
 
 import logo from "animations/wordmark.json";
 
-import { ArrowUUpLeft, Coffee, Heart, List, X } from "phosphor-react";
+import {
+	ArrowUUpLeft,
+	CaretRight,
+	Coffee,
+	Heart,
+	List,
+	X,
+} from "phosphor-react";
 import { SiGithub, SiTumblr, SiTwitter, SiYoutube } from "react-icons/si";
 
 const NavigationAnimation = {
@@ -180,7 +187,11 @@ function Navigation() {
 														href={Page.link}
 														onClick={handleMenuClose}
 														scroll={false}
-                                                        className={route === Page.link ? "ring-2 ring-black-light2 rounded-md pointer-events-none" : ""}
+														className={
+															route === Page.link
+																? "ring-2 ring-black-light2 rounded-md pointer-events-none"
+																: ""
+														}
 													>
 														<Navlink>
 															<span className="font-bold text-white">
@@ -192,10 +203,14 @@ function Navigation() {
 														</Navlink>
 													</Link>
 												))}
-												<div onClick={() => setLinks("projects")}>
+												<div
+													className="group"
+													onClick={() => setLinks("projects")}
+												>
 													<Navlink>
 														<span className="font-bold text-white">
 															{t("Projects.Head.title")}
+															<CaretRight weight="bold" className="ml-1 inline duration-75 ease-out group-hover:translate-x-1" />
 														</span>
 														<p className="text-white-dark2">
 															{t("Projects.Head.description")}
@@ -226,7 +241,11 @@ function Navigation() {
 														href={Project.link}
 														onClick={handleMenuClose}
 														scroll={false}
-                                                        className={route === Project.link ? "ring-2 ring-black-light2 rounded-md pointer-events-none" : ""}
+														className={
+															route === Project.link
+																? "ring-2 ring-black-light2 rounded-md pointer-events-none"
+																: ""
+														}
 													>
 														<Navlink>
 															<span className="font-bold text-white">
