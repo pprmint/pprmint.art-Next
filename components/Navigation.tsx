@@ -17,7 +17,7 @@ import {
 	List,
 	X,
 } from "phosphor-react";
-import { SiGithub, SiTumblr, SiTwitter, SiYoutube } from "react-icons/si";
+import { SiGithub, SiKofi, SiTumblr, SiTwitter, SiYoutube } from "react-icons/si";
 
 const NavigationAnimation = {
 	hidden: {
@@ -374,6 +374,15 @@ function Footer() {
 				>
 					<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
 						<SiGithub />
+					</button>
+				</Link>
+				<Link
+					href="https://ko-fi.com/pprmint"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
+						<SiKofi />
 					</button>
 				</Link>
 			</div>
