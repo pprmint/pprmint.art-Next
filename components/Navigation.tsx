@@ -17,7 +17,13 @@ import {
 	List,
 	X,
 } from "phosphor-react";
-import { SiGithub, SiKofi, SiTumblr, SiTwitter, SiYoutube } from "react-icons/si";
+import {
+	SiGithub,
+	SiKofi,
+	SiTumblr,
+	SiTwitter,
+	SiYoutube,
+} from "react-icons/si";
 
 const NavigationAnimation = {
 	hidden: {
@@ -140,7 +146,7 @@ function Navigation() {
 							exit="exit"
 							className="fixed top-0 right-0 m-0 sm:m-3 w-full sm:w-auto z-50"
 						>
-							<div className="bg-black-light1 border-b sm:border border-black-light2 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen sm:max-h-[calc(100vh-24px)] overflow-y-auto overflow-x-hidden">
+							<div className="bg-black-light1 border-b sm:border-2 border-black-light2 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen sm:max-h-[calc(100vh-24px)] overflow-y-auto overflow-x-hidden">
 								<div className="full flex flex-row pb-3 items-center">
 									<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
 										{t("Navigation.whereToGo")}
@@ -210,7 +216,10 @@ function Navigation() {
 													<Navlink>
 														<span className="font-bold text-white">
 															{t("Projects.Head.title")}
-															<CaretRight weight="bold" className="ml-1 inline duration-75 ease-out group-hover:translate-x-1" />
+															<CaretRight
+																weight="bold"
+																className="ml-1 inline duration-75 ease-out group-hover:translate-x-1"
+															/>
 														</span>
 														<p className="text-white-dark2">
 															{t("Projects.Head.description")}
@@ -269,7 +278,7 @@ function Navigation() {
 										transition: { delay: 0.05, duration: 0.4, ease: "circOut" },
 									}}
 								>
-									<hr className="border-dotted border-white-dark2 mx-3 my-3 sm:my-5" />
+                                <hr className="border-t-2 border-black-light2 mx-3 my-3 sm:my-5" />
 									<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
 										<Link
 											href="/privacy"
@@ -321,8 +330,8 @@ function Footer() {
 	const t = useTranslations("Navigation");
 	return (
 		<div className="flex flex-col sm:flex-row sm:items-end">
-			<div className="p-3 text-white-dark2 text-xs flex-grow">
-				<p className="flex flex-row items-center">
+			<div className="p-3 mt-1.5 text-white-dark2 text-xs flex-grow">
+				<p className="flex flex-row items-center leading-3">
 					{t("madeWith")}
 					<Link
 						href="https://awfiquily.vercel.app/"
