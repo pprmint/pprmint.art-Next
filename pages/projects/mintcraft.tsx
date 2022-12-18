@@ -51,16 +51,16 @@ const DownloadItem = {
 const v119 = [
 	{
 		name: "Mintcraft",
-		packVersion: "1.6.1",
+		packVersion: "1.6.2",
 		type: "Full",
 	},
 	{
 		name: "Mintcraft",
-		packVersion: "1.6.1",
+		packVersion: "1.6.2",
 	},
 	{
 		name: "MintBit",
-		packVersion: "1.0",
+		packVersion: "1.1",
 		type: "Add-on",
 	},
 	{
@@ -131,9 +131,10 @@ export default function Mintcraft() {
 		}>
 	) {
 		const t = useTranslations("Projects.Mintcraft.Content.Download");
+		const { type = "Standard" } = props;
 		const dlLink =
 			props.type === "Add-on"
-				? "https://download.pprmint.art/mintcraft/" +
+				? "https://static.pprmint.art/download/mintcraft/" +
 				  gameVersion +
 				  "/" +
 				  props.name +
@@ -143,7 +144,7 @@ export default function Mintcraft() {
 				  gameVersion +
 				  ").zip"
 				: props.type === "Full"
-				? "https://download.pprmint.art/mintcraft/" +
+				? "https://static.pprmint.art/download/mintcraft/" +
 				  gameVersion +
 				  "/" +
 				  props.name +
@@ -152,7 +153,7 @@ export default function Mintcraft() {
 				  "_(FullSauce_" +
 				  gameVersion +
 				  ").zip"
-				: "https://download.pprmint.art/mintcraft/" +
+				: "https://static.pprmint.art/download/mintcraft/" +
 				  gameVersion +
 				  "/" +
 				  props.name +
@@ -164,7 +165,7 @@ export default function Mintcraft() {
 		return (
 			<m.div
 				variants={DownloadItem}
-				className="relative bg-black-light1 rounded-lg flex flex-col lg:flex-row ring-2 ring-inset overflow-hidden ring-black-light2"
+				className="relative bg-black-light1 rounded-lg flex flex-col lg:flex-row border-2 overflow-hidden border-black-light2"
 			>
 				{props.type === "Full" && (
 					<Tooltip.Provider>
@@ -192,7 +193,7 @@ export default function Mintcraft() {
 					</Tooltip.Provider>
 				)}
 				<Image
-					src={"/assets/mintcraft/packs/" + props.name + "/pack.svg"}
+					src={"/assets/mintcraft/packs/" + props.name + "_" + type + ".svg"}
 					width={64}
 					height={64}
 					alt={props.name + "Icon"}
