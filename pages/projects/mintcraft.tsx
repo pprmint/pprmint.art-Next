@@ -177,12 +177,7 @@ export default function Mintcraft() {
 								<Tooltip.Content>
 									<m.div
 										className="text-white bg-black-light2 px-4 py-1.5 rounded-full drop-shadow-lg"
-										initial={{ opacity: 0, y: -10 }}
-										animate={{ opacity: 1, y: 0 }}
-										transition={{
-											opcaity: { duration: 0.2 },
-											y: { duration: 0.5, ease: "backOut" },
-										}}
+										variants={Section}
 									>
 										{t("fullSauceInfo")}
 										<Tooltip.Arrow className="fill-black-light2" />
@@ -265,7 +260,7 @@ export default function Mintcraft() {
 							{/* 1.19 */}
 							<m.div
 								key={gameVersion}
-								variants={DownloadContainer}
+								variants={SectionContainer}
 								initial="hidden"
 								animate="show"
 								exit="exit"

@@ -4,7 +4,7 @@ export const SectionContainer = {
 		opacity: 1,
 		transition: {
 			duration: 0,
-			staggerChildren: 0.05,
+			staggerChildren: 0.03,
 		},
 	},
 };
@@ -17,8 +17,8 @@ export const Section = {
 		y: 0,
 		opacity: 1,
 		transition: {
-			y: { duration: 0.75, ease: "circOut" },
-			opacity: { duration: 0.25 },
+			y: { duration: 0.5, ease: "circOut" },
+			opacity: { duration: 0.3 },
 		},
 	},
 	exit: {

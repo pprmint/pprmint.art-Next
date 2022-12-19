@@ -88,6 +88,7 @@ export default function App({ Component, pageProps }: AppProps) {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
+                            transition={{duration: .2}}
 							key={location}
 						>
 							<Component {...pageProps} />
