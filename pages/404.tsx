@@ -14,7 +14,8 @@ function randomIntForString(min: number, max: number) {
 }
 const randomStringInt = randomIntForString(1, 8);
 
-import { SectionContainer, Section } from "components/sectionAnimations";
+import { SectionContainer, Section } from "animations/sectionAnimations";
+
 
 
 export default function NotFound() {

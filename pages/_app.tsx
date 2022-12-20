@@ -86,9 +86,8 @@ export default function App({ Component, pageProps }: AppProps) {
 					>
 						<m.div
 							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-                            transition={{duration: .2}}
+							animate={{ opacity: 1, transition: { duration: 0.2 } }}
+							exit={{ opacity: 0, transition: { duration: 0.2 } }}
 							key={location}
 						>
 							<Component {...pageProps} />

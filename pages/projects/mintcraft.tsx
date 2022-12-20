@@ -11,7 +11,8 @@ import Head from "components/Head";
 import Button from "components/Button";
 import { Question } from "phosphor-react";
 
-import { SectionContainer, Section } from "components/sectionAnimations";
+import { SectionContainer, Section } from "animations/sectionAnimations";
+
 
 const DownloadContainer = {
 	show: {

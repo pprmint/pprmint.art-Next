@@ -10,19 +10,19 @@ export const SectionContainer = {
 };
 export const Section = {
 	hidden: {
-		y: 100,
+		y: 50,
 		opacity: 0,
 	},
 	show: {
 		y: 0,
 		opacity: 1,
 		transition: {
-			y: { duration: 0.5, ease: "circOut" },
+			y: { duration: 0.6, ease: "circOut" },
 			opacity: { duration: 0.3 },
 		},
 	},
 	exit: {
-		y: -100,
+		y: -50,
 		opacity: 0,
 		transition: { duration: 0.3, ease: "easeIn" },
 	},

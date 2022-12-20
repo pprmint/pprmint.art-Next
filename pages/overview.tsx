@@ -5,35 +5,7 @@ import { m } from "framer-motion";
 
 import Head from "components/Head";
 
-const ColumnContainer = {
-	hidden: { opacity: 0 },
-	show: {
-		opacity: 1,
-		transition: {
-			duration: 0,
-			staggerChildren: 0.05,
-		},
-	},
-};
-const Column = {
-	hidden: {
-		opacity: 0,
-		y: 100,
-	},
-	show: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			y: { duration: 0.75, ease: "circOut" },
-			opacity: { duration: 0.25 },
-		},
-	},
-	exit: {
-		opacity: 0,
-		y: -100,
-		transition: { duration: 0.3, ease: "easeIn" },
-	},
-};
+import { SectionContainer, Section } from "animations/sectionAnimations";
 
 export default function Overview() {
 	const t = useTranslations("Overview");
@@ -44,14 +16,14 @@ export default function Overview() {
 				description={t("Head.description")}
 			/>
 			<m.div
-				variants={ColumnContainer}
+				variants={SectionContainer}
 				initial="hidden"
 				animate="show"
 				exit="exit"
 				className="lg:grid lg:grid-cols-3 overflow-hidden"
 			>
 				<m.div
-					variants={Column}
+					variants={Section}
 					className="flex justify-center h-[33.3vh] lg:h-screen relative"
 				>
 					<Image
@@ -69,7 +41,7 @@ export default function Overview() {
 					</div>
 				</m.div>
 				<m.div
-					variants={Column}
+					variants={Section}
 					className="flex justify-center h-[33.3vh] lg:h-screen relative"
 				>
 					<Image
@@ -87,7 +59,7 @@ export default function Overview() {
 					</div>
 				</m.div>
 				<m.div
-					variants={Column}
+					variants={Section}
 					className="flex justify-center h-[33.3vh] lg:h-screen relative"
 				>
 					<Image

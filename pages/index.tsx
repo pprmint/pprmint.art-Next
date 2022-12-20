@@ -5,49 +5,20 @@ import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
 
+import { ArrowRight } from "phosphor-react";
+
 import Head from "components/Head";
 import Button from "components/Button";
 
-import backgroundImage from "public/assets/background.svg";
-import { ArrowRight } from "phosphor-react";
-
-const ColumnContainer = {
-	hidden: { opacity: 0 },
-	show: {
-		opacity: 1,
-		transition: {
-			duration: 0,
-			staggerChildren: 0.05,
-		},
-	},
-};
-const Column = {
-	hidden: {
-		y: 100,
-	},
-	show: {
-		y: 0,
-		transition: {
-			y: { duration: 0.75, ease: "circOut" },
-			opacity: { duration: 0.25 },
-		},
-	},
-	exit: {
-		y: -100,
-		transition: { duration: 0.3, ease: "easeIn" },
-	},
-};
+import { SectionContainer, Section } from "animations/sectionAnimations";
 
 export default function Home() {
 	const t = useTranslations("Home");
 	return (
 		<>
-			<Head
-				title={t("Head.title")}
-				description={t("Head.description")}
-			/>
+			<Head title={t("Head.title")} description={t("Head.description")} />
 			<m.div
-				variants={ColumnContainer}
+				variants={SectionContainer}
 				initial="hidden"
 				animate="show"
 				exit="exit"
@@ -55,20 +26,20 @@ export default function Home() {
 			>
 				<video
 					src="https://static.pprmint.art/videos/hero.mp4"
-                    autoPlay
-                    playsInline
-                    muted
-                    loop
+					autoPlay
+					playsInline
+					muted
+					loop
 					className="absolute w-full h-full object-cover"
 				/>
 				<div className="absolute flex items-center md:items-end gap-6 w-full p-6 md:p-9 flex-col md:flex-row text-center md:text-left">
-					<m.div variants={Column} className="grow">
+					<m.div variants={Section} className="grow">
 						<p
 							className="font-sans text-4xl md:text-5xl text-white font-bold"
 							dangerouslySetInnerHTML={{ __html: t.raw("Content.slogan") }}
 						/>
 					</m.div>
-					<m.div variants={Column}>
+					<m.div variants={Section}>
 						<Link href="/overview" scroll={false}>
 							<Button large>
 								{t("Content.button")} <ArrowRight />

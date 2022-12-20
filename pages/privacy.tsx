@@ -8,7 +8,8 @@ import Head from "components/Head";
 
 import { ArrowUpRight } from "phosphor-react";
 
-import { SectionContainer, Section } from "components/sectionAnimations";
+import { SectionContainer, Section } from "animations/sectionAnimations";
+
 
 
 export default function PrivacyPolicy() {
