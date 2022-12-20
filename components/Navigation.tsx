@@ -146,7 +146,7 @@ function Navigation() {
 							exit="exit"
 							className="fixed top-0 right-0 m-0 sm:m-3 w-full sm:w-auto z-50"
 						>
-							<div className="bg-black-light1 border-b sm:border-2 border-black-light2 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen sm:max-h-[calc(100vh-24px)] overflow-y-auto overflow-x-hidden">
+							<div className="bg-black-light1 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen sm:max-h-[calc(100vh-24px)] overflow-y-auto overflow-x-hidden">
 								<div className="full flex flex-row pb-3 items-center">
 									<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
 										{t("Navigation.whereToGo")}
