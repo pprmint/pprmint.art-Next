@@ -8,6 +8,7 @@ specifiers:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@vercel/og': ^0.0.21
+  animejs: ^3.2.1
   autoprefixer: ^10.4.13
   date-fns: ^2.29.3
   eslint: 8.27.0
@@ -33,6 +34,7 @@ dependencies:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@vercel/og': 0.0.21
+  animejs: 3.2.1
   date-fns: 2.29.3
   eslint: 8.27.0
   eslint-config-next: 13.0.2_rmayb2veg2btbq6mbmnyivgasy
@@ -848,6 +850,10 @@ packages:
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
+    dev: false
+
+  /animejs/3.2.1:
+    resolution: {integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==}
     dev: false
 
   /ansi-regex/5.0.1:
