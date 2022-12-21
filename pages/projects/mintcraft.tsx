@@ -163,7 +163,7 @@ export default function Mintcraft() {
 		return (
 			<m.div
 				variants={DownloadItem}
-				className="relative bg-black-light1 rounded-lg flex flex-col lg:flex-row border-2 overflow-hidden border-black-light2"
+				className="relative bg-black-light1 rounded-lg flex flex-col lg:flex-row overflow-hidden"
 			>
 				{props.type === "Full" && (
 					<Tooltip.Provider>
@@ -190,7 +190,7 @@ export default function Mintcraft() {
 					width={64}
 					height={64}
 					alt={props.name + "Icon"}
-					className="h-auto lg:h-44 w-full lg:w-auto"
+					className="h-auto lg:h-44 w-full lg:w-auto border-r border-black-light2"
 				/>
 				<div className="flex flex-col w-full h-full p-6">
 					<h3 className="font-semibold font-display text-3xl text-white">
@@ -208,16 +208,16 @@ export default function Mintcraft() {
 	function VersionSwitch() {
 		const Versions = ["1.19", "1.18", "1.17", "1.16"];
 		return (
-			<div className="flex rounded-lg duration-100 border-2 border-yellow overflow-hidden">
+			<div className="flex bg-black-light1 rounded-lg duration-100 overflow-hidden">
 				{Versions.map((v) => (
 					<button
 						key={v}
 						onClick={() => setGameVersion(v)}
 						className={
 							(gameVersion === v
-								? "bg-yellow-dark3 font-bold pointer-events-none"
+								? "bg-black-light2 font-bold pointer-events-none"
 								: "bg-transparent") +
-							" hover:bg-black-light2 active:bg-yellow-dark3 hover:font-bold duration-100 text-white sm:w-16 w-full h-10"
+							" hover:bg-black-light2 hover:font-bold duration-100 text-white sm:w-16 w-full h-10"
 						}
 					>
 						{v}
