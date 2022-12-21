@@ -26,7 +26,7 @@ export default async function (req: NextRequest) {
 						"url('https://static.pprmint.art/images/background.png')",
 					width: "100%",
 					height: "100%",
-					padding: "44px 75px",
+					padding: "60px 75px",
 					display: "flex",
 					flexDirection: "column",
 				}}
@@ -34,7 +34,7 @@ export default async function (req: NextRequest) {
 				<h1
 					style={{
 						fontFamily: "Cabinet Grotesk",
-						fontSize: 97,
+						fontSize: 90,
 						lineHeight: 0.85,
 						color: "#eee",
 					}}
@@ -44,9 +44,9 @@ export default async function (req: NextRequest) {
 				<h2
 					style={{
 						fontFamily: "Inter",
-						fontSize: 45,
+						fontSize: 40,
 						lineHeight: 1,
-						letterSpacing: 0.85,
+						letterSpacing: -0.004,
 						color: "#bbb",
 						marginBottom: "auto",
 					}}
