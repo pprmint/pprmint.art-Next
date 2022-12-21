@@ -9,8 +9,6 @@ import * as Slider from "@radix-ui/react-slider";
 import Head from "components/Head";
 import { ArrowsOut, Article } from "phosphor-react";
 
-import { FadeContainer, Fade } from "animations/fadeAnimations";
-
 // To do: Move data to JSON file and import from there. Less messy overall then.
 const Works2022 = [
 	{
@@ -195,48 +193,32 @@ export default function Gallery() {
 					{t("Head.title")}
 				</h1>
 				<section>
-					<m.div
-						variants={FadeContainer}
-						initial="hidden"
-						whileInView="show"
-						className="py-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
-					>
+					<div className="py-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
 						{Works2022.map((Work) => (
-							<m.div
+							<div
 								key={Work.caption}
-								variants={Fade}
-								transition={{ delay: 1 }}
 								className="aspect-video relative group overflow-hidden"
 							>
-								<div
-									className="absolute w-full h-full flex items-end opacity-0 hover:opacity-100 focus:opacity-100 duration-300 backdrop-blur-sm backdrop-saturate-0 ring-inset ring hover:ring-2 ring-black-light2"
-									style={{
-										background:
-											"linear-gradient(to bottom right, #222F 0%, #2225 50%, #222F 100%)",
-									}}
+								<Link
+									href={Work.src}
+									target="_blank"
+									className="absolute w-full h-full flex items-end opacity-0 hover:opacity-100 focus:opacity-100 duration-300 backdrop-blur-sm backdrop-saturate-0 backdrop-brightness-75"
 								>
-									<div className="flex flex-col w-full h-full">
-										<div className="p-3 sm:p-6 md:p-9 -translate-y-6 group-hover:translate-y-0 duration-300 ease-out">
-											<h2 className="text-white font-bold text-xl md:text-4xl">
-												{Work.caption}
-											</h2>
-										</div>
-										<div className="self-end mt-auto p-1.5 sm:p-3 md:p-6 gap-1 translate-y-6 group-hover:translate-y-0 duration-300 ease-out">
-											<Link href={Work.src} target="_blank">
-												<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-													<ArrowsOut weight="bold" />
-												</button>
+									<div className="flex flex-col gap-1.5 text-center justify-center items-center align-middle w-full h-full p-9">
+										<h2 className="text-white font-extrabold font-display text-xl md:text-4xl">
+											{Work.caption}
+										</h2>
+										{Work.tumblr && (
+											<Link
+												href={Work.tumblr}
+												target="_blank"
+												className="text-sm text-center w-fit underline decoration-dotted decoration-2 hover:text-white hover:font-bold duration-100"
+											>
+												Read more on Tumblr
 											</Link>
-											{Work.tumblr && (
-												<Link href={Work.tumblr} target="_blank">
-													<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-														<Article weight="bold" />
-													</button>
-												</Link>
-											)}
-										</div>
+										)}
 									</div>
-								</div>
+								</Link>
 								<Image
 									src={Work.src}
 									width={Work.width}
@@ -246,9 +228,9 @@ export default function Gallery() {
 									blurDataURL={Work.blurData}
 									className="h-full object-cover"
 								/>
-							</m.div>
+							</div>
 						))}
-					</m.div>
+					</div>
 				</section>
 			</main>
 		</>
