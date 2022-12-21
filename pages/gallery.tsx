@@ -3,13 +3,12 @@ import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { m } from "framer-motion";
+import { delay, m } from "framer-motion";
 import * as Slider from "@radix-ui/react-slider";
 
 import Head from "components/Head";
 import { ArrowsOut, Article } from "phosphor-react";
 
-import { SectionContainer, Section } from "animations/sectionAnimations";
 import { FadeContainer, Fade } from "animations/fadeAnimations";
 
 // To do: Move data to JSON file and import from there. Less messy overall then.
@@ -188,100 +187,69 @@ const Works2022 = [
 
 export default function Gallery() {
 	const t = useTranslations("Gallery");
-	const [cols, setCols] = React.useState([2]);
-	const gridCols = `grid-cols-${cols}`;
 	return (
 		<>
 			<Head title={t("Head.title")} description={t("Head.description")} />
-			<main className="py-40 font-sans text-white-dark2">
-				<m.div
-					variants={SectionContainer}
-					initial="hidden"
-					whileInView="show"
-					exit="exit"
-				>
-					<m.div variants={Section} className="py-5">
-						<section className="px-6 md:px-9 flex items-center flex-col md:flex-row">
-							<h1 className="font-bold text-white text-5xl md:text-6xl pb-3 flex-grow">
-								{t("Head.title")}
-							</h1>
-							<div className="flex flex-col w-full md:max-w-xl">
-								<span className="mb-3 text-right">
-									{t("Content.gridSize")}:{" "}
-									<span className="text-white font-bold">{cols}</span>
-								</span>
-								<Slider.Root
-									className="group relative flex items-center select-none touch-none w-full rounded-full"
-									value={cols}
-									onValueChange={setCols}
-									min={1}
-									max={6}
-									step={1}
+			<main className="py-40 text-white-dark2">
+				<h1 className="pb-12 px-6 md:px-9 font-display font-extrabold text-center text-white text-5xl md:text-7xl xl:text-8xl">
+					{t("Head.title")}
+				</h1>
+				<section>
+					<m.div
+						variants={FadeContainer}
+						initial="hidden"
+						whileInView="show"
+						className="py-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
+					>
+						{Works2022.map((Work) => (
+							<m.div
+								key={Work.caption}
+								variants={Fade}
+								transition={{ delay: 1 }}
+								className="aspect-video relative group overflow-hidden"
+							>
+								<div
+									className="absolute w-full h-full flex items-end opacity-0 hover:opacity-100 focus:opacity-100 duration-300 backdrop-blur-sm backdrop-saturate-0 ring-inset ring hover:ring-2 ring-black-light2"
+									style={{
+										background:
+											"linear-gradient(to bottom right, #222F 0%, #2225 50%, #222F 100%)",
+									}}
 								>
-									<Slider.Track className="relative duration-200 ease-out bg-green-dark3 flex-grow h-0.5 group-hover:h-3 rounded-full">
-										<Slider.Range className="absolute top-1/2 -translate-y-1/2 bg-green h-3 rounded-full group-hover:rounded-l-full" />
-									</Slider.Track>
-									<Slider.Thumb className="block duration-100 h-0 group-hover:h-5 w-0 group-hover:w-5 bg-green ring-0 group-hover:ring-8 ring-black rounded-full outline-none" />
-								</Slider.Root>
-							</div>
-						</section>
-					</m.div>
-					<m.div variants={Section}>
-						<m.div
-							variants={FadeContainer}
-							initial="hidden"
-							whileInView="show"
-							className={"py-5 grid " + gridCols}
-						>
-							{Works2022.map((Work) => (
-								<m.div
-									variants={Fade}
-									key={Work.caption}
-									className="aspect-video relative group overflow-hidden"
-								>
-									<div
-										className="absolute w-full h-full flex items-end opacity-0 hover:opacity-100 focus:opacity-100 duration-300 backdrop-blur-sm backdrop-saturate-0 ring-inset ring hover:ring-2 ring-black-light2"
-										style={{
-											background:
-												"linear-gradient(to bottom right, #222F 0%, #2225 50%, #222F 100%)",
-										}}
-									>
-										<div className="flex flex-col w-full h-full">
-											<div className="p-3 sm:p-6 md:p-9 -translate-y-6 group-hover:translate-y-0 duration-300 ease-out">
-												<h2 className="text-white font-bold text-xl md:text-4xl">
-													{Work.caption}
-												</h2>
-											</div>
-											<div className="self-end mt-auto p-1.5 sm:p-3 md:p-6 gap-1 translate-y-6 group-hover:translate-y-0 duration-300 ease-out">
-												<Link href={Work.src} target="_blank">
+									<div className="flex flex-col w-full h-full">
+										<div className="p-3 sm:p-6 md:p-9 -translate-y-6 group-hover:translate-y-0 duration-300 ease-out">
+											<h2 className="text-white font-bold text-xl md:text-4xl">
+												{Work.caption}
+											</h2>
+										</div>
+										<div className="self-end mt-auto p-1.5 sm:p-3 md:p-6 gap-1 translate-y-6 group-hover:translate-y-0 duration-300 ease-out">
+											<Link href={Work.src} target="_blank">
+												<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
+													<ArrowsOut weight="bold" />
+												</button>
+											</Link>
+											{Work.tumblr && (
+												<Link href={Work.tumblr} target="_blank">
 													<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-														<ArrowsOut weight="bold" />
+														<Article weight="bold" />
 													</button>
 												</Link>
-												{Work.tumblr && (
-													<Link href={Work.tumblr} target="_blank">
-														<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-															<Article weight="bold" />
-														</button>
-													</Link>
-												)}
-											</div>
+											)}
 										</div>
 									</div>
-									<Image
-										src={Work.src}
-										width={Work.width}
-										height={Work.height}
-										alt={Work.caption}
-										placeholder="blur"
-										blurDataURL={Work.blurData}
-										className="h-full object-cover"
-									/>
-								</m.div>
-							))}
-						</m.div>
+								</div>
+								<Image
+									src={Work.src}
+									width={Work.width}
+									height={Work.height}
+									alt={Work.caption}
+									placeholder="blur"
+									blurDataURL={Work.blurData}
+									className="h-full object-cover"
+								/>
+							</m.div>
+						))}
 					</m.div>
-				</m.div>
+				</section>
 			</main>
 		</>
 	);

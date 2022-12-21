@@ -11,9 +11,6 @@ import Head from "components/Head";
 import Button from "components/Button";
 import { Question } from "phosphor-react";
 
-import { SectionContainer, Section } from "animations/sectionAnimations";
-
-
 const DownloadContainer = {
 	show: {
 		transition: {
@@ -178,7 +175,7 @@ export default function Mintcraft() {
 								<Tooltip.Content>
 									<m.div
 										className="text-white bg-black-light2 px-4 py-1.5 rounded-full drop-shadow-lg"
-										variants={Section}
+										variants={DownloadItem}
 									>
 										{t("fullSauceInfo")}
 										<Tooltip.Arrow className="fill-black-light2" />
@@ -234,94 +231,81 @@ export default function Mintcraft() {
 		<>
 			<Head title={t("Head.title")} description={t("Head.description")} />
 			<main className="py-40 max-w-7xl mx-auto px-6 md:px-9 font-sans text-white-dark2">
-				<m.div
-					variants={SectionContainer}
-					initial="hidden"
-					animate="show"
-					exit="exit"
-				>
-					<m.div variants={Section} className="py-5">
-						<h1 className="font-semibold font-display text-white text-5xl md:text-6xl pb-3">
-							{t("Head.title")}
-						</h1>
+				<h1 className="font-display font-extrabold text-center text-white text-5xl md:text-7xl xl:text-8xl pb-3">
+					{t("Head.title")}
+				</h1>
+				<ParallaxBanner></ParallaxBanner>
+				<div className="flex flex-col sm:flex-row gap-6 pb-6">
+					<h2 className="font-semibold font-display text-white text-3xl flex-grow">
+						{t("Content.Download.commonTitle")}
+						&nbsp;
+						{gameVersion}
+					</h2>
+					<VersionSwitch />
+				</div>
+				<AnimatePresence mode="wait">
+					<m.div
+						key={gameVersion}
+						variants={DownloadContainer}
+						initial="hidden"
+						animate="show"
+						exit="exit"
+						className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-6"
+					>
+						{/* 1.19 */}
+						{gameVersion === "1.19" && (
+							<>
+								{v119.map((item, index) => (
+									<DownloadCard
+										key={index}
+										name={item.name}
+										packVersion={item.packVersion}
+										type={item.type}
+									/>
+								))}
+							</>
+						)}
+						{/* 1.18 */}
+						{gameVersion === "1.18" && (
+							<>
+								{v118.map((item, index) => (
+									<DownloadCard
+										key={index}
+										name={item.name}
+										packVersion={item.packVersion}
+										type={item.type}
+									/>
+								))}
+							</>
+						)}
+						{/* 1.17 */}
+						{gameVersion === "1.17" && (
+							<>
+								{v117.map((item, index) => (
+									<DownloadCard
+										key={index}
+										name={item.name}
+										packVersion={item.packVersion}
+										type={item.type}
+									/>
+								))}
+							</>
+						)}
+						{/* 1.16 */}
+						{gameVersion === "1.16" && (
+							<>
+								{v116.map((item, index) => (
+									<DownloadCard
+										key={index}
+										name={item.name}
+										packVersion={item.packVersion}
+										type={item.type}
+									/>
+								))}
+							</>
+						)}
 					</m.div>
-					<m.div variants={Section} className="py-5">
-						<ParallaxBanner></ParallaxBanner>
-					</m.div>
-					<m.div variants={Section} className="py-5">
-						<div className="flex flex-col sm:flex-row gap-6 pb-6">
-							<h2 className="font-semibold font-display text-white text-3xl flex-grow">
-								{t("Content.Download.commonTitle")}
-								&nbsp;
-								{gameVersion}
-							</h2>
-							<VersionSwitch />
-						</div>
-						<AnimatePresence mode="wait">
-							{/* 1.19 */}
-							<m.div
-								key={gameVersion}
-								variants={SectionContainer}
-								initial="hidden"
-								animate="show"
-								exit="exit"
-								className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-6"
-							>
-								{gameVersion === "1.19" && (
-									<>
-										{v119.map((item, index) => (
-											<DownloadCard
-												key={index}
-												name={item.name}
-												packVersion={item.packVersion}
-												type={item.type}
-											/>
-										))}
-									</>
-								)}
-								{/* 1.18 */}
-								{gameVersion === "1.18" && (
-									<>
-										{v118.map((item, index) => (
-											<DownloadCard
-												key={index}
-												name={item.name}
-												packVersion={item.packVersion}
-												type={item.type}
-											/>
-										))}
-									</>
-								)}
-								{/* 1.17 */}
-								{gameVersion === "1.17" && (
-									<>
-										{v117.map((item, index) => (
-											<DownloadCard
-												key={index}
-												name={item.name}
-												packVersion={item.packVersion}
-												type={item.type}
-											/>
-										))}
-									</>
-								)}
-								{/* 1.16 */}
-								{gameVersion === "1.16" && (
-									<>
-										{v116.map((item, index) => (
-											<DownloadCard
-												key={index}
-												name={item.name}
-												packVersion={item.packVersion}
-												type={item.type}
-											/>
-										))}
-									</>
-								)}
-							</m.div>
-						</AnimatePresence>
-					</m.div>
-				</m.div>
+				</AnimatePresence>
 			</main>
 		</>
 	);
