@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
 					exit="exit"
 				>
 					<m.div variants={Section} className="py-5">
-						<h1 className="font-bold text-white text-5xl md:text-6xl pb-3">
+						<h1 className="font-display font-extrabold text-white text-5xl md:text-6xl pb-3">
 							{t("Head.title")}
 						</h1>
 						<h2 className="text-white-dark2 text-3xl md:text-4xl">
@@ -40,8 +40,8 @@ export default function PrivacyPolicy() {
 					</m.div>
 
 					<m.div variants={Section} className="py-5">
-						<div className="bg-gradient-to-br from-black-light1 to-black border-2 border-black-light2 rounded-xl p-6">
-							<h3 className="font-bold text-white text-3xl pb-3">
+						<div className="bg-black-light1 rounded-xl p-6">
+							<h3 className="font-display font-extrabold text-white text-3xl pb-3">
 								{t("Content.Tldr.heading")}
 							</h3>
 							<p>{t("Content.Tldr.text")}</p>
@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
 					</m.div>
 
 					<m.div variants={Section} className="py-5">
-						<h3 className="font-bold text-white text-3xl pb-3">
+						<h3 className="font-display font-extrabold text-white text-3xl pb-3">
 							{t("Content.General.heading")}
 						</h3>
 						<p>
@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
 					</m.div>
 
 					<m.div variants={Section} className="py-5">
-						<h3 className="font-bold text-white text-3xl pb-3">
+						<h3 className="font-display font-extrabold text-white text-3xl pb-3">
 							{t("Content.Hosting.heading")}
 						</h3>
 						<p>{t("Content.Hosting.text1")}</p>
@@ -202,7 +202,7 @@ export default function PrivacyPolicy() {
 					</m.div>
 
 					<m.div variants={Section} className="py-5">
-						<h3 className="font-bold text-white text-3xl pb-3">
+						<h3 className="font-display font-extrabold text-white text-3xl pb-3">
 							{t("Content.Contact.heading")}
 						</h3>
 						<p>

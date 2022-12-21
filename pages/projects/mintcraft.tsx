@@ -196,7 +196,7 @@ export default function Mintcraft() {
 					className="h-auto lg:h-44 w-full lg:w-auto"
 				/>
 				<div className="flex flex-col w-full h-full p-6">
-					<h3 className="font-bold text-3xl text-white">
+					<h3 className="font-semibold font-display text-3xl text-white">
 						{props.type === "Full" ? props.name + " FullSauce" : props.name}
 					</h3>
 					<p className="pb-6">Version {props.packVersion}</p>
@@ -241,7 +241,7 @@ export default function Mintcraft() {
 					exit="exit"
 				>
 					<m.div variants={Section} className="py-5">
-						<h1 className="font-bold text-white text-5xl md:text-6xl pb-3">
+						<h1 className="font-semibold font-display text-white text-5xl md:text-6xl pb-3">
 							{t("Head.title")}
 						</h1>
 					</m.div>
@@ -250,7 +250,7 @@ export default function Mintcraft() {
 					</m.div>
 					<m.div variants={Section} className="py-5">
 						<div className="flex flex-col sm:flex-row gap-6 pb-6">
-							<h2 className="font-bold text-white text-3xl flex-grow">
+							<h2 className="font-semibold font-display text-white text-3xl flex-grow">
 								{t("Content.Download.commonTitle")}
 								&nbsp;
 								{gameVersion}

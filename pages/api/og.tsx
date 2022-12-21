@@ -5,16 +5,16 @@ export const config = {
 	runtime: "experimental-edge",
 };
 
-const fontRegular = fetch(
-	new URL("../../fonts/Aspekta/Aspekta-400.otf", import.meta.url)
+const fontCabinet = fetch(
+	new URL("../../fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.otf", import.meta.url)
 ).then((res) => res.arrayBuffer());
-const fontBold = fetch(
-	new URL("../../fonts/Aspekta/Aspekta-700.otf", import.meta.url)
+const fontInter = fetch(
+	new URL("../../fonts/Inter/Inter-Regular.otf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 export default async function (req: NextRequest) {
-	const fontDataRegular = await fontRegular;
-	const fontDataBold = await fontBold;
+	const fontDataCabinet = await fontCabinet;
+	const fontDataInter = await fontInter;
 	const { searchParams } = req.nextUrl;
 	const title = searchParams.get("title");
 	const description = searchParams.get("description");
@@ -33,7 +33,7 @@ export default async function (req: NextRequest) {
 			>
 				<h1
 					style={{
-						fontFamily: "Aspekta Bold",
+						fontFamily: "Cabinet Grotesk",
 						fontSize: 97,
 						lineHeight: 0.85,
 						color: "#eee",
@@ -43,7 +43,7 @@ export default async function (req: NextRequest) {
 				</h1>
 				<h2
 					style={{
-						fontFamily: "Aspekta",
+						fontFamily: "Inter",
 						fontSize: 45,
 						lineHeight: 1,
 						letterSpacing: 0.85,
@@ -60,14 +60,14 @@ export default async function (req: NextRequest) {
 			height: 600,
 			fonts: [
 				{
-					name: "Aspekta",
-					data: fontDataRegular,
-					weight: 400,
+					name: "Cabinet Grotesk",
+					data: fontDataCabinet,
+					weight: 800,
 				},
 				{
-					name: "Aspekta Bold",
-					data: fontDataBold,
-					weight: 700,
+					name: "Inter",
+					data: fontDataInter,
+					weight: 400,
 				},
 			],
 		}

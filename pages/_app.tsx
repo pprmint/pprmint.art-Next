@@ -4,7 +4,8 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { AbstractIntlMessages, NextIntlProvider } from "next-intl";
 
-import "fonts/Aspekta/aspekta.css";
+import "fonts/CabinetGrotesk/cabinet-grotesk.css";
+import "fonts/Inter/inter.css";
 import "fonts/MintBit/mintbit.css";
 
 import "styles/globals.css";
