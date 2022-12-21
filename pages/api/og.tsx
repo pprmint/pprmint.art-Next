@@ -6,7 +6,10 @@ export const config = {
 };
 
 const fontCabinet = fetch(
-	new URL("../../fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.otf", import.meta.url)
+	new URL(
+		"../../fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.otf",
+		import.meta.url
+	)
 ).then((res) => res.arrayBuffer());
 const fontInter = fetch(
 	new URL("../../fonts/Inter/Inter-Regular.otf", import.meta.url)
@@ -26,33 +29,37 @@ export default async function (req: NextRequest) {
 						"url('https://static.pprmint.art/images/background.png')",
 					width: "100%",
 					height: "100%",
-					padding: "60px 75px",
+					padding: "60px",
 					display: "flex",
-					flexDirection: "column",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    textAlign: "center"
 				}}
 			>
-				<h1
-					style={{
-						fontFamily: "Cabinet Grotesk",
-						fontSize: 90,
-						lineHeight: 0.85,
-						color: "#eee",
-					}}
-				>
-					{title}
-				</h1>
-				<h2
-					style={{
-						fontFamily: "Inter",
-						fontSize: 40,
-						lineHeight: 1,
-						letterSpacing: -0.004,
-						color: "#bbb",
-						marginBottom: "auto",
-					}}
-				>
-					{description}
-				</h2>
+				
+					<h1
+						style={{
+							fontFamily: "Cabinet Grotesk",
+							fontSize: 84,
+							lineHeight: 0.9,
+							color: "#eee",
+						}}
+					>
+						{title}
+					</h1>
+					<h2
+						style={{
+							fontFamily: "Inter",
+							fontSize: 36,
+							lineHeight: 1,
+							letterSpacing: -0.004,
+							color: "#bbb",
+						}}
+					>
+						{description}
+					</h2>
+				
 			</div>
 		),
 		{
