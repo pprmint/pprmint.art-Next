@@ -125,7 +125,7 @@ function Navigation() {
 					<NavigationMenu.Content className={NavMenuContent}>
 						<ul className="grid grid-flow-row">
 							{Pages.map((Page) => (
-								<ListItem href={Page.link} strings={Page.strings} />
+								<ListItem key={Page.link} href={Page.link} strings={Page.strings} />
 							))}
 						</ul>
 					</NavigationMenu.Content>
@@ -140,7 +140,7 @@ function Navigation() {
 					<NavigationMenu.Content className={NavMenuContent}>
 						<ul className="grid grid-flow-row">
 							{Projects.map((Project) => (
-								<ListItem href={Project.link} strings={Project.strings} />
+								<ListItem key={Project.link} href={Project.link} strings={Project.strings} />
 							))}
 						</ul>
 					</NavigationMenu.Content>
