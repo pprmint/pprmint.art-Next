@@ -4,13 +4,14 @@ import { GetStaticPropsContext } from "next";
 import { Router, useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, m } from "framer-motion";
-import * as Portal from "@radix-ui/react-portal";
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import Lottie from "lottie-react";
 
 import logo from "animations/wordmark.json";
 
 import {
 	ArrowUUpLeft,
+	CaretDown,
 	CaretRight,
 	Coffee,
 	Heart,
@@ -24,26 +25,6 @@ import {
 	SiTwitter,
 	SiYoutube,
 } from "react-icons/si";
-
-const NavigationAnimation = {
-	hidden: {
-		opacity: 0,
-		y: -20,
-	},
-	show: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			y: { duration: 0.4, ease: "easeOut" },
-			opacity: { duration: 0.2 },
-		},
-	},
-	exit: {
-		opacity: 0,
-		y: -20,
-		transition: { duration: 0.2, ease: "easeIn" },
-	},
-};
 
 // Array of available links
 const Pages = [
@@ -92,236 +73,132 @@ const Projects = [
 	},
 ];
 
-// Button
-function Navlink(props: React.PropsWithChildren) {
+
+const Carret = (
+	<CaretDown
+		weight="bold"
+		className="inline text-white-dark2 group-data-[state='open']/trigger:rotate-180 group-hover/trigger:text-white duration-200 ease-out"
+		aria-hidden
+	/>
+);
+const NavMenuTrigger =
+	"flex py-3 px-5 rounded-lg bg-transparent hover:bg-black-light1 data-[state='open']:bg-black-light1 gap-3 group/trigger text-white font-bold duration-200 items-center";
+const NavMenuContent = "absolute top-0 left-0 py-3";
+const NavMenuViewport =
+	"bg-black-light1 relative origin-top-left h-[var(--radix-navigation-menu-viewport-height)] duration-200 overflow-hidden text-white-dark2 rounded-lg shadow-xl shadow-black";
+const NavMenuLink = "flex flex-col py-3 px-3 mx-3 hover:px-6 hover:mx-0 hover:bg-black-light2 duration-150 ease-out rounded-sm"
+
+function ListItem(
+	props: React.PropsWithChildren<{ href: string; strings: string }>
+) {
+	const t = useTranslations();
 	return (
-		<button className="text-left hover:bg-black-light2 px-3 py-2 duration-75 rounded-md active:scale-[.97] w-full md:w-72 h-full">
-			{props.children}
-		</button>
+		<li>
+			<NavigationMenu.Link asChild>
+				<Link
+					href={props.href}
+					className={NavMenuLink}
+				>
+					<span className="text-white font-display font-bold text-xl">
+						{t(props.strings + ".title")}
+					</span>
+					<p className="ListItemText">{t(props.strings + ".description")}</p>
+				</Link>
+			</NavigationMenu.Link>
+		</li>
 	);
 }
 
-// Everything else. lmao
 function Navigation() {
 	const t = useTranslations();
-
 	const { locale, locales, route } = useRouter();
 	const otherLocale = locales?.find((cur) => cur !== locale);
-
-	const [menuOpen, setMenuOpen] = React.useState(false);
-	const [links, setLinks] = React.useState("pages");
-	const handleMenuOpen = () => {
-		setMenuOpen(true);
-		document.body.classList.add("overflow-hidden");
-	};
-	const handleMenuClose = async () => {
-		setMenuOpen(false);
-		await new Promise((r) => setTimeout(r, 200));
-		document.body.classList.remove("overflow-hidden");
-		setLinks("pages");
-	};
 	return (
-		<>
-			<button
-				onClick={handleMenuOpen}
-				className="text-white p-3 mt-3 md:mt-6 mr-3 md:mr-6 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
-			>
-				<List weight="bold" />
-			</button>
-			<AnimatePresence>
-				{menuOpen && (
-					<Portal.Root>
-						<m.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 0.7 }}
-							exit={{ opacity: 0 }}
-							transition={{ duration: 0.2 }}
-							className="fixed top-0 left-0 bg-black w-screen h-screen"
-							onClick={handleMenuClose}
-						/>
-						<m.div
-							variants={NavigationAnimation}
-							initial="hidden"
-							animate="show"
-							exit="exit"
-							className="fixed top-0 right-0 m-0 sm:m-3 w-full sm:w-auto z-50"
-						>
-							<div className="bg-black-light1 sm:rounded-xl p-3 shadow-2xl shadow-black max-h-screen sm:max-h-[calc(100vh-24px)] overflow-y-auto overflow-x-hidden">
-								<div className="full flex flex-row pb-3 items-center">
-									<h1 className="flex-grow pl-3 text-white text-xl md:text-2xl font-bold">
-										{t("Navigation.whereToGo")}
-									</h1>
-									{links === "pages" && (
-										<button
-											onClick={handleMenuClose}
-											className="text-white p-3 hover:bg-red-dark3 rounded-full duration-75 active:scale-90"
-										>
-											<X weight="bold" />
-										</button>
-									)}
-									{links === "projects" && (
-										<button
-											onClick={() => setLinks("pages")}
-											className="text-white p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
-										>
-											<ArrowUUpLeft weight="bold" />
-										</button>
-									)}
-								</div>
-								{/* Links */}
-								<div className="flex flex-col">
-									<AnimatePresence mode="wait">
-										{links === "pages" && (
-											<m.div
-												key="pages"
-												initial={{ opacity: 0, x: -40 }}
-												animate={{
-													opacity: 1,
-													x: 0,
-													transition: { duration: 0.4, ease: "circOut" },
-												}}
-												exit={{
-													opacity: 0,
-													x: -40,
-													transition: { duration: 0.15, ease: "linear" },
-												}}
-												className="grid gap-1.5 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3"
-											>
-												{Pages.map((Page) => (
-													<Link
-														key={Page.link}
-														href={Page.link}
-														onClick={handleMenuClose}
-														scroll={false}
-														className={
-															route === Page.link
-																? "ring-2 ring-black-light2 rounded-md pointer-events-none"
-																: ""
-														}
-													>
-														<Navlink>
-															<span className="font-bold text-white">
-																{t(Page.strings + ".title")}
-															</span>
-															<p className="text-white-dark2">
-																{t(Page.strings + ".description")}
-															</p>
-														</Navlink>
-													</Link>
-												))}
-												<div
-													className="group"
-													onClick={() => setLinks("projects")}
-												>
-													<Navlink>
-														<span className="font-bold text-white">
-															{t("Projects.Head.title")}
-															<CaretRight
-																weight="bold"
-																className="ml-1 inline duration-75 ease-out group-hover:translate-x-1"
-															/>
-														</span>
-														<p className="text-white-dark2">
-															{t("Projects.Head.description")}
-														</p>
-													</Navlink>
-												</div>
-											</m.div>
-										)}
-										{links === "projects" && (
-											<m.div
-												key="projects"
-												initial={{ opacity: 0, x: 40 }}
-												animate={{
-													opacity: 1,
-													x: 0,
-													transition: { duration: 0.4, ease: "circOut" },
-												}}
-												exit={{
-													opacity: 0,
-													x: 40,
-													transition: { duration: 0.15, ease: "linear" },
-												}}
-												className="grid gap-1.5 sm:gap-3 grid-flow-row sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3"
-											>
-												{Projects.map((Project) => (
-													<Link
-														key={Project.link}
-														href={Project.link}
-														onClick={handleMenuClose}
-														scroll={false}
-														className={
-															route === Project.link
-																? "ring-2 ring-black-light2 rounded-md pointer-events-none"
-																: ""
-														}
-													>
-														<Navlink>
-															<span className="font-bold text-white">
-																{t(Project.strings + ".title")}
-															</span>
-															<p className="text-white-dark2">
-																{t(Project.strings + ".description")}
-															</p>
-														</Navlink>
-													</Link>
-												))}
-											</m.div>
-										)}
-									</AnimatePresence>
-								</div>
-								<m.div
-									initial={{ opacity: 0, x: -40 }}
-									animate={{
-										opacity: 1,
-										x: 0,
-										transition: { delay: 0.05, duration: 0.4, ease: "circOut" },
-									}}
-								>
-                                <hr className="border-t-2 border-black-light2 mx-3 my-3 sm:my-5" />
-									<div className="grid grid-flow-row sm:grid-flow-col gap-1 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
-										<Link
-											href="/privacy"
-											onClick={handleMenuClose}
-											scroll={false}
-										>
-											<Navlink>
-												<span className="font-bold text-white">
-													{t("PrivacyPolicy.Head.title")}
-												</span>
-												<p className="text-white-dark2">
-													{t("PrivacyPolicy.Head.description")}
-												</p>
-											</Navlink>
-										</Link>
-										<Link href={route} locale={otherLocale} scroll={false}>
-											<Navlink>
-												<span className="font-bold text-white">
-													{t("Navigation.SwitchLocale.title")}
-												</span>
-												<p className="text-white-dark2">
-													{t("Navigation.SwitchLocale.description")}
-												</p>
-											</Navlink>
-										</Link>
-									</div>
-								</m.div>
-								<m.div
-									initial={{ opacity: 0, x: -40 }}
-									animate={{
-										opacity: 1,
-										x: 0,
-										transition: { delay: 0.1, duration: 0.4, ease: "circOut" },
-									}}
-								>
-									<Footer />
-								</m.div>
-							</div>
-						</m.div>
-					</Portal.Root>
-				)}
-			</AnimatePresence>
-		</>
+		<NavigationMenu.Root className="relative">
+			<NavigationMenu.List className="flex gap-3 p-6">
+				<NavigationMenu.Item>
+					<NavigationMenu.Trigger className={NavMenuTrigger}>
+						{t("Overview.Head.title")}
+						{Carret}
+					</NavigationMenu.Trigger>
+
+					<NavigationMenu.Content className={NavMenuContent}>
+						<ul className="grid grid-flow-row">
+							{Pages.map((Page) => (
+								<ListItem href={Page.link} strings={Page.strings} />
+							))}
+						</ul>
+					</NavigationMenu.Content>
+				</NavigationMenu.Item>
+
+				<NavigationMenu.Item>
+					<NavigationMenu.Trigger className={NavMenuTrigger}>
+						{t("Projects.Head.title")}
+						{Carret}
+					</NavigationMenu.Trigger>
+
+					<NavigationMenu.Content className={NavMenuContent}>
+						<ul className="grid grid-flow-row">
+							{Projects.map((Project) => (
+								<ListItem href={Project.link} strings={Project.strings} />
+							))}
+						</ul>
+					</NavigationMenu.Content>
+				</NavigationMenu.Item>
+
+				<NavigationMenu.Item>
+					<NavigationMenu.Trigger className={NavMenuTrigger}>
+						Other
+						{Carret}
+					</NavigationMenu.Trigger>
+
+					<NavigationMenu.Content className={NavMenuContent}>
+						<ul className="grid grid-flow-row">
+							<li>
+								<NavigationMenu.Link asChild>
+									<Link
+										href="/privacy"
+										className={NavMenuLink}
+									>
+										<span className="text-white font-display font-bold text-xl">
+											{t("PrivacyPolicy.Head.title")}
+										</span>
+										<p className="ListItemText">
+											{t("PrivacyPolicy.Head.description")}
+										</p>
+									</Link>
+								</NavigationMenu.Link>
+							</li>
+							<li>
+								<NavigationMenu.Link asChild>
+									<Link
+										href={route}
+										locale={otherLocale}
+										scroll={false}
+										className={NavMenuLink}
+									>
+										<span className="text-white font-display font-bold text-xl">
+											{t("Navigation.SwitchLocale.title")}
+										</span>
+										<p className="ListItemText">
+											{t("Navigation.SwitchLocale.description")}
+										</p>
+									</Link>
+								</NavigationMenu.Link>
+							</li>
+						</ul>
+					</NavigationMenu.Content>
+				</NavigationMenu.Item>
+
+				<NavigationMenu.Indicator className="NavigationMenuIndicator">
+					<div className="Arrow" />
+				</NavigationMenu.Indicator>
+			</NavigationMenu.List>
+
+			<div className="ViewportPosition">
+				<NavigationMenu.Viewport className={NavMenuViewport} />
+			</div>
+		</NavigationMenu.Root>
 	);
 }
 
@@ -402,7 +279,7 @@ function Footer() {
 // Container for it all
 export default function Navbar() {
 	return (
-		<div className="bg-gradient-to-b from-black to-transparent z-50 fixed w-full flex items-start">
+		<div className="bg-gradient-to-b from-black to-transparent z-50 fixed w-full h-24 flex items-start">
 			<div className="mr-auto">
 				<Link href="/" scroll={false}>
 					<Lottie
