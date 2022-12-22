@@ -86,6 +86,7 @@ export default function App({ Component, pageProps }: AppProps) {
 						onExitComplete={() => window.scrollTo(0, 0)}
 					>
 						<m.div
+                            key={location}
 							initial={{ opacity: 0, y: -50 }}
 							animate={{
 								opacity: 1,
@@ -101,7 +102,6 @@ export default function App({ Component, pageProps }: AppProps) {
 								filter: "grayscale(100%) blur(5px)",
 								transition: { duration: 0.3 },
 							}}
-							key={location}
 						>
 							<Component {...pageProps} />
 						</m.div>
