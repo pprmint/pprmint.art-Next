@@ -14,30 +14,24 @@ import { Question } from "phosphor-react";
 const DownloadContainer = {
 	show: {
 		transition: {
-			staggerChildren: 0.05,
+			staggerChildren: 0.02,
 		},
 	},
 };
 const DownloadItem = {
 	hidden: {
 		opacity: 0,
-		y: 30,
-		transition: { duration: 0.75, ease: "circOut" },
 	},
 	show: {
 		opacity: 1,
-		y: 0,
 		transition: {
-			y: { duration: 0.75, ease: "circOut" },
-			opacity: { duration: 0.25 },
+			duration: 0.3,
 		},
 	},
 	exit: {
 		opacity: 0,
-		y: -15,
 		transition: {
-			y: { duration: 0.2, ease: "easeIn" },
-			opacity: { duration: 0.2, ease: "linear" },
+			duration: 0.2,
 		},
 	},
 };
