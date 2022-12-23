@@ -50,15 +50,33 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				sans: [
-					"Inter",
-					"Roboto",
-					"Helvetica",
-					"Arial",
-					"sans-serif",
-				],
+				sans: ["Inter", "Roboto", "Helvetica", "Arial", "sans-serif"],
 				pixel: ["MintBit", "Roboto Mono", "monospace"],
 			},
+			keyframes: {
+				enterFromLeft: {
+					from: { opacity: 0, transform: "translateX(50px)" },
+					to: { opacity: 1, transform: "translateX(0)" },
+				},
+				enterFromRight: {
+					from: { opacity: 0, transform: "translateX(-50px)" },
+					to: { opacity: 1, transform: "translateX(0)" },
+				},
+				exitToLeft: {
+					from: { opacity: 1, transform: "translateX(0)" },
+					to: { opacity: 0, transform: "translateX(50px)" },
+				},
+				exitToRight: {
+					from: { opacity: 1, transform: "translateX(0)" },
+					to: { opacity: 0, transform: "translateX(-50px)" },
+				},
+			},
+            animation: {
+                "enter-from-l": "enterFromLeft .2s cubic-bezier(0, 0, 0.2, 1)",
+                "enter-from-r": "enterFromRight .2s cubic-bezier(0, 0, 0.2, 1)",
+                "exit-to-l": "exitToLeft .2s cubic-bezier(0, 0, 0.2, 1)",
+                "exit-to-r": "exitToRight .2s cubic-bezier(0, 0, 0.2, 1)",
+            },
 		},
 	},
 	plugins: [],
