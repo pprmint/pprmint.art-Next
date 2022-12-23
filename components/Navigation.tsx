@@ -260,6 +260,7 @@ function Navigation() {
 										<ul className="flex flex-col gap-3">
 											{Pages.map((Page) => (
 												<Link
+                                                    key={Page.link}
 													href={Page.link}
 													scroll={false}
 													onClick={() => setOpen(false)}
@@ -287,6 +288,7 @@ function Navigation() {
 										<ul className="flex flex-col gap-3">
 											{Projects.map((Project) => (
 												<Link
+                                                    key={Project.link}
 													href={Project.link}
 													scroll={false}
 													onClick={() => setOpen(false)}
