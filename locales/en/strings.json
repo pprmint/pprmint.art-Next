@@ -11,7 +11,7 @@
 				"7": "Curiosity satiated?",
 				"8": "What are ya looking for?"
 			},
-			"error": "Error: ",
+			"error": "Error ",
 			"info": "Either the URL you entered contains typos, or the page doesn't exist anymore.",
 			"returnHome": "Go to home page"
 		},

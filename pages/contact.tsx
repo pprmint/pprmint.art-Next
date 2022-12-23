@@ -50,7 +50,7 @@ export default function Contact() {
 		<>
 			<Head title={t("Head.title")} description={t("Head.description")} />
 			<main className="py-40 max-w-7xl mx-auto px-6 md:px-9 font-sans text-white-dark2">
-				<h1 className="pb-12 font-display font-extrabold text-center text-white text-5xl md:text-7xl xl:text-8xl">
+				<h1 className="pb-12 font-display font-bold text-center text-white text-5xl md:text-6xl xl:text-7xl">
 					{t("Head.title")}
 				</h1>
 				<div className="grid grid-flow-row md:grid-flow-col gap-6">

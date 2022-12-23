@@ -73,20 +73,20 @@ const Projects = [
 	},
 ];
 
-
 const Carret = (
 	<CaretDown
 		weight="bold"
-		className="inline text-white-dark2 group-data-[state='open']/trigger:rotate-180 group-hover/trigger:text-white duration-200 ease-out"
+		className="inline text-white-dark2 group-data-[state='open']/trigger:rotate-180 group-hover/trigger:text-white group-data-[state='open']/trigger:text-white duration-200 ease-out"
 		aria-hidden
 	/>
 );
 const NavMenuTrigger =
-	"flex py-3 px-5 rounded-lg bg-transparent hover:bg-black-light1 data-[state='open']:bg-black-light1 gap-3 group/trigger text-white font-bold duration-200 items-center";
-const NavMenuContent = "absolute top-0 left-0 py-3";
+	"group/trigger flex items-center gap-3 py-3 px-4 text-white-dark2 hover:text-white data-[state='open']:text-white duration-200 font-medium data-[state='open']:bg-black-light1 rounded-t-md data-[state='open']:translate-y-3";
+const NavMenuContent = "absolute top-0 left-0 p-3 duration-200";
 const NavMenuViewport =
-	"bg-black-light1 relative origin-top-left h-[var(--radix-navigation-menu-viewport-height)] duration-200 overflow-hidden text-white-dark2 rounded-lg shadow-xl shadow-black";
-const NavMenuLink = "flex flex-col py-3 px-3 mx-3 hover:px-6 hover:mx-0 hover:bg-black-light2 duration-150 ease-out rounded-sm"
+	"relative origin-top-left w-[var(--radix-navigation-menu-viewport-width)] overflow-hidden bg-black-light1 text-white-dark2 rounded-lg shadow-xl shadow-black h-[var(--radix-navigation-menu-viewport-height)] duration-200 ease-out";
+const NavMenuLink =
+	"block p-3 hover:bg-black-light2 duration-200 ease-out rounded-sm";
 
 function ListItem(
 	props: React.PropsWithChildren<{ href: string; strings: string }>
@@ -94,11 +94,8 @@ function ListItem(
 	const t = useTranslations();
 	return (
 		<li>
-			<NavigationMenu.Link asChild>
-				<Link
-					href={props.href}
-					className={NavMenuLink}
-				>
+			<NavigationMenu.Link asChild className={NavMenuLink}>
+				<Link href={props.href}>
 					<span className="text-white font-display font-bold text-xl">
 						{t(props.strings + ".title")}
 					</span>
@@ -114,7 +111,7 @@ function Navigation() {
 	const { locale, locales, route } = useRouter();
 	const otherLocale = locales?.find((cur) => cur !== locale);
 	return (
-		<NavigationMenu.Root className="relative">
+		<NavigationMenu.Root className="hidden md:flex relative justify-end w-full">
 			<NavigationMenu.List className="flex gap-3 p-6">
 				<NavigationMenu.Item>
 					<NavigationMenu.Trigger className={NavMenuTrigger}>
@@ -122,10 +119,14 @@ function Navigation() {
 						{Carret}
 					</NavigationMenu.Trigger>
 
-					<NavigationMenu.Content className={NavMenuContent}>
-						<ul className="grid grid-flow-row">
+					<NavigationMenu.Content className={NavMenuContent + " w-[500px] lg:w-[600px]"}>
+						<ul className="grid grid-flow-row grid-cols-2">
 							{Pages.map((Page) => (
-								<ListItem key={Page.link} href={Page.link} strings={Page.strings} />
+								<ListItem
+									key={Page.link}
+									href={Page.link}
+									strings={Page.strings}
+								/>
 							))}
 						</ul>
 					</NavigationMenu.Content>
@@ -137,10 +138,14 @@ function Navigation() {
 						{Carret}
 					</NavigationMenu.Trigger>
 
-					<NavigationMenu.Content className={NavMenuContent}>
+					<NavigationMenu.Content className={NavMenuContent + " w-[400px] lg:w-[500px]"}>
 						<ul className="grid grid-flow-row">
 							{Projects.map((Project) => (
-								<ListItem key={Project.link} href={Project.link} strings={Project.strings} />
+								<ListItem
+									key={Project.link}
+									href={Project.link}
+									strings={Project.strings}
+								/>
 							))}
 						</ul>
 					</NavigationMenu.Content>
@@ -152,14 +157,11 @@ function Navigation() {
 						{Carret}
 					</NavigationMenu.Trigger>
 
-					<NavigationMenu.Content className={NavMenuContent}>
+					<NavigationMenu.Content className={NavMenuContent + " w-[400px] lg:w-[500px]"}>
 						<ul className="grid grid-flow-row">
 							<li>
 								<NavigationMenu.Link asChild>
-									<Link
-										href="/privacy"
-										className={NavMenuLink}
-									>
+									<Link href="/privacy" className={NavMenuLink}>
 										<span className="text-white font-display font-bold text-xl">
 											{t("PrivacyPolicy.Head.title")}
 										</span>
@@ -189,13 +191,8 @@ function Navigation() {
 						</ul>
 					</NavigationMenu.Content>
 				</NavigationMenu.Item>
-
-				<NavigationMenu.Indicator className="NavigationMenuIndicator">
-					<div className="Arrow" />
-				</NavigationMenu.Indicator>
 			</NavigationMenu.List>
-
-			<div className="ViewportPosition">
+			<div className="absolute flex justify-end w-full top-20 right-6">
 				<NavigationMenu.Viewport className={NavMenuViewport} />
 			</div>
 		</NavigationMenu.Root>

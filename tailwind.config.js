@@ -57,13 +57,6 @@ module.exports = {
 					"Arial",
 					"sans-serif",
 				],
-				display: [
-					"Cabinet Grotesk",
-					"Gotham",
-					"Clarity City",
-					"Montserrat",
-					"sans-serif",
-				],
 				pixel: ["MintBit", "Roboto Mono", "monospace"],
 			},
 		},

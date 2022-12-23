@@ -5,19 +5,16 @@ export const config = {
 	runtime: "experimental-edge",
 };
 
-const fontCabinet = fetch(
-	new URL(
-		"../../fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.otf",
-		import.meta.url
-	)
-).then((res) => res.arrayBuffer());
-const fontInter = fetch(
+const fontRegular = fetch(
 	new URL("../../fonts/Inter/Inter-Regular.otf", import.meta.url)
+).then((res) => res.arrayBuffer());
+const fontBold = fetch(
+	new URL("../../fonts/Inter/Inter-DisplayBold.otf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 export default async function (req: NextRequest) {
-	const fontDataCabinet = await fontCabinet;
-	const fontDataInter = await fontInter;
+	const fontDataRegular = await fontRegular;
+	const fontDataBold = await fontBold;
 	const { searchParams } = req.nextUrl;
 	const title = searchParams.get("title");
 	const description = searchParams.get("description");
@@ -40,8 +37,9 @@ export default async function (req: NextRequest) {
 				
 					<h1
 						style={{
-							fontFamily: "Cabinet Grotesk",
+							fontFamily: "Inter Display",
 							fontSize: 84,
+                            fontWeight: 700,
 							lineHeight: 0.9,
 							color: "#eee",
 						}}
@@ -66,15 +64,15 @@ export default async function (req: NextRequest) {
 			width: 1200,
 			height: 600,
 			fonts: [
-				{
-					name: "Cabinet Grotesk",
-					data: fontDataCabinet,
-					weight: 800,
-				},
-				{
-					name: "Inter",
-					data: fontDataInter,
+                {
+                    name: "Inter",
+					data: fontDataRegular,
 					weight: 400,
+				},
+                {
+                    name: "Inter Display",
+					data: fontDataBold,
+					weight: 700,
 				},
 			],
 		}

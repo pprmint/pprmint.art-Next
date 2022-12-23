@@ -20,7 +20,7 @@ export default function Overview() {
 						className="z-0 object-cover opacity-25"
 					/>
 					<div className="absolute flex flex-col gap-3 text-center h-full w-full justify-center p-12">
-						<h1 className="font-display font-extrabold text-center text-white text-5xl md:text-7xl xl:text-8xl pb-3">
+						<h1 className="font-display font-bold text-center text-white text-5xl md:text-6xl xl:text-7xl pb-3">
 							Vectors
 						</h1>
 						<p className="font-sans text-white-dark2">This is sample text.</p>
@@ -35,7 +35,7 @@ export default function Overview() {
 						className="z-0 object-cover opacity-25"
 					/>
 					<div className="absolute flex flex-col gap-3 text-center h-full w-full justify-center p-12">
-						<h1 className="font-display font-extrabold text-center text-white text-5xl md:text-7xl xl:text-8xl pb-3">
+						<h1 className="font-display font-bold text-center text-white text-5xl md:text-6xl xl:text-7xl pb-3">
 							Polygons
 						</h1>
 						<p className="font-sans text-white-dark2">This is sample text.</p>
@@ -50,7 +50,7 @@ export default function Overview() {
 						className="z-0 object-cover opacity-25"
 					/>
 					<div className="absolute flex flex-col gap-3 text-center h-full w-full justify-center p-12">
-						<h1 className="font-display font-extrabold text-center text-white text-5xl md:text-7xl xl:text-8xl pb-3">
+						<h1 className="font-display font-bold text-center text-white text-5xl md:text-6xl xl:text-7xl pb-3">
 							Code
 						</h1>
 						<p className="font-sans text-white-dark2">This is sample text.</p>

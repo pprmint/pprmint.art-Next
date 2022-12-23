@@ -11,7 +11,7 @@
 				"7": "Neugierde gesättigt?",
 				"8": "Was suchst du denn?"
 			},
-			"error": "Fehler: ",
+			"error": "Fehler ",
 			"info": "Entweder enthält deine URL Tippfehler, oder die Seite existiert nicht mehr.",
 			"returnHome": "Zur Startseite"
 		},
