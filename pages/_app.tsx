@@ -98,7 +98,6 @@ export default function App({ Component, pageProps }: AppProps) {
 							}}
 							exit={{
 								opacity: 0,
-								filter: "grayscale(100%)",
 								transition: { duration: 0.3 },
 							}}
 						>
