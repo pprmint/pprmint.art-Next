@@ -77,19 +77,29 @@ const Projects = [
 
 const Carret = (
 	<CaretDown
+		size={18}
 		weight="bold"
-		className="inline text-white-dark2 group-data-[state='open']/trigger:rotate-180 group-hover/trigger:text-white group-data-[state='open']/trigger:text-white duration-200 ease-out"
+		className="inline text-white-dark2 group-data-[state='open']/root:rotate-180 group-hover/root:text-white group-data-[state='open']/root:text-white duration-250 ease-out ml-auto"
 		aria-hidden
 	/>
 );
 const NavMenuTrigger =
-	"group/trigger flex items-center gap-3 py-3 px-4 text-white-dark2 hover:text-white data-[state='open']:text-white duration-200 font-medium data-[state='open']:bg-black-light1 rounded-t-md data-[state='open']:translate-y-3";
+	"group/root flex items-center gap-3 py-3 px-4 text-white-dark2 hover:text-white data-[state='open']:text-white duration-250 font-medium data-[state='open']:bg-black-light1 rounded-t-md data-[state='open']:translate-y-3";
 const NavMenuContent =
-	"absolute top-0 left-0 p-3 duration-200 data-[motion='from-start']:animate-enter-from-l data-[motion='from-end']:animate-enter-from-r data-[motion='to-start']:animate-exit-to-l data-[motion='to-end']:animate-exit-to-r";
+	"absolute top-0 left-0 p-3 duration-250 data-[motion='from-start']:animate-enter-from-l data-[motion='from-end']:animate-enter-from-r data-[motion='to-start']:animate-exit-to-l data-[motion='to-end']:animate-exit-to-r";
 const NavMenuViewport =
-	"relative origin-top-left w-[var(--radix-navigation-menu-viewport-width)] overflow-hidden bg-black-light1 text-white-dark2 rounded-lg shadow-xl shadow-black h-[var(--radix-navigation-menu-viewport-height)] duration-200 ease-out";
+	"relative origin-top-left w-[var(--radix-navigation-menu-viewport-width)] overflow-hidden bg-black-light1 text-white-dark2 rounded-lg shadow-xl shadow-black h-[var(--radix-navigation-menu-viewport-height)] duration-250 ease-out";
 const NavMenuLink =
-	"block p-3 hover:bg-black-light2 duration-200 ease-out rounded-sm";
+	"block p-3 hover:bg-black-light2 duration-250 ease-out rounded-sm";
+
+const NavAccordionItem =
+	"group/root data-[state='open']:backdrop-brightness-75 duration-250 w-full";
+const NavAccordionTrigger =
+	"flex w-full text-left items-center px-6 py-4 data-[state='open']:py-6 hover:backdrop-brightness-200 data-[state='open']:font-bold text-white text-3xl data-[state='open']:text-4xl duration-250 ease-out";
+const NavAccordionContent =
+	"data-[state='open']:animate-slide-down data-[state='closed']:animate-slide-up overflow-hidden";
+const NavAccordionContentList = "flex flex-col p-6 pt-0 gap-3 text-xl";
+const NavAccordionContentListItem = "hover:text-white duration-100";
 
 function ListItem(
 	props: React.PropsWithChildren<{ href: string; strings: string }>
@@ -109,29 +119,17 @@ function ListItem(
 	);
 }
 
-function Navigation() {
+function DesktopNavigation() {
 	const t = useTranslations();
 	const { locale, locales, route } = useRouter();
 	const otherLocale = locales?.find((cur) => cur !== locale);
-	const [open, setOpen] = React.useState(false);
-	const handleOpen = () => {
-		setOpen(true);
-		document.body.classList.add("overflow-hidden");
-	};
-	const handleClose = async () => {
-		setOpen(false);
-		await new Promise((r) => setTimeout(r, 200));
-		document.body.classList.remove("overflow-hidden");
-	};
-	const toggleOpen = open ? handleClose : handleOpen;
 	return (
 		<>
-			{/* Desktop navigation */}
-			<NavigationMenu.Root className="hidden md:flex relative justify-end w-full">
+			<NavigationMenu.Root>
 				<NavigationMenu.List className="flex gap-3 p-6">
 					<NavigationMenu.Item>
 						<NavigationMenu.Trigger className={NavMenuTrigger}>
-							{t("Overview.Head.title")}
+							{t("Navigation.Menu.general")}
 							{Carret}
 						</NavigationMenu.Trigger>
 
@@ -152,14 +150,14 @@ function Navigation() {
 
 					<NavigationMenu.Item>
 						<NavigationMenu.Trigger className={NavMenuTrigger}>
-							{t("Projects.Head.title")}
+							{t("Navigation.Menu.projects")}
 							{Carret}
 						</NavigationMenu.Trigger>
 
 						<NavigationMenu.Content
-							className={NavMenuContent + " w-[400px] lg:w-[500px]"}
+							className={NavMenuContent + " w-[500px] lg:w-[600px]"}
 						>
-							<ul className="grid grid-flow-row">
+							<ul className="grid grid-cols-2 grid-flow-row">
 								{Projects.map((Project) => (
 									<ListItem
 										key={Project.link}
@@ -173,7 +171,7 @@ function Navigation() {
 
 					<NavigationMenu.Item>
 						<NavigationMenu.Trigger className={NavMenuTrigger}>
-							Other
+							{t("Navigation.Menu.other")}
 							{Carret}
 						</NavigationMenu.Trigger>
 
@@ -218,9 +216,29 @@ function Navigation() {
 					<NavigationMenu.Viewport className={NavMenuViewport} />
 				</div>
 			</NavigationMenu.Root>
-			{/* Mobile navigation */}
+		</>
+	);
+}
+
+function MobileNavigation() {
+	const t = useTranslations();
+	const { locale, locales, route } = useRouter();
+	const otherLocale = locales?.find((cur) => cur !== locale);
+	const [open, setOpen] = React.useState(false);
+	const handleOpen = () => {
+		setOpen(true);
+		document.body.classList.add("overflow-hidden");
+	};
+	const handleClose = async () => {
+		setOpen(false);
+		await new Promise((r) => setTimeout(r, 200));
+		document.body.classList.remove("overflow-hidden");
+	};
+	const toggleOpen = open ? handleClose : handleOpen;
+	return (
+		<>
 			<button
-				className="block md:hidden fixed top-4 right-4 text-white p-4 rounded-full z-50 hover:bg-black-light1 duration-200"
+				className="fixed top-4 right-4 text-white p-4 rounded-full z-50 hover:bg-black-light1 duration-250"
 				onClick={toggleOpen}
 			>
 				{open ? <X weight="bold" /> : <List weight="bold" />}
@@ -237,63 +255,68 @@ function Navigation() {
 							onClick={toggleOpen}
 						/>
 						<m.div
-							initial={{ opacity: 0, y: 10 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: 10 }}
-							transition={{ duration: 0.2 }}
-							className="absolute top-0 left-0 flex w-full h-full justify-center items-center z-40 text-white-dark2 backdrop-blur-md"
+							initial={{ opacity: 0, y: 50 }}
+							animate={{
+								opacity: 1,
+								y: 0,
+								transition: { duration: 0.4, ease: "circOut" },
+							}}
+							exit={{
+								opacity: 0,
+								y: 20,
+								transition: { duration: 0.2, ease: "easeIn" },
+							}}
+							className="fixed top-0 left-0 flex flex-col w-full h-full z-40 text-white-dark2 backdrop-blur-md justify-center"
 						>
 							<Accordion.Root type="single" collapsible className="w-full">
-								<Accordion.Item
-									value="overview"
-									className="data-[state='open']:backdrop-brightness-75 duration-200 p-6 w-full"
-								>
+								<Accordion.Item value="general" className={NavAccordionItem}>
 									<Accordion.Header>
-										<Accordion.Trigger className="group/trigger flex w-full text-left data-[state='open']:font-bold text-white text-3xl duration-200 ease-out">
-											<span className="flex-grow group-data-[state='open']/trigger:pb-6">
-												{t("Overview.Head.title")}
-											</span>
+										<Accordion.Trigger className={NavAccordionTrigger}>
+											{t("Navigation.Menu.general")}
 											{Carret}
 										</Accordion.Trigger>
 									</Accordion.Header>
-									<Accordion.Content>
-										<ul className="flex flex-col gap-3">
+									<Accordion.Content className={NavAccordionContent}>
+										<ul className={NavAccordionContentList}>
 											{Pages.map((Page) => (
 												<Link
-                                                    key={Page.link}
+													key={Page.link}
 													href={Page.link}
 													scroll={false}
 													onClick={() => setOpen(false)}
 												>
-													<li key={Page.link}>{t(Page.strings + ".title")}</li>
+													<li
+														className={NavAccordionContentListItem}
+														key={Page.link}
+													>
+														{t(Page.strings + ".title")}
+													</li>
 												</Link>
 											))}
 										</ul>
 									</Accordion.Content>
 								</Accordion.Item>
 
-								<Accordion.Item
-									value="projects"
-									className="data-[state='open']:backdrop-brightness-75 duration-200 p-6 w-full"
-								>
+								<Accordion.Item value="projects" className={NavAccordionItem}>
 									<Accordion.Header>
-										<Accordion.Trigger className="group/trigger flex w-full text-left data-[state='open']:font-bold text-white text-3xl duration-200 ease-out">
-											<span className="flex-grow group-data-[state='open']/trigger:pb-6">
-												{t("Projects.Head.title")}
-											</span>
+										<Accordion.Trigger className={NavAccordionTrigger}>
+											{t("Navigation.Menu.projects")}
 											{Carret}
 										</Accordion.Trigger>
 									</Accordion.Header>
-									<Accordion.Content>
-										<ul className="flex flex-col gap-3">
+									<Accordion.Content className={NavAccordionContent}>
+										<ul className={NavAccordionContentList}>
 											{Projects.map((Project) => (
 												<Link
-                                                    key={Project.link}
+													key={Project.link}
 													href={Project.link}
 													scroll={false}
 													onClick={() => setOpen(false)}
 												>
-													<li key={Project.link}>
+													<li
+														className={NavAccordionContentListItem}
+														key={Project.link}
+													>
 														{t(Project.strings + ".title")}
 													</li>
 												</Link>
@@ -302,38 +325,34 @@ function Navigation() {
 									</Accordion.Content>
 								</Accordion.Item>
 
-								<Accordion.Item
-									value="other"
-									className="data-[state='open']:backdrop-brightness-75 duration-200 p-6 w-full"
-								>
+								<Accordion.Item value="other" className={NavAccordionItem}>
 									<Accordion.Header>
-										<Accordion.Trigger className="group/trigger flex w-full text-left data-[state='open']:font-bold text-white text-3xl duration-200 ease-out">
-											<span className="flex-grow group-data-[state='open']/trigger:pb-6">
-												Other
-											</span>
+										<Accordion.Trigger className={NavAccordionTrigger}>
+											{t("Navigation.Menu.other")}
 											{Carret}
 										</Accordion.Trigger>
 									</Accordion.Header>
-									<Accordion.Content>
-										<ul className="flex flex-col gap-3">
-											<li>
-												<Link
-													href="/privacy"
-													scroll={false}
-													onClick={() => setOpen(false)}
-												>
+									<Accordion.Content className={NavAccordionContent}>
+										<ul className={NavAccordionContentList}>
+											<Link
+												href="/privacy"
+												scroll={false}
+												onClick={() => setOpen(false)}
+											>
+												<li className={NavAccordionContentListItem}>
 													{t("PrivacyPolicy.Head.title")}
-												</Link>
-											</li>
-											<li>
-												<Link href={route} locale={otherLocale} scroll={false}>
+												</li>
+											</Link>
+											<Link href={route} locale={otherLocale} scroll={false}>
+												<li className={NavAccordionContentListItem}>
 													{t("Navigation.SwitchLocale.title")}
-												</Link>
-											</li>
+												</li>
+											</Link>
 										</ul>
 									</Accordion.Content>
 								</Accordion.Item>
 							</Accordion.Root>
+							<Footer />
 						</m.div>
 					</Portal.Root>
 				)}
@@ -346,8 +365,8 @@ function Navigation() {
 function Footer() {
 	const t = useTranslations("Navigation");
 	return (
-		<div className="flex flex-col sm:flex-row sm:items-end">
-			<div className="p-3 mt-1.5 text-white-dark2 text-xs flex-grow">
+		<div className="flex absolute p-6 w-full flex-row items-end bottom-0">
+			<div className="text-white-dark2 text-xs flex-grow">
 				<p className="flex flex-row items-center leading-3">
 					{t("madeWith")}
 					<Link
@@ -365,51 +384,46 @@ function Footer() {
 					{new Date().getFullYear()} pprmint.
 				</p>
 			</div>
-			<div className="col text-white text-xl">
+			<div className="flex text-white text-xl">
 				<Link
 					href="https://twitter.com/npprmint"
 					target="_blank"
 					rel="noopener noreferrer"
+					className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
 				>
-					<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-						<SiTwitter />
-					</button>
+					<SiTwitter />
 				</Link>
 				<Link
 					href="https://youtube.com/@pprmint"
 					target="_blank"
 					rel="noopener noreferrer"
+					className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
 				>
-					<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-						<SiYoutube />
-					</button>
+					<SiYoutube />
 				</Link>
 				<Link
 					href="https://blog.pprmint.art"
 					target="_blank"
 					rel="noopener noreferrer"
+					className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
 				>
-					<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-						<SiTumblr />
-					</button>
+					<SiTumblr />
 				</Link>
 				<Link
 					href="https://github.com/pprmint"
 					target="_blank"
 					rel="noopener noreferrer"
+					className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
 				>
-					<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-						<SiGithub />
-					</button>
+					<SiGithub />
 				</Link>
 				<Link
 					href="https://ko-fi.com/pprmint"
 					target="_blank"
 					rel="noopener noreferrer"
+					className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90"
 				>
-					<button className="p-3 hover:bg-black-light2 rounded-full duration-75 active:scale-90">
-						<SiKofi />
-					</button>
+					<SiKofi />
 				</Link>
 			</div>
 		</div>
@@ -421,7 +435,7 @@ export default function Navbar() {
 	return (
 		<div className="bg-gradient-to-b from-black to-transparent z-50 fixed w-full h-24 flex items-start">
 			<div className="mr-auto">
-				<Link href="/" scroll={false}>
+				<Link href="/" scroll={false} tabIndex={1}>
 					<Lottie
 						animationData={logo}
 						loop={false}
@@ -429,7 +443,12 @@ export default function Navbar() {
 					/>
 				</Link>
 			</div>
-			<Navigation />
+			<div className="hidden md:flex">
+				<DesktopNavigation />
+			</div>
+			<div className="block md:hidden">
+				<MobileNavigation />
+			</div>
 		</div>
 	);
 }

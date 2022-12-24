@@ -55,28 +55,41 @@ module.exports = {
 			},
 			keyframes: {
 				enterFromLeft: {
-					from: { opacity: 0, transform: "translateX(50px)" },
+					from: { opacity: 0, transform: "translateX(-287px)" },
 					to: { opacity: 1, transform: "translateX(0)" },
 				},
 				enterFromRight: {
-					from: { opacity: 0, transform: "translateX(-50px)" },
+					from: { opacity: 0, transform: "translateX(287px)" },
 					to: { opacity: 1, transform: "translateX(0)" },
 				},
 				exitToLeft: {
 					from: { opacity: 1, transform: "translateX(0)" },
-					to: { opacity: 0, transform: "translateX(50px)" },
+					to: { opacity: 0, transform: "translateX(-287px)" },
 				},
 				exitToRight: {
 					from: { opacity: 1, transform: "translateX(0)" },
-					to: { opacity: 0, transform: "translateX(-50px)" },
+					to: { opacity: 0, transform: "translateX(287px)" },
+				},
+				slideDown: {
+					from: { height: 0 },
+					to: { height: "var(--radix-accordion-content-height)" },
+				},
+				slideUp: {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: 0 },
 				},
 			},
-            animation: {
-                "enter-from-l": "enterFromLeft .2s cubic-bezier(0, 0, 0.2, 1)",
-                "enter-from-r": "enterFromRight .2s cubic-bezier(0, 0, 0.2, 1)",
-                "exit-to-l": "exitToLeft .2s cubic-bezier(0, 0, 0.2, 1)",
-                "exit-to-r": "exitToRight .2s cubic-bezier(0, 0, 0.2, 1)",
-            },
+			animation: {
+				"enter-from-l": "enterFromLeft .25s cubic-bezier(0, 0, 0.2, 1)",
+				"enter-from-r": "enterFromRight .25s cubic-bezier(0, 0, 0.2, 1)",
+				"exit-to-l": "exitToLeft .25s cubic-bezier(0, 0, 0.2, 1)",
+				"exit-to-r": "exitToRight .25s cubic-bezier(0, 0, 0.2, 1)",
+				"slide-down": "slideDown .25s cubic-bezier(0, 0, 0.2, 1)",
+				"slide-up": "slideUp .25s cubic-bezier(0, 0, 0.2, 1)",
+			},
+			transitionDuration: {
+				"250": "250ms",
+			},
 		},
 	},
 	plugins: [],
