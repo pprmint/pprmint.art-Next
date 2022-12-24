@@ -145,7 +145,7 @@ function DesktopNavigation() {
 						<NavigationMenu.Content
 							className={NavMenuContent + " w-[500px] lg:w-[600px]"}
 						>
-							<ul className="grid grid-flow-row grid-cols-2">
+							<ul className="grid grid-flow-row grid-cols-2 gap-3">
 								{Pages.map((Page) => (
 									<MenuItem
 										key={Page.link}
@@ -167,7 +167,7 @@ function DesktopNavigation() {
 						<NavigationMenu.Content
 							className={NavMenuContent + " w-[500px] lg:w-[600px]"}
 						>
-							<ul className="grid grid-cols-2 grid-flow-row">
+							<ul className="grid grid-cols-2 grid-flow-row gap-3">
 								{Projects.map((Project) => (
 									<MenuItem
 										key={Project.link}
@@ -189,7 +189,7 @@ function DesktopNavigation() {
 						<NavigationMenu.Content
 							className={NavMenuContent + " w-[400px] lg:w-[500px]"}
 						>
-							<ul className="grid grid-flow-row">
+							<ul className="grid grid-flow-row gap-3">
 								<MenuItem
 									title={t("PrivacyPolicy.Head.title")}
 									description={t("PrivacyPolicy.Head.description")}

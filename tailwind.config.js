@@ -55,20 +55,20 @@ module.exports = {
 			},
 			keyframes: {
 				enterFromLeft: {
-					from: { opacity: 0, transform: "translateX(-287px)" },
+					from: { opacity: 0, transform: "translateX(-294px)" },
 					to: { opacity: 1, transform: "translateX(0)" },
 				},
 				enterFromRight: {
-					from: { opacity: 0, transform: "translateX(287px)" },
+					from: { opacity: 0, transform: "translateX(294px)" },
 					to: { opacity: 1, transform: "translateX(0)" },
 				},
 				exitToLeft: {
 					from: { opacity: 1, transform: "translateX(0)" },
-					to: { opacity: 0, transform: "translateX(-287px)" },
+					to: { opacity: 0, transform: "translateX(-294px)" },
 				},
 				exitToRight: {
 					from: { opacity: 1, transform: "translateX(0)" },
-					to: { opacity: 0, transform: "translateX(287px)" },
+					to: { opacity: 0, transform: "translateX(294px)" },
 				},
 				slideDown: {
 					from: { height: 0 },
