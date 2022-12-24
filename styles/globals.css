@@ -11,7 +11,7 @@ body {
 h1, h2, h3, h4, h5, h6, p, span, button {
     hyphens: auto;
     line-height: 1.375rem;
-	font-feature-settings: "calt", "case", "ss01", "ss02", "cv02", "cv03", "cv04", "cv09", "cv10", "cv11";
+	font-feature-settings: "ss01", "cv05", "cv10", "cv11";
 }
 
 a {
