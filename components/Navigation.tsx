@@ -260,7 +260,7 @@ function MobileNavigation() {
 			<Link
 				href={props.href}
 				scroll={false}
-				onClick={() => setOpen(false)}
+				onClick={handleClose}
 				locale={props.locale}
 			>
 				<li className={"hover:text-white py-1.5 duration-100" + highlight}>
