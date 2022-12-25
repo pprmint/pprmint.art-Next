@@ -230,7 +230,7 @@ function MobileNavigation() {
 	};
 	const handleClose = async () => {
 		setOpen(false);
-		await new Promise((r) => setTimeout(r, 200));
+		await new Promise((r) => setTimeout(r, 400));
 		document.body.classList.remove("overflow-hidden");
 	};
 	const toggleOpen = open ? handleClose : handleOpen;
@@ -280,7 +280,7 @@ function MobileNavigation() {
 			</button>
 			<AnimatePresence>
 				{open && (
-					<Portal.Root className="flex">
+					<Portal.Root>
                         {/* Overlay */}
 						<m.div
 							initial={{ opacity: 0 }}
@@ -302,7 +302,7 @@ function MobileNavigation() {
 								y: "calc(-50% + 50px)",
 								transition: { duration: 0.2, ease: "easeIn" },
 							}}
-							className="z-40 absolute -translate-y-1/2 top-1/2 w-full"
+							className="z-40 fixed -translate-y-1/2 top-1/2 w-full"
 						>
 							<Accordion.Root
 								type="single"
@@ -386,7 +386,7 @@ function MobileNavigation() {
 								y: 20,
 								transition: { duration: 0.2, ease: "easeIn" },
 							}}
-							className="absolute bottom-0 p-6 w-full z-40"
+							className="fixed bottom-0 p-6 w-full z-40"
 						>
 							<Footer className="items-end" />
 						</m.div>
