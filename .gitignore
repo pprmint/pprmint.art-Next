@@ -35,6 +35,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+next-env.d.ts
 
 # BabelEdit nonsense
 */languages.babel
