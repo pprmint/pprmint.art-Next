@@ -244,5 +244,23 @@
 			}
 		},
 		"moreInfo": "More info"
+	},
+	"Stuff": {
+		"Content": {
+			"Computers": {
+				"Desktop": {
+					"heading": "Desktop"
+				},
+				"Laptop": {
+					"heading": "Laptop"
+				},
+				"heading": "Desktop and laptop"
+			},
+			"gridSize": "Desktop"
+		},
+		"Head": {
+			"description": "A selection of fonts, programs and services I use.",
+			"title": "Stuff I use"
+		}
 	}
 }

@@ -244,5 +244,23 @@
 			}
 		},
 		"moreInfo": "Weitere Infos"
+	},
+	"Stuff": {
+		"Content": {
+			"Computers": {
+				"Desktop": {
+					"heading": "PC"
+				},
+				"Laptop": {
+					"heading": "Laptop"
+				},
+				"heading": "PC und Laptop"
+			},
+			"gridSize": "Schreibtisch"
+		},
+		"Head": {
+			"description": "Eine Auswahl der von mir verwendeten Schriftarten, Programme und Dienste.",
+			"title": "Zeug, das ich benutze"
+		}
 	}
 }

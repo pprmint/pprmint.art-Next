@@ -71,12 +71,12 @@ module.exports = {
 					to: { opacity: 0, transform: "translateX(294px)" },
 				},
 				slideDown: {
-					from: { height: 0 },
-					to: { height: "var(--radix-accordion-content-height)" },
+					from: { height: 0, opacity: 0 },
+					to: { height: "var(--radix-accordion-content-height)", opacity: 1 },
 				},
 				slideUp: {
-					from: { height: "var(--radix-accordion-content-height)" },
-					to: { height: 0 },
+					from: { height: "var(--radix-accordion-content-height)", opacity: 1 },
+					to: { height: 0, opacity: 0 },
 				},
 			},
 			animation: {
@@ -88,7 +88,7 @@ module.exports = {
 				"slide-up": "slideUp .25s cubic-bezier(0, 0, 0.2, 1)",
 			},
 			transitionDuration: {
-				"250": "250ms",
+				250: "250ms",
 			},
 		},
 	},

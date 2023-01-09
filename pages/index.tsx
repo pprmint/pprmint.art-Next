@@ -27,7 +27,7 @@ export default function Home() {
 				<div className="absolute flex items-center md:items-end gap-6 w-full p-6 md:p-9 flex-col md:flex-row text-center md:text-left">
 					<div className="grow">
 						<p
-							className="text-4xl md:text-5xl text-white font-display font-semibold"
+							className="text-3xl md:text-5xl text-white font-display font-semibold"
 							dangerouslySetInnerHTML={{ __html: t.raw("Content.slogan") }}
 						/>
 					</div>

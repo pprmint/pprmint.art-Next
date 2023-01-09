@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { AbstractIntlMessages, NextIntlProvider } from "next-intl";
+import React from "react";
 
 import "fonts/Inter/inter.css";
 import "fonts/MintBit/mintbit.css";
@@ -11,9 +12,6 @@ import "styles/globals.css";
 
 import Navigation from "components/Navigation";
 
-interface pageProps extends AppProps {
-	pageProps: { messages: AbstractIntlMessages };
-}
 
 export default function App({ Component, pageProps }: AppProps) {
 	const location = usePathname();

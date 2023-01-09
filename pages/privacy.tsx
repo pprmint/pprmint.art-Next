@@ -15,10 +15,10 @@ export default function PrivacyPolicy() {
 			<Head title={t("Head.title")} description={t("Head.description")} />
 			<main className="py-40 max-w-7xl mx-auto px-6 md:px-9 font-sans text-white-dark2">
 				<div className="pb-12 text-center">
-					<h1 className="font-display font-bold text-white text-5xl md:text-6xl xl:text-7xl pb-3">
+					<h1 className="font-display font-bold text-white text-4xl md:text-5xl xl:text-7xl pb-3">
 						{t("Head.title")}
 					</h1>
-					<h2 className="text-white-dark2 text-3xl md:text-4xl">
+					<h2 className="text-white-dark2 text-2xl md:text-3xl">
 						{t(
 							"Content.lastUpdated",
 							{ revisionDate: parseISO("2022-12-07T") } // YYYY-MM-DD

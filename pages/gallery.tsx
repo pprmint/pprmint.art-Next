@@ -189,7 +189,7 @@ export default function Gallery() {
 		<>
 			<Head title={t("Head.title")} description={t("Head.description")} />
 			<main className="py-40 text-white-dark2">
-				<h1 className="pb-12 px-6 md:px-9 font-display font-bold text-center text-white text-5xl md:text-6xl xl:text-7xl">
+				<h1 className="pb-12 px-6 md:px-9 font-display font-bold text-center text-white text-4xl md:text-5xl xl:text-7xl">
 					{t("Head.title")}
 				</h1>
 				<section>
@@ -205,7 +205,7 @@ export default function Gallery() {
 									className="absolute w-full h-full flex items-end opacity-0 hover:opacity-100 focus:opacity-100 duration-300 backdrop-blur-sm backdrop-saturate-0 backdrop-brightness-75"
 								>
 									<div className="flex flex-col gap-1.5 text-center justify-center items-center align-middle w-full h-full p-9">
-										<h2 className="text-white font-bold font-display text-xl md:text-4xl">
+										<h2 className="text-white font-bold font-display text-xl md:text-3xl">
 											{Work.caption}
 										</h2>
 										{Work.tumblr && (

@@ -75,7 +75,7 @@ const Projects = [
 	},
 ];
 
-const Carret = (
+const Caret = (
 	<CaretDown
 		size={18}
 		weight="bold"
@@ -139,13 +139,13 @@ function DesktopNavigation() {
 					<NavigationMenu.Item>
 						<NavigationMenu.Trigger className={NavMenuTrigger}>
 							{t("Navigation.Menu.general")}
-							{Carret}
+							{Caret}
 						</NavigationMenu.Trigger>
 
 						<NavigationMenu.Content
 							className={NavMenuContent + " w-[500px] lg:w-[600px]"}
 						>
-							<ul className="grid grid-flow-row grid-cols-2 gap-3">
+							<ul className="grid grid-flow-row grid-cols-2">
 								{Pages.map((Page) => (
 									<MenuItem
 										key={Page.link}
@@ -161,13 +161,13 @@ function DesktopNavigation() {
 					<NavigationMenu.Item>
 						<NavigationMenu.Trigger className={NavMenuTrigger}>
 							{t("Navigation.Menu.projects")}
-							{Carret}
+							{Caret}
 						</NavigationMenu.Trigger>
 
 						<NavigationMenu.Content
 							className={NavMenuContent + " w-[500px] lg:w-[600px]"}
 						>
-							<ul className="grid grid-cols-2 grid-flow-row gap-3">
+							<ul className="grid grid-cols-2 grid-flow-row">
 								{Projects.map((Project) => (
 									<MenuItem
 										key={Project.link}
@@ -183,13 +183,18 @@ function DesktopNavigation() {
 					<NavigationMenu.Item>
 						<NavigationMenu.Trigger className={NavMenuTrigger}>
 							{t("Navigation.Menu.other")}
-							{Carret}
+							{Caret}
 						</NavigationMenu.Trigger>
 
 						<NavigationMenu.Content
 							className={NavMenuContent + " w-[400px] lg:w-[500px]"}
 						>
-							<ul className="grid grid-flow-row gap-3">
+							<ul className="grid grid-flow-row">
+								<MenuItem
+									title={t("Stuff.Head.title")}
+									description={t("Stuff.Head.description")}
+									href="/stuff"
+								/>
 								<MenuItem
 									title={t("PrivacyPolicy.Head.title")}
 									description={t("PrivacyPolicy.Head.description")}
@@ -239,10 +244,10 @@ function MobileNavigation() {
 	const NavAccordionItem =
 		"group/root data-[state='open']:backdrop-brightness-75 duration-250 w-full border-black-light2 border-0 data-[state='open']:border-y";
 	const NavAccordionTrigger =
-		"flex w-full text-left items-center px-6 py-4 data-[state='open']:py-6 hover:backdrop-brightness-200 data-[state='open']:font-bold text-white text-3xl data-[state='open']:text-4xl duration-250 ease-out";
+		"flex w-full text-left items-center px-6 py-3 data-[state='open']:py-4 data-[state='open']:font-bold text-white text-3xl data-[state='open']:text-3xl duration-250 ease-out";
 	const NavAccordionContent =
 		"data-[state='open']:animate-slide-down data-[state='closed']:animate-slide-up overflow-hidden";
-	const NavAccordionContentList = "flex flex-col p-6 pt-0 text-xl";
+	const NavAccordionContentList = "flex flex-col px-6 pt-0 pb-3 text-md";
 
 	function ListItem(
 		props: React.PropsWithChildren<{
@@ -273,7 +278,7 @@ function MobileNavigation() {
 	return (
 		<>
 			<button
-				className="fixed top-4 right-4 text-white p-4 rounded-full z-50 hover:bg-black-light1 duration-250"
+				className="fixed top-4 right-4 text-white p-3 rounded-full z-50 hover:bg-black-light1 duration-250"
 				onClick={toggleOpen}
 			>
 				{open ? <X weight="bold" /> : <List weight="bold" />}
@@ -313,7 +318,7 @@ function MobileNavigation() {
 									<Accordion.Header>
 										<Accordion.Trigger className={NavAccordionTrigger}>
 											{t("Navigation.Menu.general")}
-											{Carret}
+											{Caret}
 										</Accordion.Trigger>
 									</Accordion.Header>
 									<Accordion.Content className={NavAccordionContent}>
@@ -333,7 +338,7 @@ function MobileNavigation() {
 									<Accordion.Header>
 										<Accordion.Trigger className={NavAccordionTrigger}>
 											{t("Navigation.Menu.projects")}
-											{Carret}
+											{Caret}
 										</Accordion.Trigger>
 									</Accordion.Header>
 									<Accordion.Content className={NavAccordionContent}>
@@ -353,11 +358,15 @@ function MobileNavigation() {
 									<Accordion.Header>
 										<Accordion.Trigger className={NavAccordionTrigger}>
 											{t("Navigation.Menu.other")}
-											{Carret}
+											{Caret}
 										</Accordion.Trigger>
 									</Accordion.Header>
 									<Accordion.Content className={NavAccordionContent}>
 										<ul className={NavAccordionContentList}>
+											<ListItem
+												href="/stuff"
+												title={t("Stuff.Head.title")}
+											/>
 											<ListItem
 												href="/privacy"
 												title={t("PrivacyPolicy.Head.title")}
@@ -420,7 +429,7 @@ function Footer(props: { className?: string }) {
 					{new Date().getFullYear()} pprmint.
 				</p>
 			</div>
-			<div className="flex text-white text-xl">
+			<div className="flex text-white md:text-xl">
 				<Link
 					href="https://twitter.com/npprmint"
 					target="_blank"
@@ -475,7 +484,7 @@ export default function Navbar() {
 					<Lottie
 						animationData={logo}
 						loop={false}
-						className="w-48 md:w-56 h-16 md:h-24 my-2 md:my-0 ml-6 md:ml-9"
+						className="w-44 md:w-56 h-14 md:h-24 my-2 md:my-0 ml-6 md:ml-9"
 					/>
 				</Link>
 			</div>
